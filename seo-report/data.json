@@ -1,0 +1,476 @@
+[
+  {
+    "url": "https://glanove.framer.website/work/case-aag-promostranicy",
+    "score": 79,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Title too long (124 chars). May be truncated in search results."
+      },
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "6 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "ROI 6 000% на ПромоСтраницах Яндекса. Кейс застройщика премиум-класса в Санкт-Петербурге - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/work/case-aag-promostranicy",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/work/case-spb-15mln",
+    "score": 79,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Title too long (122 chars). May be truncated in search results."
+      },
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "6 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "6 сделок × 15 млн ₽ через Telegram Ads. Кейс агентства недвижимости в Санкт-Петербурге - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/work/case-spb-15mln",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/work/regardis-telegram-ads-premium",
+    "score": 79,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Title too long (99 chars). May be truncated in search results."
+      },
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "6 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Как мы получили 50 квал. лидов в месяц на премиум-недвижимость. - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/work/regardis-telegram-ads-premium",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "74 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/cases/portfolio",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "12 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/cases/portfolio",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/product/%D0%B0%D0%B2%D0%B8%D1%82%D0%BE-%D0%B0%D0%B4%D1%81",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "63 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/product/%D0%B0%D0%B2%D0%B8%D1%82%D0%BE-%D0%B0%D0%B4%D1%81",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/product/content-product",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "62 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/product/content-product",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/product/product-statii",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "62 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/product/product-statii",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/product/product-telegram",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "62 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/product/product-telegram",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/product/youtube-product",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "62 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/product/youtube-product",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/404",
+    "score": 88,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "2 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/404",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/blog/all-grapples",
+    "score": 88,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "2 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "All Grapples - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/blog/all-grapples",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/blog/flowers-love",
+    "score": 88,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "2 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Flowers Love - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/blog/flowers-love",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/blog/velocity-becomes",
+    "score": 88,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "2 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Velocity Becomes - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/blog/velocity-becomes",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  },
+  {
+    "url": "https://glanove.framer.website/blog/way-to-clearance",
+    "score": 88,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (113 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "2 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Way To Clearance - Fuel - Premium Agency & Portfolio",
+      "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
+      "canonical": "https://glanove.framer.website/blog/way-to-clearance",
+      "ogImage": "https://framerusercontent.com/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png"
+    }
+  }
+]
