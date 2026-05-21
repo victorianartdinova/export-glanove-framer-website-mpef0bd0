@@ -325,14 +325,6 @@
     }
   };
 
-  var PRODUCT_CARDS = [
-    { label: 'Авито Адс',            tag: 'лиды/классифайд',     desc: 'CPL в 2–5 раз дешевле Директа. Реклама + квиз-лендинг + сквозная аналитика.',  href: '/product/avito-ads/' },
-    { label: 'Лидген Telegram',      tag: 'лиды/аудитория',      desc: 'Аналитика, контент и креатив. Всё в одном канале. CPL ниже рынка в 2 раза.',     href: '/product/product-telegram/' },
-    { label: 'Коммуникационная стратегия', tag: 'контент-маркетинг', desc: 'Кросс-платформенная система для продвижения по задачам: продажи, найм, экспертность.', href: '/product/content-product/' },
-    { label: 'Рекламная стратегия',  tag: 'медиаплан',           desc: 'Медиаплан с прогнозом продаж и квал. лидов по каждому каналу. Экономия 30% бюджета.', href: '/product/product-statii/' },
-    { label: 'ПромоСтраницы и статьи', tag: 'контент-трафик',     desc: 'ROI 6 000% и CPL на 32% дешевле контекста. ПромоСтраницы Яндекса для премиум-сегмента.', href: '/product/product-statii/' },
-    { label: 'Личный бренд YouTube', tag: 'YouTube',             desc: 'Высокие охваты в узкой нише. Сценарии, AI-система и запуск канала за 1.5 недели.', href: '/product/youtube-product/' },
-  ];
 
   // 1:1 копия TEAM[] из /root/glavnoe-real/src/components/TeamMarquee.tsx (commit 4a717c89 на 2026-05-18).
   // Фото перенаправлены на локальные ассеты текущего проекта (те же изображения, что и в product/avito-ads/index.html team-section).
@@ -442,35 +434,6 @@
     sec.innerHTML = '<div style="max-width:1392px;margin:0 auto">'+head+'<div style="display:flex;flex-wrap:wrap;gap:32px">'+grid+'</div></div>';
     pricingSection.parentNode.insertBefore(sec, pricingSection);
   }
-
-  function ensureProductCards(){
-    // Only on home page
-    var p = path();
-    if (p !== '/' && p !== '/index.html/') return;
-    if (document.querySelector('[data-glavnoe-injected="product-cards"]')) return;
-    // Anchor: heading "работаем с визионерами рынка в каждом сегменте"
-    var anchor = Array.from(document.querySelectorAll('h2, h3, h4, h5, p')).find(function(el){
-      return el.textContent.trim().indexOf('работаем с визионерами рынка в каждом сегменте') >= 0;
-    });
-    if (!anchor) return;
-    var section = anchor.closest('section');
-    if (!section || !section.parentNode) return;
-    var sec = document.createElement('section');
-    sec.setAttribute('data-glavnoe-injected', 'product-cards');
-    sec.style.cssText = 'background:#fff;color:#000;width:100%;box-sizing:border-box;padding:80px clamp(24px,4vw,64px) 120px;margin:0';
-    var head = '<div style="margin:0 0 48px;padding:24px 0;display:flex;justify-content:space-between;align-items:baseline;font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;color:rgba(0,0,0,0.5);border-top:1px solid rgba(0,0,0,0.1)"><span>(02)</span><span>(Продукты)</span><span>© 2026</span></div>';
-    var cards = PRODUCT_CARDS.map(function(c){
-      return '<a href="'+c.href+'" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;background:#f5f5f5;border-radius:16px;padding:40px 32px;min-height:280px;transition:transform 0.25s ease,box-shadow 0.25s ease" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 18px 40px rgba(0,0,0,0.08)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'+
-        '<div><div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:13px;letter-spacing:0.03em;color:rgba(0,0,0,0.45);margin-bottom:18px;text-transform:lowercase">('+c.tag+')</div>'+
-        '<div style="font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:30px;line-height:1.1;letter-spacing:-1px;color:#000;margin-bottom:14px">'+c.label+'</div>'+
-        '<div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:15px;line-height:1.45;color:rgba(0,0,0,0.65)">'+c.desc+'</div></div>'+
-        '<div style="display:flex;align-items:center;gap:10px;font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#ff3b30;margin-top:32px">Узнать → </div>'+
-        '</a>';
-    }).join('');
-    sec.innerHTML = '<div style="width:100%;max-width:none;margin:0">'+head+'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">'+cards+'</div></div>';
-    section.parentNode.insertBefore(sec, section.nextSibling);
-  }
-
   // Glavnoe: convert Archive section into clickable product showcase.
   // Framer runtime repaints CMS data — we use MutationObserver to keep our
   // text in place and add clickability to each row.
@@ -540,6 +503,48 @@
     if (!sec) return;
     applyArchiveProducts(sec);
     if (sec.dataset.glavnoeObserved === '1') return;
+    // Relocate Archive section: move it right after the "Workspace Wrapper"
+    // anchor (the "(работаем с визионерами)" block). This puts the product
+    // archive next to the audience promise, replacing the previous JS-injected
+    // 6-card grid. We move via DOM, not SSR, to avoid hydration mismatches.
+    // Side-panel fix: Archive's parent has black bg + section is 1200px fixed.
+    // After relocation Archive sits between white-bg blocks, so the dark side
+    // strips become visible. Force the section + its outermost wrappers to
+    // full viewport width with white background that bleeds to edges.
+    if (sec.dataset.glavnoeBgFixed !== '1') {
+      sec.dataset.glavnoeBgFixed = '1';
+      var bg = document.createElement('style');
+      bg.textContent = [
+        'section[data-framer-name="Archive"]{',
+        '  width:100vw !important;',
+        '  max-width:100vw !important;',
+        '  margin-left:calc(50% - 50vw) !important;',
+        '  margin-right:calc(50% - 50vw) !important;',
+        '  background:#fff !important;',
+        '  padding-left:max(24px,calc(50vw - 600px)) !important;',
+        '  padding-right:max(24px,calc(50vw - 600px)) !important;',
+        '  box-sizing:border-box !important;',
+        '}',
+      ].join('\n');
+      document.head.appendChild(bg);
+    }
+    if (sec.dataset.glavnoeRelocated !== '1') {
+      var anchor = document.querySelector('section[data-framer-name="About"]');
+      // Move Archive (and its preceding Overlap Detailing transition mask, if any
+      // immediately before it) to after the anchor.
+      if (anchor) {
+        var od = sec.previousElementSibling;
+        // Identify the transition-mask Overlap Detailing right before Archive
+        var isMask = od && od.tagName === 'SECTION' && od.getAttribute('data-framer-name') === 'Overlap Detailing';
+        // Insert order: anchor -> Archive -> (transition was originally chrome between Video and Testimonial,
+        //   it does not need to move with Archive when Archive is no longer between dark and light backgrounds).
+        anchor.parentNode.insertBefore(sec, anchor.nextSibling);
+        // Hide the transition mask in its old position only if it was originally bound to Archive.
+        // For safety we leave it; it has a 12px gap, negligible visually.
+        sec.dataset.glavnoeRelocated = '1';
+      }
+    }
+
     sec.dataset.glavnoeObserved = '1';
     var pending = false;
     var observer = new MutationObserver(function(){
@@ -664,7 +669,6 @@
     ensureAbout();
     ensureAudience();
     ensureCaseBody();
-    ensureProductCards();
     ensureArchiveProducts();
     ensureTeamMarquee();
     hideEmpty();
