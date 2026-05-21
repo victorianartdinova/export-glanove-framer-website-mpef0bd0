@@ -259,11 +259,12 @@
     });
 })();
 </script>
+
 <script data-glavnoe-safety="1">
 (function(){
-  // Safety fallback for Framer NoCodeExport hydration mismatch (React #405).
-  // After Framer runtime finishes hydrating (and possibly bailing on subtrees),
-  // force-show stuck reveal content + restore missing About text + inject case bodies.
+  // Hydration mismatch heal (React #405 from Framer NoCodeExport).
+  // Runs at window.load + 1500ms, after Framer runtime has tried its
+  // reveal animations. Surgical: only patches what is still broken.
 
   var ABOUT_TEXTS = {
     '/product/avito-ads/': 'Запускаем рекламу на Авито со сквозной аналитикой — от первого показа до заявки в CRM. Аудит конкурентов, точная сегментация по 560 сегментам, квиз-лендинг, A/B тесты и контроль CPL до сделки.',
@@ -273,22 +274,57 @@
     '/product/youtube-product/': 'Ваша медийность в узкой нише — с готовой стратегией и AI-системой для вашей команды.'
   };
 
-  var CASE_BODIES = {
-    '/work/case-aag-promostranicy/': {
-      product_url: '/product/product-statii/',
-      product_label: 'Рекламная стратегия',
-      metrics: [['6 000%','ROI'],['−32%','CPL vs контекст'],['62%','Дочитываемость (было 39%)'],['1.1%','CTR (было 0.8%)']],
-      did: ['3 статьи в разных форматах: продающий, нативный кейс (лучший результат), доверительный','5 заголовков + 3-5 обложек на каждую статью с A/B тестами','Геотаргетинг: Санкт-Петербург и Ленобласть, 25-55 лет','Стратегия «Вовлечение» — оплата за дочитывание','Оптимизация в реальном времени: отключение слабых обложек, перераспределение бюджета'],
-      why: ['Контент как таргетинг — алгоритм сам ищет аудиторию по семантике статьи','3+ минуты контакта с рекламой прогревают лучше любого баннера','Одна сделка в премиум-сегменте окупает весь рекламный бюджет']
+  var AUDIENCES = {
+    '/product/avito-ads/': {
+      title: 'Кому подходит',
+      items: [
+        ['Застройщики', 'ЖК, малоэтажные, загородные проекты'],
+        ['Агентства недвижимости', 'Брокеры, кто продаёт объекты от первички до элитки'],
+        ['Управляющие компании', 'Коммерческая и складская недвижимость'],
+      ]
     },
-    '/work/case-spb-15mln/': {
-      product_url: '/product/product-telegram/',
-      product_label: 'Лидген Telegram',
-      metrics: [['6','Сделок закрыто'],['15 млн ₽','Средний чек'],['19 973 ₽','CPL квал. обращения (KPI — 20 000)'],['310 ₽','CPM (рынок ~855 ₽)']],
-      did: ['Подготовили канал под трафик: ЦА, контент-связки, WhatsApp-бот, AmoCRM, фирстиль','Выстроили систему Telegram Ads: 4 оффера, ~200 каналов в месяц для таргетинга','Управление бюджетом 80/20: проверенные связки + тесты','Еженедельное обновление креативов — выгорают за 7 дней','Аналитика через TGStat + Telemetr, ежемесячные ревью с клиентом'],
-      why: ['Система, а не разовые закупки','Канал как актив: 20% обращений приходят органически без рекламы','Баланс 80/20 — стабильность плюс непрерывный поиск новых связок']
+    '/product/content-product/': {
+      title: 'Кому подходит',
+      items: [
+        ['Девелоперам', 'Когда нужна единая контент-система для нескольких каналов одновременно'],
+        ['Агентствам недвижимости', 'Когда соцсети дают до 50% лидов и нужна стратегия, а не разовые посты'],
+        ['Командам с HR-задачами', 'Когда параллельно с продажами нужно строить HR-бренд и корпоративный контент'],
+      ]
+    },
+    '/product/product-statii/': {
+      title: 'Кому подходит',
+      items: [
+        ['Девелоперам премиум-класса', 'Когда контекст и медийка перестали окупаться и нужен качественный контент-трафик'],
+        ['Маркетинг-директорам', 'Когда нужно защитить медиаплан с прогнозом продаж перед советом директоров'],
+        ['Командам, которые запускают новый ЖК', 'Когда нужна стратегия запуска от позиционирования до первых сделок'],
+      ]
+    },
+    '/product/product-telegram/': {
+      title: 'Кому подходит',
+      items: [
+        ['Агентствам недвижимости', 'Когда продаёте премиум и нужны квалифицированные лиды с номером телефона'],
+        ['Застройщикам', 'Когда нужно вывести проект на широкий рынок через одну связку: канал + ads + CRM'],
+        ['Брокерам и личным брендам', 'Когда личный канал — основной актив и его надо превратить в воронку продаж'],
+      ]
+    },
+    '/product/youtube-product/': {
+      title: 'Кому подходит',
+      items: [
+        ['Экспертам рынка', 'Когда есть глубокая экспертиза, но нет системы, чтобы превратить её в медийность'],
+        ['Топ-менеджерам девелопмента', 'Когда нужен личный бренд для привлечения партнёров, инвесторов, ключевых сотрудников'],
+        ['Спикерам и публичным фигурам', 'Когда нужно встать в одну нишу и собрать профессиональную аудиторию'],
+      ]
     }
   };
+
+  var PRODUCT_CARDS = [
+    { label: 'Авито Адс',            tag: 'лиды/классифайд',     desc: 'CPL в 2–5 раз дешевле Директа. Реклама + квиз-лендинг + сквозная аналитика.',  href: '/product/avito-ads/' },
+    { label: 'Лидген Telegram',      tag: 'лиды/аудитория',      desc: 'Аналитика, контент и креатив. Всё в одном канале. CPL ниже рынка в 2 раза.',     href: '/product/product-telegram/' },
+    { label: 'Коммуникационная стратегия', tag: 'контент-маркетинг', desc: 'Кросс-платформенная система для продвижения по задачам: продажи, найм, экспертность.', href: '/product/content-product/' },
+    { label: 'Рекламная стратегия',  tag: 'медиаплан',           desc: 'Медиаплан с прогнозом продаж и квал. лидов по каждому каналу. Экономия 30% бюджета.', href: '/product/product-statii/' },
+    { label: 'ПромоСтраницы и статьи', tag: 'контент-трафик',     desc: 'ROI 6 000% и CPL на 32% дешевле контекста. ПромоСтраницы Яндекса для премиум-сегмента.', href: '/product/product-statii/' },
+    { label: 'Личный бренд YouTube', tag: 'YouTube',             desc: 'Высокие охваты в узкой нише. Сценарии, AI-система и запуск канала за 1.5 недели.', href: '/product/youtube-product/' },
+  ];
 
   function fixOpacity(){
     document.querySelectorAll('[data-framer-appear-id], [style*="opacity:0"], [style*="opacity: 0"]').forEach(function(el){
@@ -302,24 +338,67 @@
     });
   }
 
+  function fixVisibility(){
+    // Collect text fingerprints of already-visible non-trivial leaf text.
+    // Used to skip duplicates so we don't unhide a backup that would stack
+    // on top of an already-visible animated version.
+    var visibleFingerprints = [];
+    document.querySelectorAll('p, h1, h2, h3, h4, h5, span, div').forEach(function(el){
+      if (el.children.length > 0) return;
+      var t = el.textContent.trim();
+      if (t.length < 18) return;
+      var cs = getComputedStyle(el);
+      if (cs.visibility !== 'hidden' && cs.opacity !== '0' && cs.display !== 'none') {
+        visibleFingerprints.push(t.slice(0, 40));
+      }
+    });
+    document.querySelectorAll('*').forEach(function(el){
+      var cs = getComputedStyle(el);
+      if (cs.visibility !== 'hidden') return;
+      if (el.matches('input, textarea, select, [data-framer-background-image-wrapper]')) return;
+      var t = el.textContent.trim();
+      if (t.length < 5) return;
+      var sig = t.slice(0, 40);
+      // Skip if a visible duplicate already exists
+      var dup = false;
+      for (var i = 0; i < visibleFingerprints.length; i++) {
+        var v = visibleFingerprints[i];
+        if (v === sig || v.indexOf(sig.slice(0, 18)) >= 0 || sig.indexOf(v.slice(0, 18)) >= 0) { dup = true; break; }
+      }
+      if (dup) return;
+      el.style.setProperty('visibility', 'visible', 'important');
+    });
+  }
+
+  function fixFooterColor(){
+    // Footer links: <a> wraps <h2 class="framer-text"> with correct color.
+    // Force <a> color:inherit so browser default blue doesn't leak through
+    // descendants that don't override.
+    var foot = document.querySelector('[data-framer-name="Footer"], footer');
+    if (!foot) return;
+    foot.querySelectorAll('a').forEach(function(a){
+      a.style.setProperty('color', 'inherit', 'important');
+      a.style.setProperty('text-decoration', 'none', 'important');
+    });
+  }
+
+  function path(){
+    return window.location.pathname.replace(/index\.html$/, '').replace(/\/?$/, '/');
+  }
+
   function ensureAbout(){
-    var path = window.location.pathname.replace(/index\.html$/, '').replace(/\/?$/, '/');
-    var text = ABOUT_TEXTS[path];
+    var text = ABOUT_TEXTS[path()];
     if (!text) return;
-    // Detect: if the about-text is NOT already in DOM, inject a styled paragraph
-    var present = Array.from(document.querySelectorAll('p, div')).some(function(el){
-      return el.children.length === 0 && el.textContent.indexOf(text.slice(0, 40)) >= 0;
+    var head = Array.from(document.querySelectorAll('p, h2, h3')).find(function(el){ return el.textContent.trim() === '(Как работаем)'; });
+    if (!head) return;
+    // Already present?
+    var present = Array.from(document.querySelectorAll('p, span, div')).some(function(el){
+      return el.children.length === 0 && el.textContent.indexOf(text.slice(0, 40)) >= 0 && getComputedStyle(el).visibility !== 'hidden';
     });
     if (present) return;
-    // Find section anchor: header "(Как работаем)"
-    var header = Array.from(document.querySelectorAll('p, h2, h3')).find(function(el){
-      var t = el.textContent.trim();
-      return t === '(Как работаем)';
-    });
-    if (!header) return;
-    var section = header.closest('section');
+    var section = head.closest('section');
     if (!section) return;
-    // Build paragraph
+    if (section.querySelector('[data-glavnoe-injected="about"]')) return;
     var p = document.createElement('div');
     p.setAttribute('data-glavnoe-injected', 'about');
     p.style.cssText = "max-width:920px;margin:0 auto;padding:40px 24px 80px;font-family:'Suisse Intl Regular','Suisse Intl Regular Placeholder',sans-serif;font-size:28px;line-height:1.3;letter-spacing:-0.5px;color:#000;text-align:center";
@@ -327,9 +406,71 @@
     section.appendChild(p);
   }
 
+  function ensureAudience(){
+    var data = AUDIENCES[path()];
+    if (!data) return;
+    if (document.querySelector('[data-glavnoe-injected="audience"]')) return;
+    // Insert BEFORE the Pricing section. Anchor: header "(Стоимость)" inside Pricing.
+    var pricingHead = Array.from(document.querySelectorAll('p, h2, h3')).find(function(el){ return el.textContent.trim() === '(Стоимость)'; });
+    var pricingSection = pricingHead ? pricingHead.closest('section') : null;
+    if (!pricingSection || !pricingSection.parentNode) return;
+    var sec = document.createElement('section');
+    sec.setAttribute('data-glavnoe-injected', 'audience');
+    sec.style.cssText = 'background:#fff;padding:80px 24px 80px;border-top:1px solid rgba(0,0,0,0.08)';
+    var head = '<div style="max-width:1392px;margin:0 0 48px;padding:0 0 24px;display:flex;justify-content:space-between;align-items:baseline;font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;color:rgba(0,0,0,0.5)"><span>(01.5)</span><span>('+data.title+')</span><span>© 2026</span></div>';
+    var grid = data.items.map(function(it){
+      return '<div style="flex:1 1 280px;min-width:0;padding:32px 32px 32px 0"><div style="font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:32px;line-height:1.1;letter-spacing:-1px;color:#000;margin-bottom:16px">'+it[0]+'</div><div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:17px;line-height:1.45;color:rgba(0,0,0,0.6);max-width:340px">'+it[1]+'</div></div>';
+    }).join('');
+    sec.innerHTML = '<div style="max-width:1392px;margin:0 auto">'+head+'<div style="display:flex;flex-wrap:wrap;gap:32px">'+grid+'</div></div>';
+    pricingSection.parentNode.insertBefore(sec, pricingSection);
+  }
+
+  function ensureProductCards(){
+    // Only on home page
+    var p = path();
+    if (p !== '/' && p !== '/index.html/') return;
+    if (document.querySelector('[data-glavnoe-injected="product-cards"]')) return;
+    // Anchor: heading "работаем с визионерами рынка в каждом сегменте"
+    var anchor = Array.from(document.querySelectorAll('h2, h3, h4, h5, p')).find(function(el){
+      return el.textContent.trim().indexOf('работаем с визионерами рынка в каждом сегменте') >= 0;
+    });
+    if (!anchor) return;
+    var section = anchor.closest('section');
+    if (!section || !section.parentNode) return;
+    var sec = document.createElement('section');
+    sec.setAttribute('data-glavnoe-injected', 'product-cards');
+    sec.style.cssText = 'background:#fff;padding:80px 24px 120px;color:#000';
+    var head = '<div style="max-width:1392px;margin:0 auto 48px;padding:0 0 24px;display:flex;justify-content:space-between;align-items:baseline;font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;color:rgba(0,0,0,0.5);border-top:1px solid rgba(0,0,0,0.1);padding-top:24px"><span>(02)</span><span>(Продукты)</span><span>© 2026</span></div>';
+    var cards = PRODUCT_CARDS.map(function(c){
+      return '<a href="'+c.href+'" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;background:#f5f5f5;border-radius:16px;padding:40px 32px;min-height:280px;transition:transform 0.25s ease,box-shadow 0.25s ease" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 18px 40px rgba(0,0,0,0.08)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'+
+        '<div><div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:13px;letter-spacing:0.03em;color:rgba(0,0,0,0.45);margin-bottom:18px;text-transform:lowercase">('+c.tag+')</div>'+
+        '<div style="font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:30px;line-height:1.1;letter-spacing:-1px;color:#000;margin-bottom:14px">'+c.label+'</div>'+
+        '<div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:15px;line-height:1.45;color:rgba(0,0,0,0.65)">'+c.desc+'</div></div>'+
+        '<div style="display:flex;align-items:center;gap:10px;font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#ff3b30;margin-top:32px">Узнать → </div>'+
+        '</a>';
+    }).join('');
+    sec.innerHTML = '<div style="max-width:1392px;margin:0 auto">'+head+'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">'+cards+'</div></div>';
+    section.parentNode.insertBefore(sec, section.nextSibling);
+  }
+
   function ensureCaseBody(){
-    var path = window.location.pathname.replace(/index\.html$/, '').replace(/\/?$/, '/');
-    var data = CASE_BODIES[path];
+    var CASES = {
+      '/work/case-aag-promostranicy/': {
+        product_url: '/product/product-statii/',
+        product_label: 'Рекламная стратегия',
+        metrics: [['6 000%','ROI'],['−32%','CPL vs контекст'],['62%','Дочитываемость (было 39%)'],['1.1%','CTR (было 0.8%)']],
+        did: ['3 статьи в разных форматах: продающий, нативный кейс (лучший результат), доверительный','5 заголовков + 3-5 обложек на каждую статью с A/B тестами','Геотаргетинг: Санкт-Петербург и Ленобласть, 25-55 лет','Стратегия «Вовлечение» — оплата за дочитывание','Оптимизация в реальном времени: отключение слабых обложек, перераспределение бюджета'],
+        why: ['Контент как таргетинг — алгоритм сам ищет аудиторию по семантике статьи','3+ минуты контакта с рекламой прогревают лучше любого баннера','Одна сделка в премиум-сегменте окупает весь рекламный бюджет']
+      },
+      '/work/case-spb-15mln/': {
+        product_url: '/product/product-telegram/',
+        product_label: 'Лидген Telegram',
+        metrics: [['6','Сделок закрыто'],['15 млн ₽','Средний чек'],['19 973 ₽','CPL квал. обращения (KPI — 20 000)'],['310 ₽','CPM (рынок ~855 ₽)']],
+        did: ['Подготовили канал под трафик: ЦА, контент-связки, WhatsApp-бот, AmoCRM, фирстиль','Выстроили систему Telegram Ads: 4 оффера, ~200 каналов в месяц для таргетинга','Управление бюджетом 80/20: проверенные связки + тесты','Еженедельное обновление креативов — выгорают за 7 дней','Аналитика через TGStat + Telemetr, ежемесячные ревью с клиентом'],
+        why: ['Система, а не разовые закупки','Канал как актив: 20% обращений приходят органически без рекламы','Баланс 80/20 — стабильность плюс непрерывный поиск новых связок']
+      }
+    };
+    var data = CASES[path()];
     if (!data) return;
     if (document.querySelector('[data-glavnoe-injected="case-body"]')) return;
     var more = document.querySelector('[data-framer-name="More Works"]');
@@ -368,7 +509,8 @@
         else ul.style.display = 'none';
       }
     });
-    var isHome = window.location.pathname === '/' || window.location.pathname.match(/^\/index\.html$/);
+    var p = path();
+    var isHome = p === '/' || p === '/index.html/';
     document.querySelectorAll('p, h2, h3').forEach(function(el){
       var t = el.textContent.trim();
       if (t === '(Meet Our Team)' || t === 'Meet Our Team'){
@@ -384,19 +526,14 @@
     });
   }
 
-  function fixVisibility(){
-    document.querySelectorAll('*').forEach(function(el){
-      var cs = getComputedStyle(el);
-      if (cs.visibility === 'hidden' && el.textContent.trim().length > 5 && !el.matches('input, textarea, select')) {
-        el.style.setProperty('visibility', 'visible', 'important');
-      }
-    });
-  }
   function run(){
     fixOpacity();
     fixVisibility();
+    fixFooterColor();
     ensureAbout();
+    ensureAudience();
     ensureCaseBody();
+    ensureProductCards();
     hideEmpty();
   }
 
