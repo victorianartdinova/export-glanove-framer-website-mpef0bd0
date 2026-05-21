@@ -434,8 +434,8 @@
     if (!section || !section.parentNode) return;
     var sec = document.createElement('section');
     sec.setAttribute('data-glavnoe-injected', 'product-cards');
-    sec.style.cssText = 'background:#fff;padding:80px 24px 120px;color:#000';
-    var head = '<div style="max-width:1392px;margin:0 auto 48px;padding:0 0 24px;display:flex;justify-content:space-between;align-items:baseline;font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;color:rgba(0,0,0,0.5);border-top:1px solid rgba(0,0,0,0.1);padding-top:24px"><span>(02)</span><span>(Продукты)</span><span>© 2026</span></div>';
+    sec.style.cssText = 'background:#fff;color:#000;width:100%;box-sizing:border-box;padding:80px clamp(24px,4vw,64px) 120px;margin:0';
+    var head = '<div style="margin:0 0 48px;padding:24px 0;display:flex;justify-content:space-between;align-items:baseline;font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;color:rgba(0,0,0,0.5);border-top:1px solid rgba(0,0,0,0.1)"><span>(02)</span><span>(Продукты)</span><span>© 2026</span></div>';
     var cards = PRODUCT_CARDS.map(function(c){
       return '<a href="'+c.href+'" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;background:#f5f5f5;border-radius:16px;padding:40px 32px;min-height:280px;transition:transform 0.25s ease,box-shadow 0.25s ease" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 18px 40px rgba(0,0,0,0.08)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'+
         '<div><div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:13px;letter-spacing:0.03em;color:rgba(0,0,0,0.45);margin-bottom:18px;text-transform:lowercase">('+c.tag+')</div>'+
@@ -444,7 +444,7 @@
         '<div style="display:flex;align-items:center;gap:10px;font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#ff3b30;margin-top:32px">Узнать → </div>'+
         '</a>';
     }).join('');
-    sec.innerHTML = '<div style="max-width:1392px;margin:0 auto">'+head+'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">'+cards+'</div></div>';
+    sec.innerHTML = '<div style="width:100%;max-width:none;margin:0">'+head+'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">'+cards+'</div></div>';
     section.parentNode.insertBefore(sec, section.nextSibling);
   }
 
