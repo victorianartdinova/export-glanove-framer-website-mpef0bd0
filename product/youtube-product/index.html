@@ -175,6 +175,54 @@ section[class*="framer-rTJXX"][class*="framer-2itchk"] {
   }
 }
 </style>
+<style id="glavnoe-section-bg-fix" data-fix="section-bg">/* fix:section-bg v1 */
+/* Surgical fix for the PricingAccordion → TeamSection seam on mobile/tablet.
+   We don't touch the rest of the page — only:
+     (a) strip any borders on the WHITE process section (`framer-b1f3u1`)
+         so it can't paint 1px white lines at its bottom/right edges
+         when the next section starts in #000;
+     (b) add padding-block to the dark sections that sit on body{bg:#000}
+         right after / before the white pricing block so they don't kiss it;
+     (c) ensure both sections span the full viewport width to avoid the
+         left/right white slivers visible at the edges of the screenshot. */
+@media (max-width: 1100px) {
+  section[class*="framer-b1f3u1"],
+  section[data-framer-name="Process Section"] {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* The dark Team section + carousel/slideshow that sits right after the
+     white pricing block on mobile. Force full-bleed width and add a
+     comfortable top padding so there is no collision. */
+  section[class*="framer-rTJXX"][class*="framer-2itchk"],
+  section[class*="framer-rTJXX"][class*="framer-118wpoh"],
+  section[data-framer-name="L"],
+  section[data-framer-name="S"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    background: #000 !important;
+    border: 0 !important;
+  }
+  /* Any section immediately following the white pricing block — keep a
+     clear 48px top gap so the boundary isn't a hairline. */
+  section[class*="framer-b1f3u1"] + section,
+  section[data-framer-name="Process Section"] + section,
+  section[data-framer-name="Process Section"] + div > section {
+    margin-top: 0 !important;
+    padding-top: 48px !important;
+    border-top: 0 !important;
+  }
+}
+</style>
 </head>
 <body>
 <script data-glavnoe-tier3-injected="1" data-glavnoe-product-override="youtube-product">
