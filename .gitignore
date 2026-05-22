@@ -1,0 +1,21 @@
+# Debug screenshots — heavy, not for prod
+docs/shots-*/
+
+# Backup files
+*.bak
+*.bak-*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Node / Python tmp
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Local server logs
+*.log

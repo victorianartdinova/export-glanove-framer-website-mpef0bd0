@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<title>Статьи | ГЛАВНОЕ</title>
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="/blog/">
-<meta http-equiv="refresh" content="0; url=/blog/">
-<script>window.location.replace('/blog/');</script>
-<style>html,body{background:#0a0a0a;color:#fff;font-family:system-ui,-apple-system,sans-serif;margin:0;padding:48px;text-align:center}a{color:#ff3b30}</style>
-</head>
-<body>
-<p>Перенаправляем на <a href="/blog/">все статьи</a>…</p>
-<script data-glavnoe-nav-v3="1">(function(){
+(function(){
   if (window.__glavnoeNavFixerLoaded) return;
   window.__glavnoeNavFixerLoaded = true;
 
@@ -315,6 +302,3 @@
   }
   window.addEventListener('load', function(){ setTimeout(run, 500); setTimeout(run, 1800); setTimeout(run, 4000); });
 })();
-</script>
-</body>
-</html>
