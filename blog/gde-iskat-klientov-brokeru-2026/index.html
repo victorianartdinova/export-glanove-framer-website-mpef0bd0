@@ -148,7 +148,8 @@
     <a href="https://www.instagram.com/glavnoe_agency" target="_blank" rel="noopener">Instagram</a>
   </div>
 </footer>
-<script data-glavnoe-nav-v3="1">(function(){
+<script data-glavnoe-nav-v3="1">/* fix:home-article-cards-v2 applied */
+(function(){
   if (window.__glavnoeNavFixerLoaded) return;
   window.__glavnoeNavFixerLoaded = true;
 
@@ -175,10 +176,10 @@
   };
 
   var BLOG_CARDS = {
-    '/blog/way-to-clearance/':  { slug: 'strategiya-marketinga-dlya-developera-2026', title: 'Стратегия маркетинга для девелопера в 2026', tag: 'Стратегия' },
-    '/blog/all-grapples/':      { slug: 'kak-zastrojshchiku-vesti-telegram-kanal',     title: 'Как застройщику вести Telegram-канал',           tag: 'Telegram' },
-    '/blog/flowers-love/':      { slug: '6-sdelok-srednim-chekom-15-mln-telegram-ads', title: '6 сделок × 15 млн ₽ через Telegram Ads — кейс',  tag: 'Кейс' },
-    '/blog/velocity-becomes/':  { slug: 'gde-iskat-klientov-brokeru-2026',             title: 'Где брокеру искать клиентов в 2026',             tag: 'Брокеры' }
+    '/blog/way-to-clearance/':  { slug: 'strategiya-marketinga-dlya-developera-2026', title: 'Стратегия маркетинга для девелопера в 2026', tag: 'Стратегия', year: '© 2026', match: ['Way To Clearance'] },
+    '/blog/all-grapples/':      { slug: 'kak-zastrojshchiku-vesti-telegram-kanal',     title: 'Как застройщику вести Telegram-канал',           tag: 'Telegram', year: '© 2026', match: ['All Grapples'] },
+    '/blog/flowers-love/':      { slug: '6-sdelok-srednim-chekom-15-mln-telegram-ads', title: '6 сделок × 15 млн ₽ через Telegram Ads',          tag: 'Кейс',     year: '© 2026', match: ['Flowers Love'] },
+    '/blog/velocity-becomes/':  { slug: 'gde-iskat-klientov-brokeru-2026',             title: 'Где брокеру искать клиентов в 2026',             tag: 'Брокеры',  year: '© 2026', match: ['Velocity Becomes'] }
   };
 
   // Post-hydration text replacements — Framer SSR can re-render and overwrite static HTML edits.
@@ -214,27 +215,90 @@
     });
   }
 
+  function _normalizeBlogHref(raw){
+    if (!raw) return '';
+    var n = raw.replace(/^https?:\/\/[^/]+/, '');
+    n = n.replace(/^\.\//, '/');
+    if (n.charAt(0) !== '/') n = '/' + n;
+    n = n.replace(/index\.html$/, '');
+    if (!n.endsWith('/')) n += '/';
+    return n;
+  }
+
+  // Recursively find the deepest descendant text-bearing element.
+  // Returns either a text-only <p>/<span> or the original element.
+  function _leafTextEl(el){
+    if (!el) return el;
+    var cur = el;
+    var guard = 0;
+    while (cur && cur.children && cur.children.length === 1 && guard < 6) {
+      cur = cur.children[0];
+      guard++;
+    }
+    return cur;
+  }
+
+  function _setLeafText(el, newText){
+    var leaf = _leafTextEl(el);
+    if (!leaf) return;
+    if (leaf.children.length === 0 && (leaf.textContent || '').trim() !== newText) {
+      leaf.textContent = newText;
+    }
+  }
+
+  function _findBlogMapByPlaceholderTitle(anchor){
+    var titleEl = anchor.querySelector('[data-framer-name="Title"], h2, h3, h4');
+    if (!titleEl) return null;
+    var t = (titleEl.textContent || '').trim();
+    for (var k in BLOG_CARDS){
+      if (!Object.prototype.hasOwnProperty.call(BLOG_CARDS, k)) continue;
+      var m = BLOG_CARDS[k];
+      if (!m.match) continue;
+      for (var i=0;i<m.match.length;i++){ if (m.match[i] === t) return m; }
+    }
+    return null;
+  }
+
   function fixBlogCards(){
     document.querySelectorAll('a[href]').forEach(function(a){
       var raw = a.getAttribute('href');
-      if (!raw) return;
-      var normalized = raw.replace(/^https?:\/\/[^/]+/, '').replace(/index\.html$/, '');
-      if (!normalized.endsWith('/')) normalized += '/';
-      var map = BLOG_CARDS[normalized];
+      var normalized = _normalizeBlogHref(raw);
+      var map = BLOG_CARDS[normalized] || _findBlogMapByPlaceholderTitle(a);
       if (!map) return;
       var newHref = '/blog/' + map.slug + '/';
       if (a.getAttribute('href') !== newHref) a.setAttribute('href', newHref);
       a.querySelectorAll('h2, h3, h4, [data-framer-name="Title"]').forEach(function(t){
-        if (t.children.length === 0 && t.textContent && t.textContent.trim() !== map.title) {
-          t.textContent = map.title;
-        }
+        _setLeafText(t, map.title);
       });
       a.querySelectorAll('[data-framer-name="Tag"], [data-framer-name="Category"]').forEach(function(t){
-        if (t.children.length === 0 && t.textContent && t.textContent.trim().length && t.textContent.trim() !== map.tag) {
-          t.textContent = map.tag;
-        }
+        _setLeafText(t, map.tag);
+      });
+      if (map.year) {
+        a.querySelectorAll('[data-framer-name="Year"]').forEach(function(t){
+          _setLeafText(t, map.year);
+        });
+      }
+    });
+  }
+
+  // MutationObserver — ловит пост-хидратационные ре-рендеры Framer,
+  // которые откатывают наши правки.
+  function _watchBlogCards(){
+    if (!isHomepage()) return;
+    if (window.__glavnoeBlogCardObserver) return;
+    var pending = false;
+    var obs = new MutationObserver(function(){
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(function(){
+        pending = false;
+        try { fixBlogCards(); } catch(e){}
+    try { _watchBlogCards(); } catch(e){}
       });
     });
+    obs.observe(document.body, { childList: true, subtree: true, characterData: true });
+    window.__glavnoeBlogCardObserver = obs;
+    setTimeout(function(){ try { obs.disconnect(); } catch(e){} }, 30000);
   }
 
   function fixLinks(root){
