@@ -116,7 +116,49 @@ section.framer-1jk03ar .framer-698lh {
 section.framer-1jk03ar p.framer-text.framer-styles-preset-13cjcn8 {
     color: #ffffff !important;
 }
-</style></head>
+</style><style id="glavnoe-regardis-photo-fix">
+.glavnoe-photo-caption {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    padding: 16px 24px 4px;
+    pointer-events: none;
+}
+@media (max-width: 810px) {
+    .framer-1l5j7fw[data-framer-name="Images"] {
+        display: none !important;
+    }
+    .glavnoe-photo-caption {
+        display: none !important;
+    }
+}
+</style>
+<script id="glavnoe-regardis-photo-fix-js">(function(){
+  function injectCaption(){
+    var images = document.querySelector('.framer-1l5j7fw[data-framer-name="Images"]');
+    if (!images) return false;
+    if (images.parentElement.querySelector('.glavnoe-photo-caption')) return true;
+    var cap = document.createElement('div');
+    cap.className = 'glavnoe-photo-caption';
+    cap.textContent = 'Атмосфера бренд-медиа Regardis';
+    images.parentElement.insertBefore(cap, images.nextSibling);
+    return true;
+  }
+  var tries = 0;
+  var iv = setInterval(function(){
+    tries++;
+    if (injectCaption() || tries >= 60) clearInterval(iv);
+  }, 200);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectCaption, { once: true });
+  } else {
+    injectCaption();
+  }
+})();</script></head>
 <body>
 	
 	<!-- Start of bodyStart -->
@@ -726,7 +768,13 @@ section.framer-1jk03ar p.framer-text.framer-styles-preset-13cjcn8 {
     'Live Preview':       'Смотреть кейс',
     '404 Error':          '404 — Страница не найдена',
     'A curated selection of refined digital work shaped through structure.':
-      'Похоже, страница потерялась. Вернитесь на главную или посмотрите наши работы.'
+      'Похоже, страница потерялась. Вернитесь на главную или посмотрите наши работы.',
+    // FIX 10 — текстовые правки (страховка от регрессий)
+    'Кейсы в СМИ:)':              'Опубликованные кейсы',
+    'Кейсы в СМИ':                'Опубликованные кейсы',
+    'Главное — их донести®.':     'Главное — их донести.',
+    'Главное — их донести®':      'Главное — их донести.',
+    '© 2025':                     '© 2026'
   };
 
   function fixVisibleText(){
