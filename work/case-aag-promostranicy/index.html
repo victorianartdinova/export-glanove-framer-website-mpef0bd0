@@ -232,6 +232,24 @@ footer a{color:var(--text-dim)}
   .hero h1{font-size:30px}
   .metric-hero .value{font-size:46px}
 }
+
+/* === case avatars (client + media outlet) === */
+.hero-side{display:flex;flex-direction:column;gap:18px}
+.avatars{display:flex;align-items:center;gap:14px;justify-content:center;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.avatars .av{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.avatars .av-circle{width:64px;height:64px;border-radius:50%;overflow:hidden;border:1px solid #E5E0D8;background:#0d0d0d;flex:none;display:flex;align-items:center;justify-content:center}
+.avatars .av-circle img{width:100%;height:100%;object-fit:cover;display:block}
+.avatars .av-circle svg{width:100%;height:100%;display:block}
+.avatars .av-role{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute);text-align:center}
+.avatars .av-sep{width:1px;height:48px;background:var(--line-2);flex:none}
+.avatars-caption{font-size:12px;color:var(--text-mute);text-align:center;line-height:1.5;margin-top:-4px}
+@media (max-width:809px){
+  .avatars{padding:14px 16px;gap:10px}
+  .avatars .av-circle{width:40px;height:40px}
+  .avatars .av-sep{height:36px}
+  .avatars .av-role{font-size:10px}
+  .avatars-caption{font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -262,12 +280,12 @@ footer a{color:var(--text-dim)}
         <a class="btn btn-ghost" href="#funnel">Читать кейс</a>
       </div>
     </div>
-    <aside class="metric-hero">
+    <div class="hero-side"><aside class="metric-hero">
       <div class="label">Цена за переход</div>
       <div class="value">64 ₽</div>
       <div class="unit">средняя по всем кампаниям</div>
       <div class="compare">35 ₽ за 1 000 охвата</div>
-    </aside>
+    </aside><div class="avatars" data-glavnoe-avatars role="group" aria-label="Клиент: AAG Development · СМИ: Эфир ГЛАВНОЕ"><div class="av"><div class="av-circle"><img src="assets/avatars/client-barakovskaya.jpg" alt="Евгения Бараковская, руководитель рекламы AAG Development" loading="lazy"></div><div class="av-role">Клиент</div></div><div class="av-sep" aria-hidden="true"></div><div class="av"><div class="av-circle"><img src="assets/avatars/media-efir.svg" alt="Эфир ГЛАВНОЕ — внутренняя публикация кейса" loading="lazy"></div><div class="av-role">СМИ</div></div></div><p class="avatars-caption">Клиент: AAG Development · СМИ: Эфир ГЛАВНОЕ</p></div>
   </div>
 </header>
 
