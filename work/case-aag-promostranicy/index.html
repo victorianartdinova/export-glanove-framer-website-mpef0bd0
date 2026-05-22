@@ -102,7 +102,32 @@
   .glavnoe-case-gallery { grid-template-columns: 1fr !important; }
 }
 </style>
-<script id="glavnoe-strip-dev-link">(function(){function strip(){var anchors=document.querySelectorAll("a");for(var i=0;i<anchors.length;i++){var a=anchors[i];if((a.textContent||"").indexOf("азработали сайт мы")>=0){var s=document.createElement("span");s.className=a.className;s.style.cssText=a.style.cssText;s.textContent=a.textContent;a.parentNode.replaceChild(s,a);}}}var tries=0;var iv=setInterval(function(){tries++;strip();if(tries>=300){clearInterval(iv);}},200);})();</script><script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script></head>
+<script id="glavnoe-strip-dev-link">(function(){function strip(){var anchors=document.querySelectorAll("a");for(var i=0;i<anchors.length;i++){var a=anchors[i];if((a.textContent||"").indexOf("азработали сайт мы")>=0){var s=document.createElement("span");s.className=a.className;s.style.cssText=a.style.cssText;s.textContent=a.textContent;a.parentNode.replaceChild(s,a);}}}var tries=0;var iv=setInterval(function(){tries++;strip();if(tries>=300){clearInterval(iv);}},200);})();</script><script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-aag-hero-fix">
+/* AAG case hero: darken filler so white title becomes readable */
+.framer-wwtfnn { background: #0a0a0a !important; }
+
+/* Dim the diagonal-stripes SVG overlay sitting on top of the dark filler */
+.framer-17js171 > div[style*="data:image/svg+xml"] { opacity: 0.18 !important; }
+
+/* Subtitle (right column under headline) — was rgb(0,0,0) over dark area */
+section.framer-1jk03ar p.framer-text.framer-styles-preset-13cjcn8 {
+    color: #ffffff !important;
+}
+
+/* Tagline under the title 'ПромоСтраницы Яндекса / Performance / Санкт-Петербург'
+   sits inside the hero on the dark side now — force to light grey for legibility. */
+section.framer-1jk03ar .framer-text,
+section.framer-1jk03ar p,
+section.framer-1jk03ar h1,
+section.framer-1jk03ar h2,
+section.framer-1jk03ar h3 {
+    /* don't break already-white text */
+}
+section.framer-1jk03ar [style*="color: rgb(0, 0, 0)"],
+section.framer-1jk03ar [style*="color:rgb(0,0,0)"] {
+    color: #ffffff !important;
+}
+</style></head>
 <body>
 	
 	<!-- Start of bodyStart -->
