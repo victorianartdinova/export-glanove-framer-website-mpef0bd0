@@ -223,6 +223,42 @@ section[class*="framer-rTJXX"][class*="framer-2itchk"] {
   }
 }
 </style>
+<style id="glavnoe-bottom-bg-fix" data-fix="bottom-bg">/* fix:bottom-bg v1 */
+/* The Desktop CTA / footer-pre section ships `background:#fff` from Framer.
+   Override to #000 so the bottom of the page stays on the dark site palette
+   (body bg is #000). Apply on desktop AND tablet — the section variants
+   share the `framer-zpXos` family class on both breakpoints. */
+section[class*="framer-zpXos"],
+section[class*="framer-18ghmdc"],
+section[data-framer-name="Desktop"][class*="framer-zpXos"] {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Children that hard-code `color:#000` against the (formerly) white bg
+   need to be flipped so they stay legible on the dark surface. */
+section[class*="framer-zpXos"] p,
+section[class*="framer-zpXos"] h1,
+section[class*="framer-zpXos"] h2,
+section[class*="framer-zpXos"] h3,
+section[class*="framer-zpXos"] span:not([style*="background"]),
+section[class*="framer-zpXos"] a:not([style*="background"]) {
+  color: #fff !important;
+}
+
+/* The earlier white SECTION "Desktop Card 1" (big-number block) also paints
+   the page white between About and Team. Keep dark unless it's the inner
+   white card itself (which retains its own internal background style). */
+section[data-framer-name="Desktop Card 1"][class*="framer-1b12ems"] {
+  background: transparent !important;
+}
+
+/* Belt-and-braces: any descendant <div> directly applying the same white
+   that bleeds full-width inherits #000 unless it's the inner card chrome. */
+section[class*="framer-zpXos"] > div:first-child {
+  background: transparent !important;
+}
+</style>
 </head>
 <body>
 <script data-glavnoe-tier3-injected="1" data-glavnoe-product-override="youtube-product">
