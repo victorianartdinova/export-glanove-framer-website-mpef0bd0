@@ -116,17 +116,37 @@ section.framer-1jk03ar .framer-698lh {
 section.framer-1jk03ar p.framer-text.framer-styles-preset-13cjcn8 {
     color: #ffffff !important;
 }
-</style><style id="glavnoe-regardis-photo-fix">
+</style>
+
+
+
+
+
+
+<style id="glavnoe-regardis-photo-fix">
 .glavnoe-photo-caption {
-    display: block;
-    width: 100%;
+    position: absolute;
+    /* photos column right-aligned within .framer-1mb2zip (which has no inner
+       padding). caption mirrors that column. */
+    right: 0;
+    bottom: -40px;
+    width: 671px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 13px;
+    /* Content section in this case page has WHITE background — caption sits
+       in that white area below the photos, so use dark text. */
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.02em;
-    padding: 16px 24px 4px;
     pointer-events: none;
+    z-index: 5;
+}
+/* Make sure the Bottom row has room for caption below + relative anchor */
+.framer-1mb2zip[data-framer-name="Bottom"] {
+    position: relative !important;
+}
+section.framer-zfg0k1[data-framer-name="Content"] > .framer-1mb2zip[data-framer-name="Bottom"] {
+    margin-bottom: 48px;
 }
 @media (max-width: 810px) {
     .framer-1l5j7fw[data-framer-name="Images"] {
@@ -135,29 +155,50 @@ section.framer-1jk03ar p.framer-text.framer-styles-preset-13cjcn8 {
     .glavnoe-photo-caption {
         display: none !important;
     }
+    section.framer-zfg0k1[data-framer-name="Content"] > .framer-1mb2zip[data-framer-name="Bottom"] {
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 811px) and (max-width: 1199.98px) {
+    .glavnoe-photo-caption {
+        right: 0;
+        width: 50%;
+    }
 }
 </style>
 <script id="glavnoe-regardis-photo-fix-js">(function(){
-  function injectCaption(){
+  var TEXT = 'Атмосфера бренд-медиа Regardis';
+  function ensureCaption(){
     var images = document.querySelector('.framer-1l5j7fw[data-framer-name="Images"]');
     if (!images) return false;
-    if (images.parentElement.querySelector('.glavnoe-photo-caption')) return true;
+    var bottom = images.closest('.framer-1mb2zip[data-framer-name="Bottom"]');
+    if (!bottom) return false;
+    var existing = bottom.querySelector(':scope > .glavnoe-photo-caption');
+    if (existing) return true;
     var cap = document.createElement('div');
     cap.className = 'glavnoe-photo-caption';
-    cap.textContent = 'Атмосфера бренд-медиа Regardis';
-    images.parentElement.insertBefore(cap, images.nextSibling);
+    cap.setAttribute('data-glavnoe-caption', 'regardis');
+    cap.textContent = TEXT;
+    bottom.appendChild(cap);
     return true;
+  }
+  function tryNow(){ ensureCaption(); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryNow, { once: true });
+  } else {
+    tryNow();
   }
   var tries = 0;
   var iv = setInterval(function(){
     tries++;
-    if (injectCaption() || tries >= 60) clearInterval(iv);
-  }, 200);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectCaption, { once: true });
-  } else {
-    injectCaption();
-  }
+    ensureCaption();
+    if (tries >= 100) clearInterval(iv);
+  }, 300);
+  try {
+    var mo = new MutationObserver(function(){ ensureCaption(); });
+    mo.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function(){ mo.disconnect(); }, 60000);
+  } catch(e) {}
 })();</script></head>
 <body>
 	
