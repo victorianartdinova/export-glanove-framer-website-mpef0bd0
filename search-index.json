@@ -1,38 +1,102 @@
 [
   {
-    "path": "/",
-    "title": "Fuel - Premium Agency &amp; Portfolio",
-    "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
-    "excerpt": "Результаты"
+    "url": "/",
+    "title": "ГЛАВНОЕ — стратегический маркетинг для застройщиков",
+    "description": "Стратегические партнёры по маркетингу для застройщиков. Performance-маркетинг, Telegram, Авито, стратегия продвижения недвижимости."
   },
   {
-    "path": "/404",
-    "title": "Fuel - Premium Agency &amp; Portfolio",
-    "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
-    "excerpt": "Результаты"
+    "url": "/about/",
+    "title": "О нас | ГЛАВНОЕ",
+    "description": "ГЛАВНОЕ — стратегические партнёры по маркетингу для застройщиков. Performance, Telegram, контент, бренд."
   },
   {
-    "path": "/blog",
-    "title": "All Grapples - Fuel - Premium Agency &amp; Portfolio",
-    "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
-    "excerpt": "Результаты"
+    "url": "/contact/",
+    "title": "Контакты | ГЛАВНОЕ",
+    "description": "Связаться с командой ГЛАВНОЕ — стратегического маркетинга для застройщиков. Telegram, почта, Instagram."
   },
   {
-    "path": "/cases",
-    "title": "Fuel - Premium Agency &amp; Portfolio",
-    "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
-    "excerpt": "Результаты"
+    "url": "/404/",
+    "title": "Страница не найдена | ГЛАВНОЕ",
+    "description": "Стратегические партнёры по маркетингу для застройщиков. Performance-маркетинг, Telegram, Авито, стратегия продвижения недвижимости."
   },
   {
-    "path": "/product",
-    "title": "Fuel - Premium Agency &amp; Portfolio",
-    "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
-    "excerpt": "Результаты"
+    "url": "/cases/portfolio/",
+    "title": "Кейсы | ГЛАВНОЕ",
+    "description": "Кейсы агентства ГЛАВНОЕ: Telegram Ads, ПромоСтраницы, премиум-недвижимость. Реальные цифры CPL, ROI, обращений."
   },
   {
-    "path": "/work",
-    "title": "ROI 6 000% на ПромоСтраницах Яндекса. Кейс застройщика премиум-класса в Санкт-Петербурге - Fuel - Premium Agency &amp; Portfolio",
-    "description": "Fuel, a premium agency framer template, is a perfect fit for designers, freelancers, agencies, and photographers.",
-    "excerpt": "Результаты"
+    "url": "/blog/",
+    "title": "Статьи | ГЛАВНОЕ",
+    "description": "Гайды и кейсы от ГЛАВНОЕ — стратегического маркетинга для застройщиков. Telegram Ads, ПромоСтраницы, performance, контент-стратегия."
+  },
+  {
+    "url": "/blog/strategiya-marketinga-dlya-developera-2026/",
+    "title": "Стратегия маркетинга для девелопера: что работает в 2026 году | ГЛАВНОЕ",
+    "description": "Какие каналы маркетинга работают для застройщиков в 2026 году. Telegram, Авито, контекст — сравнение CPL и конверсий. Пошаговый план стратегии от агентства ГЛАВНОЕ."
+  },
+  {
+    "url": "/blog/kak-zastrojshchiku-vesti-telegram-kanal/",
+    "title": "Как застройщику вести Telegram-канал в 2026 году | ГЛАВНОЕ",
+    "description": "Пошаговая стратегия Telegram-канала для застройщика: от контент-плана до Telegram Ads. CPL от 3 784 ₽, 69 заявок в месяц — реальные цифры и пошаговый план."
+  },
+  {
+    "url": "/blog/gde-iskat-klientov-brokeru-2026/",
+    "title": "Где брокеру искать клиентов в 2026 году: системность вместо хаоса | ГЛАВНОЕ",
+    "description": "Как брокеру недвижимости выстроить систему привлечения клиентов в 2026 году. Сегментация, упаковка ценности, Telegram как канал продаж, личный бренд и кейс первой сделки без рекламы."
+  },
+  {
+    "url": "/blog/telegram-dlya-agentstva-nedvizhimosti-90-zayavok/",
+    "title": "Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц | ГЛАВНОЕ",
+    "description": "Кейс: как агентство недвижимости в Санкт-Петербурге получило 370 заявок за 4 месяца через Telegram. Бюджет 50 000 руб/мес, CPL ~555 рублей. Стратегия, воронка, результаты."
+  },
+  {
+    "url": "/blog/50-kvallidov-premium-nedvizhimost-telegram-ads/",
+    "title": "50+ квалифицированных обращений в месяц на премиум-недвижимость с баннеров Telegram Ads | ГЛАВНОЕ",
+    "description": "Кейс: как агентство недвижимости получило 50+ квалифицированных лидов через баннеры Telegram Ads с CPL 9 684 рубля. Стратегия, таргетинг, бюджет, результаты и рекомендации."
+  },
+  {
+    "url": "/blog/6-sdelok-srednim-chekom-15-mln-telegram-ads/",
+    "title": "Как с рекламой в Telegram закрыть 6 сделок со средним чеком 15 млн рублей: кейс агентства недвижимости | ГЛАВНОЕ",
+    "description": "Кейс: 6 сделок со средним чеком 15 млн рублей через Telegram Ads за 4 месяца. CPL 5 113 рублей, 260 обращений, CPM 310 рублей. Пошаговая стратегия от агентства ГЛАВНОЕ."
+  },
+  {
+    "url": "/work/case-aag-promostranicy/",
+    "title": "ROI 6 000% на ПромоСтраницах Яндекса. Кейс застройщика премиум-класса в Санкт-Петербурге | ГЛАВНОЕ",
+    "description": "Стратегические партнёры по маркетингу для застройщиков. Performance-маркетинг, Telegram, Авито, стратегия продвижения недвижимости."
+  },
+  {
+    "url": "/work/case-spb-15mln/",
+    "title": "6 сделок × 15 млн ₽ через Telegram Ads. Кейс агентства недвижимости в Санкт-Петербурге | ГЛАВНОЕ",
+    "description": "Стратегические партнёры по маркетингу для застройщиков. Performance-маркетинг, Telegram, Авито, стратегия продвижения недвижимости."
+  },
+  {
+    "url": "/work/regardis-telegram-ads-premium/",
+    "title": "Как мы получили 50 квал. лидов в месяц на премиум-недвижимость. | ГЛАВНОЕ",
+    "description": "Стратегические партнёры по маркетингу для застройщиков. Performance-маркетинг, Telegram, Авито, стратегия продвижения недвижимости."
+  },
+  {
+    "url": "/product/avito-ads/",
+    "title": "Авито Адс | ГЛАВНОЕ",
+    "description": "Стратегические партнёры по маркетингу для застройщиков. Performance-маркетинг, Telegram, Авито, стратегия продвижения недвижимости."
+  },
+  {
+    "url": "/product/content-product/",
+    "title": "Контент-маркетинг | ГЛАВНОЕ",
+    "description": "Кросс-платформенная коммуникационная стратегия для застройщиков: продажи, найм, экспертность. Стратегические партнёры по маркетингу недвижимости."
+  },
+  {
+    "url": "/product/product-statii/",
+    "title": "Рекламная стратегия | ГЛАВНОЕ",
+    "description": "Рекламная стратегия с медиапланом и прогнозом продаж. Стратегические партнёры по маркетингу недвижимости."
+  },
+  {
+    "url": "/product/product-telegram/",
+    "title": "Лидген Telegram | ГЛАВНОЕ",
+    "description": "Лидген в Telegram: аналитика, контент, креатив. CPL в 2 раза ниже рынка. Стратегические партнёры по маркетингу недвижимости."
+  },
+  {
+    "url": "/product/youtube-product/",
+    "title": "Личный бренд YouTube | ГЛАВНОЕ",
+    "description": "Личный бренд на YouTube: сценарии, продюсирование, запуск канала. Стратегические партнёры по маркетингу недвижимости."
   }
 ]
