@@ -21,10 +21,10 @@ opacity:0 !important, чтобы исключить любое визуальн�
 from pathlib import Path
 
 HTML = Path('/root/framerexport/full-site-export-may21/index.html')
-HTML_MARKER = '<!-- fix:h1-double-mobile applied -->'
+HTML_MARKER = '/* fix:h1-double-mobile applied */'
 
 STYLE = (
-    '<style id="glavnoe-h1-double-fix">' + HTML_MARKER + '\n'
+    '<style id="glavnoe-h1-double-fix">/* fix:h1-double-mobile applied */\n'
     '@media (max-width:1024px){\n'
     # aria-hidden text placeholders внутри Framer animated text:
     # они с position:absolute и visibility:visible !important — но

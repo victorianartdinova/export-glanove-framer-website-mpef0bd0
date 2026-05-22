@@ -26,13 +26,13 @@ JS = ROOT / 'assets/framer/sites/1OcdQgezFomPwA9UGakYyz/V6MP5xCojziNbtxidWz9fUuP
 HTML = ROOT / 'index.html'
 
 JS_MARKER = '/* fix:hero-bg-mobile applied */'
-HTML_MARKER = '<!-- fix:hero-bg-mobile applied -->'
+HTML_MARKER = '/* fix:hero-bg-mobile applied */'
 
 EXTERNAL_PREFIX = 'https://framerusercontent.com/images/PNql8FwjCxLPNXeuzrGEMxR2o4.webp'
 LOCAL_PATH = '/assets/framer/images/PNql8FwjCxLPNXeuzrGEMxR2o4.webp'
 
 HTML_STYLE = (
-    '<style id="glavnoe-hero-bg-fallback">' + HTML_MARKER + '\n'
+    '<style id="glavnoe-hero-bg-fallback">/* fix:hero-bg-mobile applied */\n'
     # Hero <section data-framer-name="Hero"> и его BG-картинка-wrapper.
     # Если изображение не подгрузилось — фон чёрный, alt-текст невидим.
     'section[data-framer-name="Hero"]{background-color:#000 !important}\n'
