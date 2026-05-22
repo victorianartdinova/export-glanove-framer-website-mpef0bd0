@@ -231,4 +231,3 @@
   }
   window.addEventListener('load', function(){ setTimeout(run, 500); setTimeout(run, 1800); setTimeout(run, 4000); });
 })();
-})();
