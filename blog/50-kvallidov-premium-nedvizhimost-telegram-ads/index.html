@@ -174,6 +174,33 @@ img{max-width:100%;display:block}
 .dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
 @media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
 
+/* Duo-tip: Вика + Саша подсказывают */
+.duo-tip{display:flex;gap:14px;align-items:flex-start;margin:28px 0;padding:16px 18px 16px 16px;background:linear-gradient(180deg,#FFFDF6 0%,#FBF3E2 100%);border:1px solid var(--border);border-radius:18px;position:relative}
+.duo-tip .duo-avatars{flex-shrink:0;display:flex;align-items:center}
+.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08);background:#FBF7F1}
+.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-12px}
+.duo-tip .tip-bubble{flex:1;min-width:0}
+.duo-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.duo-tip .tip-name .tip-tag{font-size:10px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.08em}
+.duo-tip .tip-line{font-size:14px;color:var(--text);line-height:1.55;margin:4px 0}
+.duo-tip .tip-line strong{color:var(--accent);font-weight:600;margin-right:4px}
+.duo-tip .tip-line.sasha strong{color:var(--mint)}
+@media(max-width:520px){.duo-tip{padding:14px 14px 14px 12px;gap:10px;margin:22px 0}.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:34px;height:34px}.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-10px}.duo-tip .tip-line{font-size:13px}}
+
+/* Hero illustration */
+.hero-illu{max-width:760px;margin:32px auto 0;padding:0 32px}
+.hero-illu svg{width:100%;height:auto;display:block}
+.hero-illu .ill-path{stroke-dasharray:520;stroke-dashoffset:520;animation:illDraw 2.6s ease-out forwards .5s}
+@keyframes illDraw{to{stroke-dashoffset:0}}
+.hero-illu .ill-node{opacity:0;animation:illPop .55s ease-out forwards;transform-origin:center;transform-box:fill-box}
+.hero-illu .ill-node.n1{animation-delay:.7s}
+.hero-illu .ill-node.n2{animation-delay:1.6s}
+.hero-illu .ill-node.n3{animation-delay:2.4s}
+.hero-illu .ill-cloud{opacity:0;animation:illPop .6s ease-out forwards 2.9s}
+@keyframes illPop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@media(max-width:520px){.hero-illu{padding:0 20px;margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.hero-illu .ill-path{stroke-dashoffset:0;animation:none}.hero-illu .ill-node,.hero-illu .ill-cloud{opacity:1;animation:none}}
+
 </style>
 <script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner")||document.querySelector("nav.nav")||document.querySelector("nav.site-nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var links=nav.querySelector(".nav-links")||nav.querySelector(".crumbs");var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("aria-expanded","false");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(e){e.preventDefault();var open=nav.classList.toggle("burger-open");btn.setAttribute("aria-expanded",open?"true":"false");if(open){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';}else{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script><style>@media (max-width:1024px){nav.topnav .nav-links,nav.nav .nav-links,nav.site-nav .nav-links,nav.topnav .crumbs{display:none !important}nav.topnav.burger-open .nav-links,nav.nav.burger-open .nav-links,nav.site-nav.burger-open .nav-links,nav.topnav.burger-open .crumbs{display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);padding:16px 20px;gap:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.08)}nav.topnav.burger-open,nav.nav.burger-open,nav.site-nav.burger-open{position:relative}}</style>
 <script type="application/ld+json">
@@ -256,17 +283,80 @@ img{max-width:100%;display:block}
     <span class="rm-item"><span class="rm-icon">🎯</span> <span>для премиум-сегмента</span></span>
   </div>
 </section>
+<div class="hero-illu reveal" aria-label="Воронка квалификации лидов">
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+    <defs>
+      <linearGradient id="funnelGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#A087D3" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#5CBA8C" stop-opacity="0.22"/>
+      </linearGradient>
+    </defs>
+
+    <rect x="120" y="40" width="480" height="44" rx="10" fill="#F6F3FC" stroke="#A087D3" stroke-width="1.4"/>
+    <text x="360" y="68" text-anchor="middle" font-family="Suisse Intl, Inter, sans-serif" font-size="15" font-weight="600" fill="#1A1814">Telegram Ads, баннеры на каналы инвесторов</text>
+
+    <circle class="ill-node n1" cx="180" cy="130" r="14" fill="#A087D3"/>
+    <circle class="ill-node n1" cx="240" cy="130" r="14" fill="#A087D3" opacity="0.75"/>
+    <circle class="ill-node n1" cx="300" cy="130" r="14" fill="#A087D3" opacity="0.55"/>
+    <circle class="ill-node n1" cx="360" cy="130" r="14" fill="#A087D3" opacity="0.85"/>
+    <circle class="ill-node n1" cx="420" cy="130" r="14" fill="#A087D3" opacity="0.6"/>
+    <circle class="ill-node n1" cx="480" cy="130" r="14" fill="#A087D3" opacity="0.78"/>
+    <circle class="ill-node n1" cx="540" cy="130" r="14" fill="#A087D3" opacity="0.5"/>
+
+    <path class="ill-path" d="M150 175 L570 175 L450 250 L270 250 Z" fill="url(#funnelGrad)" stroke="#A087D3" stroke-width="1.6" stroke-linejoin="round"/>
+    <text x="360" y="218" text-anchor="middle" font-family="Suisse Intl, Inter, sans-serif" font-size="13" font-weight="600" fill="#1A1814" letter-spacing="0.04em">QUALIFY · CPL 9 684 ₽</text>
+
+    <circle class="ill-node n2" cx="300" cy="290" r="10" fill="#5CBA8C"/>
+    <circle class="ill-node n2" cx="340" cy="290" r="10" fill="#5CBA8C"/>
+    <circle class="ill-node n2" cx="380" cy="290" r="10" fill="#5CBA8C"/>
+    <circle class="ill-node n2" cx="420" cy="290" r="10" fill="#5CBA8C"/>
+
+    <rect class="ill-node n3" x="260" y="316" width="200" height="34" rx="8" fill="#1A1814"/>
+    <text class="ill-node n3" x="360" y="339" text-anchor="middle" font-family="Suisse Intl, Inter, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">50+ квал-лидов / месяц</text>
+
+    <g class="ill-cloud" transform="translate(56,250)">
+      <rect x="0" y="0" width="120" height="44" rx="22" fill="#FFFFFF" stroke="#5CBA8C" stroke-width="1.4"/>
+      <text x="60" y="28" text-anchor="middle" font-family="Suisse Intl, Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1814">Чек 20 млн ₽</text>
+    </g>
+    <g class="ill-cloud" transform="translate(544,250)">
+      <rect x="0" y="0" width="120" height="44" rx="22" fill="#FFFFFF" stroke="#A087D3" stroke-width="1.4"/>
+      <text x="60" y="28" text-anchor="middle" font-family="Suisse Intl, Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1814">CPM 310 ₽</text>
+    </g>
+  </svg>
+</div>
 <article class="article">
 <h2 id="sec-1" class="reveal">Что такое performance-маркетинг в премиум-недвижимости через Telegram Ads</h2>
 <p>Performance-маркетинг в премиум-недвижимости через Telegram Ads. Это системный подход к привлечению квалифицированных обращений от покупателей с бюджетом от 20 млн рублей, где каждый рубль рекламного бюджета привязан к конкретному результату: стоимости лида, количеству обращений и конверсии в сделку.</p>
 <p>Когда реклама работает на результат, а не просто на охваты, даже мессенджер может стать стабильным источником инвестиционных клиентов. В этом кейсе мы делимся опытом привлечения качественных заявок в рамках KPI и превращения Telegram в полноценный канал продаж.</p>
 <h2 id="sec-2" class="reveal">О проекте</h2>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Премиум продаётся не баннером, а доверием к человеку за продуктом. Без бренд-медиа отдел продаж жжёт деньги.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Соберите топ-5 объектов с самой высокой маржой и распакуйте каждый в инвест-кейс с цифрами. От них и пляшут креативы.</div>
+  </div>
+</div>
 <p>Агентство недвижимости специализируется на новостройках бизнес- и премиум-класса в Москве, а также работает со вторичной недвижимостью для инвестирования. На момент обращения команда состояла из шести брокеров, руководителем отдела продаж был владелец с сильными компетенциями в инвестициях для перепродажи. Однако эта экспертность никак не отражалась в коммуникациях агентства. У владельца был активный YouTube-канал.</p>
 <h3>Проблемы с предыдущими подрядчиками</h3>
 <p>Клиент столкнулся с типичными ошибками при работе с другими агентствами:</p>
 <ol><li><strong>Отсутствие погружения в продукт</strong>, подрядчики не разбирались в специфике объектов</li><li><strong>Неправильный таргетинг</strong>, реклама шла по широкой теме «Недвижимость» без проверки аудитории каналов, что привлекало риэлторов вместо покупателей</li><li><strong>Непонимание контекста продвигаемых продуктов</strong>, без знания локаций, инвестиционных сценариев и распределения аудитории по жизненным ситуациям реклама не работает</li></ol>
 <p>Чтобы реклама приносила результат, нужно разбираться в локациях региона, понимать распределение аудитории по жизненным сценариям, знать, какие дома продаются лучше всего.</p>
 <h2 id="sec-3" class="reveal">Задачи и KPI</h2>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> KPI без верхней планки CPL превращается в бесконечный тест. Цифра в 10 000 ₽ для премиума честная.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Разделите воронку на три метрики: первое сообщение, номер телефона, квалификация. Каждая считается отдельно и тарифицируется отдельно.</div>
+  </div>
+</div>
 <p>Нас привлекли как отдел <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">performance-маркетинга</a> на аутсорсе для создания системы привлечения лидов со средним чеком от 25 млн рублей. Мы предложили создать бренд-медиа в Telegram, которое работало бы одновременно на лидогенерацию и формирование доверия.</p>
 <h3>Ключевые KPI</h3>
 <ul><li>Стоимость первичного обращения без номера телефона</li><li>Стоимость обращения с номером телефона</li><li><strong>Стоимость квалифицированного клиента, максимум 10 000 рублей</strong></li></ul>
@@ -292,6 +382,17 @@ img{max-width:100%;display:block}
 <h3>Текстовые объявления в Telegram Ads</h3>
 <p>На этапе тестирования текстовых объявлений появлялись подписчики, но лидов было мало. Стало очевидно, что для получения 50-100 квалифицированных обращений в премиум-сегменте необходим визуальный формат, баннеры.</p>
 <h2 id="sec-5" class="reveal">Этап 2: запуск баннеров в Telegram Ads (апрель)</h2>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Баннер в премиум-сегменте продаёт через лайфстайл, а не через планировку. Картинка фасада с видом работает лучше, чем рендер кухни.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Запустите 12 направлений гипотез и под каждое по 8-10 креативов. Через две недели оставьте только 4-5 связок-лидеров, бюджет в них.</div>
+  </div>
+</div>
 <p>Баннерная реклама запущена 1 апреля. На подключение формата с постоплатой ушло две недели в марте. Минимальный бюджет для запуска креативов с изображениями и видео: <strong>1 млн рублей в месяц</strong>.</p>
 <h3>Цель рекламной кампании</h3>
 <p>100 обращений ежемесячно, минимум 50% из которых должны квалифицироваться отделом продаж.</p>
@@ -321,10 +422,32 @@ img{max-width:100%;display:block}
 <p>| Формат | CPM | |--------|-----| | Telegram Ads (таргетинг на каналы), среднее по рынку | ~9 евро | | Посевы в Telegram | от 2 500 рублей | | Наша кампания (баннеры) | <strong>310 рублей</strong> (по курсу 95 руб./евро с учётом комиссии 20% и НДС) |</p>
 <p>CPM 310 рублей, значительно ниже среднерыночного за счёт точного таргетинга и качественных креативов.</p>
 <h2 id="sec-7" class="reveal">Планы по масштабированию</h2>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Лояльность аудитории это актив. Чем дольше канал живёт, тем дешевле квал-лид, бюджет начинает работать на накопленный охват.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Перед удвоением бюджета удвойте мощности контент-команды. Иначе канал не успевает прогревать новую аудиторию и CPL уходит вверх.</div>
+  </div>
+</div>
 <p>Стоимость квалифицированного лида в мае снизилась ещё на <strong>30%</strong>, эффект накопленной лояльности аудитории.</p>
 <p>Планы:</p>
 <ul><li>Увеличить рекламный бюджет до <strong>1 млн рублей в месяц</strong> за три месяца</li><li>Внедрить аналитику на основе искусственного интеллекта для обработки комментариев и обращений</li><li>Использовать формулировки реальных клиентов в рекламных креативах</li></ul>
 <h2 id="sec-8" class="reveal">Рекомендации из практики</h2>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Голос клиента это бесплатный креативный отдел. Возражения из переписок попадают в баннеры лучше любого копирайтера.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Заведите таблицу «фразы клиентов» и раз в неделю собирайте оттуда 3-5 формулировок в новые офферы. Связки оживают сразу.</div>
+  </div>
+</div>
 <h3>Таблицы, основа эффективности</h3>
 <p>Планируйте бюджет заранее и сопоставляйте план с фактом. Без табличного контроля невозможно понять, какие каналы работают, а какие сжигают бюджет. Это основа тактического <a href="/uslugi/strategiya-marketinga" target="_blank" rel="noopener">управления маркетинговой стратегией</a>.</p>
 <h3>Эмоции для контента</h3>

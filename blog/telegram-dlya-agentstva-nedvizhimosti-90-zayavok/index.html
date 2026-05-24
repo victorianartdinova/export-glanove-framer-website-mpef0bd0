@@ -174,6 +174,37 @@ img{max-width:100%;display:block}
 .dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
 @media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
 
+/* Duo-tip helper styles (Вика+Саша подсказки) */
+.duo-tip{display:flex;gap:14px;align-items:flex-start;margin:28px 0;padding:16px 18px 16px 16px;background:linear-gradient(180deg,#FFFDF6 0%,#FBF3E2 100%);border:1px solid var(--border);border-radius:18px;position:relative}
+.duo-tip .duo-avatars{flex-shrink:0;display:flex;align-items:center}
+.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08);background:#FBF7F1}
+.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-12px}
+.duo-tip .tip-bubble{flex:1;min-width:0}
+.duo-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.duo-tip .tip-line{font-size:14px;color:var(--text);line-height:1.55;margin:4px 0}
+.duo-tip .tip-line strong{color:var(--accent);font-weight:600;margin-right:4px}
+.duo-tip .tip-line.sasha strong{color:var(--mint)}
+@media (max-width:760px){
+  .duo-tip{padding:14px 14px 14px 12px;gap:10px;margin:22px 0}
+  .duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:34px;height:34px}
+  .duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-10px}
+  .duo-tip .tip-line{font-size:13px}
+}
+
+/* Hero illustration */
+.hero-illu{max-width:760px;margin:32px auto 0;padding:0 32px}
+.hero-illu svg{width:100%;height:auto;display:block}
+.hero-illu .ill-path{stroke-dasharray:520;stroke-dashoffset:520;animation:illDraw 2.6s ease-out forwards .5s}
+.hero-illu .ill-node{opacity:0;animation:illPop .55s ease-out forwards;transform-origin:center;transform-box:fill-box}
+.hero-illu .ill-node.n1{animation-delay:.7s}
+.hero-illu .ill-node.n2{animation-delay:1.6s}
+.hero-illu .ill-node.n3{animation-delay:2.4s}
+.hero-illu .ill-cloud{opacity:0;animation:illPop .6s ease-out forwards 2.9s}
+@keyframes illDraw{to{stroke-dashoffset:0}}
+@keyframes illPop{0%{opacity:0;transform:scale(.6)} 100%{opacity:1;transform:scale(1)}}
+@media (max-width:760px){.hero-illu{padding:0 20px;margin-top:24px}}
+@media (prefers-reduced-motion: reduce){.hero-illu .ill-path{stroke-dashoffset:0;animation:none}.hero-illu .ill-node,.hero-illu .ill-cloud{opacity:1;animation:none}}
+
 </style>
 <script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner")||document.querySelector("nav.nav")||document.querySelector("nav.site-nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var links=nav.querySelector(".nav-links")||nav.querySelector(".crumbs");var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("aria-expanded","false");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(e){e.preventDefault();var open=nav.classList.toggle("burger-open");btn.setAttribute("aria-expanded",open?"true":"false");if(open){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';}else{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script><style>@media (max-width:1024px){nav.topnav .nav-links,nav.nav .nav-links,nav.site-nav .nav-links,nav.topnav .crumbs{display:none !important}nav.topnav.burger-open .nav-links,nav.nav.burger-open .nav-links,nav.site-nav.burger-open .nav-links,nav.topnav.burger-open .crumbs{display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);padding:16px 20px;gap:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.08)}nav.topnav.burger-open,nav.nav.burger-open,nav.site-nav.burger-open{position:relative}}</style></head>
 <body>
@@ -242,6 +273,81 @@ img{max-width:100%;display:block}
     <span class="rm-item"><span class="rm-icon">🎯</span> <span>для агентств</span></span>
   </div>
 </section>
+<div class="hero-illu reveal" aria-hidden="true">
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Поток заявок из Telegram-канала к менеджеру агентства">
+    <defs>
+      <linearGradient id="tgScreen" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F6F3FC"/>
+        <stop offset="100%" stop-color="#ECE6F8"/>
+      </linearGradient>
+      <linearGradient id="tgPhone" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="100%" stop-color="#FBF7F1"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="720" height="360" fill="#FBF7F1"/>
+    <ellipse cx="180" cy="312" rx="120" ry="10" fill="#1A1814" opacity="0.06"/>
+    <ellipse cx="560" cy="312" rx="90" ry="8" fill="#1A1814" opacity="0.06"/>
+
+    <g transform="translate(96 56)">
+      <rect x="0" y="0" width="180" height="252" rx="26" fill="#1A1814"/>
+      <rect x="6" y="8" width="168" height="236" rx="20" fill="url(#tgPhone)"/>
+      <rect x="14" y="24" width="152" height="40" rx="10" fill="#A087D3"/>
+      <circle cx="34" cy="44" r="12" fill="#FFFFFF" opacity="0.95"/>
+      <path d="M28 45 l5 4 l9 -9" stroke="#A087D3" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="52" y="34" width="80" height="8" rx="4" fill="#FFFFFF" opacity="0.95"/>
+      <rect x="52" y="48" width="50" height="6" rx="3" fill="#FFFFFF" opacity="0.7"/>
+      <rect x="14" y="76" width="152" height="44" rx="10" fill="url(#tgScreen)"/>
+      <rect x="22" y="86" width="100" height="6" rx="3" fill="#1A1814" opacity="0.7"/>
+      <rect x="22" y="98" width="120" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+      <rect x="22" y="108" width="60" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+      <rect x="14" y="130" width="152" height="44" rx="10" fill="url(#tgScreen)"/>
+      <rect x="22" y="140" width="90" height="6" rx="3" fill="#1A1814" opacity="0.7"/>
+      <rect x="22" y="152" width="120" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+      <rect x="22" y="162" width="70" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+      <rect x="14" y="184" width="152" height="44" rx="10" fill="url(#tgScreen)"/>
+      <rect x="22" y="194" width="80" height="6" rx="3" fill="#1A1814" opacity="0.7"/>
+      <rect x="22" y="206" width="120" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+      <rect x="22" y="216" width="50" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+    </g>
+
+    <path class="ill-path" d="M290 180 Q380 90 480 180" fill="none" stroke="#A087D3" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 8"/>
+    <path class="ill-path" d="M290 200 Q400 240 480 210" fill="none" stroke="#5CBA8C" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 8"/>
+    <path class="ill-path" d="M290 220 Q380 290 480 250" fill="none" stroke="#A087D3" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 8"/>
+
+    <g class="ill-node n1" transform="translate(348 110)">
+      <rect x="-22" y="-16" width="44" height="32" rx="6" fill="#FFFFFF" stroke="#A087D3" stroke-width="1.8"/>
+      <path d="M-22 -10 L0 6 L22 -10" fill="none" stroke="#A087D3" stroke-width="1.8" stroke-linejoin="round"/>
+    </g>
+    <g class="ill-node n2" transform="translate(380 220)">
+      <rect x="-22" y="-16" width="44" height="32" rx="6" fill="#FFFFFF" stroke="#5CBA8C" stroke-width="1.8"/>
+      <path d="M-22 -10 L0 6 L22 -10" fill="none" stroke="#5CBA8C" stroke-width="1.8" stroke-linejoin="round"/>
+    </g>
+    <g class="ill-node n3" transform="translate(360 280)">
+      <rect x="-22" y="-16" width="44" height="32" rx="6" fill="#FFFFFF" stroke="#A087D3" stroke-width="1.8"/>
+      <path d="M-22 -10 L0 6 L22 -10" fill="none" stroke="#A087D3" stroke-width="1.8" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(560 188)">
+      <circle cx="0" cy="-32" r="22" fill="#A087D3"/>
+      <circle cx="0" cy="-32" r="22" fill="#FFFFFF" opacity="0.12"/>
+      <path d="M-9 -36 q9 -8 18 0 q-9 6 -18 0z" fill="#FFFFFF" opacity="0.95"/>
+      <circle cx="-4" cy="-34" r="2" fill="#1A1814"/>
+      <circle cx="6" cy="-34" r="2" fill="#1A1814"/>
+      <path d="M-6 -27 q6 4 12 0" fill="none" stroke="#1A1814" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M-44 8 q44 -44 88 0 v52 q-22 14 -44 14 t-44 -14 z" fill="#FFFFFF" stroke="#1A1814" stroke-width="1.8" stroke-linejoin="round"/>
+      <rect x="-28" y="22" width="56" height="8" rx="4" fill="#5CBA8C"/>
+      <rect x="-28" y="38" width="40" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+      <rect x="-28" y="50" width="48" height="6" rx="3" fill="#1A1814" opacity="0.35"/>
+    </g>
+
+    <g class="ill-cloud" transform="translate(610 92)">
+      <rect x="-46" y="-22" width="92" height="44" rx="14" fill="#FFFFFF" stroke="#5CBA8C" stroke-width="1.8"/>
+      <text x="0" y="-2" text-anchor="middle" font-family="Suisse Intl, Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="#1A1814">90</text>
+      <text x="0" y="14" text-anchor="middle" font-family="Suisse Intl, Inter, system-ui, sans-serif" font-weight="600" font-size="9" fill="#5C5750" letter-spacing="0.5">ЗАЯВОК/МЕС</text>
+    </g>
+  </svg>
+</div>
 <article class="article">
 <h2 id="sec-1" class="reveal">Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц</h2>
 <p>Привет, меня зовут Виктория. Моя команда занимается комплексным маркетингом для недвижимости в Telegram. Этот материал, для тех, кто устал от покупки лидов и ищет возможности роста, но считает это непомерно дорогостоящим.</p>
@@ -253,6 +359,17 @@ img{max-width:100%;display:block}
 <h2 id="sec-3" class="reveal">Две ключевые проблемы</h2>
 <p><strong>Проблема первая, выгорание брокеров.</strong> Обработка низкокачественных лидов сжигала мотивацию команды. Люди устали работать с обращениями, которые не конвертируются в сделки.</p>
 <p><strong>Проблема вторая, острая конкуренция.</strong> Количество агентств новостроек в городе выросло с 15 до 35 организаций. Уровень конкуренции оказался выше, чем в Москве.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Выгорание брокеров и рост конкурентов лечатся одним: качеством входящего лида, а не его количеством.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Поставьте простую метрику: сколько процентов заявок брокер сам считает рабочими. Ниже 40% значит проблема в источнике, а не в людях.</div>
+  </div>
+</div>
 <h2 id="sec-4" class="reveal">Аналитика перед стартом: почему именно Telegram</h2>
 <p>Мы не начинали работу без предварительного анализа. Изучив источники трафика крупнейших агентств с оборотом более <strong>1 млрд рублей</strong>, выяснили: <strong>80% трафика приходит через Telegram</strong>.</p>
 <p>Вопрос: как привлекать «тёплые» лиды системно, учитывая конкуренцию в контекстной рекламе, проблемы с Авито и ограничения застройщиков на промоматериалы?</p>
@@ -265,6 +382,17 @@ img{max-width:100%;display:block}
 <p>Реклама приносит не только прямые заявки, но и новых подписчиков. Через <strong>3-8 недель</strong>, когда подписчик «созревает» на контенте канала, приходят самые тёплые обращения.</p>
 <p>Разница принципиальная: клиент обращается <strong>именно к вам для решения конкретной проблемы</strong>, а не просто для покупки квартиры. Качество таких обращений близко к рекомендациям, самому ценному типу лидов.</p>
 <p>Цель стратегии: системно увеличивать количество тёплых заявок, близких по качеству к рекомендациям.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Канал работает не за счёт охватов, а за счёт времени, которое подписчик проводит рядом с вами.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Заведите отдельную UTM-метку для каждого канала закупа и сверяйте через 6 недель, какие подписчики реально пишут в директ. Большая часть «мёртвых» площадок отвалится сама.</div>
+  </div>
+</div>
 <h2 id="sec-6" class="reveal">Реализация: 6 шагов от нуля до 90 заявок</h2>
 <h3>1. Позиционирование</h3>
 <p>Команда полностью погрузилась в работу агентства: изучила экспертизу, внутренние процессы, стиль руководителей. Результат, запоминающееся отличие от конкурентов плюс незаметная рыночная особенность, которую не использовал никто.</p>
@@ -283,9 +411,31 @@ img{max-width:100%;display:block}
 <p>Автоматизация решила проблему выгорания: брокеры перестали тратить время на нецелевые обращения.</p>
 <h3>6. Работа с подписчиками</h3>
 <ul><li>Прямые эфиры с экспертами</li><li>Подкасты о рынке недвижимости</li><li>Активности для вовлечения и удержания аудитории</li></ul>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Шесть шагов работают только в связке. Выкинете один, рассыплется весь конвейер.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Соберите чек-лист по каждому шагу и пройдитесь по нему раз в месяц. Видно сразу, где канал просел, а где руководитель агентства забил на контент.</div>
+  </div>
+</div>
 <h2 id="sec-7" class="reveal">Результаты за 4 месяца</h2>
 <p>| Метрика | Значение | |---------|----------| | Всего заявок за 4 месяца | <strong>370 обращений</strong> | | Заявки в первый месяц | <strong>30</strong> | | Заявки к четвёртому месяцу | <strong>90 в месяц</strong> | | Ежемесячный рекламный бюджет | <strong>50 000 рублей</strong> | | Стоимость заявки (CPL) | <strong>~555 рублей</strong> |</p>
 <p>Динамика роста: от 30 заявок в первый месяц до 90 заявок к четвёртому. Трёхкратный рост при том же бюджете, за счёт накопления подписчиков и эффекта «дозревания».</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Цифры в 30 и 90 заявок отличаются не бюджетом, а накопленной базой и репутацией канала.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Не пугайтесь первого месяца, в нём всегда мало лидов. Сверяйте план не помесячно, а нарастающим итогом за квартал.</div>
+  </div>
+</div>
 <h2 id="sec-8" class="reveal">Почему конкуренты получают хуже результат</h2>
 <p>Основная ошибка рынка, <strong>бездумное распределение бюджета</strong>. Конкуренты закупают рекламу в тематических каналах «недвижимость», где:</p>
 <ul><li>Аудитория перенасыщена рекламой, каждый пост конкурирует с десятками аналогичных предложений</li><li>Целевая аудитория состоит <strong>не из покупателей</strong>, а из профессионалов рынка, конкурентов, риэлторов, ипотечных брокеров</li></ul>
@@ -298,6 +448,17 @@ img{max-width:100%;display:block}
 <p><strong>Окупаемость с первой сделки.</strong> Рекламный бюджет и стоимость услуг окупаются одной закрытой сделкой. При 90 заявках в месяц это более чем достижимо. Первый клиент из Telegram был закрыт через рассылку бота.</p>
 <p><strong>Тёплые заявки вместо холодных лидов.</strong> Эффект «дозревания» через 3-8 недель даёт обращения, близкие по качеству к рекомендациям. Брокеры работают с мотивированными покупателями, а не с «просто спросить».</p>
 <p><strong>Стратегия определяет результат.</strong> При одинаковом бюджете в 50 000 рублей можно получить и 10 заявок, и 90, разница в подходе. Нестандартный подбор площадок, ежедневный контент, автоматизация квалификации. Это <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">управление performance-каналом</a>, а не «ведение странички».</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Подписчики и охваты обманчивы. Считайте только сделки и стоимость заявки, остальное шум.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Вешайте на стену офиса две цифры: CPL и количество сделок за месяц. Команда сама начнёт оптимизировать процесс под них.</div>
+  </div>
+</div>
 <h2 id="sec-11" class="reveal">Подходит ли вам эта стратегия</h2>
 <p>Этот подход работает для агентств недвижимости, которые:</p>
 <ul><li>Специализируются на новостройках и хотят снизить зависимость от классифайдов</li><li>Готовы вкладываться в системную работу минимум на 3-4 месяца</li><li>Понимают, что 50 000 рублей в месяц на рекламу. Это инвестиция, а не расход</li><li>Хотят получать тёплые заявки, а не базы контактов для холодного обзвона</li></ul>

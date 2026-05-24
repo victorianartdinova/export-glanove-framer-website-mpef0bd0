@@ -218,6 +218,32 @@
 .dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
 @media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
 
+/* Duo-tip: Вика + Саша подсказывают */
+.duo-tip{display:flex;gap:14px;align-items:flex-start;margin:28px 0;padding:16px 18px 16px 16px;background:linear-gradient(180deg,#FFFDF6 0%,#FBF3E2 100%);border:1px solid var(--border);border-radius:18px;position:relative}
+.duo-tip .duo-avatars{flex-shrink:0;display:flex;align-items:center}
+.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08);background:#FBF7F1}
+.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-12px}
+.duo-tip .tip-bubble{flex:1;min-width:0}
+.duo-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.duo-tip .tip-line{font-size:14px;color:var(--text);line-height:1.55;margin:4px 0}
+.duo-tip .tip-line strong{color:var(--accent);font-weight:600;margin-right:4px}
+.duo-tip .tip-line.sasha strong{color:var(--mint)}
+@media(max-width:520px){.duo-tip{padding:14px 14px 14px 12px;gap:10px;margin:22px 0}.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:34px;height:34px}.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-10px}.duo-tip .tip-line{font-size:13px}}
+
+/* Hero illustration */
+.hero-illu{max-width:760px;margin:32px auto 0;padding:0 32px}
+.hero-illu svg{width:100%;height:auto;display:block}
+.hero-illu .ill-path{stroke-dasharray:520;stroke-dashoffset:520;animation:illDraw 2.6s ease-out forwards .5s}
+@keyframes illDraw{to{stroke-dashoffset:0}}
+.hero-illu .ill-node{opacity:0;animation:illPop .55s ease-out forwards;transform-origin:center;transform-box:fill-box}
+.hero-illu .ill-node.n1{animation-delay:.7s}
+.hero-illu .ill-node.n2{animation-delay:1.6s}
+.hero-illu .ill-node.n3{animation-delay:2.4s}
+.hero-illu .ill-cloud{opacity:0;animation:illPop .6s ease-out forwards 2.9s}
+@keyframes illPop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@media(max-width:520px){.hero-illu{padding:0 20px;margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.hero-illu .ill-path{stroke-dashoffset:0;animation:none}.hero-illu .ill-node,.hero-illu .ill-cloud{opacity:1;animation:none}}
+
 </style>
 <script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner")||document.querySelector("nav.nav")||document.querySelector("nav.site-nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var links=nav.querySelector(".nav-links")||nav.querySelector(".crumbs");var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("aria-expanded","false");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(e){e.preventDefault();var open=nav.classList.toggle("burger-open");btn.setAttribute("aria-expanded",open?"true":"false");if(open){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';}else{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script><style>@media (max-width:1024px){nav.topnav .nav-links,nav.nav .nav-links,nav.site-nav .nav-links,nav.topnav .crumbs{display:none !important}nav.topnav.burger-open .nav-links,nav.nav.burger-open .nav-links,nav.site-nav.burger-open .nav-links,nav.topnav.burger-open .crumbs{display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);padding:16px 20px;gap:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.08)}nav.topnav.burger-open,nav.nav.burger-open,nav.site-nav.burger-open{position:relative}}</style></head>
 <body>
@@ -288,6 +314,105 @@
   </div>
 </section>
 
+<div class="hero-illu reveal" aria-label="Telegram-канал застройщика как медиа: контент-сетка и подписчики">
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <linearGradient id="phoneGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFFFFF"/>
+        <stop offset="1" stop-color="#FBF7F1"/>
+      </linearGradient>
+      <linearGradient id="tileLav" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#A087D3" stop-opacity="0.85"/>
+        <stop offset="1" stop-color="#A087D3" stop-opacity="0.45"/>
+      </linearGradient>
+      <linearGradient id="tileMint" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#5CBA8C" stop-opacity="0.85"/>
+        <stop offset="1" stop-color="#5CBA8C" stop-opacity="0.45"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Phone frame -->
+    <rect x="200" y="36" width="220" height="290" rx="28" fill="url(#phoneGrad)" stroke="#1A1814" stroke-width="2"/>
+    <rect x="214" y="56" width="192" height="22" rx="6" fill="#1A1814" opacity="0.06"/>
+    <circle cx="230" cy="67" r="7" fill="#A087D3"/>
+    <text x="246" y="71" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="11" font-weight="600">ЖК «Главный»</text>
+    <text x="246" y="82" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="8">канал · 12 480 подписчиков</text>
+
+    <!-- Content grid: photos, videos, renders -->
+    <g class="ill-node n1">
+      <rect x="214" y="92" width="58" height="58" rx="10" fill="url(#tileLav)"/>
+      <text x="243" y="125" text-anchor="middle" fill="#FFFFFF" font-family="Suisse Intl, Inter, sans-serif" font-size="9" font-weight="700">ФОТО</text>
+    </g>
+    <g class="ill-node n2">
+      <rect x="281" y="92" width="58" height="58" rx="10" fill="url(#tileMint)"/>
+      <polygon points="306,114 306,134 322,124" fill="#FFFFFF"/>
+      <text x="310" y="146" text-anchor="middle" fill="#FFFFFF" font-family="Suisse Intl, Inter, sans-serif" font-size="9" font-weight="700">ОБХОД</text>
+    </g>
+    <g class="ill-node n3">
+      <rect x="348" y="92" width="58" height="58" rx="10" fill="url(#tileLav)"/>
+      <text x="377" y="125" text-anchor="middle" fill="#FFFFFF" font-family="Suisse Intl, Inter, sans-serif" font-size="9" font-weight="700">РЕНДЕР</text>
+    </g>
+    <g class="ill-node n1">
+      <rect x="214" y="158" width="58" height="58" rx="10" fill="#FBF7F1" stroke="#A087D3" stroke-width="1.5"/>
+      <text x="243" y="184" text-anchor="middle" fill="#A087D3" font-family="Suisse Intl, Inter, sans-serif" font-size="9" font-weight="700">КЕЙС</text>
+      <text x="243" y="195" text-anchor="middle" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="7">покупателя</text>
+    </g>
+    <g class="ill-node n2">
+      <rect x="281" y="158" width="58" height="58" rx="10" fill="#FBF7F1" stroke="#5CBA8C" stroke-width="1.5"/>
+      <text x="310" y="184" text-anchor="middle" fill="#5CBA8C" font-family="Suisse Intl, Inter, sans-serif" font-size="9" font-weight="700">ИПОТЕКА</text>
+      <text x="310" y="195" text-anchor="middle" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="7">разбор</text>
+    </g>
+    <g class="ill-node n3">
+      <rect x="348" y="158" width="58" height="58" rx="10" fill="#FBF7F1" stroke="#A087D3" stroke-width="1.5"/>
+      <text x="377" y="184" text-anchor="middle" fill="#A087D3" font-family="Suisse Intl, Inter, sans-serif" font-size="9" font-weight="700">CTA</text>
+      <text x="377" y="195" text-anchor="middle" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="7">в бот</text>
+    </g>
+
+    <!-- CTA button inside phone -->
+    <rect x="214" y="228" width="192" height="36" rx="18" fill="#A087D3"/>
+    <text x="310" y="251" text-anchor="middle" fill="#FFFFFF" font-family="Suisse Intl, Inter, sans-serif" font-size="11" font-weight="700">Открыть подборку →</text>
+
+    <!-- Stats line -->
+    <text x="214" y="287" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="9">охват поста</text>
+    <text x="406" y="287" text-anchor="end" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="10" font-weight="700">52%</text>
+    <text x="214" y="303" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="9">CPL Telegram Ads</text>
+    <text x="406" y="303" text-anchor="end" fill="#A087D3" font-family="Suisse Intl, Inter, sans-serif" font-size="10" font-weight="700">3 784 ₽</text>
+
+    <!-- Path from phone to readers -->
+    <path class="ill-path" d="M 420 180 C 490 180, 520 110, 600 100" fill="none" stroke="#A087D3" stroke-width="2" stroke-linecap="round" stroke-dasharray="0"/>
+    <path class="ill-path" d="M 420 200 C 490 200, 520 200, 600 200" fill="none" stroke="#5CBA8C" stroke-width="2" stroke-linecap="round"/>
+    <path class="ill-path" d="M 420 220 C 490 220, 520 290, 600 300" fill="none" stroke="#A087D3" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Readers (subscribers) -->
+    <g class="ill-cloud">
+      <circle cx="610" cy="100" r="18" fill="#FBF7F1" stroke="#A087D3" stroke-width="1.5"/>
+      <circle cx="610" cy="92" r="6" fill="#A087D3"/>
+      <path d="M 598 110 Q 610 100, 622 110" fill="none" stroke="#A087D3" stroke-width="1.5"/>
+      <text x="640" y="103" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="10" font-weight="600">инвестор</text>
+
+      <circle cx="610" cy="200" r="18" fill="#FBF7F1" stroke="#5CBA8C" stroke-width="1.5"/>
+      <circle cx="610" cy="192" r="6" fill="#5CBA8C"/>
+      <path d="M 598 210 Q 610 200, 622 210" fill="none" stroke="#5CBA8C" stroke-width="1.5"/>
+      <text x="640" y="203" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="10" font-weight="600">семья</text>
+
+      <circle cx="610" cy="300" r="18" fill="#FBF7F1" stroke="#A087D3" stroke-width="1.5"/>
+      <circle cx="610" cy="292" r="6" fill="#A087D3"/>
+      <path d="M 598 310 Q 610 300, 622 310" fill="none" stroke="#A087D3" stroke-width="1.5"/>
+      <text x="640" y="303" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="10" font-weight="600">регион</text>
+    </g>
+
+    <!-- Left annotation -->
+    <text x="100" y="160" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="13" font-weight="700">Контент</text>
+    <text x="100" y="178" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="11">по 3 уровням</text>
+    <text x="100" y="194" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="11">воронки</text>
+    <line x1="140" y1="200" x2="200" y2="200" stroke="#A087D3" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- Right annotation -->
+    <text x="680" y="50" text-anchor="end" fill="#1A1814" font-family="Suisse Intl, Inter, sans-serif" font-size="13" font-weight="700">Подписчики</text>
+    <text x="680" y="68" text-anchor="end" fill="#5C5750" font-family="Suisse Intl, Inter, sans-serif" font-size="11">по сегментам</text>
+  </svg>
+</div>
+
 <div class="wrap">
   <aside class="toc" id="desktopToc" aria-label="Содержание">
     <div class="toc__title">Содержание</div>
@@ -325,6 +450,18 @@
       </div>
       <p class="step__sub">Прежде чем что-то менять, нужно понять, где вы сейчас.</p>
 
+      <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+        <div class="duo-avatars" aria-hidden="true">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+          <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+        </div>
+        <div class="tip-bubble">
+          <div class="tip-name">Вика и Саша</div>
+          <div class="tip-line"><strong>Вика:</strong> Канал застройщика, это медиа об объекте, а не каталог. Цель в заявках и сделках, не в подписчиках.</div>
+          <div class="tip-line sasha"><strong>Саша:</strong> Прежде чем считать охваты, ответьте на 4 вопроса по подписчикам, охвату, воронке и текущему CPL. Без этих цифр старт вслепую.</div>
+        </div>
+      </div>
+
       <p>Проведите аудит по четырём вопросам:</p>
       <ul>
         <li>Сколько подписчиков в канале и какой процент, целевая аудитория?</li>
@@ -342,6 +479,18 @@
         <div class="step__title">Разработка контент-стратегии, а не контент-плана</div>
       </div>
       <p class="step__sub">Контент-план, табличка с датами. Контент-стратегия, понимание, зачем каждый пост существует.</p>
+
+      <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+        <div class="duo-avatars" aria-hidden="true">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+          <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+        </div>
+        <div class="tip-bubble">
+          <div class="tip-name">Вика и Саша</div>
+          <div class="tip-line"><strong>Вика:</strong> Канал застройщика становится медиа только когда покупатель видит в нём ответ на свой жизненный сценарий, а не очередную планировку.</div>
+          <div class="tip-line sasha"><strong>Саша:</strong> Возьмите ближайшие 10 постов и распишите по колонкам TOFU/MOFU/BOFU. Если 8 из 10 это рендеры, контент-плана нет, есть лента картинок.</div>
+        </div>
+      </div>
 
       <p>Большинство застройщиков путают эти две вещи. Мы используем трёхуровневую модель контента:</p>
       <ul>
@@ -385,6 +534,18 @@
         <div class="step__title">Настройка воронки внутри Telegram</div>
       </div>
       <p class="step__sub">Канал без воронки. Это дорогая доска объявлений.</p>
+
+      <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+        <div class="duo-avatars" aria-hidden="true">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+          <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+        </div>
+        <div class="tip-bubble">
+          <div class="tip-name">Вика и Саша</div>
+          <div class="tip-line"><strong>Вика:</strong> Подписчик без следующего шага, мёртвая метрика. Канал работает только если из любого поста есть тропа в бота.</div>
+          <div class="tip-line sasha"><strong>Саша:</strong> Заведите бот-квалификатор на 3 вопроса по бюджету, срокам и типу объекта. Менеджер берёт только тех, кто ответил на все три.</div>
+        </div>
+      </div>
 
       <p>Минимальная воронка, которая работает:</p>
       <ol>
@@ -467,6 +628,18 @@
       </div>
       <p class="step__sub">Если вы не считаете unit-экономику, вы не управляете маркетингом, вы тратите деньги наугад.</p>
 
+      <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+        <div class="duo-avatars" aria-hidden="true">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+          <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+        </div>
+        <div class="tip-bubble">
+          <div class="tip-name">Вика и Саша</div>
+          <div class="tip-line"><strong>Вика:</strong> Решения о бюджете принимает не интуиция, а связка CPL, конверсия в сделку и LTV/CAC. Без них застройщик финансирует процесс, а не результат.</div>
+          <div class="tip-line sasha"><strong>Саша:</strong> Раз в неделю сводите 6 цифр в одну таблицу. По понедельникам, до планёрки. 15 минут, экономят сотни тысяч бюджета.</div>
+        </div>
+      </div>
+
       <p>Ключевые метрики, которые нужно отслеживать еженедельно:</p>
 
       <div class="ttable-wrap"><table class="ttable">
@@ -540,6 +713,18 @@
         <div class="step__title">Чек-лист готовности канала к рекламе</div>
       </div>
       <p class="step__sub">Перед тем как вкладывать бюджет в Telegram Ads, проверьте канал.</p>
+
+      <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+        <div class="duo-avatars" aria-hidden="true">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+          <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+        </div>
+        <div class="tip-bubble">
+          <div class="tip-name">Вика и Саша</div>
+          <div class="tip-line"><strong>Вика:</strong> Реклама усиливает то, что уже есть. Если канал слабый, бюджет покупает разочарование, а не заявки.</div>
+          <div class="tip-line sasha"><strong>Саша:</strong> Откройте канал глазами нового подписчика, со смартфона. Описание, закреп, последние 5 постов, бот. Если хотя бы один шаг ломается, рекламу запускать рано.</div>
+        </div>
+      </div>
 
       <ul>
         <li><strong>Описание канала</strong> содержит чёткое ценностное предложение, а не общие слова «всё о недвижимости». Подписчик за 3 секунды должен понять, зачем ему ваш канал.</li>

@@ -174,6 +174,40 @@ img{max-width:100%;display:block}
 .dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
 @media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
 
+/* Duo-tip helper styles (Вика+Саша подсказки) */
+.duo-tip{display:flex;gap:14px;align-items:flex-start;margin:28px 0;padding:16px 18px 16px 16px;background:linear-gradient(180deg,#FFFDF6 0%,#FBF3E2 100%);border:1px solid var(--border);border-radius:18px;position:relative}
+.duo-tip .duo-avatars{flex-shrink:0;display:flex;align-items:center}
+.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08);background:#FBF7F1}
+.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-12px}
+.duo-tip .tip-bubble{flex:1;min-width:0}
+.duo-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.duo-tip .tip-line{font-size:14px;color:var(--text);line-height:1.55;margin:4px 0}
+.duo-tip .tip-line strong{color:var(--accent);font-weight:600;margin-right:4px}
+.duo-tip .tip-line.sasha strong{color:var(--mint)}
+@media (max-width:760px){
+  .duo-tip{padding:14px 14px 14px 12px;gap:10px;margin:22px 0}
+  .duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:34px;height:34px}
+  .duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-10px}
+  .duo-tip .tip-line{font-size:13px}
+}
+
+/* Hero illustration (Вика + Саша + объект) */
+.hero-illu{max-width:760px;margin:32px auto 0;padding:0 32px}
+.hero-illu svg{width:100%;height:auto;display:block}
+.hero-illu .ill-path{stroke-dasharray:520;stroke-dashoffset:520;animation:illDraw 2.6s ease-out forwards .5s}
+.hero-illu .ill-node{opacity:0;animation:illPop .55s ease-out forwards;transform-origin:center;transform-box:fill-box}
+.hero-illu .ill-node.n1{animation-delay:.7s}
+.hero-illu .ill-node.n2{animation-delay:1.6s}
+.hero-illu .ill-node.n3{animation-delay:2.4s}
+.hero-illu .ill-cloud{opacity:0;animation:illPop .6s ease-out forwards 2.9s}
+@keyframes illDraw{to{stroke-dashoffset:0}}
+@keyframes illPop{0%{opacity:0;transform:scale(.6)} 100%{opacity:1;transform:scale(1)}}
+@media (max-width:760px){
+  .hero-illu{padding:0 20px;margin-top:24px}
+  .hero-illu .ill-path{stroke-dashoffset:0;animation:none}
+  .hero-illu .ill-node,.hero-illu .ill-cloud{opacity:1;animation:none}
+}
+
 </style>
 <script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner")||document.querySelector("nav.nav")||document.querySelector("nav.site-nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var links=nav.querySelector(".nav-links")||nav.querySelector(".crumbs");var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("aria-expanded","false");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(e){e.preventDefault();var open=nav.classList.toggle("burger-open");btn.setAttribute("aria-expanded",open?"true":"false");if(open){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';}else{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script><style>@media (max-width:1024px){nav.topnav .nav-links,nav.nav .nav-links,nav.site-nav .nav-links,nav.topnav .crumbs{display:none !important}nav.topnav.burger-open .nav-links,nav.nav.burger-open .nav-links,nav.site-nav.burger-open .nav-links,nav.topnav.burger-open .crumbs{display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);padding:16px 20px;gap:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.08)}nav.topnav.burger-open,nav.nav.burger-open,nav.site-nav.burger-open{position:relative}}</style></head>
 <body>
@@ -238,6 +272,72 @@ img{max-width:100%;display:block}
     <span class="rm-item"><span class="rm-icon">🎯</span> <span>для девелоперов</span></span>
   </div>
 </section>
+
+<div class="hero-illu reveal" aria-label="Схема маркетинговой стратегии девелопера">
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+    <defs>
+      <filter id="ill-shadow-strategy" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+        <feOffset dx="0" dy="1.5" result="off"/>
+        <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+        <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <g stroke="#1A1814" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path class="ill-path" d="M150,90 C 230,140 290,160 360,180" />
+      <path class="ill-path" d="M150,270 C 230,230 290,210 360,180" />
+      <path class="ill-path" d="M570,90 C 490,140 430,160 360,180" />
+      <path class="ill-path" d="M570,270 C 490,230 430,210 360,180" />
+    </g>
+
+    <g class="ill-node n1" filter="url(#ill-shadow-strategy)">
+      <rect x="80" y="60" width="140" height="60" rx="14" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.6"/>
+      <circle cx="106" cy="90" r="13" fill="#A087D3"/>
+      <text x="106" y="95" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#FFFDF6">TG</text>
+      <text x="130" y="86" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#1A1814">Telegram</text>
+      <text x="130" y="102" font-family="Inter,Arial,sans-serif" font-size="10" fill="#5C5750">Ads и канал</text>
+    </g>
+
+    <g class="ill-node n1" filter="url(#ill-shadow-strategy)">
+      <rect x="80" y="240" width="140" height="60" rx="14" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.6"/>
+      <circle cx="106" cy="270" r="13" fill="#5CBA8C"/>
+      <text x="106" y="275" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFDF6">AV</text>
+      <text x="130" y="266" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#1A1814">Авито</text>
+      <text x="130" y="282" font-family="Inter,Arial,sans-serif" font-size="10" fill="#5C5750">горячий спрос</text>
+    </g>
+
+    <g class="ill-node n2" filter="url(#ill-shadow-strategy)">
+      <rect x="500" y="60" width="140" height="60" rx="14" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.6"/>
+      <circle cx="526" cy="90" r="13" fill="#A087D3"/>
+      <text x="526" y="95" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFDF6">Я</text>
+      <text x="550" y="86" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#1A1814">Контекст</text>
+      <text x="550" y="102" font-family="Inter,Arial,sans-serif" font-size="10" fill="#5C5750">Яндекс Директ</text>
+    </g>
+
+    <g class="ill-node n2" filter="url(#ill-shadow-strategy)">
+      <rect x="500" y="240" width="140" height="60" rx="14" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.6"/>
+      <circle cx="526" cy="270" r="13" fill="#5CBA8C"/>
+      <text x="526" y="275" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFDF6">PR</text>
+      <text x="550" y="266" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#1A1814">PR и медиа</text>
+      <text x="550" y="282" font-family="Inter,Arial,sans-serif" font-size="10" fill="#5C5750">статьи и посевы</text>
+    </g>
+
+    <g class="ill-node n3" filter="url(#ill-shadow-strategy)">
+      <circle cx="360" cy="180" r="58" fill="#A087D3" stroke="#1A1814" stroke-width="1.8"/>
+      <circle cx="360" cy="180" r="44" fill="none" stroke="#FFFDF6" stroke-width="1.4" stroke-dasharray="3 4"/>
+      <text x="360" y="174" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFDF6">СДЕЛКИ</text>
+      <text x="360" y="192" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#FFFDF6" opacity=".85">единая воронка</text>
+    </g>
+
+    <g class="ill-cloud" filter="url(#ill-shadow-strategy)">
+      <rect x="262" y="290" width="196" height="44" rx="22" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.6"/>
+      <text x="360" y="310" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#1A1814">CPL · CPA · ROI</text>
+      <text x="360" y="324" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#5C5750">сквозная аналитика</text>
+    </g>
+  </svg>
+</div>
+
 <article class="article">
 <h2 id="sec-1" class="reveal">Что такое стратегия маркетинга для девелопера</h2>
 <p>Стратегия маркетинга для девелопера. Это документ и план действий, который определяет, какие каналы продвижения использовать, сколько вкладывать в каждый из них и какие результаты в лидах и сделках ожидать. Это не медиаплан и не контент-план. Стратегия отвечает на вопрос <strong>«как системно получать обращения от покупателей квартир и доводить их до сделки»</strong>, а не «что постить в социальных сетях».</p>
@@ -245,12 +345,34 @@ img{max-width:100%;display:block}
 <p>Агентство <a href="/uslugi/strategiya-marketinga" target="_blank" rel="noopener">ГЛАВНОЕ</a> работает с застройщиками как стратегический партнёр: мы не ведём социальные сети, мы управляем маркетингом, который конвертируется в сделки.</p>
 <h2 id="sec-2" class="reveal">Почему застройщику нужна стратегия, а не просто реклама</h2>
 <p>Большинство девелоперов начинают маркетинг с тактики: запускают контекстную рекламу, заводят Telegram-канал, размещаются на Авито. Каждый канал работает отдельно, метрики не связаны между собой, а маркетолог отчитывается охватами и подписчиками вместо стоимости лида и количества сделок.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Тактика без стратегии, это бюджет на хаос. Сначала цель в сделках, потом каналы.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Прежде чем запускать рекламу, посчитайте обратно: 10 сделок, конверсия 20%, нужно 50 показов и 167 лидов. Только потом выбирайте канал.</div>
+  </div>
+</div>
 <p>Стратегический подход переворачивает эту логику. Сначала определяется цель в деньгах: сколько сделок нужно в месяц, с каким средним чеком, какой допустимый CPL. Затем под эту цель подбираются каналы, распределяется бюджет и выстраивается воронка от первого касания до подписания договора.</p>
 <h3>Разница между тактическим и стратегическим маркетингом</h3>
 <p><strong>Тактический подход:</strong> девелопер нанимает SMM-специалиста, который делает 20 постов в месяц. Через 3 месяца у канала 500 подписчиков, ноль обращений, непонятно зачем это нужно. Бюджет потрачен, результат измеряется в лайках.</p>
 <p><strong>Стратегический подход:</strong> определяется, что Telegram нужен не для охватов, а как канал прогрева для тёплой аудитории. Трафик идёт из контекстной рекламы и Telegram Ads, канал прогревает кейсами и цифрами, целевое действие, заявка на консультацию. CPL контролируется, конверсия замеряется на каждом этапе.</p>
 <p>В нашей практике этот подход позволил достичь CPL 3 784 рубля через Telegram Ads для проекта с лотами от 20 млн рублей. За лучший месяц кампания принесла 69 целевых обращений, из которых 6 конвертировались в сделки со средним чеком 15 млн рублей.</p>
 <h2 id="sec-3" class="reveal">Пошаговый план построения маркетинговой стратегии для застройщика</h2>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Стратегия начинается не с креативов, а с честного аудита. Что уже есть, что работает, что сливает деньги.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Возьмите выгрузку лидов за 6 месяцев, поделите на каналы и посчитайте CPL. Часто 60% бюджета приносят 20% сделок, остальное чистая утечка.</div>
+  </div>
+</div>
 <h3>Шаг 1. Аудит текущего состояния</h3>
 <p>Прежде чем строить стратегию, нужно понять, что уже есть. Аудит включает анализ всех действующих каналов, их стоимости, конверсий и качества лидов. Часто на этом этапе обнаруживается, что 60-70% бюджета уходит в каналы, которые приносят менее 20% сделок.</p>
 <p>Что проверяем:</p>
@@ -279,6 +401,17 @@ img{max-width:100%;display:block}
 <p>Подробнее о <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">performance-маркетинге для застройщиков</a> и как мы управляем этими каналами.</p>
 <h2 id="sec-5" class="reveal">Чек-лист: 7 признаков, что застройщику нужна маркетинговая стратегия</h2>
 <p>Если вы узнали себя хотя бы в 3 пунктах из 7, пора переходить от хаотичного маркетинга к системному.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Если маркетолог отчитывается охватами, а не сделками, у вас не маркетинг. У вас декорация.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Заведите простой дашборд из 5 цифр на месяц: CPL, доля квалифицированных лидов, конверсия в показ, в сделку, ROI. Этого хватит, чтобы видеть всё.</div>
+  </div>
+</div>
 <ol><li><strong>Вы не знаете свой CPL.</strong> Маркетолог отчитывается охватами и подписчиками, но не может назвать стоимость одного обращения по каждому каналу.</li></ol>
 <ol><li><strong>Более 30% лидов, мусорные.</strong> Брокеры, нецелевые запросы, люди с бюджетом ниже минимального лота. Это значит, что каналы настроены неправильно или аудитория подобрана без стратегии.</li></ol>
 <ol><li><strong>Каналы работают изолированно.</strong> Контекстная реклама ведёт на сайт, Telegram живёт отдельно, PR-активности не связаны с лидогенерацией. Нет единой воронки.</li></ol>
@@ -299,6 +432,17 @@ img{max-width:100%;display:block}
 <p>Стоимость: от 350 000 рублей в месяц за комплексное обслуживание. Агентство берёт на себя и стратегию, и исполнение. Удобно, но есть риск потери контроля и зависимости от одного подрядчика.</p>
 <h2 id="sec-7" class="reveal">Что должна включать стратегия маркетинга застройщика</h2>
 <p>Готовая стратегия. Это не презентация на 100 слайдов, а рабочий документ, по которому команда действует каждый день. Вот обязательные разделы:</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Хорошая стратегия помещается в одну страницу. Всё остальное, приложения для команды.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Соберите верхний лист: цель в сделках, 3 ключевых канала, бюджет, KPI и ответственные. По нему планёрки проходят за 20 минут.</div>
+  </div>
+</div>
 <h3>Аналитический блок</h3>
 <ul><li>Анализ конкурентов (3-5 ближайших по классу и локации);</li><li>Анализ целевой аудитории (сегменты, боли, критерии выбора);</li><li>Аудит текущих каналов и их эффективности;</li><li>SWOT-анализ маркетинговой функции.</li></ul>
 <h3>Стратегический блок</h3>
@@ -307,6 +451,17 @@ img{max-width:100%;display:block}
 <ul><li>Медиаплан на 3-6 месяцев;</li><li>KPI по каждому каналу и этапу воронки;</li><li>Календарь активностей;</li><li>Ответственные и дедлайны;</li><li>Система отчётности (что, когда, кому).</li></ul>
 <h2 id="sec-8" class="reveal">Ошибки застройщиков в маркетинге</h2>
 <p>За 4 года работы с девелоперами мы видели одни и те же ошибки. Вот самые дорогие из них.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Самая дорогая ошибка, менять подрядчика каждые 3 месяца. В недвижимости результаты видны через полгода, не раньше.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Зафиксируйте в договоре с агентством квартальные точки сверки и метрики. Это дисциплинирует обе стороны и убирает «давайте подождём ещё месяц».</div>
+  </div>
+</div>
 <p><strong>Ошибка 1: измерять эффективность охватами.</strong> Охват. Это метрика осведомлённости, а не продаж. У канала может быть 10 000 подписчиков и ноль обращений. CPL и количество квалифицированных лидов, вот настоящие показатели.</p>
 <p><strong>Ошибка 2: менять агентство каждые 3 месяца.</strong> Маркетинг в недвижимости. Это длинный цикл. Результаты стратегии видны через 3-6 месяцев. Менять подрядчика раньше, значит каждый раз начинать с нуля и платить за обучение новой команды.</p>
 <p><strong>Ошибка 3: экономить на стратегии, но тратить на тактику.</strong> Девелопер платит 500 000 рублей в месяц за рекламу, но не готов заплатить 200 000 за стратегию, которая покажет, что половина этого бюджета уходит впустую. Стратегия окупается в первый же месяц за счёт оптимизации расходов.</p>

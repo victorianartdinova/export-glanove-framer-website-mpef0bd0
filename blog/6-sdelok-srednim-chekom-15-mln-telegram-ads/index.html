@@ -174,6 +174,40 @@ img{max-width:100%;display:block}
 .dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
 @media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
 
+/* Duo-tip helper styles (Вика+Саша подсказки) */
+.duo-tip{display:flex;gap:14px;align-items:flex-start;margin:28px 0;padding:16px 18px 16px 16px;background:linear-gradient(180deg,#FFFDF6 0%,#FBF3E2 100%);border:1px solid var(--border);border-radius:18px;position:relative}
+.duo-tip .duo-avatars{flex-shrink:0;display:flex;align-items:center}
+.duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08);background:#FBF7F1}
+.duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-12px}
+.duo-tip .tip-bubble{flex:1;min-width:0}
+.duo-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.duo-tip .tip-line{font-size:14px;color:var(--text);line-height:1.55;margin:4px 0}
+.duo-tip .tip-line strong{color:var(--accent);font-weight:600;margin-right:4px}
+.duo-tip .tip-line.sasha strong{color:var(--mint)}
+@media (max-width:760px){
+  .duo-tip{padding:14px 14px 14px 12px;gap:10px;margin:22px 0}
+  .duo-tip .duo-avatars img,.duo-tip .duo-avatars svg{width:34px;height:34px}
+  .duo-tip .duo-avatars img:last-child,.duo-tip .duo-avatars svg:last-child{margin-left:-10px}
+  .duo-tip .tip-line{font-size:13px}
+}
+
+/* Hero illustration (Вика + Саша + объект) */
+.hero-illu{max-width:760px;margin:32px auto 0;padding:0 32px}
+.hero-illu svg{width:100%;height:auto;display:block}
+.hero-illu .ill-path{stroke-dasharray:520;stroke-dashoffset:520;animation:illDraw 2.6s ease-out forwards .5s}
+.hero-illu .ill-node{opacity:0;animation:illPop .55s ease-out forwards;transform-origin:center;transform-box:fill-box}
+.hero-illu .ill-node.n1{animation-delay:.7s}
+.hero-illu .ill-node.n2{animation-delay:1.6s}
+.hero-illu .ill-node.n3{animation-delay:2.4s}
+.hero-illu .ill-cloud{opacity:0;animation:illPop .6s ease-out forwards 2.9s}
+@keyframes illDraw{to{stroke-dashoffset:0}}
+@keyframes illPop{0%{opacity:0;transform:scale(.6)} 100%{opacity:1;transform:scale(1)}}
+@media (max-width:760px){
+  .hero-illu{padding:0 20px;margin-top:24px}
+  .hero-illu .ill-path{stroke-dashoffset:0;animation:none}
+  .hero-illu .ill-node,.hero-illu .ill-cloud{opacity:1;animation:none}
+}
+
 </style>
 <script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner")||document.querySelector("nav.nav")||document.querySelector("nav.site-nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var links=nav.querySelector(".nav-links")||nav.querySelector(".crumbs");var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("aria-expanded","false");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(e){e.preventDefault();var open=nav.classList.toggle("burger-open");btn.setAttribute("aria-expanded",open?"true":"false");if(open){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';}else{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script><style>@media (max-width:1024px){nav.topnav .nav-links,nav.nav .nav-links,nav.site-nav .nav-links,nav.topnav .crumbs{display:none !important}nav.topnav.burger-open .nav-links,nav.nav.burger-open .nav-links,nav.site-nav.burger-open .nav-links,nav.topnav.burger-open .crumbs{display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);padding:16px 20px;gap:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.08)}nav.topnav.burger-open,nav.nav.burger-open,nav.site-nav.burger-open{position:relative}}</style>
 <script type="application/ld+json">
@@ -254,10 +288,95 @@ img{max-width:100%;display:block}
     <span class="rm-item"><span class="rm-icon">🎯</span> <span>для девелоперов и агентств</span></span>
   </div>
 </section>
+<div class="hero-illu reveal" aria-hidden="true">
+  <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Премиум недвижимость и Telegram Ads">
+    <defs>
+      <linearGradient id="hi-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FBF7F1"/>
+        <stop offset="1" stop-color="#F3ECDF"/>
+      </linearGradient>
+      <linearGradient id="hi-tower" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#B8A2DE"/>
+        <stop offset="1" stop-color="#7E63B8"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="720" height="360" fill="url(#hi-sky)"/>
+    <line x1="0" y1="300" x2="720" y2="300" stroke="#1A1814" stroke-opacity=".12" stroke-width="1.2"/>
+    <g class="ill-node n1">
+      <rect x="120" y="120" width="80" height="180" rx="6" fill="url(#hi-tower)" stroke="#1A1814" stroke-width="1.4"/>
+      <polygon points="120,120 160,86 200,120" fill="#A087D3" stroke="#1A1814" stroke-width="1.4"/>
+      <g fill="#FBF7F1" opacity=".82">
+        <rect x="132" y="138" width="14" height="14" rx="1"/>
+        <rect x="158" y="138" width="14" height="14" rx="1"/>
+        <rect x="184" y="138" width="14" height="14" rx="1"/>
+        <rect x="132" y="164" width="14" height="14" rx="1"/>
+        <rect x="158" y="164" width="14" height="14" rx="1"/>
+        <rect x="184" y="164" width="14" height="14" rx="1"/>
+        <rect x="132" y="190" width="14" height="14" rx="1"/>
+        <rect x="158" y="190" width="14" height="14" rx="1"/>
+        <rect x="184" y="190" width="14" height="14" rx="1"/>
+        <rect x="132" y="216" width="14" height="14" rx="1"/>
+        <rect x="158" y="216" width="14" height="14" rx="1"/>
+        <rect x="184" y="216" width="14" height="14" rx="1"/>
+        <rect x="132" y="242" width="14" height="14" rx="1"/>
+        <rect x="158" y="242" width="14" height="14" rx="1"/>
+        <rect x="184" y="242" width="14" height="14" rx="1"/>
+      </g>
+      <text x="160" y="320" font-family="Suisse Intl, Inter, sans-serif" font-size="11" fill="#1A1814" text-anchor="middle" opacity=".7">премиум-объект</text>
+    </g>
+    <path class="ill-path" d="M210,210 C280,180 330,220 360,180" fill="none" stroke="#A087D3" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="4 6"/>
+    <g class="ill-node n2">
+      <rect x="320" y="120" width="120" height="200" rx="22" fill="#FBF7F1" stroke="#1A1814" stroke-width="1.6"/>
+      <rect x="330" y="132" width="100" height="158" rx="6" fill="#F3ECDF"/>
+      <circle cx="380" cy="306" r="6" fill="none" stroke="#1A1814" stroke-width="1.4"/>
+      <g transform="translate(360,158)">
+        <circle cx="20" cy="20" r="20" fill="#229ED9"/>
+        <path d="M11 20.5 L30 12.5 L27 30.5 L21.5 27 L17.5 31 L18 25 L11 20.5 Z" fill="#fff"/>
+      </g>
+      <rect x="334" y="216" width="92" height="8" rx="3" fill="#1A1814" opacity=".15"/>
+      <rect x="334" y="232" width="68" height="8" rx="3" fill="#1A1814" opacity=".12"/>
+      <rect x="334" y="252" width="92" height="22" rx="6" fill="#A087D3" opacity=".18"/>
+      <text x="380" y="267" font-family="Suisse Intl, Inter, sans-serif" font-size="10" fill="#A087D3" text-anchor="middle" font-weight="600">Telegram Ads</text>
+    </g>
+    <path class="ill-path" d="M450,200 C510,200 540,210 580,210" fill="none" stroke="#5CBA8C" stroke-width="2.2" stroke-linecap="round"/>
+    <polygon points="578,204 590,210 578,216" fill="#5CBA8C"/>
+    <g class="ill-node n3">
+      <circle cx="608" cy="208" r="42" fill="#ECFDF5" stroke="#5CBA8C" stroke-width="1.6"/>
+      <g transform="translate(584,184)" stroke="#1A1814" stroke-width="1.4" fill="none">
+        <circle cx="14" cy="22" r="10" fill="#fff"/>
+        <path d="M22 18 L40 18 L40 26 L34 26 L34 30 L30 30 L30 26 L24 26" fill="#fff"/>
+      </g>
+      <text x="608" y="266" font-family="Suisse Intl, Inter, sans-serif" font-size="11" fill="#1A1814" text-anchor="middle" opacity=".75">сделка · 15 млн</text>
+    </g>
+    <g class="ill-cloud" transform="translate(60,52)">
+      <rect x="0" y="0" width="170" height="44" rx="14" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.2"/>
+      <circle cx="14" cy="22" r="6" fill="#5CBA8C"/>
+      <text x="28" y="20" font-family="Suisse Intl, Inter, sans-serif" font-size="11" fill="#1A1814" font-weight="600">CPM 310 ₽</text>
+      <text x="28" y="34" font-family="Suisse Intl, Inter, sans-serif" font-size="10" fill="#5C5750">в 2,8 раза ниже рынка</text>
+    </g>
+    <g class="ill-cloud" transform="translate(490,46)">
+      <rect x="0" y="0" width="170" height="44" rx="14" fill="#FFFDF6" stroke="#1A1814" stroke-width="1.2"/>
+      <circle cx="14" cy="22" r="6" fill="#A087D3"/>
+      <text x="28" y="20" font-family="Suisse Intl, Inter, sans-serif" font-size="11" fill="#1A1814" font-weight="600">6 сделок · 4 мес</text>
+      <text x="28" y="34" font-family="Suisse Intl, Inter, sans-serif" font-size="10" fill="#5C5750">260 обращений с номером</text>
+    </g>
+  </svg>
+</div>
 <article class="article">
 <h2 id="sec-1" class="reveal">Что такое Telegram Ads для недвижимости и почему это работает</h2>
 <p>Telegram Ads для недвижимости. Это performance-инструмент, который позволяет агентствам и застройщикам привлекать целевые обращения с измеримой стоимостью и прогнозируемой конверсией. В отличие от посевов в региональных пабликах или классической таргетированной рекламы, Telegram Ads даёт доступ к платёжеспособной аудитории финансовых и инвестиционных каналов, той самой аудитории, которая рассматривает недвижимость как инструмент сохранения капитала.</p>
 <p>В этом кейсе мы покажем, как системная работа с Telegram-каналом и Telegram Ads позволила закрыть <strong>6 сделок со средним чеком 15 млн рублей</strong> за четыре месяца, с бюджетом чуть больше миллиона рублей.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Премиум не покупают с таргета в ВК, премиум читают в Telegram между чатом про венчур и новостями ЦБ.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Берите каналы про финансы, инвестиции и управление капиталом, там лежит платёжеспособная аудитория с готовым контекстом про сохранение денег.</div>
+  </div>
+</div>
 <h2 id="sec-2" class="reveal">О проекте: задача и контекст</h2>
 <p><strong>Клиент:</strong> агентство недвижимости в Санкт-Петербурге.</p>
 <p><strong>Цель:</strong> увеличить оборот с 1 млрд до 5 млрд рублей в год за счёт системной лидогенерации через Telegram.</p>
@@ -287,6 +406,17 @@ img{max-width:100%;display:block}
 <h3>Частота и форматы публикаций</h3>
 <ul><li>до <strong>двух постов в день</strong>;</li><li>еженедельный креативный контент: архитектурные достопримечательности в стиле Захи Хадид;</li><li>голосовые подкасты и видео с брокерами.</li></ul>
 <p><strong>Результат подготовки:</strong> 64 комментария на голосовой подкаст, обращения начали приходить как из рекламы, так и из органического контента, <strong>20% обращений в месяц</strong> генерировал сам канал без рекламы.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Без подготовленного канала Telegram Ads сливает бюджет в подписки, которые никогда не дойдут до заявки.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Подготовка занимает 2-3 недели: контент-связки под каждый объект, кодовые слова для WhatsApp, интеграция с amoCRM. Потом каждая заявка считается до сделки.</div>
+  </div>
+</div>
 <h2 id="sec-4" class="reveal">Этап 2: стратегия размещения в Telegram Ads</h2>
 <p>После подготовки канала мы перешли к системной рекламе. Ключевое слово, «системной»: не разовые закупки, а управляемый <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">performance-процесс</a> с контролем каждого рубля.</p>
 <h3>Рекламные офферы</h3>
@@ -302,6 +432,17 @@ img{max-width:100%;display:block}
 <h3>Управление бюджетом</h3>
 <p>Мы выстроили чёткую систему управления бюджетом:</p>
 <ul><li>общий бюджет: <strong>700 000 рублей</strong> в неделю (максимум);</li><li>дневной лимит: бюджет делим на 4 недели и 7 дней = <strong>не более 25 000 рублей в день</strong>;</li><li>в выходные и праздничные дни, <strong>ограничение расходов</strong> (активность аудитории ниже);</li><li><strong>80-85% бюджета</strong> направлялось на проверенные связки, <strong>15-20%</strong>, на тестирование новых гипотез.</li></ul>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Креатив в Telegram Ads живёт неделю, не пытайтесь сэкономить на свежей пачке баннеров.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Я держу 100-200 креативов в месяц на проект: 4 оффера, по 25 вариантов текста и обложки, выгоревшие отключаю каждый понедельник.</div>
+  </div>
+</div>
 <h2 id="sec-5" class="reveal">Результаты за четыре месяца</h2>
 <p>Вот конкретные цифры, к которым мы пришли за четыре месяца работы.</p>
 <h3>Финансовые показатели</h3>
@@ -311,6 +452,17 @@ img{max-width:100%;display:block}
 <p>Стоимость квалифицированного клиента <strong>снижалась каждую неделю</strong>. Это происходило благодаря:</p>
 <ul><li><strong>росту лояльности аудитории</strong>, подписчики, которые читают канал 2-3 месяца, конвертируются лучше новых;</li><li><strong>системной работе с данными</strong>, еженедельный анализ и перераспределение бюджета;</li><li><strong>масштабированию эффективных офферов</strong>, 80-85% бюджета уходило в связки с доказанной конверсией;</li><li><strong>минимальными затратами на тесты</strong>, 10-20% бюджета на проверку новых гипотез.</li></ul>
 <p>Вывод: через три месяца системной работы стоимость привлечения клиента <strong>может снизиться на 30%</strong> относительно первого месяца.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> На премиуме считают не CPL, а стоимость квалифицированного клиента: 20 000 ₽ против чека 15 млн окупаются с одной сделки.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Сравнивайте CPL не неделя к неделе, а месяц к месяцу. Лояльная аудитория канала через 2-3 месяца даёт минус 30% к стоимости заявки.</div>
+  </div>
+</div>
 <h2 id="sec-6" class="reveal">Пошаговый чек-лист: как повторить результат</h2>
 <p>Основываясь на этом кейсе, мы выделили ключевые шаги для агентств и застройщиков, которые хотят системно работать с Telegram Ads.</p>
 <h3>Подготовка</h3>
@@ -328,6 +480,17 @@ img{max-width:100%;display:block}
 <p><strong>80-85% бюджета</strong>, на проверенные связки, которые приносят результат прямо сейчас. <strong>15-20%</strong>, на инновации и новые гипотезы. Этот баланс обеспечивает стабильность и развитие одновременно.</p>
 <h3>Анализируйте в динамике</h3>
 <p>Считайте результаты не только за неделю, но за <strong>месяц, квартал, полугодие и год</strong>. Один плохой день не означает, что система сломалась. Один хороший день не означает, что всё идеально. Ценность, в динамике, а не в статике.</p>
+<div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+  <div class="duo-avatars" aria-hidden="true">
+    <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="40" height="40">
+    <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="40" height="40">
+  </div>
+  <div class="tip-bubble">
+    <div class="tip-name">Вика и Саша</div>
+    <div class="tip-line"><strong>Вика:</strong> Уникальность канала важнее любого креатива, скопировать визуал можно за вечер, а тон голоса нельзя.</div>
+    <div class="tip-line sasha"><strong>Саша:</strong> Держите правило 80/20: 80% бюджета в проверенные связки, 20% в эксперименты. Без эксперимента система упрётся в потолок за 2 месяца.</div>
+  </div>
+</div>
 <h2 id="sec-8" class="reveal">Как ГЛАВНОЕ работает с Telegram Ads для недвижимости</h2>
 <p>Мы не «ведём каналы» и не «делаем посты». Мы <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">управляем performance-маркетингом</a> для агентств и застройщиков, с конкретными KPI, сквозной аналитикой и ответственностью за результат в заявках и сделках.</p>
 <p>Наш подход включает:</p>
