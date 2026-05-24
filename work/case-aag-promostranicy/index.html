@@ -548,7 +548,7 @@ footer a:hover{color:var(--accent)}
     </div>
   </div>
 </nav>
-<script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(){window.location.href="/";};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script>
+<script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner")||document.querySelector("nav.nav")||document.querySelector("nav.site-nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var links=nav.querySelector(".nav-links")||nav.querySelector(".crumbs");var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("aria-expanded","false");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(e){e.preventDefault();var open=nav.classList.toggle("burger-open");btn.setAttribute("aria-expanded",open?"true":"false");if(open){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';}else{btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script><style>@media (max-width:1024px){nav.topnav .nav-links,nav.nav .nav-links,nav.site-nav .nav-links,nav.topnav .crumbs{display:none !important}nav.topnav.burger-open .nav-links,nav.nav.burger-open .nav-links,nav.site-nav.burger-open .nav-links,nav.topnav.burger-open .crumbs{display:flex !important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);padding:16px 20px;gap:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.08)}nav.topnav.burger-open,nav.nav.burger-open,nav.site-nav.burger-open{position:relative}}</style>
 
 <details class="toc-mobile">
   <summary>Содержание кейса</summary>
@@ -685,7 +685,7 @@ footer a:hover{color:var(--accent)}
     <div class="sh reveal">
       <span class="tag">Контекст</span>
       <h2>Что было на старте</h2>
-      <p>Премиум-девелопер AAG продаёт мультиформатный объект в центре СПб. Новый продукт на рынке, у застройщика 6–10 рендеров и задача: упаковать позиционирование в простое и ёмкое для холодной аудитории.</p>
+      <p>Премиум-девелопер AAG продаёт мультиформатный объект в центре СПб. Новый продукт на рынке, у застройщика 6-10 рендеров и задача: упаковать позиционирование в простое и ёмкое для холодной аудитории.</p>
     </div>
     <div class="cards-3">
       <div class="card reveal">
@@ -730,7 +730,7 @@ footer a:hover{color:var(--accent)}
     <div class="predict reveal" data-predict>
       <span class="predict-label">Проверь себя</span>
       <h3>Как думаешь, сколько стоит привести читателя на сайт застройщика через нативную статью?</h3>
-      <p class="predict-sub">Средний CPC в Яндекс Директе для недвижимости: около 250–350 ₽. РСЯ-баннеры на холодную аудиторию: 120–180 ₽. А у нас, через ПромоСтраницы?</p>
+      <p class="predict-sub">Средний CPC в Яндекс Директе для недвижимости: около 250-350 ₽. РСЯ-баннеры на холодную аудиторию: 120-180 ₽. А у нас, через ПромоСтраницы?</p>
       <div class="predict-options" role="group" aria-label="Варианты ответа">
         <button class="predict-opt" type="button" data-answer="wrong" data-value="280">≈ 280 ₽<br><small style="font-weight:400;font-size:12px;color:var(--text-secondary)">как в Директе</small></button>
         <button class="predict-opt" type="button" data-answer="wrong" data-value="150">≈ 150 ₽<br><small style="font-weight:400;font-size:12px;color:var(--text-secondary)">как в РСЯ</small></button>
@@ -739,7 +739,7 @@ footer a:hover{color:var(--accent)}
       <div class="predict-reveal" aria-live="polite">
         <h4>Реальный CPC: 64 ₽, в 4 раза дешевле Директа и в 2 раза дешевле РСЯ.</h4>
         <div class="big-num">64 ₽</div>
-        <div class="big-sub">наша средняя цена перехода против 250–350 ₽ в Директе и 120–180 ₽ в РСЯ</div>
+        <div class="big-sub">наша средняя цена перехода против 250-350 ₽ в Директе и 120-180 ₽ в РСЯ</div>
         <ul>
           <li>Платим за дочитывание и переход, а не за показ: на холодной премиум-аудитории это в разы выгоднее медийки</li>
           <li>Серия нативных статей от персонажа собирает релевантных читателей, которым уже интересен объект</li>
@@ -920,7 +920,7 @@ footer a:hover{color:var(--accent)}
           <div class="tip-bubble">
             <div class="tip-name">Вика и Саша</div>
             <div class="tip-line"><strong>Вика:</strong> Персонаж в статье это не «маркетинговая фишка». Это разрешение для читателя не быть продаваемым. Тогда срабатывает доверие, а не оборона.</div>
-            <div class="tip-line sasha"><strong>Саша:</strong> Считайте дочитываемость главным сигналом. Если ниже 40% — переписывайте статью, не докручивайте заголовок. Слабая концепция дороже слабой обложки.</div>
+            <div class="tip-line sasha"><strong>Саша:</strong> Считайте дочитываемость главным сигналом. Если ниже 40%, переписывайте статью, не докручивайте заголовок. Слабая концепция дороже слабой обложки.</div>
           </div>
         </div>
       </div>
@@ -1072,7 +1072,7 @@ footer a:hover{color:var(--accent)}
       <div class="tip-bubble">
         <div class="tip-name">Вика и Саша</div>
         <div class="tip-line"><strong>Вика:</strong> Дочитываемость 54% против бенчмарка Яндекса 25-30% в премиуме это не «удача». Это формат-персонаж. Меняешь голос, меняется метрика.</div>
-        <div class="tip-line sasha"><strong>Саша:</strong> Гоните параллельно 3 кампании с разными группировками обложек. Через неделю смотрите, какая обложка ловит топ-1 по CTR — масштабируйте её, остальные глушите.</div>
+        <div class="tip-line sasha"><strong>Саша:</strong> Гоните параллельно 3 кампании с разными группировками обложек. Через неделю смотрите, какая обложка ловит топ-1 по CTR, масштабируйте её, остальные глушите.</div>
       </div>
     </div>
 
