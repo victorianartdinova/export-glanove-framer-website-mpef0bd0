@@ -3,28 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>602 перехода по 64 ₽ для AAG через ПромоСтраницы — кейс ГЛАВНОЕ</title>
+<title>602 перехода по 64 ₽ для AAG через ПромоСтраницы, кейс ГЛАВНОЕ</title>
 <meta name="description" content="Кейс ГЛАВНОЕ: для AAG Development собрали 602 перехода и 1 115 дочитываний через ПромоСтраницы Яндекса. Бюджет 38 780 ₽, цена за переход 64 ₽, 35 ₽ за 1 000 охвата.">
 <link rel="canonical" href="https://theglavnoe.com/work/case-aag-promostranicy/">
 <link href="/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png" rel="icon" media="(prefers-color-scheme: light)">
 <link href="/assets/framer/images/4J6CXGUmoEtVlMcjzkR0rQZdo.png" rel="icon" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="602 перехода по 64 ₽ для AAG через ПромоСтраницы — кейс ГЛАВНОЕ">
+<meta property="og:title" content="602 перехода по 64 ₽ для AAG через ПромоСтраницы, кейс ГЛАВНОЕ">
 <meta property="og:description" content="AAG Development, квартал AVANT на Петроградской. 1 100 новой аудитории, 602 перехода, 1 115 дочитываний, 35 ₽ за 1 000 охвата.">
 <meta property="og:url" content="https://theglavnoe.com/work/case-aag-promostranicy/">
-<meta property="og:image" content="https://theglavnoe.com/work/case-aag-promostranicy/assets/aag-slide-10.jpg">
+<meta property="og:image" content="https://theglavnoe.com/assets/cases/aag-og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="602 перехода по 64 ₽ для AAG через ПромоСтраницы — кейс ГЛАВНОЕ">
+<meta name="twitter:title" content="602 перехода по 64 ₽ для AAG через ПромоСтраницы, кейс ГЛАВНОЕ">
 <meta name="twitter:description" content="AAG Development, квартал AVANT. 602 перехода, 1 115 дочитываний, 35 ₽ за 1 000 охвата.">
-<meta name="twitter:image" content="https://theglavnoe.com/work/case-aag-promostranicy/assets/aag-slide-10.jpg">
+<meta name="twitter:image" content="https://theglavnoe.com/assets/cases/aag-og-cover.jpg">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "602 перехода по 64 ₽ для AAG Development через ПромоСтраницы Яндекса",
-  "image": "https://theglavnoe.com/work/case-aag-promostranicy/assets/aag-slide-10.jpg",
+  "image": "https://theglavnoe.com/assets/cases/aag-og-cover.jpg",
   "datePublished": "2026-05-22",
   "dateModified": "2026-05-22",
   "author": {
@@ -76,8 +78,13 @@
   --mint-grad-2:#D1FAE5;
   --honey:#F5C24A;
   --card-bg:#FFFFFF;
+  --card-alt:#FBF7F1;
   --card-shadow:0 4px 24px rgba(26,24,20,0.04);
   --card-shadow-strong:0 8px 32px rgba(26,24,20,0.06);
+  --card-shadow-lg:0 8px 32px rgba(26,24,20,0.06);
+  --text-body:#2A2723;
+  --radius-lg:32px;
+  --ease:cubic-bezier(0.22, 1, 0.36, 1);
   --card-radius:24px;
   --max:1080px;
   --pad:24px;
@@ -102,6 +109,13 @@ button{font-family:inherit}
 .topnav .logo{font-weight:600;letter-spacing:.02em;font-size:18px;color:var(--text)}
 .topnav .crumbs{font-size:13px;color:var(--text-secondary)}
 .topnav .crumbs a:hover{color:var(--text)}
+.topnav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:var(--text);cursor:pointer;padding:0;margin-left:auto}
+.topnav .glavnoe-static-burger:hover{color:var(--accent)}
+.topnav .glavnoe-static-burger svg{width:24px;height:24px;display:block}
+@media (max-width:1024px){
+  .topnav .crumbs{display:none !important}
+  .topnav .glavnoe-static-burger{display:flex !important}
+}
 
 /* Hero */
 .hero{padding:80px 0 64px;background:radial-gradient(1200px 600px at 50% -10%,var(--accent-soft),transparent 60%)}
@@ -160,7 +174,7 @@ button{font-family:inherit}
 .stage-slide img{width:100%;height:auto;display:block}
 .stage-slide .cap{padding:16px 20px;font-size:13px;color:var(--text-secondary);border-top:1px solid var(--border);background:var(--bg-soft)}
 
-/* Wow card — wow-блоки между этапами и инсайт-блоки */
+/* Wow card, wow-блоки между этапами и инсайт-блоки */
 .wow{margin-top:28px;border-radius:32px;padding:32px 36px;box-shadow:var(--card-shadow-strong);position:relative;overflow:hidden}
 .wow.lavender{background:linear-gradient(135deg,var(--accent-soft) 0%,var(--accent-grad-2) 100%)}
 .wow.mint{background:linear-gradient(135deg,var(--mint-soft) 0%,var(--mint-grad-2) 100%)}
@@ -192,7 +206,7 @@ button{font-family:inherit}
 .leader-grid .v{font-size:36px;font-weight:600;letter-spacing:-0.02em;color:var(--accent);line-height:1}
 .leader-grid .l{font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.45}
 
-/* Takeaways — финал, единственный тёмный блок */
+/* Takeaways, финал, единственный тёмный блок */
 .takeaways{margin-top:24px;background:#1A1814;color:#F5F2EC;border-radius:32px;padding:48px;box-shadow:var(--card-shadow-strong)}
 .takeaways .tag{color:var(--honey)}
 .takeaways h2{font-size:32px;font-weight:600;letter-spacing:-0.02em;margin:10px 0 22px;color:#FFFCF7;line-height:1.2}
@@ -307,9 +321,224 @@ footer a:hover{color:var(--accent)}
   .metric-hero .value{font-size:44px}
   .metric-card .v{font-size:36px}
 }
+
+/* === Gamification: progress bar === */
+.progress-bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:100;will-change:transform;transition:transform .1s linear}
+
+/* === Gamification: Duo-tip Вика + Саша === */
+.duo-tip{display:flex;gap:14px;align-items:flex-start;margin:28px 0;padding:18px 20px;background:linear-gradient(180deg,#FFFDF6 0%,#FBF3E2 100%);border:1px solid var(--border);border-radius:18px;position:relative;box-shadow:var(--card-shadow)}
+.duo-tip .duo-avatars{flex-shrink:0;display:flex;align-items:center}
+.duo-tip .duo-avatars img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08);background:#FBF7F1}
+.duo-tip .duo-avatars img:last-child{margin-left:-14px}
+.duo-tip .tip-bubble{flex:1;min-width:0}
+.duo-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;letter-spacing:.02em}
+.duo-tip .tip-name .tip-tag{font-size:10px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:6px;text-transform:uppercase;letter-spacing:.08em}
+.duo-tip .tip-line{font-size:15px;color:var(--text-body,#2A2723);line-height:1.55;margin:6px 0}
+.duo-tip .tip-line strong{color:var(--accent);font-weight:600;margin-right:4px}
+.duo-tip .tip-line.sasha strong{color:var(--mint)}
+@media(max-width:640px){.duo-tip{padding:14px 14px;gap:10px;margin:22px 0}.duo-tip .duo-avatars img{width:36px;height:36px}.duo-tip .duo-avatars img:last-child{margin-left:-10px}.duo-tip .tip-line{font-size:14px}}
+
+/* === Gamification: Dual CTA канал + личка === */
+.dual-cta{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px}
+.dual-cta-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:28px 26px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:10px;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;box-shadow:var(--card-shadow)}
+.dual-cta-card:hover{transform:translateY(-3px);box-shadow:var(--card-shadow-strong);border-color:var(--accent)}
+.dual-cta-card .dc-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.dual-cta-card .dc-handle{font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);line-height:1.2}
+.dual-cta-card .dc-desc{font-size:14px;color:var(--text-secondary);line-height:1.55;margin-top:2px}
+.dual-cta-card .dc-arrow{margin-top:auto;padding-top:12px;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.dual-cta-card.accent{border-top:3px solid var(--accent)}
+.dual-cta-card.mint{border-top:3px solid var(--mint)}
+.dual-cta-card.mint .dc-tag, .dual-cta-card.mint .dc-arrow{color:var(--mint)}
+.dual-cta-card.mint:hover{border-color:var(--mint)}
+@media(max-width:720px){.dual-cta{grid-template-columns:1fr;gap:14px}.dual-cta-card{padding:22px 20px}}
+
+/* === Gamification: reveal-on-scroll === */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* === Gamification: mobile TOC === */
+.toc-mobile{display:block;background:var(--card-bg);border:1px solid var(--border);border-radius:16px;margin:24px var(--pad) 0;overflow:hidden}
+.toc-mobile summary{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::after{content:'+';font-size:20px;color:var(--accent);font-weight:600}
+.toc-mobile[open] summary::after{content:'−'}
+.toc-mobile ul{list-style:none;margin:0;padding:0 0 12px}
+.toc-mobile ul li a{display:block;padding:8px 20px;font-size:13px;color:var(--text-secondary)}
+@media (min-width:1100px){.toc-mobile{display:none}}
+
+/* === Gamification: desktop sticky TOC === */
+@media (min-width:1100px){
+  .desktop-toc{position:fixed;top:120px;left:24px;width:200px;z-index:40;font-size:13px}
+  .desktop-toc-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);font-weight:700;margin-bottom:14px;padding-left:14px}
+  .desktop-toc ol{list-style:none;margin:0;padding:0;counter-reset:dtoc}
+  .desktop-toc ol li{counter-increment:dtoc;position:relative;padding:0}
+  .desktop-toc ol li a{display:flex;align-items:center;gap:10px;padding:9px 14px;color:var(--text-secondary);border-radius:10px;transition:all .25s ease;font-weight:500;line-height:1.25}
+  .desktop-toc ol li a::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--bg-soft);border:1.5px solid var(--border);flex:none;transition:all .25s ease}
+  .desktop-toc ol li a:hover{color:var(--text);background:var(--accent-soft)}
+  .desktop-toc ol li.passed a::before{background:var(--mint);border-color:var(--mint)}
+  .desktop-toc ol li.passed a{color:var(--text);text-decoration:line-through;opacity:0.7}
+  .desktop-toc ol li.active a::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .desktop-toc ol li.active a{color:var(--accent);font-weight:600;background:var(--accent-soft)}
+}
+@media (max-width:1099px){.desktop-toc{display:none}}
+
+/* === Gamification: predict-card (Проверь себя) === */
+.predict{margin-top:36px;background:linear-gradient(135deg,#FEF8E6 0%,#FBEFC6 100%);border-radius:32px;padding:40px 44px;box-shadow:var(--card-shadow-strong);max-width:820px;margin-left:auto;margin-right:auto}
+.predict .predict-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#9A6A12;font-weight:700}
+.predict .predict-label::before{content:'?';display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#F5C24A;color:#1A1814;font-weight:700;font-size:14px}
+.predict h3{font-size:24px;font-weight:600;margin:14px 0 8px;color:var(--text);letter-spacing:-0.01em;line-height:1.3}
+.predict .predict-sub{font-size:15px;color:var(--text-secondary);line-height:1.55;margin-bottom:20px}
+.predict .predict-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.predict .predict-opt{background:var(--card-bg);border:2px solid var(--border);border-radius:18px;padding:18px 16px;font-size:18px;font-weight:600;color:var(--text);text-align:center;cursor:pointer;transition:all .25s ease;font-family:inherit;letter-spacing:-0.01em}
+.predict .predict-opt:hover{border-color:var(--accent);transform:translateY(-2px)}
+.predict .predict-opt.wrong{opacity:0.45;border-color:var(--border)}
+.predict .predict-opt.correct{border-color:var(--mint);background:var(--mint-soft);color:var(--mint)}
+.predict .predict-reveal{display:none;margin-top:24px;background:var(--card-bg);border-radius:18px;padding:24px 28px;border-left:4px solid var(--mint);box-shadow:var(--card-shadow)}
+.predict.answered .predict-reveal{display:block;animation:revealIn .5s ease}
+@keyframes revealIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.predict .predict-reveal h4{font-size:18px;font-weight:600;margin-bottom:14px;color:var(--text);letter-spacing:-0.01em}
+.predict .predict-reveal .big-num{font-size:42px;font-weight:600;color:var(--accent);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
+.predict .predict-reveal .big-sub{font-size:13px;color:var(--text-secondary);margin-bottom:18px}
+.predict .predict-reveal ul{margin:0;padding:0;list-style:none}
+.predict .predict-reveal ul li{padding:8px 0;font-size:15px;color:var(--text);display:flex;gap:10px;line-height:1.55}
+.predict .predict-reveal ul li::before{content:'→';color:var(--accent);font-weight:600;flex:none}
+@media (max-width:809px){
+  .predict{padding:28px 22px}
+  .predict h3{font-size:20px}
+  .predict .predict-options{grid-template-columns:1fr;gap:10px}
+  .predict .predict-opt{font-size:16px;padding:16px}
+}
+
+/* === Author pill в hero === */
+.author-pill{display:inline-flex;align-items:center;gap:12px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;padding:6px 18px 6px 6px;box-shadow:var(--card-shadow);text-decoration:none;color:var(--text);transition:transform .25s var(--ease),border-color .25s var(--ease);margin-bottom:18px}
+.author-pill:hover{transform:translateY(-1px);border-color:var(--accent)}
+.author-pill img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+.author-pill .role{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:600;line-height:1}
+.author-pill .name{font-size:14px;font-weight:600;color:var(--text);line-height:1.2;margin-top:4px}
+
+/* === Reading meta под hero === */
+.reading-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;padding:14px 18px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;box-shadow:var(--card-shadow);font-size:13px;color:var(--text-body);max-width:560px}
+.reading-meta .rm-item{display:flex;align-items:center;gap:8px}
+.reading-meta .rm-item .rm-icon{font-size:16px}
+.reading-meta .rm-item strong{color:var(--text);font-weight:600}
+
+/* === Mascot bubble, между этапами === */
+.mascot-bubble{display:flex;align-items:center;gap:16px;background:var(--card-bg);border:1px solid var(--border);border-radius:24px;padding:16px 24px 16px 18px;box-shadow:var(--card-shadow);max-width:560px;margin:32px auto 0}
+.mascot-bubble img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff}
+.mascot-bubble p{font-size:15px;color:var(--text-body);line-height:1.55;margin:0}
+
+/* === Scene cards между этапами (лампочка / ракета / калькулятор / часы) === */
+.scene{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:48px 32px;border-radius:var(--radius-lg);margin:48px auto 0;max-width:680px}
+.scene.lamp{background:linear-gradient(135deg,var(--accent-soft) 0%,var(--accent-grad-2) 100%)}
+.scene.rocket{background:linear-gradient(135deg,var(--mint-soft) 0%,var(--mint-grad-2) 100%)}
+.scene.calc{background:linear-gradient(135deg,#FEF8E6 0%,#FBEFC6 100%)}
+.scene.clock{background:linear-gradient(135deg,#FFF1F1 0%,#FEE1DD 100%)}
+.scene svg{width:96px;height:96px;display:block}
+.scene .scene-text{font-size:18px;color:var(--text);font-weight:600;letter-spacing:-0.01em;line-height:1.35;max-width:520px}
+.scene .scene-sub{font-size:14px;color:var(--text-secondary);line-height:1.55}
+@media (max-width:809px){
+  .scene{padding:36px 24px;margin:32px auto 0}
+  .scene svg{width:72px;height:72px}
+  .scene .scene-text{font-size:16px}
+}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 0 rgba(160,135,211,0))}50%{filter:drop-shadow(0 0 18px rgba(160,135,211,0.45))}}
+.scene.lamp svg{animation:glow 2.6s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.scene.lamp svg{animation:none}}
+
+/* === Animated funnel (SVG с движущимся лидом) === */
+.b2b-flow{margin:32px auto 0;max-width:760px;padding:18px 22px 14px;background:linear-gradient(180deg,#FFFDF6 0%,var(--card-bg) 60%);border:1px solid var(--border);border-radius:18px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.b2b-flow .b2b-svg{width:100%;height:auto;display:block}
+.b2b-caption{margin-top:10px;padding:10px 0 2px;text-align:center;font-size:13px;font-weight:600;color:var(--text);letter-spacing:.02em;border-top:1px dashed var(--border)}
+.b2b-caption .b2b-soon{display:inline-block;margin-left:6px;padding:2px 9px;background:var(--accent);color:#fff;border-radius:6px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;vertical-align:middle}
+.b2b-partners{opacity:0;transform:translateY(6px);transition:opacity .55s var(--ease) .1s,transform .55s var(--ease) .1s}
+.b2b-flow.in .b2b-partners{opacity:1;transform:translateY(0)}
+.b2b-line{stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1.4s var(--ease) .2s}
+.b2b-flow.in .b2b-line{stroke-dashoffset:0}
+.b2b-product{opacity:0;transform:translate(140px,100px);transition:opacity .3s var(--ease),transform 1.3s var(--ease)}
+.b2b-flow.in .b2b-product{animation:b2bProductFly 1.8s var(--ease) .8s forwards}
+@keyframes b2bProductFly{
+  0%{opacity:0;transform:translate(140px,100px)}
+  15%{opacity:1;transform:translate(160px,100px)}
+  75%{opacity:1;transform:translate(330px,100px)}
+  100%{opacity:0;transform:translate(360px,100px)}
+}
+.b2b-broker{opacity:0;transform-origin:center;transform-box:fill-box;transform:scale(.5);transition:opacity .35s var(--ease),transform .45s cubic-bezier(.34,1.56,.64,1)}
+.b2b-flow.in .b2b-broker:nth-child(1){transition-delay:1.5s;opacity:1;transform:scale(1)}
+.b2b-flow.in .b2b-broker:nth-child(2){transition-delay:1.7s;opacity:1;transform:scale(1)}
+.b2b-flow.in .b2b-broker:nth-child(3){transition-delay:1.9s;opacity:1;transform:scale(1)}
+.b2b-line-2{transition-delay:2s}
+.b2b-house{opacity:0;transform-origin:center bottom;transform-box:fill-box;transform:translateY(4px) scale(.7);transition:opacity .4s var(--ease),transform .5s cubic-bezier(.34,1.56,.64,1);transition-delay:calc(2.3s + var(--d, 0s))}
+.b2b-flow.in .b2b-house{opacity:1;transform:translateY(0) scale(1)}
+@media (max-width:680px){.b2b-flow{padding:14px 14px 16px;margin-top:24px}}
+@media (prefers-reduced-motion: reduce){
+  .b2b-partners,.b2b-line,.b2b-product,.b2b-broker,.b2b-house{opacity:1;transform:none;stroke-dashoffset:0;transition:none;animation:none}
+}
+
+.funnel-anim{margin-top:36px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:48px 40px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.funnel-anim .fa-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;margin:0 -8px;padding:0 8px;scrollbar-width:thin}
+.funnel-anim .fa-svg{width:100%;height:auto;max-width:980px;margin:0 auto;display:block;min-width:760px}
+.funnel-anim .fa-node circle.outer{fill:var(--card-alt);stroke:var(--border);stroke-width:2;transition:fill .4s var(--ease),stroke .4s var(--ease)}
+.funnel-anim .fa-node.active circle.outer{fill:var(--accent-soft);stroke:var(--accent)}
+.funnel-anim .fa-node.passed circle.outer{fill:var(--mint-soft);stroke:var(--mint)}
+.funnel-anim .fa-node .label-top{font-size:11px;text-transform:uppercase;letter-spacing:.08em;fill:var(--text-secondary);font-weight:600}
+.funnel-anim .fa-node .label-value{font-size:18px;font-weight:600;fill:var(--text);letter-spacing:-0.01em}
+.funnel-anim .fa-node .label-sub{font-size:11px;fill:var(--text-secondary)}
+.funnel-anim .fa-line{stroke:var(--border);stroke-width:2;fill:none;stroke-dasharray:6 6}
+.funnel-anim .fa-line.passed{stroke:var(--mint)}
+.funnel-anim .fa-lead{fill:var(--accent);filter:drop-shadow(0 4px 10px rgba(160,135,211,0.45));transition:cx 700ms var(--ease),opacity .4s var(--ease) .35s}
+.funnel-anim.house-open .fa-lead{opacity:0}
+.funnel-anim .fa-vika-side{transform-origin:center;transform-box:fill-box;animation:saSashaPulse 3s ease-in-out infinite}
+@keyframes saSashaPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.funnel-anim .fa-vika{opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease);transform-origin:center;transform-box:fill-box}
+.funnel-anim.vika-on .fa-vika{opacity:1;transform:translateY(0)}
+.funnel-anim .fa-house-door{transform:scaleY(1);transform-origin:50% 100%;transform-box:fill-box;transition:transform .55s var(--ease) .15s}
+.funnel-anim.house-open .fa-house-door{transform:scaleY(.08)}
+.funnel-anim .fa-house-key{opacity:0;transform:translateY(4px) rotate(0deg);transform-origin:center;transform-box:fill-box;transition:opacity .55s var(--ease) .35s,transform .55s var(--ease) .35s}
+.funnel-anim.house-open .fa-house-key{opacity:1;transform:translateY(0) rotate(-12deg)}
+.funnel-anim .fa-house-glow{opacity:0;transition:opacity .6s var(--ease) .4s}
+.funnel-anim.house-open .fa-house-glow{opacity:1}
+@media (prefers-reduced-motion: reduce){.funnel-anim .fa-lead{transition:none}.funnel-anim .fa-vika-side{animation:none}.funnel-anim .fa-house-door,.funnel-anim .fa-house-key,.funnel-anim .fa-vika{transition:none}}
+.funnel-anim .fa-caption{margin-top:24px;font-size:15px;color:var(--text-body);text-align:center;line-height:1.5}
+.funnel-anim .fa-caption strong{color:var(--accent)}
+.funnel-anim .fa-replay{display:inline-flex;align-items:center;gap:8px;margin:18px auto 0;padding:10px 18px;background:var(--card-alt);border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--text-secondary);font-weight:600;cursor:pointer;transition:all .2s var(--ease)}
+.funnel-anim .fa-replay:hover{border-color:var(--accent);color:var(--accent)}
+.funnel-anim .fa-replay-wrap{text-align:center}
+@media (max-width:809px){.funnel-anim{padding:28px 18px}}
+
+/* === CPM compare bar chart === */
+.cpm-compare{margin-top:28px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:40px 32px 28px;box-shadow:var(--card-shadow)}
+.cpm-compare h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);font-weight:600;margin-bottom:24px;text-align:center}
+.cpm-bars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:end;min-height:280px}
+.cpm-bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:12px}
+.cpm-bar .col{width:100%;max-width:140px;border-radius:12px 12px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:14px;font-weight:600;font-size:18px;color:var(--text);position:relative;transform-origin:bottom;transform:scaleY(0);transition:transform 1.2s var(--ease)}
+.cpm-bar.in .col{transform:scaleY(1)}
+.cpm-bar.us .col{background:linear-gradient(180deg,var(--mint) 0%,#4AA37A 100%);color:#fff}
+.cpm-bar.avg .col{background:linear-gradient(180deg,#C7CBF6 0%,#9CA5EF 100%);color:#2A2723}
+.cpm-bar.seed .col{background:linear-gradient(180deg,#7280E8 0%,#5263D9 100%);color:#fff}
+.cpm-bar .lbl{font-size:13px;color:var(--text-secondary);text-align:center;line-height:1.4;min-height:36px}
+.cpm-compare .cpm-note{margin-top:24px;padding-top:18px;border-top:1px solid var(--border);font-size:13px;color:var(--text-secondary);text-align:center;line-height:1.6}
+.cpm-compare .cpm-note strong{color:var(--text)}
+@media (max-width:520px){.cpm-bars{gap:14px}.cpm-bar .col{font-size:15px}}
+
+/* === Gamification: completion marker (Ты прошёл кейс) === */
+.completion{margin:48px auto 0;text-align:center;max-width:560px}
+.completion-circle{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--mint) 0%,#4AA37A 100%);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(92,186,140,0.35);position:relative}
+.completion-circle svg{width:44px;height:44px;color:#fff}
+.completion-circle::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--mint);opacity:0;animation:pulseRing 2.4s ease infinite}
+@keyframes pulseRing{0%{opacity:0.4;transform:scale(1)}100%{opacity:0;transform:scale(1.25)}}
+.completion h4{font-size:24px;font-weight:600;margin:24px 0 10px;color:var(--text);letter-spacing:-0.01em;line-height:1.25}
+.completion p{font-size:16px;color:var(--text-secondary);line-height:1.55}
+.completion-cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:14px 26px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;font-size:14px;font-weight:600;color:var(--text);text-decoration:none;transition:all .25s ease;box-shadow:var(--card-shadow)}
+.completion-cta:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){.completion-circle::after{animation:none}}
 </style>
 </head>
 <body>
+
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
 <nav class="topnav">
   <div class="wrap topnav-inner">
@@ -319,53 +548,157 @@ footer a:hover{color:var(--accent)}
     </div>
   </div>
 </nav>
+<script>(function(){function inject(){var nav=document.querySelector("nav.topnav .topnav-inner");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';btn.onclick=function(){window.location.href="/";};nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script>
+
+<details class="toc-mobile">
+  <summary>Содержание кейса</summary>
+  <ul>
+    <li><a href="#context">Что было на старте</a></li>
+    <li><a href="#predict">Проверь себя</a></li>
+    <li><a href="#funnel">Воронка кампании</a></li>
+    <li><a href="#stages">Как сделали</a></li>
+    <li><a href="#takeaways-block">Что забрать с собой</a></li>
+  </ul>
+</details>
+
+<nav class="desktop-toc" id="desktopToc" aria-label="Карта кейса">
+  <div class="desktop-toc-title">Этапы кейса</div>
+  <ol>
+    <li data-target="context"><a href="#context">Что было на старте</a></li>
+    <li data-target="predict"><a href="#predict">Проверь себя</a></li>
+    <li data-target="funnel"><a href="#funnel">Воронка кампании</a></li>
+    <li data-target="stages"><a href="#stages">Как сделали</a></li>
+    <li data-target="takeaways-block"><a href="#takeaways-block">Забрать с собой</a></li>
+  </ol>
+</nav>
 
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="anim-fade">
+      <a class="author-pill" href="/" aria-label="Кейс разбирает Виктория Нартдинова, founder ГЛАВНОЕ">
+        <img src="assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова">
+        <span>
+          <span class="role">Разбирает кейс</span><br>
+          <span class="name">Виктория Нартдинова · founder ГЛАВНОЕ</span>
+        </span>
+      </a>
       <span class="tag">Кейс · ПромоСтраницы Яндекса</span>
       <h1>602 перехода по 64 ₽ для AAG через ПромоСтраницы</h1>
-      <p class="hero-sub">Для квартала AVANT, премиум-редевелопмента фабрики Эриха Мендельсона на Петроградской, собрали 1 100 новой аудитории, 602 перехода на сайт и 1 115 дочитываний за бюджет 38 780 ₽.</p>
+      <p class="hero-sub">Для квартала AVANT, редевелопмента фабрики Эриха Мендельсона на Петроградской, собрали 1 100 новой аудитории, 602 перехода на сайт и 1 115 дочитываний за бюджет 38 780 ₽.</p>
       <div class="hero-meta">
         <span class="chip">Клиент · AAG Development, СПб</span>
         <span class="chip">Объект · квартал AVANT</span>
         <span class="chip">Бюджет · 38 780 ₽</span>
+      </div>
+      <div class="reading-meta" aria-label="Что узнаешь из кейса">
+        <span class="rm-item"><span class="rm-icon">⏱</span> <span><strong>10 мин</strong> чтения</span></span>
+        <span class="rm-item"><span class="rm-icon">📊</span> <span><strong>4 этапа</strong> работы</span></span>
+        <span class="rm-item"><span class="rm-icon">🎯</span> <span>для девелоперов и брокеров</span></span>
       </div>
       <div class="hero-cta">
         <a class="btn btn-primary" href="/product/product-statii/">Запустить ПромоСтраницы</a>
         <a class="btn btn-ghost" href="#funnel">Читать кейс</a>
       </div>
     </div>
-    <div class="hero-side"><aside class="metric-hero">
+    <div class="hero-side"><aside class="metric-hero reveal">
       <div class="label">Цена за переход</div>
       <div class="value">64 ₽</div>
       <div class="unit">средняя по всем кампаниям</div>
       <div class="compare">35 ₽ за 1 000 охвата</div>
-    </aside><div class="avatars" data-glavnoe-avatars role="group" aria-label="Клиент: AAG Development · СМИ: Эфир ГЛАВНОЕ"><div class="av"><div class="av-circle"><img src="assets/avatars/client-barakovskaya.jpg" alt="Евгения Бараковская, руководитель рекламы AAG Development" loading="lazy"></div><div class="av-role">Клиент</div></div><div class="av-sep" aria-hidden="true"></div><div class="av"><div class="av-circle"><img src="assets/avatars/media-efir.svg" alt="Эфир ГЛАВНОЕ — внутренняя публикация кейса" loading="lazy"></div><div class="av-role">СМИ</div></div></div><p class="avatars-caption">Клиент: AAG Development · СМИ: Эфир ГЛАВНОЕ</p></div>
+    </aside><div class="avatars" data-glavnoe-avatars role="group" aria-label="Клиент: AAG Development · СМИ: Эфир FireStory"><div class="av"><div class="av-circle"><img src="assets/avatars/client-barakovskaya.jpg" alt="Евгения Бараковская, руководитель рекламы AAG Development" loading="lazy"></div><div class="av-role">Клиент</div></div><div class="av-sep" aria-hidden="true"></div><div class="av"><div class="av-circle"><img src="assets/avatars/media-efir.svg" alt="Эфир FireStory, внутренняя публикация кейса" loading="lazy"></div><div class="av-role">СМИ</div></div></div><p class="avatars-caption">Клиент: AAG Development · СМИ: Эфир FireStory</p></div>
+  </div>
+  <div class="wrap">
+    <div class="b2b-flow reveal" aria-label="Как работает связка: мы делаем ПромоСтраницу, клиент-девелопер ведёт людей на сайт ЖК">
+      <svg class="b2b-svg" viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" role="img">
+        <defs>
+          <clipPath id="b2bVikaAag"><circle cx="50" cy="100" r="22"/></clipPath>
+          <clipPath id="b2bSashaAag"><circle cx="84" cy="100" r="22"/></clipPath>
+        </defs>
+        <g class="b2b-partners">
+          <ellipse cx="67" cy="156" rx="58" ry="6" fill="#1A1814" opacity="0.06"/>
+          <circle cx="50" cy="100" r="24" fill="#FFFFFF"/>
+          <circle cx="50" cy="100" r="23" fill="none" stroke="#A087D3" stroke-width="1.6"/>
+          <image href="/assets/avatars/vika-avatar.jpg" x="28" y="78" width="44" height="44" clip-path="url(#b2bVikaAag)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="84" cy="100" r="24" fill="#FFFFFF"/>
+          <circle cx="84" cy="100" r="23" fill="none" stroke="#5CBA8C" stroke-width="1.6"/>
+          <image href="/assets/avatars/sasha-photo.jpg" x="62" y="78" width="44" height="44" clip-path="url(#b2bSashaAag)" preserveAspectRatio="xMidYMid slice"/>
+        </g>
+        <path class="b2b-line b2b-line-1" d="M 130 100 L 270 100" stroke="#A087D3" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="4 6"/>
+        <g class="b2b-product">
+          <rect x="-12" y="-12" width="24" height="24" rx="5" fill="#A087D3"/>
+          <rect x="-7" y="-7" width="14" height="14" rx="2" fill="#ECE6F8" opacity="0.7"/>
+          <circle cx="0" cy="0" r="1.6" fill="#FFFFFF"/>
+        </g>
+        <g class="b2b-brokers">
+          <g class="b2b-broker">
+            <circle cx="300" cy="68" r="22" fill="#FFFFFF" stroke="#1A1814" stroke-width="1.4"/>
+            <circle cx="300" cy="60" r="5" fill="#F5D2B7"/>
+            <path d="M 287 84 Q 287 72 295 70 L 305 70 Q 313 72 313 84 Z" fill="#1A1814"/>
+            <path d="M 297 71 L 300 78 L 303 71 Z" fill="#FFFFFF"/>
+            <path d="M 299 72 L 301 72 L 302 82 L 298 82 Z" fill="#A087D3"/>
+          </g>
+          <g class="b2b-broker">
+            <circle cx="300" cy="132" r="22" fill="#FFFFFF" stroke="#1A1814" stroke-width="1.4"/>
+            <circle cx="300" cy="124" r="5" fill="#F5D2B7"/>
+            <path d="M 287 148 Q 287 136 295 134 L 305 134 Q 313 136 313 148 Z" fill="#1A1814"/>
+            <path d="M 297 135 L 300 142 L 303 135 Z" fill="#FFFFFF"/>
+            <path d="M 299 136 L 301 136 L 302 146 L 298 146 Z" fill="#5CBA8C"/>
+          </g>
+          <g class="b2b-broker">
+            <circle cx="380" cy="100" r="22" fill="#FFFFFF" stroke="#1A1814" stroke-width="1.4"/>
+            <circle cx="380" cy="92" r="5" fill="#F5D2B7"/>
+            <path d="M 367 116 Q 367 104 375 102 L 385 102 Q 393 104 393 116 Z" fill="#1A1814"/>
+            <path d="M 377 103 L 380 110 L 383 103 Z" fill="#FFFFFF"/>
+            <path d="M 379 104 L 381 104 L 382 114 L 378 114 Z" fill="#F5C24A"/>
+          </g>
+        </g>
+        <path class="b2b-line b2b-line-2" d="M 420 100 L 540 100" stroke="#A087D3" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="4 6"/>
+        <g class="b2b-crowd">
+          <g class="b2b-house" style="--d:.1s"><path d="M 558 50 L 566 42 L 574 50 Z" fill="#A087D3"/><rect x="558" y="50" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="563" y="54" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.2s"><path d="M 588 50 L 596 42 L 604 50 Z" fill="#5CBA8C"/><rect x="588" y="50" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="593" y="54" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.3s"><path d="M 618 50 L 626 42 L 634 50 Z" fill="#F5C24A"/><rect x="618" y="50" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="623" y="54" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.4s"><path d="M 648 50 L 656 42 L 664 50 Z" fill="#A087D3"/><rect x="648" y="50" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="653" y="54" width="6" height="8" fill="#F5C24A"/></g>
+          <g class="b2b-house" style="--d:.5s"><path d="M 678 50 L 686 42 L 694 50 Z" fill="#5CBA8C"/><rect x="678" y="50" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="683" y="54" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.6s"><path d="M 708 50 L 716 42 L 724 50 Z" fill="#F5C24A"/><rect x="708" y="50" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="713" y="54" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.25s"><path d="M 573 90 L 581 82 L 589 90 Z" fill="#5CBA8C"/><rect x="573" y="90" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="578" y="94" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.35s"><path d="M 603 90 L 611 82 L 619 90 Z" fill="#A087D3"/><rect x="603" y="90" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="608" y="94" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.45s"><path d="M 633 90 L 641 82 L 649 90 Z" fill="#F5C24A"/><rect x="633" y="90" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="638" y="94" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.55s"><path d="M 663 90 L 671 82 L 679 90 Z" fill="#5CBA8C"/><rect x="663" y="90" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="668" y="94" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.65s"><path d="M 693 90 L 701 82 L 709 90 Z" fill="#A087D3"/><rect x="693" y="90" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="698" y="94" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.4s"><path d="M 558 130 L 566 122 L 574 130 Z" fill="#F5C24A"/><rect x="558" y="130" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="563" y="134" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.5s"><path d="M 588 130 L 596 122 L 604 130 Z" fill="#5CBA8C"/><rect x="588" y="130" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="593" y="134" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.6s"><path d="M 618 130 L 626 122 L 634 130 Z" fill="#A087D3"/><rect x="618" y="130" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="623" y="134" width="6" height="8" fill="#F5C24A"/></g>
+          <g class="b2b-house" style="--d:.7s"><path d="M 648 130 L 656 122 L 664 130 Z" fill="#5CBA8C"/><rect x="648" y="130" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="653" y="134" width="6" height="8" fill="#A087D3"/></g>
+          <g class="b2b-house" style="--d:.8s"><path d="M 678 130 L 686 122 L 694 130 Z" fill="#F5C24A"/><rect x="678" y="130" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="683" y="134" width="6" height="8" fill="#5CBA8C"/></g>
+          <g class="b2b-house" style="--d:.9s"><path d="M 708 130 L 716 122 L 724 130 Z" fill="#A087D3"/><rect x="708" y="130" width="16" height="12" fill="#FFFFFF" stroke="#1A1814" stroke-width="1"/><rect x="713" y="134" width="6" height="8" fill="#5CBA8C"/></g>
+        </g>
+      </svg>
+      <div class="b2b-caption">B2B AI-продукт для real estate<span class="b2b-soon">скоро</span></div>
+    </div>
   </div>
 </header>
 
 <!-- CONTEXT -->
-<section class="section">
+<section class="section" id="context">
   <div class="wrap">
-    <div class="sh">
+    <div class="sh reveal">
       <span class="tag">Контекст</span>
       <h2>Что было на старте</h2>
-      <p>Премиум-девелопер AAG продаёт мультиформатный объект в центре СПб. Новый продукт на рынке, у застройщика 6–10 рендеров и задача — упаковать позиционирование в простое и ёмкое для холодной аудитории.</p>
+      <p>Премиум-девелопер AAG продаёт мультиформатный объект в центре СПб. Новый продукт на рынке, у застройщика 6–10 рендеров и задача: упаковать позиционирование в простое и ёмкое для холодной аудитории.</p>
     </div>
     <div class="cards-3">
-      <div class="card">
+      <div class="card reveal">
         <div class="badge">Клиент</div>
         <h3>AAG Development, СПб</h3>
-        <p>Премиум-девелопер. Объект — квартал AVANT, мультиформатный редевелопмент фабрики Эриха Мендельсона на Петроградской: отель, лофт, локация с историей, новаторство планировок.</p>
+        <p>Девелопер с экстра-подходом и визионерским продуктом на рынке. Объект: квартал AVANT, редевелопмент фабрики Эриха Мендельсона на Петроградской: отель, лофт, локация с историей, новаторство планировок.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <div class="badge">Точка А</div>
-        <h3>Привычная классика без функции</h3>
-        <p>Рынок Петербурга 2022 года — смелых проектов нет. У застройщика 6–10 рендеров и нет упакованного смысла, который зацепит холодную аудиторию.</p>
+        <h3>Новый продукт для рынка без аналогов</h3>
+        <p>Функциональность в каждой точке продукта и сложность с простым позиционированием для привлечения новой аудитории из диджитал-каналов.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <div class="badge">Гипотеза</div>
         <h3>Контент-маркетинг через нативные статьи</h3>
         <p>Запустить ПромоСтраницы Яндекса с серией статей от лица персонажа. Распространить позиционирование и собрать тёплую аудиторию для других рекламных каналов.</p>
@@ -374,50 +707,123 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- FUNNEL -->
+<!-- Duo-tip: когда выбирать ПромоСтраницы -->
+<section class="section" style="padding:0;border-top:0">
+  <div class="wrap">
+    <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+      <div class="duo-avatars" aria-hidden="true">
+        <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="44" height="44">
+        <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="44" height="44">
+      </div>
+      <div class="tip-bubble">
+        <div class="tip-name">Вика и Саша</div>
+        <div class="tip-line"><strong>Вика:</strong> ПромоСтраницы это не «вместо Telegram Ads», а отдельная воронка для нового продукта без отзывов. Когда продавать ещё нечем, продавайте историю.</div>
+        <div class="tip-line sasha"><strong>Саша:</strong> Выбирайте ПромоСтраницы, если у объекта 0 поисковых запросов и нет упоминаний. Статья создаст спрос сама, а не догонит существующий.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREDICT: интерактивный вопрос (геймификация) -->
+<section class="section" style="padding:32px 0" id="predict">
+  <div class="wrap">
+    <div class="predict reveal" data-predict>
+      <span class="predict-label">Проверь себя</span>
+      <h3>Как думаешь, сколько стоит привести читателя на сайт застройщика через нативную статью?</h3>
+      <p class="predict-sub">Средний CPC в Яндекс Директе для недвижимости: около 250–350 ₽. РСЯ-баннеры на холодную аудиторию: 120–180 ₽. А у нас, через ПромоСтраницы?</p>
+      <div class="predict-options" role="group" aria-label="Варианты ответа">
+        <button class="predict-opt" type="button" data-answer="wrong" data-value="280">≈ 280 ₽<br><small style="font-weight:400;font-size:12px;color:var(--text-secondary)">как в Директе</small></button>
+        <button class="predict-opt" type="button" data-answer="wrong" data-value="150">≈ 150 ₽<br><small style="font-weight:400;font-size:12px;color:var(--text-secondary)">как в РСЯ</small></button>
+        <button class="predict-opt" type="button" data-answer="correct" data-value="64">≈ 64 ₽<br><small style="font-weight:400;font-size:12px;color:var(--text-secondary)">в 4 раза дешевле Директа</small></button>
+      </div>
+      <div class="predict-reveal" aria-live="polite">
+        <h4>Реальный CPC: 64 ₽, в 4 раза дешевле Директа и в 2 раза дешевле РСЯ.</h4>
+        <div class="big-num">64 ₽</div>
+        <div class="big-sub">наша средняя цена перехода против 250–350 ₽ в Директе и 120–180 ₽ в РСЯ</div>
+        <ul>
+          <li>Платим за дочитывание и переход, а не за показ: на холодной премиум-аудитории это в разы выгоднее медийки</li>
+          <li>Серия нативных статей от персонажа собирает релевантных читателей, которым уже интересен объект</li>
+          <li>Параллельные кампании с разными обложками и заголовками: связки, которые работают, оставляем; остальные выключаем</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cpm-compare reveal" data-cpm-compare aria-label="Сравнение цены перехода">
+      <h4>Цена перехода на сайт застройщика</h4>
+      <div class="cpm-bars">
+        <div class="cpm-bar seed" data-bar style="--h:84%"><div class="col" style="height:230px">280 ₽</div><div class="lbl">Яндекс Директ<br>недвижимость</div></div>
+        <div class="cpm-bar avg" data-bar style="--h:46%"><div class="col" style="height:126px">150 ₽</div><div class="lbl">РСЯ-баннеры<br>холодная аудитория</div></div>
+        <div class="cpm-bar us" data-bar style="--h:20%"><div class="col" style="height:55px">64 ₽</div><div class="lbl">ПромоСтраницы<br>наш кейс AAG</div></div>
+      </div>
+      <div class="cpm-note">У ПромоСтраниц <strong>в 4 раза дешевле</strong>, чем Директ, и <strong>в 2 раза дешевле</strong>, чем РСЯ. Это и есть причина выбора формата для премиум-объекта.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL, анимированная воронка кампании -->
 <section class="section" id="funnel">
   <div class="wrap">
-    <div class="sh">
-      <span class="tag">Воронка</span>
-      <h2>Сквозная аналитика: от показов до дочитываний</h2>
-      <p>Реальные цифры по итогам кампании в Яндекс ПромоСтраницах. Бюджет, охват новой аудитории, переходы на сайт застройщика и дочитывания статей.</p>
+    <div class="sh reveal">
+      <span class="tag">Воронка кампании</span>
+      <h2>Как 38 780 ₽ превращаются в 602 перехода на сайт</h2>
+      <p>Бюджет проходит 4 точки: показ статьи, дочитывание, переход на сайт и дозабор аудитории через Метрику. Цифры реальные, за период открутки.</p>
     </div>
-    <div class="funnel">
-      <div class="funnel-step">
-        <div class="step-n">01 · Бюджет</div>
-        <div class="step-v">38 780 ₽</div>
-        <div class="step-l">потрачено в Яндекс ПромоСтраницах</div>
+    <div class="funnel-anim reveal" data-funnel-anim>
+      <div class="fa-scroll">
+      <svg class="fa-svg" viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Воронка ПромоСтраниц: бюджет, охват, дочитывания, переходы">
+        <line class="fa-line" data-line="0" x1="180" y1="140" x2="380" y2="140"/>
+        <line class="fa-line" data-line="1" x1="460" y1="140" x2="660" y2="140"/>
+        <line class="fa-line" data-line="2" x1="740" y1="140" x2="840" y2="140"/>
+
+        <g class="fa-node" data-node="0">
+          <circle class="outer" cx="140" cy="140" r="40"/>
+          <text class="label-top" x="140" y="60" text-anchor="middle">01 · Бюджет</text>
+          <text x="140" y="148" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1814">₽</text>
+          <text class="label-value" x="140" y="212" text-anchor="middle">38 780 ₽</text>
+          <text class="label-sub" x="140" y="232" text-anchor="middle">Яндекс ПромоСтраницы</text>
+        </g>
+        <g class="fa-node" data-node="1">
+          <circle class="outer" cx="420" cy="140" r="40"/>
+          <text class="label-top" x="420" y="60" text-anchor="middle">02 · Охват</text>
+          <text x="420" y="148" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1814">👁</text>
+          <text class="label-value" x="420" y="212" text-anchor="middle">1 100</text>
+          <text class="label-sub" x="420" y="232" text-anchor="middle">35 ₽ за 1 000 показов</text>
+        </g>
+        <g class="fa-node" data-node="2">
+          <circle class="outer" cx="700" cy="140" r="40"/>
+          <text class="label-top" x="700" y="60" text-anchor="middle">03 · Дочитывания</text>
+          <text x="700" y="148" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1814">📖</text>
+          <text class="label-value" x="700" y="212" text-anchor="middle">1 115</text>
+          <text class="label-sub" x="700" y="232" text-anchor="middle">54% дочитываемость · 2:20 ср.</text>
+        </g>
+        <g class="fa-node" data-node="3">
+          <circle class="outer" cx="880" cy="140" r="40"/>
+          <text class="label-top" x="880" y="60" text-anchor="middle">04 · Переходы</text>
+          <text x="880" y="148" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1814">→</text>
+          <text class="label-value" x="880" y="212" text-anchor="middle">602</text>
+          <text class="label-sub" x="880" y="232" text-anchor="middle">64 ₽ за переход на сайт</text>
+        </g>
+
+        <circle class="fa-lead" cx="140" cy="140" r="14" data-funnel-lead/>
+      </svg>
       </div>
-      <div class="funnel-step">
-        <div class="step-n">02 · Охват</div>
-        <div class="step-v">1 100</div>
-        <div class="step-l">новой аудитории · 35 ₽ за 1 000</div>
-      </div>
-      <div class="funnel-step accent">
-        <div class="step-n">03 · Переходы</div>
-        <div class="step-v">602</div>
-        <div class="step-l">на сайт застройщика · 64 ₽/шт</div>
-      </div>
-      <div class="funnel-step">
-        <div class="step-n">04 · Дочитывания</div>
-        <div class="step-v">1 115</div>
-        <div class="step-l">54% дочитываемость · 2:20 среднее</div>
-      </div>
+      <p class="fa-caption">Главная точка контроля: <strong>дочитывания</strong>. 54%: в 2 раза выше бенчмарка Яндекса по премиум-недвижимости. Без них переходов не было бы.</p>
+      <div class="fa-replay-wrap"><button class="fa-replay" type="button" data-funnel-replay>↻ Запустить ещё раз</button></div>
     </div>
-    <p class="funnel-note">ПромоСтраницы работают как актив: дочитавшие статью попадают в аудиторные сегменты Яндекса и догоняются в других рекламных каналах. Контент продолжает приводить переходы и после открутки бюджета.</p>
+    <p class="funnel-note">ПромоСтраницы работают как актив: дочитавшие попадают в аудиторные сегменты Яндекса и догоняются в РСЯ и Поиске. Контент продолжает приводить переходы и после открутки бюджета.</p>
   </div>
 </section>
 
 <!-- STAGES -->
-<section class="section">
+<section class="section" id="stages">
   <div class="wrap">
-    <div class="sh">
+    <div class="sh reveal">
       <span class="tag">Этапы</span>
       <h2>Как сделали</h2>
       <p>Четыре шага: изучили объект и рынок, придумали формат, запустили нативные статьи, получили дочитывания и переходы.</p>
     </div>
 
-    <div class="stage">
+    <div class="stage reveal">
       <div>
         <div class="stage-label">Этап</div>
         <div class="stage-num">01</div>
@@ -425,7 +831,7 @@ footer a:hover{color:var(--accent)}
       <div>
         <div class="stage-label">Изучили</div>
         <h3>Объект, рынок СПб и аудиторию премиум-сегмента</h3>
-        <p>Разобрали продукт AAG, конкурентное поле и боль аудитории. Зафиксировали, что у застройщика нет упакованного смысла под холодного читателя — есть только рендеры и описания планировок.</p>
+        <p>Разобрали продукт AAG, конкурентное поле и боль аудитории. Зафиксировали, что у застройщика нет упакованного смысла под холодного читателя, есть только рендеры и описания планировок.</p>
         <ul>
           <li>Изучили объект: квартал AVANT, мультиформатный редевелопмент фабрики Эриха Мендельсона на Петроградской</li>
           <li>Зафиксировали рынок СПб 2022 года: привычная классика без функции, смелых проектов мало</li>
@@ -433,25 +839,48 @@ footer a:hover{color:var(--accent)}
           <li>Поняли ключевую задачу: упаковать позиционирование в простое и ёмкое</li>
         </ul>
         <div class="stage-slide">
-          <img src="assets/aag-slide-07.jpg" alt="Слайд 07 из эфира: AVANT — мультиформатный проект редевелопмента фабрики на Петроградской" loading="lazy">
+          <img src="assets/aag-slide-07.jpg" alt="Слайд 07 из эфира: AVANT, мультиформатный проект редевелопмента фабрики на Петроградской" loading="lazy">
           <div class="cap">Слайд из эфира 16.04.2026 · Объект AAG: квартал AVANT, бережный редевелопмент фабрики Эриха Мендельсона</div>
         </div>
 
-        <!-- Wow-блок Этап 01 — что поняли в первую неделю -->
+        <!-- Wow-блок Этап 01, что поняли в первую неделю -->
         <div class="wow lavender">
           <div class="wow-label">Что поняли на старте</div>
           <div class="wow-title">Три инсайта, которые поменяли подход к рекламе AAG</div>
           <ul>
-            <li>У застройщика рендеры есть, упакованного смысла нет — холодный читатель не понимает чем AVANT отличается от соседних премиум-ЖК</li>
+            <li>У застройщика рендеры есть, упакованного смысла нет: холодный читатель не понимает чем AVANT отличается от соседних премиум-ЖК</li>
             <li>Премиум-аудитория Петербурга ловится не таргетингом «премиум», а нативным контентом про культуру и место</li>
-            <li>Объект мультиформатный — значит надо несколько ценностей в разных статьях, а не одна обёртка для всего</li>
+            <li>Объект мультиформатный, значит надо несколько ценностей в разных статьях, а не одна обёртка для всего</li>
           </ul>
           <div class="wow-foot">Это и есть концепция. Можно скопировать под свой объект.</div>
+        </div>
+
+        <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+          <div class="duo-avatars" aria-hidden="true">
+            <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="44" height="44">
+            <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="44" height="44">
+          </div>
+          <div class="tip-bubble">
+            <div class="tip-name">Вика и Саша</div>
+            <div class="tip-line"><strong>Вика:</strong> Самая частая ошибка с премиум-ЖК: продавать «локацию, статус, инвестиции» одной обёрткой. Под мультиформатный объект нужны разные истории под разные сегменты.</div>
+            <div class="tip-line sasha"><strong>Саша:</strong> Выпишите 3-5 портретов покупателя и под каждый отдельную причину переехать. Под каждую причину пишите свою статью.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="stage">
+    <!-- Сценка-переход: лампочка (после этапа 01) -->
+    <div class="scene lamp reveal" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#6b4fb0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Лампочка, момент озарения">
+        <path d="M32 8a16 16 0 0 0-10 28v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6A16 16 0 0 0 32 8z"/>
+        <path d="M26 50h12M28 56h8"/>
+        <path d="M20 16l-3-3M44 16l3-3M14 30h-4M50 30h4"/>
+      </svg>
+      <div class="scene-text">И тогда мы поняли</div>
+      <div class="scene-sub">Премиум-аудиторию через классическую медийку не достать. Нужен другой формат: история, а не баннер.</div>
+    </div>
+
+    <div class="stage reveal">
       <div>
         <div class="stage-label">Этап</div>
         <div class="stage-num">02</div>
@@ -459,7 +888,7 @@ footer a:hover{color:var(--accent)}
       <div>
         <div class="stage-label">Придумали</div>
         <h3>Формат «Диалоги с петербургским эстетом»</h3>
-        <p>Главное решение: не писать «о застройщике», а рассказывать от лица персонажа. Дедушка-эстет, ностальгия по Петербургу, узнаваемая интонация. Каждая статья — одна ценность продукта.</p>
+        <p>Главное решение: не писать «о застройщике», а рассказывать от лица персонажа. Дедушка-эстет, ностальгия по Петербургу, узнаваемая интонация. Каждая статья = одна ценность продукта.</p>
         <ul>
           <li>Серия статей через рассказ от лица персонажа: дедушки, который был у каждого</li>
           <li>Инструмент: ностальгия. Внедрили формат ещё до того, как этот приём стал трендом</li>
@@ -472,20 +901,44 @@ footer a:hover{color:var(--accent)}
           <div class="cap">Слайд из эфира 16.04.2026 · Формат «Диалоги с петербургским эстетом» и Telegram-канал AAG</div>
         </div>
 
-        <!-- Wow-блок Этап 02 — мятный «что сработало» -->
+        <!-- Wow-блок Этап 02, мятный «что сработало» -->
         <div class="wow mint">
           <div class="wow-label">Почему формат зашёл</div>
           <div class="wow-title">Персонаж убирает корпоративную холодность, ностальгия удерживает дочитывание</div>
           <ul>
-            <li>Читатель не чувствует, что ему продают — он читает историю</li>
-            <li>Ностальгия как формат сработала на 2 года раньше тренда — у нас не было конкурентов в этом тоне</li>
-            <li>Одна ценность на одну статью — нет переполнения, дочитываемость растёт до 54%</li>
+            <li>Читатель не чувствует, что ему продают, он читает историю</li>
+            <li>Ностальгия как формат сработала на 2 года раньше тренда, у нас не было конкурентов в этом тоне</li>
+            <li>Одна ценность на одну статью: нет переполнения, дочитываемость растёт до 54%</li>
           </ul>
+        </div>
+
+        <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+          <div class="duo-avatars" aria-hidden="true">
+            <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="44" height="44">
+            <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="44" height="44">
+          </div>
+          <div class="tip-bubble">
+            <div class="tip-name">Вика и Саша</div>
+            <div class="tip-line"><strong>Вика:</strong> Персонаж в статье это не «маркетинговая фишка». Это разрешение для читателя не быть продаваемым. Тогда срабатывает доверие, а не оборона.</div>
+            <div class="tip-line sasha"><strong>Саша:</strong> Считайте дочитываемость главным сигналом. Если ниже 40% — переписывайте статью, не докручивайте заголовок. Слабая концепция дороже слабой обложки.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="stage">
+    <!-- Сценка-переход: ракета (после этапа 02) -->
+    <div class="scene rocket reveal" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#1f7a52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ракета, запуск кампании">
+        <path d="M32 6c8 6 12 14 12 22v14l-6 6h-12l-6-6V28c0-8 4-16 12-22z"/>
+        <circle cx="32" cy="26" r="4"/>
+        <path d="M20 42l-6 8 8-2M44 42l6 8-8-2"/>
+        <path d="M28 56l-2 4M36 56l2 4M32 56v6"/>
+      </svg>
+      <div class="scene-text">Поехали в Яндекс</div>
+      <div class="scene-sub">5 статей, 3 кампании, оплата за дочитывание. Никаких медийных показов в пустоту.</div>
+    </div>
+
+    <div class="stage reveal">
       <div>
         <div class="stage-label">Этап</div>
         <div class="stage-num">03</div>
@@ -524,14 +977,27 @@ footer a:hover{color:var(--accent)}
             <div class="m"><span><b>3,5 тыс.</b> прочитали</span><span><b>2,5 мин</b> чтение</span></div>
           </div>
           <div class="article-row">
-            <div class="t">Квартал AVANT — место, где история встречается с будущим</div>
+            <div class="t">Квартал AVANT, место где история встречается с будущим</div>
             <div class="m"><span><b>2,1 тыс.</b> прочитали</span><span><b>1,5 мин</b> чтение</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="stage">
+    <!-- Сценка-переход: калькулятор (после этапа 03) -->
+    <div class="scene calc reveal" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#9A6A12" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Калькулятор, подсчёт результатов">
+        <rect x="14" y="8" width="36" height="48" rx="4"/>
+        <rect x="20" y="14" width="24" height="10" rx="2"/>
+        <circle cx="22" cy="32" r="2"/><circle cx="32" cy="32" r="2"/><circle cx="42" cy="32" r="2"/>
+        <circle cx="22" cy="42" r="2"/><circle cx="32" cy="42" r="2"/><circle cx="42" cy="42" r="2"/>
+        <circle cx="22" cy="52" r="2"/><circle cx="32" cy="52" r="2"/><circle cx="42" cy="52" r="2"/>
+      </svg>
+      <div class="scene-text">Считаем что вышло за 38 780 ₽</div>
+      <div class="scene-sub">Дочитывания, переходы, новая аудитория для ретаргетинга. И где главный рычаг, внутри.</div>
+    </div>
+
+    <div class="stage reveal">
       <div>
         <div class="stage-label">Этап</div>
         <div class="stage-num">04</div>
@@ -539,7 +1005,7 @@ footer a:hover{color:var(--accent)}
       <div>
         <div class="stage-label">Получили</div>
         <h3>1 115 дочитываний и 602 перехода на сайт застройщика</h3>
-        <p>За бюджет 38 780 ₽ собрали 1 100 человек новой аудитории, 602 перехода и 1 115 дочитываний. Средняя цена перехода 64 ₽, охват 1 000 — 35 ₽. Среднее время дочитывания статьи 2:20.</p>
+        <p>За бюджет 38 780 ₽ собрали 1 100 человек новой аудитории, 602 перехода и 1 115 дочитываний. Средняя цена перехода 64 ₽, охват 1 000 за 35 ₽. Среднее время дочитывания статьи 2:20.</p>
         <ul>
           <li>602 перехода на сайт AAG по средней цене 64 ₽</li>
           <li>1 115 дочитываний статей при дочитываемости 54%</li>
@@ -552,14 +1018,14 @@ footer a:hover{color:var(--accent)}
           <div class="cap">Слайд из эфира 16.04.2026 · Таблица результатов 3 кампаний ПромоСтраниц AAG в кабинете Яндекса</div>
         </div>
 
-        <!-- Wow-блок Этап 04 — мятный, «что получили» -->
+        <!-- Wow-блок Этап 04, мятный, «что получили» -->
         <div class="wow mint">
           <div class="wow-label">Что получилось в итоге</div>
           <div class="wow-title">Кампания продолжает работать даже после открутки бюджета</div>
           <ul>
             <li>1 100 человек новой аудитории попали в аудиторные сегменты Яндекса</li>
-            <li>Эти же люди догоняются в РСЯ и Поиске в следующих рекламных кампаниях — без повторной оплаты охвата</li>
-            <li>CPM 35 ₽ за 1 000 — в 8 раз дешевле классической медийки в этом сегменте</li>
+            <li>Эти же люди догоняются в РСЯ и Поиске в следующих рекламных кампаниях, без повторной оплаты охвата</li>
+            <li>CPM 35 ₽ за 1 000: в 8 раз дешевле классической медийки в этом сегменте</li>
           </ul>
         </div>
       </div>
@@ -570,7 +1036,7 @@ footer a:hover{color:var(--accent)}
 <!-- METRICS -->
 <section class="section">
   <div class="wrap">
-    <div class="sh">
+    <div class="sh reveal">
       <span class="tag">Метрики</span>
       <h2>Главные цифры</h2>
       <p>Четыре ключевых показателя кейса. Все цифры из кабинета Яндекс ПромоСтраниц по итогам 3 кампаний.</p>
@@ -598,12 +1064,24 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
+    <div class="duo-tip reveal" role="note" aria-label="Подсказка от Вики и Саши">
+      <div class="duo-avatars" aria-hidden="true">
+        <img src="/assets/avatars/vika-avatar.jpg" alt="" loading="lazy" width="44" height="44">
+        <img src="/assets/avatars/sasha-photo.jpg" alt="" loading="lazy" width="44" height="44">
+      </div>
+      <div class="tip-bubble">
+        <div class="tip-name">Вика и Саша</div>
+        <div class="tip-line"><strong>Вика:</strong> Дочитываемость 54% против бенчмарка Яндекса 25-30% в премиуме это не «удача». Это формат-персонаж. Меняешь голос, меняется метрика.</div>
+        <div class="tip-line sasha"><strong>Саша:</strong> Гоните параллельно 3 кампании с разными группировками обложек. Через неделю смотрите, какая обложка ловит топ-1 по CTR — масштабируйте её, остальные глушите.</div>
+      </div>
+    </div>
+
     <!-- LEADER -->
     <div class="leader">
       <div>
         <span class="tag">Лидер кампании</span>
         <h3>Статья через историю места</h3>
-        <p>«Как новые жилые комплексы меняют облик города» — кампания, построенная вокруг истории Петроградской и квартала AVANT. Получила лучшую цену перехода по всем кампаниям.</p>
+        <p>«Как новые жилые комплексы меняют облик города»: кампания, построенная вокруг истории Петроградской и квартала AVANT. Получила лучшую цену перехода по всем кампаниям.</p>
       </div>
       <div class="leader-grid">
         <div>
@@ -627,10 +1105,10 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- TAKEAWAYS — финал, единственный тёмный блок -->
-<section class="section">
+<!-- TAKEAWAYS, финал, единственный тёмный блок -->
+<section class="section" id="takeaways-block">
   <div class="wrap">
-    <div class="takeaways">
+    <div class="takeaways reveal">
       <span class="tag">Что забрать с собой</span>
       <h2>5 правил ПромоСтраниц для премиум-недвижимости</h2>
       <div class="t-list">
@@ -640,7 +1118,7 @@ footer a:hover{color:var(--accent)}
         </div>
         <div class="t-item">
           <div class="t-n">02</div>
-          <div class="t-text">Одна статья — одна ценность объекта. Локация, форматы квартир, история места — это разные тексты, не одна обёртка.</div>
+          <div class="t-text">Одна статья = одна ценность объекта. Локация, форматы квартир, история места: это разные тексты, не одна обёртка.</div>
         </div>
         <div class="t-item">
           <div class="t-n">03</div>
@@ -648,14 +1126,23 @@ footer a:hover{color:var(--accent)}
         </div>
         <div class="t-item">
           <div class="t-n">04</div>
-          <div class="t-text">Подключайте счётчики Метрики на сайт сразу. Дочитавшие — это актив для ретаргетинга в РСЯ и Поиске.</div>
+          <div class="t-text">Подключайте счётчики Метрики на сайт сразу. Дочитавшие это актив для ретаргетинга в РСЯ и Поиске.</div>
         </div>
         <div class="t-item">
           <div class="t-n">05</div>
-          <div class="t-text">Тестируйте обложки и заголовки в 3 кампаниях параллельно. Связки, которые работают, оставляйте — остальные отключайте без сожаления.</div>
+          <div class="t-text">Тестируйте обложки и заголовки в 3 кампаниях параллельно. Связки, которые работают, оставляйте; остальные отключайте без сожаления.</div>
         </div>
       </div>
-      <div class="t-foot">Если хотите применить это к своему ЖК — напишите. Разберём ваш объект и покажем, как упаковать его в ПромоСтраницы.</div>
+      <div class="t-foot">Если хотите применить это к своему ЖК, напишите. Разберём ваш объект и покажем, как упаковать его в ПромоСтраницы.</div>
+    </div>
+
+    <div class="completion reveal" data-completion>
+      <span class="completion-circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+      </span>
+      <h4>Ты прошёл весь кейс</h4>
+      <p>Спасибо, что дочитал. Если есть вопрос по ПромоСтраницам для своего ЖК, напиши, разберём бесплатно.</p>
+      <a class="completion-cta" href="/contact/">Задать вопрос Виктории →</a>
     </div>
   </div>
 </section>
@@ -663,10 +1150,25 @@ footer a:hover{color:var(--accent)}
 <!-- CTA -->
 <section class="section">
   <div class="wrap">
-    <div class="cta-block">
+    <div class="cta-block reveal">
       <h2>Запустить ПромоСтраницы для своего объекта</h2>
-      <p>Считаем под ваш ЖК или объект. Формат, тексты, обложки, кампании в Яндексе и подключение аудитории к другим РК — под ключ.</p>
+      <p>Разберём ваш ЖК и сегмент. Соберём формат, тексты, обложки, кампании в Яндексе и подключим аудиторию к другим РК, под ключ.</p>
       <a class="btn btn-primary" href="/product/product-statii/">Запустить ПромоСтраницы → Старт</a>
+    </div>
+
+    <div class="dual-cta reveal">
+      <a class="dual-cta-card accent" href="https://t.me/vnartdinova" target="_blank" rel="noopener" aria-label="Канал Виктории в Telegram">
+        <span class="dc-tag">Канал · Telegram</span>
+        <span class="dc-handle">@vnartdinova</span>
+        <span class="dc-desc">Разбираю маркетинг недвижимости и AI-инструменты вживую. Кейсы, цифры, ошибки, каждый день.</span>
+        <span class="dc-arrow">Подписаться на канал →</span>
+      </a>
+      <a class="dual-cta-card mint" href="https://t.me/victorianartdinova" target="_blank" rel="noopener" aria-label="Личка Виктории для консультации">
+        <span class="dc-tag">Личка · Консультация</span>
+        <span class="dc-handle">@victorianartdinova</span>
+        <span class="dc-desc">Напишите в личку: разберу ваш ЖК, подскажу формат и обложки под ПромоСтраницы Яндекса.</span>
+        <span class="dc-arrow">Написать Виктории →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -674,11 +1176,11 @@ footer a:hover{color:var(--accent)}
 <!-- RELATED -->
 <section class="section">
   <div class="wrap">
-    <div class="sh">
+    <div class="sh reveal">
       <span class="tag">Связанные кейсы</span>
       <h2>Похожие проекты по премиум-недвижимости</h2>
     </div>
-    <div class="related">
+    <div class="related reveal">
       <a class="related-card" href="/work/case-spb-15mln/">
         <div class="meta">Telegram Ads · СПб</div>
         <div class="big">6 сделок × 15 млн ₽</div>
@@ -697,9 +1199,193 @@ footer a:hover{color:var(--accent)}
 
 <footer>
   <div class="wrap">
-    ГЛАВНОЕ — маркетинг недвижимости · <a href="https://theglavnoe.com/">theglavnoe.com</a>
+    ГЛАВНОЕ, маркетинг недвижимости · <a href="https://theglavnoe.com/">theglavnoe.com</a>
   </div>
 </footer>
+
+<script data-glavnoe-case-gamification="1">
+(function(){
+  if (window.__glavnoeAagGameLoaded) return;
+  window.__glavnoeAagGameLoaded = true;
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function initProgress(){
+    var bar = document.getElementById('progressBar');
+    if (!bar) return;
+    var ticking = false;
+    function update(){
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - window.innerHeight) || 1;
+      var p = Math.min(1, Math.max(0, window.scrollY / max));
+      bar.style.transform = 'scaleX(' + p + ')';
+      ticking = false;
+    }
+    function onScroll(){ if (!ticking){ requestAnimationFrame(update); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  function initDesktopToc(){
+    var toc = document.getElementById('desktopToc');
+    if (!toc) return;
+    var items = Array.prototype.slice.call(toc.querySelectorAll('li[data-target]'));
+    var targets = items.map(function(li){ return document.getElementById(li.dataset.target); }).filter(Boolean);
+    if (!targets.length) return;
+    function update(){
+      var midline = window.scrollY + window.innerHeight * 0.35;
+      var activeIdx = 0;
+      targets.forEach(function(t, idx){
+        var top = t.getBoundingClientRect().top + window.scrollY;
+        if (top <= midline) activeIdx = idx;
+      });
+      items.forEach(function(li, idx){
+        li.classList.remove('active', 'passed');
+        if (idx < activeIdx) li.classList.add('passed');
+        else if (idx === activeIdx) li.classList.add('active');
+      });
+    }
+    var ticking = false;
+    function onScroll(){ if (!ticking){ requestAnimationFrame(function(){ update(); ticking = false; }); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
+  function initPredict(){
+    document.querySelectorAll('[data-predict]').forEach(function(box){
+      var opts = box.querySelectorAll('.predict-opt');
+      opts.forEach(function(o){
+        o.addEventListener('click', function(){
+          if (box.classList.contains('answered')) return;
+          box.classList.add('answered');
+          opts.forEach(function(other){
+            if (other.dataset.answer === 'correct') other.classList.add('correct');
+            else if (other !== o) other.classList.add('wrong');
+          });
+          if (o.dataset.answer === 'wrong') o.classList.add('wrong');
+        });
+      });
+    });
+  }
+
+  function initFunnel(){
+    var wrap = document.querySelector('[data-funnel-anim]');
+    if (!wrap) return;
+    var lead = wrap.querySelector('[data-funnel-lead]');
+    var nodes = wrap.querySelectorAll('.fa-node');
+    var lines = wrap.querySelectorAll('.fa-line');
+    var positions = [140, 420, 700, 880];
+    if (!lead || nodes.length !== 4) return;
+    var hasRun = false;
+    var stepTimer = null;
+
+    function paint(i){
+      lead.setAttribute('cx', positions[i]);
+      nodes.forEach(function(n, idx){
+        n.classList.remove('active', 'passed');
+        if (idx < i) n.classList.add('passed');
+        else if (idx === i) n.classList.add('active');
+      });
+      lines.forEach(function(l, idx){ l.classList.toggle('passed', idx < i); });
+    }
+
+    function go(fromReplay){
+      if (stepTimer) { clearTimeout(stepTimer); stepTimer = null; }
+      if (reduced){ paint(3); return; }
+      var i = 0;
+      paint(i);
+      function next(){
+        if (i >= positions.length - 1) return;
+        i++;
+        paint(i);
+        if (i < positions.length - 1) stepTimer = setTimeout(next, 950);
+      }
+      stepTimer = setTimeout(next, fromReplay ? 220 : 600);
+    }
+
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting && !hasRun){
+            hasRun = true;
+            go(false);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.35 });
+      io.observe(wrap);
+    } else {
+      go(false);
+    }
+
+    var replayBtn = wrap.querySelector('[data-funnel-replay]');
+    if (replayBtn){ replayBtn.addEventListener('click', function(){ go(true); }); }
+  }
+
+  function initCpmBars(){
+    var box = document.querySelector('[data-cpm-compare]');
+    if (!box) return;
+    var bars = box.querySelectorAll('[data-bar]');
+    if (reduced || !('IntersectionObserver' in window)){
+      bars.forEach(function(b){ b.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          bars.forEach(function(b, idx){
+            setTimeout(function(){ b.classList.add('in'); }, idx * 180);
+          });
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    io.observe(box);
+  }
+
+  function initCompletion(){
+    var box = document.querySelector('[data-completion]');
+    if (!box) return;
+    if (reduced || !('IntersectionObserver' in window)){ box.classList.add('in'); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ box.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    io.observe(box);
+  }
+
+  function run(){
+    try { initProgress(); } catch(e){}
+    try { initReveal(); } catch(e){}
+    try { initDesktopToc(); } catch(e){}
+    try { initPredict(); } catch(e){}
+    try { initFunnel(); } catch(e){}
+    try { initCpmBars(); } catch(e){}
+    try { initCompletion(); } catch(e){}
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
+})();
+</script>
 
 </body>
 </html>
