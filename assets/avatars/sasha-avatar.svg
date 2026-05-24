@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Саша, ассистент по операционке">
+  <defs>
+    <clipPath id="sasha-clip">
+      <circle cx="100" cy="100" r="100"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#sasha-clip)">
+    <!-- paper background -->
+    <rect width="200" height="200" fill="#FBF7F1"/>
+    <!-- soft shoulders -->
+    <path d="M 18 200 C 30 158, 70 142, 100 142 C 130 142, 170 158, 182 200 Z" fill="#E8E0CF"/>
+    <!-- neck -->
+    <rect x="86" y="118" width="28" height="22" rx="6" fill="#F0CFA8"/>
+    <!-- face -->
+    <ellipse cx="100" cy="92" rx="44" ry="50" fill="#F5D2B7"/>
+    <!-- hair: blond, side-swept -->
+    <path d="M 56 80 C 56 50, 80 38, 102 38 C 130 38, 146 56, 148 78 C 148 78, 132 70, 116 72 C 102 74, 92 80, 86 86 C 80 92, 70 90, 60 92 C 56 86, 54 84, 56 80 Z" fill="#E8C885"/>
+    <!-- side fringe -->
+    <path d="M 58 80 C 64 70, 76 64, 90 66 C 92 72, 86 80, 76 84 C 68 86, 60 86, 58 80 Z" fill="#D8B670"/>
+    <!-- eyebrows -->
+    <path d="M 78 88 q 8 -3 16 0" stroke="#3B2E1C" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 108 88 q 8 -3 16 0" stroke="#3B2E1C" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- eyes -->
+    <circle cx="86" cy="98" r="2.6" fill="#1A1814"/>
+    <circle cx="116" cy="98" r="2.6" fill="#1A1814"/>
+    <!-- nose -->
+    <path d="M 100 102 q -2 8 0 12 q 3 2 6 0" stroke="#C99876" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <!-- mouth: light smile -->
+    <path d="M 90 122 q 10 8 22 0" stroke="#A0533B" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- subtle cheek tint -->
+    <circle cx="74" cy="112" r="6" fill="#F5BFA0" opacity="0.5"/>
+    <circle cx="126" cy="112" r="6" fill="#F5BFA0" opacity="0.5"/>
+  </g>
+  <!-- outer ring -->
+  <circle cx="100" cy="100" r="99" fill="none" stroke="#EFEAE0" stroke-width="2"/>
+</svg>

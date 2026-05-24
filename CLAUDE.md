@@ -1,94 +1,115 @@
-# CLAUDE.md — full-site-export-may21
+# CLAUDE.md — папка проекта theglavnoe.com
 
-> Эти инструкции **переопределяют** глобальный `/root/CLAUDE.md` и любые CLAUDE.md из родительских папок при работе в этой директории.
+> Эти инструкции **переопределяют** глобальный `/root/CLAUDE.md` при работе в этой директории.
+> Это активная папка сайта (прод). Обновлено: 23 мая 2026.
 
 ---
 
 ## 🔴 ПЕРВЫМ ДЕЛОМ ПРОЧИТАТЬ
 
-1. `PROJECT_RULES.md` — что можно/нельзя, source of truth, forbidden paths.
-2. `CURRENT_TASK.md` — текущая задача, текущее состояние.
-3. `README_RESTORE.md` — как восстановить проект если папка пропала.
+1. **`/root/ops/dev/state-theglavnoe-com.md`** — единый источник правды по сайту, 2 воронкам (AI-школа + ГЛАВНОЕ), геймификации кейсов, статусу контента. **Читать всегда первым.**
+2. `./README.md` — навигация по документам этой папки.
 
-После прочтения **обязательно** запустить:
-
+После прочтения проверить:
 ```bash
-pwd
-git remote -v
-git branch --show-current
-git status --short
+pwd                                                  # должна быть /root/framerexport/full-site-export-may21
+curl -sI https://theglavnoe.com/ | head -1           # HTTP/2 200
 ```
-
-Если что-то из этого не совпадает с ожидаемым (см. `PROJECT_RULES.md`) — **STOP. Сообщить пользователю.**
 
 ---
 
 ## ЧТО ЭТО
 
-Static HTML/CSS/JS export Framer-сайта `glanove.framer.website` через NoCodeExport.
-**НЕ React. НЕ Next.js. НЕ Vite.** Никаких `src/`, `components/`, `templates/`.
+Активная папка сайта theglavnoe.com. Static HTML/CSS/JS из:
+- **Framer-экспорта** (главная, продуктовые, /about, /contact, /cases портфолио, меню) — зона Виктории, она правит в Framer Studio и переэкспортирует
+- **Моих кастомных страниц с геймификацией** (`/work/*` кейсы, `/blog/*` статьи) — зона Клода
 
-Структура:
-- `index.html` — главная.
-- `product/<slug>/index.html` — продуктовые страницы (avito-ads, content-product, product-statii, product-telegram, youtube-product).
-- `blog/`, `cases/` — контент-разделы.
-- `assets/framer/sites/1OcdQgezFomPwA9UGakYyz/` — JS chunks Framer runtime + style chunks.
-- `assets/images/` — графика.
-- `docs/` — внутренние handoff-документы по сессиям.
+Раздаётся через **Caddy** на VPS (блок `theglavnoe.com {...}` в `/etc/caddy/Caddyfile`). Переключено 22.05.2026 с Next.js на статику.
 
----
+## ЗОНЫ ОТВЕТСТВЕННОСТИ
+
+| Я (Клод) | Вика (Framer Studio) |
+|----------|----------------------|
+| `/work/*` (3 кейса) | `index.html` (главная) |
+| `/blog/*` (6 статей) | `product/*` (5 продуктовых) |
+| `/404/` (если меняем) | `about/`, `contact/` |
+| SEO статей и кейсов | меню/бургер/футер |
+| og:image, Schema.org, sitemap | hero-фоны и иллюстрации |
+| Контент полностью (пишу, верстаю, публикую) | Презентационная витрина |
+
+**Вика НЕ таскает кейсы и статьи во Framer CMS — это моя зона полностью.**
 
 ## SOURCE OF TRUTH
 
 | Что | Где |
 |-----|-----|
 | Локально | `/root/framerexport/full-site-export-may21/` |
-| GitHub | `git@github.com:victorianartdinova/export-glanove-framer-website-mpef0bd0.git` |
-| Ветка для текущей работы | `runtime-restore-may21` |
-| Preview | `http://srv1207957.hstgr.cloud:3343/` |
+| Прод (URL) | https://theglavnoe.com |
+| State-файл проекта | `/root/ops/dev/state-theglavnoe-com.md` |
+| Цифры кейсов | `/root/ops/CASE_SOURCES_OF_TRUTH.md` (SPB ppc.world, Regardis elama.ru, AAG `/root/Эфир 16.04..pdf`) |
+| Эталон геймификации | `./work/case-spb-15mln/index.html` (1575 строк) |
+| Концепция геймификации | `./CASE_EXPERIENCE_V2.md` + `/root/ops/VIKA_PROMPT_CASE_EXPERIENCE_V2.md` |
+| Шаблоны | `./CASE_TEMPLATE_V1.md`, `./GUIDE_TEMPLATE_V1.md` |
+| Архитектура контента | `./CONTENT_ARCHITECTURE_V1.md` |
+| Programmatic SEO план | `/root/ops/seo-machine-plan.md` (на будущее, не сейчас) |
 
----
+## ВОРОНКИ — 2 ШТУКИ (дефолтный контекст, не переспрашивать)
 
-## ❌ FORBIDDEN
+**AI-школа (личный бренд @vnartdinova):**
+рилс → «ПОЕХАЛИ» → ManyChat → TG-канал → бот @lopata_voronka (БД `/root/lopata-bot/lopata.db`) → /ai-startup/ гайд → скилл-пак
 
-Никогда:
-- Не открывать, не читать, не править `/root/glavnoe-real/`.
-- Не запускать агентов в `/root/glavnoe-real/`.
-- Не ссылаться на `src/products/*`, `src/templates/ProductPage.tsx` — это другой устаревший проект.
-- Не делать React rebuild сайта.
-- Не работать в ветке `full-site-export-may20-stable`.
-- Не мёрджить в `main` без approve.
-- Не коммитить/пушить без approve.
+**Агентство ГЛАВНОЕ:**
+Google SEO / прямой → главная → Guide `/blog/*` → Case `/work/*` → Product `/product/*` → Hard CTA → форма `/api/lead` → @glavnoe_rebot (БД `/root/glavnoe-leads-bot/data/leads_re.db`, топик 927 группы `-1003915597546`)
 
 ## ✅ ALLOWED
 
-- Править HTML в `product/`, `index.html`, `blog/`, `cases/`.
-- Править Framer JS chunks в `assets/framer/sites/.../*.mjs` (есть `-v2.mjs` варианты — это post-hydration patches).
-- Править assets (картинки, иконки).
-- Править тексты, ссылки, контент.
+- Править/создавать HTML в `work/<slug>/`, `blog/<slug>/`, `404/`
+- Править ассеты (картинки, аватарки, og:image) в моих папках
+- Править тексты, цифры (только из CASE_SOURCES_OF_TRUTH), ссылки, SEO-метаданные на моих страницах
+- Перед коммитом: `curl -sI` 200 на изменённую страницу + проверка og:image через opengraph.xyz
+
+## ❌ FORBIDDEN
+
+- **Не править** `index.html` (главная), `product/*`, `about/`, `contact/`, меню/футер — это зона Framer Studio Виктории
+- **Не предлагать** Вике таскать кейсы и статьи во Framer CMS вручную
+- **Не делать тёмные лендинги** для кейсов и обучающих статей — paper-style #FBF7F1 обязательно (см. CASE_EXPERIENCE_V2)
+- **Не выдумывать цифры** в кейсах — только CASE_SOURCES_OF_TRUTH.md
+- **Не упоминать имя «Денис»** нигде на сайте (URL, текст, alt) — `feedback_no_denis_in_public`
+- **Не путать БД ботов**: `lopata.db` = AI-школа, `leads_re.db` = агентство. Разные воронки, разные базы.
+- **Не лезть в legacy** (`/tmp/trash-2026-05-23/glavnoe-site/`, `/tmp/trash-2026-05-23/glavnoe-real/`) — удалены 23.05, восстанавливать только если что-то реально пропустили
+- **Не подключать домен к Framer hosting** — блокирует геймификацию и ломает /leads, /ai-startup, /api/*
+
+## ОБЯЗАТЕЛЬНЫЕ ЭЛЕМЕНТЫ ГЕЙМИФИЦИРОВАННОЙ СТРАНИЦЫ (кейс / гайд)
+
+См. полный список в `state-theglavnoe-com.md §3.3`. Главное:
+
+- Paper-style фон #FBF7F1, **НЕ тёмный**
+- Sticky progress bar сверху
+- Sticky TOC слева (desktop) / collapsible (mobile)
+- Reveal-анимации на scroll
+- Funnel-step карточки (большая цифра + value + label)
+- 4-6 нумерованных этапов с try-this box после каждого
+- Инсайт/wow-момент после каждого этапа
+- Карточка читателя в начале (время / этапы / для кого)
+- Wow-блок в конце (единственное место где допустим #1A1814 тёмный)
+- Hard CTA на связанный Product + Related cards
+- Author block с `vika-avatar.jpg`
+- SEO: title 50-60, description 150-160, Schema.org Article + Breadcrumb, og:image 1200×630
+
+## ФОРМАТ ОТВЕТОВ (из глобального /root/CLAUDE.md, в силе)
+
+- Коротко 3-5 предложений в чате
+- Без полотен, заголовков, буллетов, кода — это всё в файлах
+- Антибред-фильтр: факт или додумка, проверено ли, есть ли результат
+- «Не знаю» допустимо
+- Не отчитываться о процессе — только результат
+- Никаких dev-терминов в чат (nodeId, MCP-методы, путь к компонентам) — только человеческие слова
+
+## ПОСЛЕ КАЖДОЙ СЕССИИ — ОБНОВИТЬ
+
+- `/root/ops/dev/state-theglavnoe-com.md` — статус кейсов/статей, открытые задачи, дата вверху
+- Если изменилась архитектура (новые папки, новые маршруты Caddy) — `README.md` и этот `CLAUDE.md`
 
 ---
 
-## ТЕКУЩАЯ ЗАДАЧА (см. CURRENT_TASK.md для деталей)
-
-Все 4 продуктовые страницы должны быть копиями `product/avito-ads/index.html` с подменённым контентом:
-- `product/content-product/index.html`
-- `product/product-statii/index.html`
-- `product/product-telegram/index.html`
-- `product/youtube-product/index.html`
-
-Структура секций, классы Framer, порядок блоков — **идентичны Avito Ads**. Меняется только контент.
-
----
-
-## ФОРМАТ ОТВЕТОВ (наследую из /root/CLAUDE.md, оставляю в силе)
-
-- Коротко, 3-5 предложений в чате.
-- Без заголовков/буллетов/кода в чате (исключение — структурированные статусы по запросу).
-- Антибред-фильтр перед каждым ответом: факт или додумка, есть ли результат, проверено ли.
-- «Не знаю» — допустимо.
-- Не отчитываться о процессе — только результат.
-
----
-
-Обновлено: 2026-05-21
+Обновлено: 23 мая 2026

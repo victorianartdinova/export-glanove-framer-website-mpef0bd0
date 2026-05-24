@@ -19,3 +19,5 @@ __pycache__/
 
 # Local server logs
 *.log
+
+*.bak*

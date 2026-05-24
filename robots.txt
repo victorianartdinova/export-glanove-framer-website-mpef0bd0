@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+
+# Неутверждённые / в работе — не индексировать
+Disallow: /blog/strategiya-marketinga-dlya-developera-2026/
+Disallow: /blog/telegram-dlya-agentstva-nedvizhimosti-90-zayavok/
+
+# Технические страницы
+Disallow: /404/
+
+Sitemap: https://theglavnoe.com/sitemap.xml
