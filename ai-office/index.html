@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-офис, Шаг 1: свой Клод на своём сервере | ГЛАВНОЕ</title>
+<meta name="description" content="За один вечер: купить VPS, поднять Клода, дать ему ваш контекст. Без программиста и без кода.">
+<link rel="canonical" href="https://theglavnoe.com/ai-office/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-офис, Шаг 1: свой Клод на своём сервере">
+<meta property="og:description" content="VPS, VS Code, Claude Max, первый скилл. Пошаговый гайд от Виктории Нартдиновой.">
+<meta property="og:url" content="https://theglavnoe.com/ai-office/">
+<meta property="og:image" content="https://theglavnoe.com/assets/avatars/vika-avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png">
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-Regular.otf" type="font/otf" crossorigin>
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-SemiBold.otf" type="font/otf" crossorigin>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"AI-офис, Шаг 1: свой Клод на своём сервере","datePublished":"2026-04-15","dateModified":"2026-05-24","author":{"@type":"Person","name":"Виктория Нартдинова"},"publisher":{"@type":"Organization","name":"ГЛАВНОЕ","logo":{"@type":"ImageObject","url":"https://theglavnoe.com/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://theglavnoe.com/ai-office/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://theglavnoe.com/"},{"@type":"ListItem","position":2,"name":"AI-гайды","item":"https://theglavnoe.com/blog/ai/"},{"@type":"ListItem","position":3,"name":"AI-офис, Шаг 1","item":"https://theglavnoe.com/ai-office/"}]}
+</script>
+
+<style>
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Book.otf') format('opentype');font-weight:350;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+::selection{background:#ECE6F8;color:#1A1814}
+:root{
+  --bg:#FBF7F1;--card-bg:#FFFFFF;--text:#1A1814;--text-secondary:#5C5750;--text-muted:#8A857E;
+  --border:#E5E0D8;--accent:#A087D3;--accent-soft:#F6F3FC;--accent-soft-2:#ECE6F8;
+  --accent-mint:#5CBA8C;--accent-mint-soft:#ECFDF5;--accent-coral:#F0805F;--accent-coral-soft:#FEF3F0;
+  --accent-honey:#F5C24A;--accent-honey-soft:#FEF9E7;--card-radius:24px;
+  --card-shadow:0 1px 3px rgba(26,24,20,.04),0 8px 24px rgba(26,24,20,.04);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Suisse Intl','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent-mint),var(--accent),var(--accent-coral));z-index:100;transition:width .1s linear}
+
+.site-nav{position:sticky;top:0;background:rgba(251,247,241,.92);backdrop-filter:blur(14px);padding:20px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:50}
+.site-nav .logo{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--text)}
+.site-nav .logo:hover{color:var(--accent)}
+.site-nav .nav-links{display:flex;gap:24px;font-size:14px}
+.site-nav .nav-links a{color:var(--text-secondary);transition:color .2s}
+.site-nav .nav-links a:hover,.site-nav .nav-links a.active{color:var(--accent)}
+@media(max-width:720px){.site-nav .nav-links{display:none}}
+
+.breadcrumb{padding:24px 32px 0;font-size:13px;color:var(--text-muted);max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--text);font-weight:500}
+
+.hero{padding:56px 32px 48px;max-width:1080px;margin:0 auto;position:relative;overflow:hidden;text-align:center}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none;z-index:1}
+.hero .blob.b1{width:380px;height:380px;background:var(--accent-mint);top:-100px;left:-80px}
+.hero .blob.b2{width:340px;height:340px;background:var(--accent);top:80px;right:-60px}
+.hero .blob.b3{width:260px;height:260px;background:var(--accent-coral);bottom:-80px;left:40%}
+.hero > *{position:relative;z-index:2}
+.hero .hero-pills{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;opacity:0;transform:translateY(20px);animation:reveal .8s var(--ease) .05s forwards}
+.hero .author-pill{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border:1px solid rgba(26,24,20,.08);border-radius:999px;padding:6px 20px 6px 6px;transition:all .2s var(--ease);box-shadow:0 1px 3px rgba(26,24,20,.04)}
+.hero .author-pill:hover{background:#fff;border-color:rgba(26,24,20,.22)}
+.hero .author-pill img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff}
+.hero .author-pill .info{display:flex;flex-direction:column;line-height:1.2;text-align:left}
+.hero .author-pill .label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:500}
+.hero .author-pill .name{font-size:14px;font-weight:600;color:var(--text)}
+.hero .tag-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.72);border:1px solid rgba(26,24,20,.08);border-radius:999px;padding:10px 18px;font-size:14px;color:var(--text-secondary)}
+.hero .tag-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-mint);box-shadow:0 0 0 0 rgba(92,186,140,.45);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(92,186,140,.5)}70%{box-shadow:0 0 0 10px rgba(92,186,140,0)}100%{box-shadow:0 0 0 0 rgba(92,186,140,0)}}
+.hero h1{font-size:clamp(40px,5.5vw,72px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin:0 auto 22px;max-width:880px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .15s forwards}
+.hero h1 .accent{background:linear-gradient(120deg,var(--accent) 0%,var(--accent-coral) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.hero .subtitle{font-size:clamp(18px,2vw,21px);color:var(--text-secondary);line-height:1.55;max-width:640px;margin:0 auto;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .3s forwards}
+.hero .cta-row{margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .45s forwards}
+.hero .cta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--text);color:var(--bg);padding:14px 28px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:-0.005em;transition:all .2s var(--ease);box-shadow:0 8px 20px rgba(26,24,20,.18)}
+.hero .cta-primary:hover{transform:translateY(-1px);background:#0d0c0a;box-shadow:0 12px 28px rgba(26,24,20,.24)}
+.hero .cta-secondary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--text);padding:14px 28px;border-radius:999px;font-size:15px;font-weight:600;border:1px solid rgba(26,24,20,.15);transition:all .2s var(--ease)}
+.hero .cta-secondary:hover{border-color:rgba(26,24,20,.4);transform:translateY(-1px)}
+.hero .meta{margin-top:28px;display:flex;justify-content:center;gap:14px;font-size:13px;color:var(--text-muted);opacity:0;animation:reveal .9s var(--ease) .55s forwards}
+@media(max-width:520px){.hero .author-pill{padding:5px 16px 5px 5px}.hero .author-pill img{width:36px;height:36px}.hero .cta-primary,.hero .cta-secondary{padding:12px 22px;font-size:14px;width:100%;justify-content:center}.hero .cta-row{flex-direction:column;width:100%}}
+
+.vika-tip{display:flex;gap:12px;align-items:flex-start;margin:18px 0 0;padding:14px 16px 14px 14px;background:linear-gradient(180deg,#FFFDF6 0%,var(--accent-honey-soft) 100%);border:1px solid var(--border);border-radius:18px;position:relative}
+.vika-tip .vika-avatar{flex-shrink:0;width:38px;height:38px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08)}
+.vika-tip .tip-bubble{flex:1;min-width:0}
+.vika-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.vika-tip .tip-name .tip-tag{font-size:10px;font-weight:500;color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:6px;text-transform:uppercase;letter-spacing:.06em}
+.vika-tip .tip-text{font-size:14px;color:var(--text);line-height:1.5}
+.vika-tip .tip-text a{color:var(--accent);font-weight:500;border-bottom:1px solid rgba(160,135,211,.4)}
+.vika-tip .tip-text a:hover{border-bottom-color:var(--accent)}
+@media(max-width:520px){.vika-tip{padding:12px 14px 12px 12px;gap:10px}.vika-tip .vika-avatar{width:34px;height:34px}.vika-tip .tip-text{font-size:13px}}
+
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+.layout{max-width:1200px;margin:32px auto 0;padding:0 32px 80px;display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.toc{position:sticky;top:88px;font-size:13px}
+.toc-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:600;margin-bottom:14px;padding:0 12px}
+.toc-list{list-style:none}
+.toc-list li a{display:block;padding:9px 12px;color:var(--text-secondary);font-size:13px;line-height:1.4;border-radius:10px;transition:all .2s var(--ease)}
+.toc-list li a:hover{color:var(--text);background:var(--accent-soft)}
+.toc-list li a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
+@media(max-width:1023px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+
+.article{max-width:760px;min-width:0}
+.article .prose p{font-size:17px;color:var(--text);line-height:1.7;margin-bottom:18px}
+.article .prose strong{font-weight:600;color:var(--text)}
+.article h2{font-size:clamp(26px,3.2vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.02em;color:var(--text)}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+.checklist{margin:40px 0;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:36px;box-shadow:var(--card-shadow)}
+.checklist h2{margin-bottom:18px}
+.checklist .intro{font-size:15px;color:var(--text-secondary);margin-bottom:18px;line-height:1.6}
+.checklist ol{list-style:none;counter-reset:ck}
+.checklist ol li{counter-increment:ck;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.checklist ol li:last-child{border-bottom:none}
+.checklist ol li::before{content:counter(ck,decimal-leading-zero);color:var(--accent);font-size:13px;font-weight:600;min-width:32px}
+.checklist .item-title{font-weight:600;color:var(--text);font-size:16px;margin-bottom:4px}
+.checklist .item-desc{font-size:15px;color:var(--text-secondary);line-height:1.55}
+
+.note{margin:14px 0;padding:18px 22px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:12px;font-size:16px;color:var(--text);line-height:1.6}
+.note.mint{background:var(--accent-mint-soft);border-left-color:var(--accent-mint)}
+.note.coral{background:var(--accent-coral-soft);border-left-color:var(--accent-coral)}
+.note.honey{background:var(--accent-honey-soft);border-left-color:var(--accent-honey)}
+
+.funnel-step{margin:28px 0;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:36px;box-shadow:var(--card-shadow);display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;transition:transform .3s var(--ease);position:relative;overflow:hidden}
+.funnel-step:hover{transform:translateY(-3px)}
+.funnel-step .num{font-size:72px;font-weight:600;letter-spacing:-0.04em;color:var(--accent);opacity:0.25;line-height:1}
+.funnel-step .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.funnel-step h3{font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;color:var(--text);line-height:1.25}
+.funnel-step .body p{font-size:16px;color:var(--text-secondary);line-height:1.65;margin-bottom:12px}
+.funnel-step .body p:last-child{margin-bottom:0}
+.funnel-step .body strong{color:var(--text)}
+.funnel-step ol{list-style:decimal;padding-left:22px;margin-top:8px}
+.funnel-step ol li{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-bottom:6px}
+.funnel-step .codeblock{display:block;background:#1A1814;color:#FBF7F1;padding:14px 18px;border-radius:12px;font-family:'JetBrains Mono','Menlo',monospace;font-size:13px;margin:12px 0;overflow-x:auto;white-space:pre-wrap;word-break:break-word;line-height:1.55}
+.funnel-step code:not(.codeblock){background:var(--accent-soft);color:var(--text);padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92em}
+@media(max-width:720px){.funnel-step{grid-template-columns:1fr;padding:24px;gap:12px}.funnel-step .num{font-size:54px}}
+
+.try-this{margin:16px 0;padding:18px 22px;background:var(--accent-soft);border-radius:14px;border:1px dashed var(--accent)}
+.try-this .head{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:6px}
+.try-this .body{font-size:15px;color:var(--text);line-height:1.6;font-style:italic}
+
+.pull{margin:48px 0;padding:24px 28px;border-left:4px solid var(--accent)}
+.pull p{font-size:clamp(22px,2.6vw,28px);font-weight:600;line-height:1.25;letter-spacing:-0.01em;color:var(--text)}
+.pull p.sub{font-weight:500;color:var(--text-secondary);font-size:20px;margin-top:10px}
+
+.wow{margin:64px 0 32px;background:#1A1814;color:#FBF7F1;border-radius:var(--card-radius);padding:56px 48px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.wow::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:var(--accent);opacity:.15;border-radius:50%;filter:blur(60px)}
+.wow > *{position:relative;z-index:2}
+.wow .label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:600;margin-bottom:16px}
+.wow h2{font-size:clamp(26px,3vw,36px);font-weight:600;color:#FBF7F1;letter-spacing:-0.02em;line-height:1.2;margin-bottom:18px}
+.wow p{font-size:17px;line-height:1.65;color:rgba(251,247,241,.85);margin-bottom:14px}
+.wow p:last-child{margin-bottom:0}
+.wow .channel-card{display:inline-flex;align-items:center;gap:14px;padding:12px 20px 12px 12px;background:rgba(251,247,241,.08);border:1px solid rgba(251,247,241,.18);border-radius:999px;margin-top:24px;transition:all .2s var(--ease)}
+.wow .channel-card:hover{background:rgba(251,247,241,.14);border-color:var(--accent)}
+.wow .channel-card .avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;background:var(--accent-soft)}
+.wow .channel-card .avatar img{width:100%;height:100%;object-fit:cover}
+.wow .channel-card .info{display:flex;flex-direction:column;line-height:1.25}
+.wow .channel-card .name{font-size:14px;font-weight:600;color:#FBF7F1;display:flex;align-items:center;gap:6px}
+.wow .channel-card .sub{font-size:12px;color:rgba(251,247,241,.6)}
+.wow .channel-card .tg-icon{width:18px;height:18px;color:#229ED9}
+
+.next-cards{margin:48px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.next-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:28px;transition:all .3s var(--ease);box-shadow:var(--card-shadow);display:block}
+.next-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 4px 12px rgba(26,24,20,.06),0 24px 56px rgba(26,24,20,.08)}
+.next-card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:10px}
+.next-card h3{font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);line-height:1.25;margin-bottom:8px}
+.next-card p{font-size:14px;color:var(--text-secondary);line-height:1.55}
+.next-card .arrow{display:block;margin-top:14px;color:var(--accent);font-size:14px;font-weight:600}
+@media(max-width:720px){.next-cards{grid-template-columns:1fr}}
+
+.service-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 2px}
+.service-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:var(--text);color:var(--bg);border-radius:999px;font-size:14px;font-weight:600;letter-spacing:-0.005em;transition:all .2s var(--ease);text-decoration:none;line-height:1.2}
+.service-btn:hover{transform:translateY(-1px);background:var(--accent);color:#fff}
+.service-btn .arr{font-size:13px;opacity:.7}
+.service-btn.soft{background:var(--accent-soft);color:var(--text);border:1px solid var(--border)}
+.service-btn.soft:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.service-hint{font-size:12px;color:var(--text-muted);margin:8px 0 0}
+.site-footer{padding:32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);text-align:center;background:var(--bg)}
+.site-footer a{color:var(--text-secondary);margin:0 8px}
+.site-footer a:hover{color:var(--accent)}
+
+@media(max-width:520px){
+  .hero{padding:32px 20px 24px}
+  .breadcrumb{padding:20px 20px 0}
+  .layout{padding:0 20px 64px}
+  .site-nav{padding:16px 20px}
+  .wow{padding:40px 24px}
+  .checklist{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="pb"></div>
+
+<nav class="site-nav">
+  <a href="/" class="logo">ГЛАВНОЕ</a>
+  <div class="nav-links">
+    <a href="/">Главная</a>
+    <a href="/cases/portfolio">Кейсы</a>
+    <a href="/blog/">Статьи</a>
+    <a href="/about">О нас</a>
+    <a href="/contact">Контакты</a>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Главная</a> · <a href="/blog/ai/">AI-гайды</a> · <span>AI-офис, Шаг 1</span></div>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="hero-pills">
+    <a href="https://t.me/vnartdinova" target="_blank" rel="noopener" class="author-pill">
+      <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова">
+      <span class="info">
+        <span class="label">Гайд подготовила</span>
+        <span class="name">Виктория Нартдинова</span>
+      </span>
+    </a>
+    <span class="tag-pill"><span class="dot"></span>AI-офис · Шаг 1 из 3</span>
+  </div>
+  <h1>Свой Клод на <span class="accent">своём сервере</span></h1>
+  <p class="subtitle">За один вечер собрать AI-офис. Без программиста, без кода, без ограничений.</p>
+  <div class="cta-row">
+    <a href="#intro" class="cta-primary">Начать читать <span aria-hidden="true">→</span></a>
+    <a href="https://t.me/vnartdinova" target="_blank" rel="noopener" class="cta-secondary">Канал @vnartdinova</a>
+  </div>
+  <div class="meta"><span>10 минут чтения</span><span style="color:var(--border)">·</span><span>6 шагов + бонус</span></div>
+</section>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc-title">Содержание</div>
+    <ul class="toc-list">
+      <li><a href="#intro">Зачем тебе свой сервер</a></li>
+      <li><a href="#ready">Что понадобится</a></li>
+      <li><a href="#step-01">01 · Купить сервер</a></li>
+      <li><a href="#step-02">02 · VS Code</a></li>
+      <li><a href="#step-03">03 · Запустить Клода</a></li>
+      <li><a href="#step-04">04 · «Сделай себя удобным»</a></li>
+      <li><a href="#step-05">05 · Первый скилл</a></li>
+      <li><a href="#step-06">06 · VPN на этом же сервере</a></li>
+      <li><a href="#troubleshooting">Если сломалось</a></li>
+      <li><a href="#whats-next">Что дальше</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="intro" class="reveal prose">
+      <h2 style="margin-bottom:18px">Зачем тебе свой сервер</h2>
+      <p>Год я собирала автоматизацию из готовых сервисов: ChatGPT, n8n, боты, плагины. Половина не принимала российскую карту, половина блокировала по стране, остальное стоило как машина в год.</p>
+      <p>Решение простое: <strong>отдельный «компьютер в интернете»</strong>, работает 24/7, принадлежит тебе. Называется <strong>VPS</strong>, аренда от 500₽ в месяц. На нём живёт <strong>Клод</strong> и знает твой бизнес, тон, процессы.</p>
+      <p>К нему подключается всё: телеграм-боты, таблицы, базы, Google Drive, Figma, сайт. Клод становится сотрудником, которого нельзя переманить и нельзя отключить извне.</p>
+      <p style="font-size:20px;font-weight:500;color:var(--text);padding-top:8px">Этот гайд про то, как поставить такого Клода. За один вечер. Без программиста.</p>
+    </section>
+
+    <div class="pull reveal">
+      <p>С нейронками что-то создать уже не проблема. Главное понять, как оптимально решить свой запрос.</p>
+      <p class="sub">Я помогу.</p>
+    </div>
+
+    <section id="ready" class="checklist reveal">
+      <h2>Что понадобится</h2>
+      <ol>
+        <li><div><div class="item-title">Карта</div><div class="item-desc">Российские работают на Beget и Timeweb. Для Claude Max нужна иностранная виртуалка, проще всего у бота «Плати по миру». Бери карту страны без санкций, желательно той же, что у твоего VPN. При оплате Anthropic VPN должен быть статичным, иначе привязка отвалится (шаг 06).<div class="service-row"><a href="https://platipomiru.com/?code=WESI4DM8" target="_blank" rel="noopener" class="service-btn">«Плати по миру» <span class="arr">→</span></a></div></div></div></li>
+        <li><div><div class="item-title">$20-$200 в месяц на Claude</div><div class="item-desc">Начни с младшего тарифа, апгрейд в два клика. Эта подписка заменяет API-ключи, ботов и половину плагинов.</div></div></li>
+        <li><div><div class="item-title">500-1000 ₽ в месяц на сервер</div><div class="item-desc">Первый месяц минимум, потом подрастёшь по необходимости.</div></div></li>
+        <li><div><div class="item-title">Один вечер</div><div class="item-desc">Реально 2-3 часа. Второй раз привычно, третий, за 30 минут.</div></div></li>
+        <li><div><div class="item-title">Любой ноутбук</div><div class="item-desc">Mac, Windows, Chromebook. Через браузер и одну программу.</div></div></li>
+      </ol>
+      <p style="margin-top:18px;font-weight:500;color:var(--text)">Программисты не нужны. Знания кода не нужны. Серьёзно.</p>
+    </section>
+
+    <section id="step-01" class="funnel-step reveal">
+      <div class="num">01</div>
+      <div>
+        <div class="label">Шаг 01</div>
+        <h3>Купить сервер</h3>
+        <div class="vika-tip">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория" class="vika-avatar">
+          <div class="tip-bubble">
+            <div class="tip-name">Вика <span class="tip-tag">подсказка</span></div>
+            <div class="tip-text">Я брала Hostinger по реф-ссылке, −20% от цены. KVM 2, 4 ядра, RAM 4 GB хватает на всё.</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Идёшь на хостинг и оформляешь VPS. <strong>Beget</strong>, русский интерфейс, российские карты. Для иностранной карты и сервера за границей, <strong>Hostinger</strong> или <strong>DigitalOcean</strong>.</p>
+          <div class="service-row">
+            <a href="https://www.hostinger.com?REFERRALCODE=UGXHEYSEYBUJ" target="_blank" rel="noopener" class="service-btn">Hostinger · −20% <span class="arr">→</span></a>
+            <a href="https://beget.com/ru/vps" target="_blank" rel="noopener" class="service-btn soft">Beget VPS <span class="arr">→</span></a>
+            <a href="https://www.digitalocean.com/" target="_blank" rel="noopener" class="service-btn soft">DigitalOcean <span class="arr">→</span></a>
+          </div>
+          <p class="service-hint">Реферальная ссылка Hostinger, −20% на первый платёж.</p>
+          <p><strong>На Beget:</strong></p>
+          <ol>
+            <li>Открой <code>beget.com/ru/vps</code>.</li>
+            <li>Тариф <strong>VPS Start</strong> или <strong>Standard</strong> (500-900 ₽/мес). Минимум <strong>2 ГБ RAM, 2 ядра</strong>, иначе Клод задохнётся.</li>
+            <li>ОС: <strong>Ubuntu 22.04</strong>. Именно она, не Debian.</li>
+            <li>Пароль root, придумай и <strong>запиши</strong>. Потеряешь, пересоздавать сервер с нуля.</li>
+            <li>Оплати картой. На выходе: <strong>IP</strong> (например <code>185.12.34.56</code>), <strong>логин</strong> <code>root</code> и пароль.</li>
+          </ol>
+          <p>Всё. У тебя теперь компьютер в интернете. Он работает прямо сейчас.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-02" class="funnel-step reveal">
+      <div class="num">02</div>
+      <div>
+        <div class="label">Шаг 02</div>
+        <h3>Подключиться через VS Code</h3>
+        <div class="vika-tip">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория" class="vika-avatar">
+          <div class="tip-bubble">
+            <div class="tip-name">Вика <span class="tip-tag">подсказка</span></div>
+            <div class="tip-text">Кажется страшно, на деле 5 минут. Если застрял, пиши в <a href="https://t.me/victorianartdinova" target="_blank" rel="noopener">личку</a>, подскажу.</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Можно ходить в сервер через голый терминал, но это страшно с первого раза. Я хожу через <strong>Visual Studio Code</strong>: бесплатный редактор Microsoft. Удобный интерфейс, файлы, встроенный терминал. И главное: <strong>Клод работает внутри сервера</strong>, у него нет доступа к твоему маку.</p>
+          <ol>
+            <li>Скачай <strong>VS Code</strong> с <code>code.visualstudio.com</code>, поставь как обычную программу.</li>
+            <li>Открой VS Code. В Extensions поставь плагин <code>Remote - SSH</code> от Microsoft (синяя галочка).</li>
+            <li>Там же, <code>Claude Code</code> от Anthropic. Официальный плагин, добавит кнопку запуска Клода.</li>
+            <li>Открой Command Palette: <code>⌘ Shift P</code> (Mac) или <code>Ctrl Shift P</code> (Win).</li>
+            <li>Напечатай <code>Remote-SSH: Connect to Host</code> → <strong>Add New SSH Host</strong>.</li>
+            <li>Вставь <code>ssh root@185.12.34.56</code> (свой IP). Enter. Выбери <code>~/.ssh/config</code>. Enter.</li>
+            <li>Снова Command Palette → <code>Remote-SSH: Connect to Host</code> → выбери IP. Откроется новое окно. <code>Linux</code>? Да. Пароль, root-пароль с Beget.</li>
+            <li>Готово. В нижнем углу, зелёная плашка <code>SSH: 185.12.34.56</code>. Ты <strong>внутри сервера</strong>.</li>
+          </ol>
+          <p>Первый коннект, минута. Все следующие, 2 секунды, один клик.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-03" class="funnel-step reveal">
+      <div class="num">03</div>
+      <div>
+        <div class="label">Шаг 03</div>
+        <h3>Запустить Клода внутри сервера</h3>
+        <div class="vika-tip">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория" class="vika-avatar">
+          <div class="tip-bubble">
+            <div class="tip-name">Вика <span class="tip-tag">подсказка</span></div>
+            <div class="tip-text">Когда Клод запустится, попроси: «представься и покажи что умеешь». Будет первым другом.</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Магия.</p>
+          <p>Открой встроенный терминал: <code>Terminal → New Terminal</code> или <code>Ctrl `</code> (обратный апостроф). Внизу появится командная строка, она работает на сервере.</p>
+          <p>Введи и нажми Enter:</p>
+          <code class="codeblock">curl -fsSL https://claude.ai/install.sh | bash</code>
+          <p>1-2 минуты установка. Жди, пока курсор замигает пустой.</p>
+          <p>Запускай:</p>
+          <code class="codeblock">claude</code>
+          <p>При первом запуске спросит как авторизоваться. Выбери <strong>Claude Max subscription</strong> (не API, Max дешевле и мощнее). Клод покажет ссылку, открой в браузере, залогинься в Anthropic, подтверди доступ.</p>
+          <p>Вернись в VS Code, Клод напишет <code>Authenticated</code>. Он твой.</p>
+          <div class="try-this"><div class="head">Что получилось</div><div class="body">ИИ живёт на твоём сервере. Ты смотришь на него через VS Code, твой мак его не видит. Как отдельная рабочая комната, туда заходишь работать, домашнее остаётся дома.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-04" class="funnel-step reveal">
+      <div class="num">04</div>
+      <div>
+        <div class="label">Шаг 04</div>
+        <h3>Сказать Клоду «сделай себя удобным»</h3>
+        <div class="vika-tip">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория" class="vika-avatar">
+          <div class="tip-bubble">
+            <div class="tip-name">Вика <span class="tip-tag">подсказка</span></div>
+            <div class="tip-text">Это магия. После этого шага Клод сам адаптируется под тебя, папки, конфиги, правила. Просто говори словами.</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Клод запущен, но пока пустой, как новый ноут без настроек. Надо объяснить кто ты и как работаешь. У программистов это занимает дни. Здесь, 5 минут и словами.</p>
+          <p>Не печатай, <strong>наговаривай голосом</strong>. На айфоне встроенная диктовка отлично понимает длинные мысли. На маке поставь приложение со словом <strong>Whisper</strong> в названии. Через голос мысль льётся естественно.</p>
+          <div class="try-this"><div class="head">Промпт</div><div class="body">Привет. Меня зовут [имя]. Я [кто, блогер, маркетолог, директор агентства]. У меня свой VPS, ты только что запустился. Настрой здесь всё для комфортной работы: базовая структура папок (заметки, проекты, база знаний, процессы), нужные пакеты, git, CLAUDE.md с моими правилами. На каждом шаге объясняй что делаешь.</div></div>
+          <p>Enter. Клод начинает <strong>сам</strong> выполнять команды: папки, пакеты, конфиги, проверки. На каждом шаге показывает «сейчас делаю это», «нужно для того», «готово».</p>
+          <p>Ты смотришь и соглашаешься. На каждое предложение он спрашивает подтверждения, жмёшь Enter, продолжает.</p>
+          <p>Первый раз, как фокус. На третий перестаёшь следить и идёшь пить чай.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-05" class="funnel-step reveal">
+      <div class="num">05</div>
+      <div>
+        <div class="label">Шаг 05</div>
+        <h3>Первый скилл</h3>
+        <div class="vika-tip">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория" class="vika-avatar">
+          <div class="tip-bubble">
+            <div class="tip-name">Вика <span class="tip-tag">подсказка</span></div>
+            <div class="tip-text">Скилл, это ярлык. Один раз написал, один раз показал, дальше зовёшь по имени. Начни с чего-то, что делаешь каждую неделю.</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Скилл, <strong>текстовый файл</strong> с инструкцией для Клода. Как служебка для сотрудника.</p>
+          <p>Например, ты часто пишешь посты в TG. Каждый раз объясняешь «тон», «структуру», «что не любишь». Это повторяется, идеальный кандидат на скилл.</p>
+          <div class="try-this"><div class="head">Промпт</div><div class="body">Создай мой первый скилл, для постов в TG-канал. Сохрани в <code>.claude/skills/posts.skill.md</code>. Сначала задай 10 вопросов про мой тон, структуру, запреты, примеры что нравится. Из ответов собери скилл по правильной структуре.</div></div>
+          <p>Клод задаст вопросы. Отвечаешь в свободной форме. Он превращает ответы в структурированный файл.</p>
+          <p>Теперь когда попросишь пост, Клод прочитает скилл и сработает по твоим правилам. Разница как между стажёром и сеньором.</p>
+          <p>В пакете к этой статье, <strong>4 готовых скилла</strong>. Посмотри как примеры, укради структуру, перепиши под себя. Этому учит скилл <code>skill-builder</code>, он тоже в пакете.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-06" class="funnel-step reveal">
+      <div class="num">06</div>
+      <div>
+        <div class="label">Шаг 06 · бонус</div>
+        <h3>Свой VPN на этом же сервере через Amnezia</h3>
+        <div class="vika-tip">
+          <img src="/assets/avatars/vika-avatar.jpg" alt="Виктория" class="vika-avatar">
+          <div class="tip-bubble">
+            <div class="tip-name">Вика <span class="tip-tag">подсказка</span></div>
+            <div class="tip-text">Если статичный IP для Anthropic надоел через сторонний VPN, этот шаг для тебя. Один сервер на всё: и Клод, и VPN.</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>У тебя уже компьютер в интернете, почему бы не сделать его личным VPN. Без подписок, без «недоступно из вашей страны», без отвалов платных. И заодно <strong>статичный IP</strong> для Anthropic, привязка карты не отвалится.</p>
+          <p>Я пользуюсь <strong>AmneziaVPN</strong>: обходит блокировки в России, не требует ручной возни с конфигами. Серверную часть ставит сам десктопный клиент.</p>
+          <div class="service-row">
+            <a href="https://amnezia.org/ru/downloads" target="_blank" rel="noopener" class="service-btn">Скачать Amnezia <span class="arr">→</span></a>
+            <a href="https://docs.amnezia.org/ru/documentation/instructions/" target="_blank" rel="noopener" class="service-btn soft">Гайд установки <span class="arr">→</span></a>
+          </div>
+          <ol>
+            <li>Поставь <strong>Amnezia</strong> на мак или винду.</li>
+            <li>В клиенте: «подключить свой сервер» → IP с Beget/Hostinger, логин <code>root</code>, пароль.</li>
+            <li>Протокол <strong>AmneziaWG</strong> (WireGuard с обфускацией, главная фишка Amnezia). Установка 2-3 минуты, клиент всё ставит сам.</li>
+            <li>Готово: значок «защита включена», трафик идёт через сервер, IP сервера = твой статичный IP.</li>
+            <li>Для телефона: <strong>AmneziaVPN</strong> из App Store / Google Play. Расшарь QR из десктопного клиента, конфиг импортируется.</li>
+          </ol>
+          <div class="try-this"><div class="head">Итог</div><div class="body">Один сервер закрывает обе задачи: AI-офис с Клодом и личный VPN на все устройства. Поедешь за границу, VPN с собой. Перед оплатой Anthropic убедись: Amnezia включена, страна сервера = страна карты от «Плати по миру».</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="troubleshooting" class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Если что-то пошло не так</h2>
+      <div class="note coral"><strong>SSH не пускает, Permission denied.</strong> Неправильный пароль или IP. Пароль вводится «вслепую», курсор не двигается. Попробуй ещё раз. Если точно правильно, проверь IP в команде <code>ssh root@IP</code>.</div>
+      <div class="note honey"><strong>Команды падают с ошибкой.</strong> Скопируй текст ошибки, вставь Клоду со словами «вот что сломалось, почини». Клод прочитает и либо починит, либо объяснит.</div>
+      <div class="note mint"><strong>Клод не запускается, command not found.</strong> Установка не прошла до конца. Запусти <code>npm install -g @anthropic-ai/claude-code</code> ещё раз. Проверь интернет: <code>ping google.com</code> (Ctrl+C прервать).</div>
+    </section>
+
+    <section id="whats-next" class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Что дальше</h2>
+      <p style="color:var(--text-secondary);font-size:16px;line-height:1.65;margin-bottom:24px">У тебя сервер, Клод и базовая настройка. Это как купить машину, пора поехать. Дальше в порядке ценности:</p>
+      <div class="checklist" style="margin:0">
+        <ol>
+          <li><div><div class="item-title">Создать свои скиллы</div><div class="item-desc">По одному процессу за раз. Не описывай всё сразу, путь в хаос. Один скилл → проверь на реальной задаче → доработай. За месяц 10-15 штук.</div></div></li>
+          <li><div><div class="item-title">Выгрузить свою экспертизу</div><div class="item-desc">Знания, что нарабатывались годами, переговоры, тексты, продажи. Пока в голове, ты единственный источник. Выгрузи в текст, зашей в Клода, появится «второй ты». Скилл <code>expertise-extractor</code> в пакете.</div></div></li>
+          <li><div><div class="item-title">Подключить свои данные</div><div class="item-desc">Drive, Календарь, заметки, CRM. Через MCP-серверы, одной командой. Клод начнёт работать с реальными данными.</div></div></li>
+          <li><div><div class="item-title">Бот-интерфейс</div><div class="item-desc">Чтобы не лезть в терминал, телеграм-бот с голосовыми. Кинул мысль на бегу, получил черновик.</div></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="next-cards reveal">
+      <a href="/ai-office/tg/" class="next-card">
+        <div class="tag">Следующий шаг</div>
+        <h3>Шаг 2 · Управление с телефона</h3>
+        <p>Свой телеграм-бот, который заходит к Клоду и приносит ответ. Без ноутбука, без терминала.</p>
+        <span class="arrow">Открыть →</span>
+      </a>
+      <a href="/ai-office/codex/" class="next-card">
+        <div class="tag">Бонус</div>
+        <h3>Codex от OpenAI с телефона</h3>
+        <p>Альтернатива Клоду: ChatGPT-агент на компе, управление с телефона. Plus за $20.</p>
+        <span class="arrow">Открыть →</span>
+      </a>
+    </div>
+
+    <section class="wow reveal">
+      <div class="label">Финал</div>
+      <h2>Я даю инструмент. Дальше ты строишь под себя.</h2>
+      <p>Я могла бы отдать тебе мои 46 агентов готовыми. Но это мой бизнес, они знают мой тон, мои процессы, моих клиентов.</p>
+      <p>Поставь сервер, подними Клода, дай ему свои правила. Через две недели у тебя свой Клод, с твоим контекстом, тоном и процессами внутри.</p>
+      <p style="margin-top:24px">Если нужен взгляд со стороны, я консультирую предпринимателей по маркетингу, процессам и AI. Распакуем твою задачу и соберём контур под неё.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px">
+        <a href="https://t.me/victorianartdinova" target="_blank" rel="noopener" class="channel-card" style="margin-top:0">
+          <span class="avatar"><img src="/assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова"></span>
+          <span class="info">
+            <span class="name">@victorianartdinova <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.566 7.04l-1.522 7.18c-.115.519-.418.643-.847.4l-2.34-1.726-1.13 1.087c-.124.124-.229.229-.471.229l.168-2.388 4.342-3.922c.188-.168-.041-.262-.293-.094L8.99 13.18l-2.314-.724c-.504-.158-.514-.504.105-.747l9.046-3.485c.42-.158.787.094.74.816z"/></svg></span>
+            <span class="sub">Личка · консультация</span>
+          </span>
+        </a>
+        <a href="https://t.me/vnartdinova" target="_blank" rel="noopener" class="channel-card" style="margin-top:0">
+          <span class="avatar"><img src="/assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова"></span>
+          <span class="info">
+            <span class="name">@vnartdinova <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.566 7.04l-1.522 7.18c-.115.519-.418.643-.847.4l-2.34-1.726-1.13 1.087c-.124.124-.229.229-.471.229l.168-2.388 4.342-3.922c.188-.168-.041-.262-.293-.094L8.99 13.18l-2.314-.724c-.504-.158-.514-.504.105-.747l9.046-3.485c.42-.158.787.094.74.816z"/></svg></span>
+            <span class="sub">Канал · следующие шаги и разборы</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <div class="reveal" style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px">– Виктория</div>
+
+  </article>
+</div>
+
+<footer class="site-footer">
+  <a href="/">theglavnoe.com</a> · <a href="/blog/">Статьи</a> · <a href="/blog/ai/">AI-гайды</a> · <a href="/about">О нас</a> · <a href="/contact">Контакты</a>
+</footer>
+
+<script>
+(function(){
+  var pb=document.getElementById('pb');
+  function upd(){var h=document.documentElement;var s=h.scrollTop/(h.scrollHeight-h.clientHeight);pb.style.width=(s*100)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var tocLinks=document.querySelectorAll('.toc-list a');
+  var sections=Array.prototype.map.call(tocLinks,function(a){return document.getElementById(a.getAttribute('href').slice(1))}).filter(Boolean);
+  function setActive(){var y=window.scrollY+120;var cur=sections[0];sections.forEach(function(s){if(s&&s.offsetTop<=y)cur=s});tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href').slice(1)===(cur&&cur.id))});}
+  window.addEventListener('scroll',setActive,{passive:true});setActive();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-офис, Шаг 2: управление Клодом с телефона | ГЛАВНОЕ</title>
+<meta name="description" content="Терминал в кармане за 5 минут или свой телеграм-бот с голосовыми и топиками за час. Без ноутбука, без программиста.">
+<link rel="canonical" href="https://theglavnoe.com/ai-office/tg/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-офис, Шаг 2: управление Клодом с телефона">
+<meta property="og:description" content="Терминал в кармане за 5 минут или свой телеграм-бот с голосовыми и топиками за час.">
+<meta property="og:url" content="https://theglavnoe.com/ai-office/tg/">
+<meta property="og:image" content="https://theglavnoe.com/assets/avatars/vika-avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png">
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-Regular.otf" type="font/otf" crossorigin>
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-SemiBold.otf" type="font/otf" crossorigin>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"AI-офис, Шаг 2: управление Клодом с телефона","datePublished":"2026-05-11","dateModified":"2026-05-24","author":{"@type":"Person","name":"Виктория Нартдинова"},"publisher":{"@type":"Organization","name":"ГЛАВНОЕ","logo":{"@type":"ImageObject","url":"https://theglavnoe.com/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://theglavnoe.com/ai-office/tg/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://theglavnoe.com/"},{"@type":"ListItem","position":2,"name":"AI-гайды","item":"https://theglavnoe.com/blog/ai/"},{"@type":"ListItem","position":3,"name":"AI-офис, Шаг 2","item":"https://theglavnoe.com/ai-office/tg/"}]}
+</script>
+
+<style>
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Book.otf') format('opentype');font-weight:350;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+::selection{background:#ECE6F8;color:#1A1814}
+:root{
+  --bg:#FBF7F1;--card-bg:#FFFFFF;--text:#1A1814;--text-secondary:#5C5750;--text-muted:#8A857E;
+  --border:#E5E0D8;--accent:#A087D3;--accent-soft:#F6F3FC;--accent-soft-2:#ECE6F8;
+  --accent-mint:#5CBA8C;--accent-mint-soft:#ECFDF5;--accent-coral:#F0805F;--accent-coral-soft:#FEF3F0;
+  --accent-honey:#F5C24A;--accent-honey-soft:#FEF9E7;--card-radius:24px;
+  --card-shadow:0 1px 3px rgba(26,24,20,.04),0 8px 24px rgba(26,24,20,.04);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Suisse Intl','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent-mint),var(--accent),var(--accent-coral));z-index:100;transition:width .1s linear}
+.site-nav{position:sticky;top:0;background:rgba(251,247,241,.92);backdrop-filter:blur(14px);padding:20px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:50}
+.site-nav .logo{font-size:18px;font-weight:600;color:var(--text)}
+.site-nav .logo:hover{color:var(--accent)}
+.site-nav .nav-links{display:flex;gap:24px;font-size:14px}
+.site-nav .nav-links a{color:var(--text-secondary);transition:color .2s}
+.site-nav .nav-links a:hover{color:var(--accent)}
+@media(max-width:720px){.site-nav .nav-links{display:none}}
+.breadcrumb{padding:24px 32px 0;font-size:13px;color:var(--text-muted);max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--text);font-weight:500}
+
+/* HERO with blobs */
+.hero{padding:48px 32px 32px;max-width:1080px;margin:0 auto;position:relative;overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none;z-index:1}
+.hero .blob.b1{width:380px;height:380px;background:var(--accent-mint);top:-100px;left:-80px}
+.hero .blob.b2{width:340px;height:340px;background:var(--accent);top:80px;right:-60px}
+.hero .blob.b3{width:260px;height:260px;background:var(--accent-coral);bottom:-80px;left:40%}
+.hero > *{position:relative;z-index:2}
+.hero .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:600;margin-bottom:16px;opacity:0;transform:translateY(20px);animation:reveal .8s var(--ease) .05s forwards}
+.hero h1{font-size:clamp(40px,5.5vw,72px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px;max-width:900px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .15s forwards}
+.hero h1 .accent{background:linear-gradient(120deg,var(--accent) 0%,var(--accent-coral) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.hero .subtitle{font-size:clamp(18px,2vw,21px);color:var(--text-secondary);line-height:1.55;max-width:680px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .3s forwards}
+.hero .meta{margin-top:24px;display:flex;gap:14px;font-size:14px;color:var(--text-muted);opacity:0;animation:reveal .9s var(--ease) .45s forwards}
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+.layout{max-width:1200px;margin:32px auto 0;padding:0 32px 80px;display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.toc{position:sticky;top:88px;font-size:13px}
+.toc-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:600;margin-bottom:14px;padding:0 12px}
+.toc-list{list-style:none}
+.toc-list li a{display:block;padding:9px 12px;color:var(--text-secondary);font-size:13px;line-height:1.4;border-radius:10px;transition:all .2s var(--ease)}
+.toc-list li a:hover{color:var(--text);background:var(--accent-soft)}
+.toc-list li a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
+@media(max-width:1023px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+
+.article{max-width:760px;min-width:0}
+.article h2{font-size:clamp(26px,3.2vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.02em;color:var(--text)}
+.article .prose p{font-size:17px;color:var(--text);line-height:1.7;margin-bottom:18px}
+.article .prose strong{font-weight:600;color:var(--text)}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* TWO PATHS, choose your variant */
+.paths{margin:32px 0 40px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.path-card{position:relative;border-radius:var(--card-radius);padding:32px 28px;transition:all .3s var(--ease);box-shadow:var(--card-shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:240px;overflow:hidden;border:1px solid transparent}
+.path-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,24,20,.08),0 24px 56px rgba(26,24,20,.1)}
+.path-card.fast{background:linear-gradient(135deg,var(--accent-mint-soft) 0%,#FFFFFF 80%);border-color:rgba(92,186,140,.25)}
+.path-card.full{background:linear-gradient(135deg,var(--accent-soft) 0%,#FFFFFF 80%);border-color:rgba(160,135,211,.25)}
+.path-card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:10px;display:inline-flex;align-items:center;gap:8px}
+.path-card.fast .tag{color:var(--accent-mint)}
+.path-card.full .tag{color:var(--accent)}
+.path-card .tag .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.path-card.fast .tag .dot{background:var(--accent-mint)}
+.path-card.full .tag .dot{background:var(--accent)}
+.path-card h3{font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-0.02em;color:var(--text);margin-bottom:8px}
+.path-card p{font-size:15px;color:var(--text-secondary);line-height:1.55;margin-bottom:18px;flex:1}
+.path-card .go{font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.path-card.fast .go{color:var(--accent-mint)}
+.path-card.full .go{color:var(--accent)}
+@media(max-width:720px){.paths{grid-template-columns:1fr}}
+
+.pull{margin:48px 0;padding:24px 28px;border-left:4px solid var(--accent)}
+.pull p{font-size:clamp(22px,2.6vw,28px);font-weight:600;line-height:1.25;letter-spacing:-0.01em;color:var(--text)}
+.pull p.sub{font-weight:500;color:var(--text-secondary);font-size:20px;margin-top:10px}
+
+/* HERO CARD FOR VARIANT 1, big and bold */
+.hero-card{margin:48px 0;border-radius:var(--card-radius);padding:44px 40px;background:linear-gradient(135deg,var(--accent-mint-soft) 0%,#FFFFFF 60%,var(--accent-honey-soft) 100%);border:1px solid rgba(92,186,140,.2);position:relative;overflow:hidden;box-shadow:var(--card-shadow)}
+.hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:var(--accent-mint);border-radius:50%;opacity:.18;filter:blur(40px)}
+.hero-card > *{position:relative;z-index:2}
+.hero-card .num{font-family:'Suisse Intl',serif;font-weight:600;font-size:clamp(80px,12vw,140px);line-height:.85;letter-spacing:-0.04em;color:var(--accent-mint);opacity:.18;position:absolute;top:18px;right:32px;z-index:1}
+.hero-card .label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-mint);font-weight:600;margin-bottom:8px}
+.hero-card h2{font-size:clamp(26px,3.4vw,38px);font-weight:600;letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px;color:var(--text)}
+.hero-card .lead{font-size:17px;color:var(--text);line-height:1.65;margin-bottom:14px}
+.hero-card .body p{font-size:15.5px;color:var(--text-secondary);line-height:1.65;margin-bottom:12px}
+.hero-card .body strong{color:var(--text)}
+.hero-card code{background:rgba(255,255,255,.7);color:var(--text);padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92em;border:1px solid var(--border)}
+
+/* Service buttons, make Moshi LOUD */
+.service-row{margin:22px 0 18px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.service-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;background:var(--text);color:#FBF7F1;border-radius:14px;font-size:15px;font-weight:600;transition:all .2s var(--ease);box-shadow:0 4px 14px rgba(26,24,20,.18)}
+.service-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,24,20,.25);background:#000}
+.service-btn .arr{font-weight:400;opacity:.7;transition:transform .2s var(--ease)}
+.service-btn:hover .arr{transform:translateX(4px);opacity:1}
+.service-btn.soft{background:#FFFFFF;color:var(--text);border:1px solid var(--border);box-shadow:var(--card-shadow)}
+.service-btn.soft:hover{background:#FFFFFF;border-color:var(--accent);color:var(--accent)}
+@media(max-width:520px){.service-row{grid-template-columns:1fr}}
+
+.checklist{margin:48px 0;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:36px;box-shadow:var(--card-shadow)}
+.checklist .label-2{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.checklist h2{margin-bottom:18px}
+.checklist .intro{font-size:15px;color:var(--text-secondary);margin-bottom:22px;line-height:1.6}
+.checklist ol{list-style:none;counter-reset:ck;margin-top:8px}
+.checklist ol li{counter-increment:ck;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.checklist ol li:last-child{border-bottom:none}
+.checklist ol li::before{content:counter(ck,decimal-leading-zero);color:var(--accent);font-size:13px;font-weight:600;min-width:32px}
+.checklist .item-title{font-weight:600;color:var(--text);font-size:16px;margin-bottom:4px}
+.checklist .item-desc{font-size:15px;color:var(--text-secondary);line-height:1.55}
+.checklist .pipe{background:#1A1814;color:#FBF7F1;padding:18px 22px;border-radius:14px;font-family:'JetBrains Mono','Menlo',monospace;font-size:13px;line-height:1.7;white-space:pre-wrap;margin-bottom:22px;overflow-x:auto;word-break:break-word}
+@media(max-width:520px){.checklist .pipe{font-size:11.5px;padding:14px 16px}}
+
+.note{margin:14px 0;padding:18px 22px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:12px;font-size:16px;color:var(--text);line-height:1.6}
+.note.mint{background:var(--accent-mint-soft);border-left-color:var(--accent-mint)}
+.note.coral{background:var(--accent-coral-soft);border-left-color:var(--accent-coral)}
+.note.honey{background:var(--accent-honey-soft);border-left-color:var(--accent-honey)}
+
+.funnel-step{margin:28px 0;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:36px;box-shadow:var(--card-shadow);display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;transition:transform .3s var(--ease);position:relative;overflow:hidden}
+.funnel-step:hover{transform:translateY(-3px)}
+.funnel-step .num{font-size:72px;font-weight:600;letter-spacing:-0.04em;color:var(--accent);opacity:0.25;line-height:1}
+.funnel-step .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.funnel-step h3{font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;color:var(--text);line-height:1.25}
+.funnel-step .body p{font-size:16px;color:var(--text-secondary);line-height:1.65;margin-bottom:12px}
+.funnel-step .body p:last-child{margin-bottom:0}
+.funnel-step .body strong{color:var(--text)}
+.funnel-step ul,.funnel-step ol{padding-left:22px;margin:8px 0}
+.funnel-step ul{list-style:disc}.funnel-step ol{list-style:decimal}
+.funnel-step ul li,.funnel-step ol li{font-size:15px;color:var(--text-secondary);line-height:1.65;margin-bottom:6px}
+.funnel-step .codeblock{display:block;background:#1A1814;color:#FBF7F1;padding:14px 18px;border-radius:12px;font-family:'JetBrains Mono','Menlo',monospace;font-size:13px;margin:12px 0;overflow-x:auto;white-space:pre-wrap;word-break:break-word;line-height:1.55}
+.funnel-step code:not(.codeblock){background:var(--accent-soft);color:var(--text);padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92em}
+.funnel-step a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(160,135,211,.4);text-underline-offset:3px}
+.funnel-step a:hover{text-decoration-color:var(--accent)}
+@media(max-width:720px){.funnel-step{grid-template-columns:1fr;padding:24px;gap:12px}.funnel-step .num{font-size:54px}}
+
+.vika-tip{display:flex;gap:12px;align-items:flex-start;margin:0 0 18px;padding:14px 16px 14px 14px;background:linear-gradient(180deg,#FFFDF6 0%,var(--accent-honey-soft) 100%);border:1px solid var(--border);border-radius:18px}
+.vika-tip .vika-avatar{flex-shrink:0;width:38px;height:38px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08)}
+.vika-tip .tip-bubble{flex:1;min-width:0}
+.vika-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.vika-tip .tip-name .tip-tag{font-size:10px;font-weight:500;color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:6px;text-transform:uppercase;letter-spacing:.06em}
+.vika-tip .tip-text{font-size:14px;color:var(--text);line-height:1.5}
+.vika-tip .tip-text a{color:var(--accent);font-weight:500;border-bottom:1px solid rgba(160,135,211,.4)}
+@media(max-width:520px){.vika-tip{padding:12px 14px 12px 12px;gap:10px}.vika-tip .vika-avatar{width:34px;height:34px}.vika-tip .tip-text{font-size:13px}}
+
+.wow{margin:64px 0 32px;background:#1A1814;color:#FBF7F1;border-radius:var(--card-radius);padding:56px 48px;position:relative;overflow:hidden}
+.wow::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:var(--accent);opacity:.15;border-radius:50%;filter:blur(60px)}
+.wow > *{position:relative;z-index:2}
+.wow .label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:600;margin-bottom:16px}
+.wow h2{font-size:clamp(26px,3vw,36px);font-weight:600;color:#FBF7F1;letter-spacing:-0.02em;line-height:1.2;margin-bottom:18px}
+.wow p{font-size:17px;line-height:1.65;color:rgba(251,247,241,.85);margin-bottom:14px}
+.wow .channel-card{display:inline-flex;align-items:center;gap:14px;padding:12px 20px 12px 12px;background:rgba(251,247,241,.08);border:1px solid rgba(251,247,241,.18);border-radius:999px;margin-top:24px;transition:all .2s var(--ease)}
+.wow .channel-card:hover{background:rgba(251,247,241,.14);border-color:var(--accent)}
+.wow .channel-card .avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;background:var(--accent-soft)}
+.wow .channel-card .avatar img{width:100%;height:100%;object-fit:cover}
+.wow .channel-card .info{display:flex;flex-direction:column;line-height:1.25}
+.wow .channel-card .name{font-size:14px;font-weight:600;color:#FBF7F1;display:flex;align-items:center;gap:6px}
+.wow .channel-card .sub{font-size:12px;color:rgba(251,247,241,.6)}
+.wow .channel-card .tg-icon{width:18px;height:18px;color:#229ED9}
+
+.next-cards{margin:48px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.next-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:28px;transition:all .3s var(--ease);box-shadow:var(--card-shadow);display:block}
+.next-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 4px 12px rgba(26,24,20,.06),0 24px 56px rgba(26,24,20,.08)}
+.next-card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:10px}
+.next-card h3{font-size:20px;font-weight:600;color:var(--text);line-height:1.25;margin-bottom:8px}
+.next-card p{font-size:14px;color:var(--text-secondary);line-height:1.55}
+.next-card .arrow{display:block;margin-top:14px;color:var(--accent);font-size:14px;font-weight:600}
+@media(max-width:720px){.next-cards{grid-template-columns:1fr}}
+
+.site-footer{padding:32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);text-align:center;background:var(--bg)}
+.site-footer a{color:var(--text-secondary);margin:0 8px}
+.site-footer a:hover{color:var(--accent)}
+
+@media(max-width:520px){
+  .hero{padding:32px 20px 24px}.breadcrumb{padding:20px 20px 0}
+  .layout{padding:0 20px 64px}.site-nav{padding:16px 20px}.wow{padding:40px 24px}
+  .hero-card{padding:32px 24px}.hero-card .num{font-size:64px;top:14px;right:18px}
+  .checklist{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="pb"></div>
+
+<nav class="site-nav">
+  <a href="/" class="logo">ГЛАВНОЕ</a>
+  <div class="nav-links">
+    <a href="/">Главная</a>
+    <a href="/cases/portfolio">Кейсы</a>
+    <a href="/blog/">Статьи</a>
+    <a href="/about">О нас</a>
+    <a href="/contact">Контакты</a>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Главная</a> · <a href="/blog/ai/">AI-гайды</a> · <a href="/ai-office/">AI-офис</a> · <span>Шаг 2 · Управление с телефона</span></div>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="eyebrow">AI-офис · Шаг 2</div>
+  <h1>Как управлять Клодом <span class="accent">с телефона</span></h1>
+  <p class="subtitle">Два варианта: терминал в кармане за 5 минут или свой телеграм-бот с голосовыми и топиками за час. Без ноутбука, без программиста.</p>
+  <div class="meta"><span>Виктория Нартдинова</span><span style="color:var(--border)">·</span><span>6 минут чтения</span></div>
+</section>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc-title">Содержание</div>
+    <ul class="toc-list">
+      <li><a href="#intro">Два варианта</a></li>
+      <li><a href="#ssh-alt">Вариант 1 · Moshi</a></li>
+      <li><a href="#ready">Вариант 2 · что готово</a></li>
+      <li><a href="#step-01">01 · Бот в Телеграме</a></li>
+      <li><a href="#step-02">02 · Группа с топиками</a></li>
+      <li><a href="#step-03">03 · Скормить Клоду</a></li>
+      <li><a href="#step-04">04 · Подписка</a></li>
+      <li><a href="#step-05">05 · Топики и папки</a></li>
+      <li><a href="#step-06">06 · Первый тест</a></li>
+      <li><a href="#troubleshooting">Если сломалось</a></li>
+      <li><a href="#whats-next">Что дальше</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="intro" class="reveal prose">
+      <h2 style="margin-bottom:18px">Два варианта · что выбрать</h2>
+      <p>Я люблю быть на ходу, и работать за ПК ненавижу. Поэтому Клод у меня в кармане. За полгода попробовала всё, осталось два рабочих варианта.</p>
+      <p style="font-size:15px;color:var(--text-secondary);background:var(--accent-soft);padding:14px 18px;border-radius:12px;border-left:3px solid var(--accent);margin-top:6px;margin-bottom:24px">Если сервера ещё нет, сначала <a href="/ai-office/" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">Шаг 1: свой сервер под любую LLM</a>. Этот гайд работает поверх него.</p>
+      <div class="paths" style="margin:0">
+        <a href="#ssh-alt" class="path-card fast">
+          <div>
+            <div class="tag"><span class="dot"></span>Вариант 1 · 5 минут</div>
+            <h3>Moshi на телефон</h3>
+            <p>Терминал в кармане. Самый быстрый способ зайти в Клода с айфона.</p>
+          </div>
+          <span class="go">К инструкции →</span>
+        </a>
+        <a href="#ready" class="path-card full">
+          <div>
+            <div class="tag"><span class="dot"></span>Вариант 2 · 1 час</div>
+            <h3>Свой телеграм-бот</h3>
+            <p>Голосовые в топик, ответ в карман. Каждый топик, своя папка проекта.</p>
+          </div>
+          <span class="go">К инструкции →</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="pull reveal">
+      <p>Самое сильное в обеих схемах, карман. Мысль приходит на пробежке, через 30 секунд она уже у Клода.</p>
+      <p class="sub">Раньше я её забывала.</p>
+    </div>
+
+    <section id="ssh-alt" class="hero-card reveal">
+      <div class="num">01</div>
+      <div class="label">Вариант 1 · 5 минут · самый быстрый</div>
+      <h2>Moshi: терминал прямо в телефоне</h2>
+      <p class="lead">Заходишь по SSH на свой сервер, набираешь <code>claude</code>, работаешь как с ноута. Никаких ботов, никакой инфраструктуры.</p>
+      <div class="service-row">
+        <a href="https://apps.apple.com/kz/app/moshi-ssh-mosh-terminal/id6757859949" target="_blank" rel="noopener" class="service-btn">Moshi · App Store <span class="arr">→</span></a>
+        <a href="https://play.google.com/store/apps/details?id=com.server.auditor.ssh.client" target="_blank" rel="noopener" class="service-btn soft">Termius · Android <span class="arr">→</span></a>
+      </div>
+      <div class="body">
+        <p>На айфоне беру <strong>Moshi</strong>: внутри Mosh поверх UDP, сессия не отваливается при переходе wifi → мобильная сеть. Заходишь в метро, выходишь, Клод на том же месте. На Android: <strong>Termius</strong>, тоже бесплатный.</p>
+        <p><strong>Настройка:</strong> поставь приложение → новое подключение → IP сервера + логин <code>root</code> + root-пароль с хостинга → <code>claude</code>. Всё.</p>
+        <p>Этого хватает для 80% задач: подёргать Клода с дивана, кинуть мысль с пробежки, проверить долгий процесс. Если нужны голосовые и топики, Вариант 2 ниже.</p>
+      </div>
+    </section>
+
+    <section id="ready" class="checklist reveal">
+      <div class="label-2">Вариант 2 · 1 час</div>
+      <h2>Свой телеграм-бот · что должно быть готово</h2>
+      <p class="intro">Этот вариант мощнее: голосовое в топик, бот распознаёт, передаёт Клоду в нужную папку, ответ возвращается в тот же топик. Если какой-то пункт не закрыт, вернись в <a href="/ai-office/" style="color:var(--accent);text-decoration:underline">Шаг 1</a>.</p>
+      <div class="pipe">📱 Голосовое в топик «Контент»
+         ↓
+🤖 Бот в группе принимает
+         ↓
+🖥  Уходит на сервер
+         ↓
+🧠 Клод заходит в папку проекта
+         ↓
+✍️  Делает задачу: черновик, разбор, цифра
+         ↓
+💬 Ответ, в тот же топик</div>
+      <ol>
+        <li><div><div class="item-title">Свой сервер (VPS)</div><div class="item-desc">Адрес и SSH-доступ под рукой.</div></div></li>
+        <li><div><div class="item-title">Клод установлен на сервере</div><div class="item-desc">Команда <code style="background:var(--accent-soft);padding:2px 6px;border-radius:4px;font-family:monospace">claude</code> в терминале здоровается.</div></div></li>
+        <li><div><div class="item-title">Подписка Claude активна на сервере</div><div class="item-desc">Pro или Max, не API.</div></div></li>
+        <li><div><div class="item-title">Хотя бы один <code style="background:var(--accent-soft);padding:2px 6px;border-radius:4px;font-family:monospace">CLAUDE.md</code> в <code style="background:var(--accent-soft);padding:2px 6px;border-radius:4px;font-family:monospace">/root/</code></div><div class="item-desc">В Шаге 1 Клод уже собрал.</div></div></li>
+        <li><div><div class="item-title">Телеграм-аккаунт</div><div class="item-desc">Любой.</div></div></li>
+        <li><div><div class="item-title">Час времени</div><div class="item-desc"></div></div></li>
+      </ol>
+      <div class="note honey" style="margin-top:18px"><strong>Важное про подписку.</strong> Веб-клод на <a href="https://claude.ai" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">claude.ai</a> и подписка на сервере, один аккаунт Anthropic. Если зайти в веб под VPN, можно словить блок на всё. Я в веб не хожу.</div>
+    </section>
+
+    <section id="step-01" class="funnel-step reveal">
+      <div class="num">01</div>
+      <div>
+        <div class="label">Шаг 01</div>
+        <h3>Создаём бота в Телеграме 🤖</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Токен от BotFather сразу в заметки, потом не достанешь. И никому не показывай, это полный доступ к боту.</div></div></div>
+          <p>Бот, посланник между Телегой и сервером. Создаётся за 2 минуты.</p>
+          <ol>
+            <li>Найди в Телеге <a href="https://t.me/BotFather" target="_blank" rel="noopener">@BotFather</a> (с синей галочкой).</li>
+            <li><code>/start</code> → <code>/newbot</code>.</li>
+            <li>Имя (видно в чатах). Например, «Мой AI-офис».</li>
+            <li>Username с <code>bot</code> на конце. Например, <code>viktoria_office_bot</code>.</li>
+            <li>BotFather пришлёт токен вида <code>8204551730:AAHk9mP8Qx-...</code></li>
+          </ol>
+          <p>Токен, ключ от бота. В заметки, никому не показывать.</p>
+          <p>Заодно: <code>/setdescription</code> и <code>/setuserpic</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-02" class="funnel-step reveal">
+      <div class="num">02</div>
+      <div>
+        <div class="label">Шаг 02</div>
+        <h3>Группа с топиками под задачу</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">У меня 8 топиков, не больше. Один топик = один большой контекст. Если их 20, путаешься сама и Клод путается.</div></div></div>
+          <p>Здесь живут все топики. По топику на задачу.</p>
+          <ol>
+            <li>Создай в Телеге новую группу. Можно с собой, добавлять никого не нужно.</li>
+            <li>В настройках включи «Темы» (Topics).</li>
+            <li>Добавь бота, дай админку.</li>
+            <li>Создай первые темы. У меня: Контент, Рилсы, Финансы, Дев, Переговоры, Агентство, AI-школа, Личное.</li>
+          </ol>
+          <p>Каждую тему привяжем к своей папке проекта в шаге 05.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-03" class="funnel-step reveal">
+      <div class="num">03</div>
+      <div>
+        <div class="label">Шаг 03</div>
+        <h3>Скормить Клоду установку 🛠</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Клод будет писать код 15-20 минут. Не вмешивайся, не отменяй на середине. Когда увидишь «бот запущен», пиши <code>/start</code>.</div></div></div>
+          <p>Открой VS Code, подключись к серверу, запусти <code>claude</code>. Скопируй промпт целиком:</p>
+          <code class="codeblock">Напиши Telegram-бота для управления Клодом через Телегу. Стек: Python, aiogram. Положи в /root/ai-office-bot/, зависимости через uv. Что должен уметь:
+
+- Работать в группе с топиками (forum mode). Каждый топик привязан к своей папке через topic_config.json: thread_id → cwd, engine=claude, exec_mode=tmux (сессия не умирает).
+- На входящее: открыть tmux в нужной папке, передать claude текст, поймать ответ, вернуть в тот же топик.
+- Голосовые: Deepgram API (бесплатного лимита хватает) или локально faster-whisper.
+- Фото: передавать Клоду путь к файлу.
+- Защита по ALLOWED_USER_IDS из .env. Остальным короткий отказ.
+- Никакого ANTHROPIC_API_KEY. Только команда claude через залогиненную подписку Pro/Max.
+- systemd-сервис с автоперезапуском, логи через journalctl.
+
+Мой Telegram bot token: &lt;вставь&gt;. Мой user_id: &lt;свой&gt;. Язык русский. Объясняй каждый шаг.</code>
+          <p>Перед Enter: подставь токен от BotFather и свой <code>user_id</code>.</p>
+          <p>Где взять <code>user_id</code>: <a href="https://t.me/userinfobot" target="_blank" rel="noopener">@userinfobot</a> → <code>/start</code>, он пришлёт.</p>
+          <p>Дальше Клод сам: папка, python, uv, код, <code>.env</code>, сервис. 15-20 минут.</p>
+          <p>Когда увидишь «бот запущен», открой Телегу, напиши боту в любой топик <code>/start</code>. Ответит.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-04" class="funnel-step reveal">
+      <div class="num">04</div>
+      <div>
+        <div class="label">Шаг 04</div>
+        <h3>Подключить твою подписку Claude</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">API-ключи не нужны. Те же $20/$200 что уже списываются, отдельной оплаты бота не будет.</div></div></div>
+          <p>Бот вызывает <code>claude</code> на сервере той же командой, что и ты. Залогинен в Pro/Max на сервере (это Шаг 1), бот автоматически использует подписку.</p>
+          <p>Никаких API-ключей и отдельных оплат. Те же $20 (Pro) или $200 (Max), что у тебя уже списываются.</p>
+          <p>Хочешь убедиться, что бот не уйдёт в API, попроси Клода:</p>
+          <code class="codeblock">Проверь, что в .env и скриптах бота нет ANTHROPIC_API_KEY. Бот использует только мою залогиненную подписку через команду claude.</code>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-05" class="funnel-step reveal">
+      <div class="num">05</div>
+      <div>
+        <div class="label">Шаг 05</div>
+        <h3>Связать топики с папками проектов</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Самая магия начинается тут. Топик «Контент» = папка с рилсами, бот сразу в контексте. Не надо каждый раз объяснять.</div></div></div>
+          <p>Самая красивая часть. Каждый топик смотрит в свою папку. Клод приходит, читает <code>CLAUDE.md</code>, скиллы, файлы и работает в твоём контексте.</p>
+          <p>В <code>/root/ai-office-bot/</code> лежит <code>topic_config.json</code>, карта связей.</p>
+          <p>Скажи Клоду:</p>
+          <code class="codeblock">Открой topic_config.json. Добавь топики: для каждого thread_id, cwd, engine=claude, exec_mode=tmux. Топики: Контент /root/ops/personal/reels, Финансы /root/ops/finance, Дев /root/work, Переговоры /root/ops/personal/inputs. Подставь свои папки.</code>
+          <p>Где взять <code>thread_id</code>: открой топик, перешли любое сообщение в <a href="https://t.me/userinfobot" target="_blank" rel="noopener">@userinfobot</a>.</p>
+          <p>После правки Клод перезапустит сервис. Готово, в каждом топике своя папка.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-06" class="funnel-step reveal">
+      <div class="num">06</div>
+      <div>
+        <div class="label">Шаг 06</div>
+        <h3>Первый тест ⚡</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Первое голосовое в новом топике долгое, Клод читает <code>CLAUDE.md</code> и скиллы. Со второго быстро. Тестируй на простой задаче, не на сложной.</div></div></div>
+          <p>Зайди в любой свой топик (тот, к которому в шаге 05 привязал папку). Запиши голосовое.</p>
+          <ul>
+            <li><strong>Контент:</strong> «накидай идеи трёх постов на неделю».</li>
+            <li><strong>Финансы:</strong> «посчитай среднюю выручку за квартал».</li>
+            <li><strong>Дев:</strong> «проверь логи бота за последний час».</li>
+          </ul>
+          <p>Бот покажет «думаю», расшифрует голос, передаст Клоду. Через минуту в топике, черновик в твоём тоне, по твоим правилам, со ссылками на твои скиллы.</p>
+          <p>Дальше пишешь как в терминале. Только теперь это карман, метро, такси, очередь, диван.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="troubleshooting" class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Если что-то пошло не так</h2>
+      <div class="note coral"><strong>Бот молчит после <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">/start</code>.</strong> Сервис упал. Скажи Клоду в VS Code: «покажи статус <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">ai-office-bot</code> и последние 50 строк логов». Чаще всего, опечатка в токене.</div>
+      <div class="note honey"><strong>Бот отвечает чужим.</strong> Защита <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">user_id</code> не встала. Проверь <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">ALLOWED_USER_IDS=[твой_id]</code> в <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">.env</code> и перезапусти.</div>
+      <div class="note"><strong>Голосовые не расшифровываются.</strong> Не настроен Deepgram. Скажи Клоду: «добавь Deepgram API key в <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">.env</code>, ключ возьми с deepgram.com».</div>
+      <div class="note mint"><strong>Клод отвечает медленно в новом топике.</strong> Нормально, первое сообщение читает <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px">CLAUDE.md</code> и скиллы. Со второго быстро.</div>
+      <div class="note coral"><strong>Закончились лимиты подписки.</strong> Жди сброса или апгрейд до Max. Я живу на $200/мес, хватает с запасом.</div>
+    </section>
+
+    <section id="whats-next" class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Что дальше</h2>
+      <p style="color:var(--text-secondary);font-size:16px;line-height:1.65;margin-bottom:18px">Клод в кармане, пока только интерфейс. Дальше подключаем сервисы.</p>
+      <div class="checklist" style="margin:0">
+        <ol>
+          <li><div><div class="item-title">Google Drive</div><div class="item-desc">Открыть любой документ голосом.</div></div></li>
+          <li><div><div class="item-title">Календарь</div><div class="item-desc">Записать встречу, предупредить о конфликтах.</div></div></li>
+          <li><div><div class="item-title">Почта</div><div class="item-desc">Набросать ответ клиенту.</div></div></li>
+          <li><div><div class="item-title">Второй бот для команды</div><div class="item-desc">Или для ассистента.</div></div></li>
+        </ol>
+      </div>
+      <p style="margin-top:18px;font-size:16px;color:var(--text-secondary)">Это Шаг 3. Пишу инструкцию.</p>
+    </section>
+
+    <section class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Немного правды</h2>
+      <p style="font-size:17px;color:var(--text);line-height:1.7;margin-bottom:18px">Первые три дня будешь тестировать через силу, рука по привычке тянется в ChatGPT. На четвёртый поймаешь «а почему я не в боте». С этого момента процесс идёт сам.</p>
+      <p style="font-size:17px;color:var(--text);line-height:1.7;margin-bottom:18px">Я могла бы отдать свою группу готовой. Но она знает мой бизнес, моих клиентов, мой тон.</p>
+      <div class="pull"><p>Тебе нужна своя, под свои процессы. Поэтому даю инструмент и инструкцию, а не готовую инфраструктуру.</p></div>
+    </section>
+
+    <div class="next-cards reveal">
+      <a href="/ai-office/" class="next-card">
+        <div class="tag">Шаг 1 · базовое</div>
+        <h3>Свой сервер под любую LLM</h3>
+        <p>VPS, Клод, контекст. Тот же сервер тащит Codex и локальные модели. Один вечер, без программиста.</p>
+        <span class="arrow">← Открыть</span>
+      </a>
+      <a href="/ai-office/codex/" class="next-card">
+        <div class="tag">Бонус</div>
+        <h3>Codex от OpenAI с телефона</h3>
+        <p>Альтернатива Клоду на подписке Plus за $20. Управление с телефона через ChatGPT.</p>
+        <span class="arrow">Открыть →</span>
+      </a>
+    </div>
+
+    <section class="wow reveal">
+      <div class="label">Расскажи мне</div>
+      <h2>Что хочется сделать или узнать?</h2>
+      <p>Пишу следующие шаги и хочу сделать их максимально полезными. Что болит, в канал или в личку.</p>
+      <a href="https://t.me/vnartdinova" target="_blank" rel="noopener" class="channel-card">
+        <span class="avatar"><img src="/assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова"></span>
+        <span class="info">
+          <span class="name">@vnartdinova <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.566 7.04l-1.522 7.18c-.115.519-.418.643-.847.4l-2.34-1.726-1.13 1.087c-.124.124-.229.229-.471.229l.168-2.388 4.342-3.922c.188-.168-.041-.262-.293-.094L8.99 13.18l-2.314-.724c-.504-.158-.514-.504.105-.747l9.046-3.485c.42-.158.787.094.74.816z"/></svg></span>
+          <span class="sub">Канал AI-школы · разборы и следующие шаги</span>
+        </span>
+      </a>
+    </section>
+
+    <div class="reveal" style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px">– Виктория</div>
+
+  </article>
+</div>
+
+<footer class="site-footer">
+  <a href="/">theglavnoe.com</a> · <a href="/blog/">Статьи</a> · <a href="/blog/ai/">AI-гайды</a> · <a href="/about">О нас</a> · <a href="/contact">Контакты</a>
+</footer>
+
+<script>
+(function(){
+  var pb=document.getElementById('pb');
+  function upd(){var h=document.documentElement;var s=h.scrollTop/(h.scrollHeight-h.clientHeight);pb.style.width=(s*100)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var tocLinks=document.querySelectorAll('.toc-list a');
+  var sections=Array.prototype.map.call(tocLinks,function(a){return document.getElementById(a.getAttribute('href').slice(1))}).filter(Boolean);
+  function setActive(){var y=window.scrollY+120;var cur=sections[0];sections.forEach(function(s){if(s&&s.offsetTop<=y)cur=s});tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href').slice(1)===(cur&&cur.id))});}
+  window.addEventListener('scroll',setActive,{passive:true});setActive();
+})();
+</script>
+</body>
+</html>

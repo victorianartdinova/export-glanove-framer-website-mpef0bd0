@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Codex от OpenAI: работа с телефона за 20 минут | AI-офис</title>
+<meta name="description" content="Codex живёт у тебя на компьютере или сервере, а ты управляешь им с телефона через ChatGPT. Без терминала, без программиста, на подписке Plus за $20.">
+<link rel="canonical" href="https://theglavnoe.com/ai-office/codex/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codex от OpenAI: работа с телефона">
+<meta property="og:description" content="Настройка за 20 минут даже если никогда не открывал терминал. Только Plus за $20, без Pro.">
+<meta property="og:url" content="https://theglavnoe.com/ai-office/codex/">
+<meta property="og:image" content="https://theglavnoe.com/assets/avatars/vika-avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png">
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-Regular.otf" type="font/otf" crossorigin>
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-SemiBold.otf" type="font/otf" crossorigin>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Codex от OpenAI: работа с телефона","datePublished":"2026-05-15","dateModified":"2026-05-24","author":{"@type":"Person","name":"Виктория Нартдинова"},"publisher":{"@type":"Organization","name":"ГЛАВНОЕ","logo":{"@type":"ImageObject","url":"https://theglavnoe.com/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://theglavnoe.com/ai-office/codex/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://theglavnoe.com/"},{"@type":"ListItem","position":2,"name":"AI-гайды","item":"https://theglavnoe.com/blog/ai/"},{"@type":"ListItem","position":3,"name":"Codex от OpenAI","item":"https://theglavnoe.com/ai-office/codex/"}]}
+</script>
+
+<style>
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Book.otf') format('opentype');font-weight:350;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+::selection{background:#ECE6F8;color:#1A1814}
+:root{
+  --bg:#FBF7F1;--card-bg:#FFFFFF;--text:#1A1814;--text-secondary:#5C5750;--text-muted:#8A857E;
+  --border:#E5E0D8;--accent:#A087D3;--accent-soft:#F6F3FC;--accent-soft-2:#ECE6F8;
+  --accent-mint:#5CBA8C;--accent-mint-soft:#ECFDF5;--accent-coral:#F0805F;--accent-coral-soft:#FEF3F0;
+  --accent-honey:#F5C24A;--accent-honey-soft:#FEF9E7;--card-radius:24px;
+  --card-shadow:0 1px 3px rgba(26,24,20,.04),0 8px 24px rgba(26,24,20,.04);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Suisse Intl','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent-mint),var(--accent),var(--accent-coral));z-index:100;transition:width .1s linear}
+.site-nav{position:sticky;top:0;background:rgba(251,247,241,.92);backdrop-filter:blur(14px);padding:20px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:50}
+.site-nav .logo{font-size:18px;font-weight:600;color:var(--text)}
+.site-nav .logo:hover{color:var(--accent)}
+.site-nav .nav-links{display:flex;gap:24px;font-size:14px}
+.site-nav .nav-links a{color:var(--text-secondary);transition:color .2s}
+.site-nav .nav-links a:hover{color:var(--accent)}
+@media(max-width:720px){.site-nav .nav-links{display:none}}
+.breadcrumb{padding:24px 32px 0;font-size:13px;color:var(--text-muted);max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--text);font-weight:500}
+
+/* HERO with blobs */
+.hero{padding:48px 32px 32px;max-width:1080px;margin:0 auto;position:relative;overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none;z-index:1}
+.hero .blob.b1{width:380px;height:380px;background:var(--accent-mint);top:-100px;left:-80px}
+.hero .blob.b2{width:340px;height:340px;background:var(--accent);top:80px;right:-60px}
+.hero .blob.b3{width:260px;height:260px;background:var(--accent-coral);bottom:-80px;left:40%}
+.hero > *{position:relative;z-index:2}
+.hero .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:600;margin-bottom:16px;opacity:0;transform:translateY(20px);animation:reveal .8s var(--ease) .05s forwards}
+.hero h1{font-size:clamp(40px,5.5vw,72px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px;max-width:900px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .15s forwards}
+.hero h1 .accent{background:linear-gradient(120deg,var(--accent) 0%,var(--accent-coral) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.hero .subtitle{font-size:clamp(18px,2vw,21px);color:var(--text-secondary);line-height:1.55;max-width:680px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .3s forwards}
+.hero .meta{margin-top:24px;display:flex;gap:14px;font-size:14px;color:var(--text-muted);opacity:0;animation:reveal .9s var(--ease) .45s forwards}
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+.layout{max-width:1200px;margin:32px auto 0;padding:0 32px 80px;display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.toc{position:sticky;top:88px;font-size:13px}
+.toc-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:600;margin-bottom:14px;padding:0 12px}
+.toc-list{list-style:none}
+.toc-list li a{display:block;padding:9px 12px;color:var(--text-secondary);font-size:13px;line-height:1.4;border-radius:10px;transition:all .2s var(--ease)}
+.toc-list li a:hover{color:var(--text);background:var(--accent-soft)}
+.toc-list li a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
+@media(max-width:1023px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+
+.article{max-width:760px;min-width:0}
+.article h2{font-size:clamp(26px,3.2vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.02em;color:var(--text)}
+.article .prose p{font-size:17px;color:var(--text);line-height:1.7;margin-bottom:18px}
+.article .prose strong{font-weight:600;color:var(--text)}
+.article .prose code{background:var(--accent-soft);padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92em}
+.article .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+.checklist{margin:48px 0;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:36px;box-shadow:var(--card-shadow)}
+.checklist h2{margin-bottom:24px}
+.checklist ol{list-style:none;counter-reset:ck}
+.checklist ol li{counter-increment:ck;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.checklist ol li:last-child{border-bottom:none}
+.checklist ol li::before{content:counter(ck,decimal-leading-zero);color:var(--accent);font-size:13px;font-weight:600;min-width:32px}
+.checklist .item-title{font-weight:600;color:var(--text);font-size:16px;margin-bottom:4px}
+.checklist .item-desc{font-size:15px;color:var(--text-secondary);line-height:1.55}
+
+.note{margin:14px 0;padding:18px 22px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:12px;font-size:16px;color:var(--text);line-height:1.6}
+.note.mint{background:var(--accent-mint-soft);border-left-color:var(--accent-mint)}
+.note.coral{background:var(--accent-coral-soft);border-left-color:var(--accent-coral)}
+.note.honey{background:var(--accent-honey-soft);border-left-color:var(--accent-honey)}
+.note code{background:rgba(255,255,255,.6);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92em}
+
+.funnel-step{margin:28px 0;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:36px;box-shadow:var(--card-shadow);display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;transition:transform .3s var(--ease);position:relative;overflow:hidden}
+.funnel-step:hover{transform:translateY(-3px)}
+.funnel-step .num{font-size:72px;font-weight:600;letter-spacing:-0.04em;color:var(--accent);opacity:0.25;line-height:1}
+.funnel-step .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.funnel-step h3{font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;color:var(--text);line-height:1.25}
+.funnel-step .body p{font-size:16px;color:var(--text-secondary);line-height:1.65;margin-bottom:12px}
+.funnel-step .body p:last-child{margin-bottom:0}
+.funnel-step .body strong{color:var(--text)}
+.funnel-step ul,.funnel-step ol{padding-left:22px;margin:8px 0}
+.funnel-step ul{list-style:disc}.funnel-step ol{list-style:decimal}
+.funnel-step ul li,.funnel-step ol li{font-size:15px;color:var(--text-secondary);line-height:1.65;margin-bottom:6px}
+.funnel-step .codeblock{display:block;background:#1A1814;color:#FBF7F1;padding:14px 18px;border-radius:12px;font-family:'JetBrains Mono','Menlo',monospace;font-size:13px;margin:12px 0;overflow-x:auto;white-space:pre-wrap;word-break:break-word;line-height:1.55}
+.funnel-step code:not(.codeblock){background:var(--accent-soft);color:var(--text);padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92em}
+.funnel-step a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(160,135,211,.4);text-underline-offset:3px}
+.funnel-step a:hover{text-decoration-color:var(--accent)}
+@media(max-width:720px){.funnel-step{grid-template-columns:1fr;padding:24px;gap:12px}.funnel-step .num{font-size:54px}}
+
+/* Mode cards, three colored variants */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0 40px}
+.mode-card{position:relative;border-radius:var(--card-radius);padding:28px 24px;background:var(--card-bg);border:1px solid var(--border);box-shadow:var(--card-shadow);transition:all .3s var(--ease);overflow:hidden}
+.mode-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,24,20,.08),0 24px 56px rgba(26,24,20,.1)}
+.mode-card.lav{background:linear-gradient(135deg,var(--accent-soft) 0%,#FFFFFF 80%);border-color:rgba(160,135,211,.25)}
+.mode-card.mint{background:linear-gradient(135deg,var(--accent-mint-soft) 0%,#FFFFFF 80%);border-color:rgba(92,186,140,.25)}
+.mode-card.coral{background:linear-gradient(135deg,var(--accent-coral-soft) 0%,#FFFFFF 80%);border-color:rgba(240,128,95,.25)}
+.mode-card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:10px;display:inline-flex;align-items:center;gap:8px}
+.mode-card.lav .tag{color:var(--accent)}
+.mode-card.mint .tag{color:var(--accent-mint)}
+.mode-card.coral .tag{color:var(--accent-coral)}
+.mode-card .tag .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.mode-card.lav .tag .dot{background:var(--accent)}
+.mode-card.mint .tag .dot{background:var(--accent-mint)}
+.mode-card.coral .tag .dot{background:var(--accent-coral)}
+.mode-card h3{font-size:19px;font-weight:600;color:var(--text);margin-bottom:10px;letter-spacing:-0.01em;line-height:1.25}
+.mode-card p{font-size:14.5px;color:var(--text-secondary);line-height:1.6}
+@media(max-width:720px){.modes{grid-template-columns:1fr}}
+
+.wow{margin:64px 0 32px;background:#1A1814;color:#FBF7F1;border-radius:var(--card-radius);padding:56px 48px;position:relative;overflow:hidden}
+.wow::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:var(--accent);opacity:.15;border-radius:50%;filter:blur(60px)}
+.wow > *{position:relative;z-index:2}
+.wow .label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:600;margin-bottom:16px}
+.wow h2{font-size:clamp(26px,3vw,36px);font-weight:600;color:#FBF7F1;letter-spacing:-0.02em;line-height:1.2;margin-bottom:18px}
+.wow p{font-size:17px;line-height:1.65;color:rgba(251,247,241,.85);margin-bottom:14px}
+.wow .channel-card{display:inline-flex;align-items:center;gap:14px;padding:12px 20px 12px 12px;background:rgba(251,247,241,.08);border:1px solid rgba(251,247,241,.18);border-radius:999px;margin-top:24px;transition:all .2s var(--ease)}
+.wow .channel-card:hover{background:rgba(251,247,241,.14);border-color:var(--accent)}
+.wow .channel-card .avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;background:var(--accent-soft)}
+.wow .channel-card .avatar img{width:100%;height:100%;object-fit:cover}
+.wow .channel-card .info{display:flex;flex-direction:column;line-height:1.25}
+.wow .channel-card .name{font-size:14px;font-weight:600;color:#FBF7F1;display:flex;align-items:center;gap:6px}
+.wow .channel-card .sub{font-size:12px;color:rgba(251,247,241,.6)}
+.wow .channel-card .tg-icon{width:18px;height:18px;color:#229ED9}
+
+.next-cards{margin:48px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.next-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);padding:28px;transition:all .3s var(--ease);box-shadow:var(--card-shadow);display:block}
+.next-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 4px 12px rgba(26,24,20,.06),0 24px 56px rgba(26,24,20,.08)}
+.next-card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:10px}
+.next-card h3{font-size:20px;font-weight:600;color:var(--text);line-height:1.25;margin-bottom:8px}
+.next-card p{font-size:14px;color:var(--text-secondary);line-height:1.55}
+.next-card .arrow{display:block;margin-top:14px;color:var(--accent);font-size:14px;font-weight:600}
+@media(max-width:720px){.next-cards{grid-template-columns:1fr}}
+
+.site-footer{padding:32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);text-align:center;background:var(--bg)}
+.site-footer a{color:var(--text-secondary);margin:0 8px}
+.site-footer a:hover{color:var(--accent)}
+
+.vika-tip{display:flex;gap:12px;align-items:flex-start;margin:18px 0 0;padding:14px 16px 14px 14px;background:linear-gradient(180deg,#FFFDF6 0%,var(--accent-honey-soft) 100%);border:1px solid var(--border);border-radius:18px}
+.vika-tip .vika-avatar{flex-shrink:0;width:38px;height:38px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(26,24,20,.08)}
+.vika-tip .tip-bubble{flex:1;min-width:0}
+.vika-tip .tip-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.vika-tip .tip-name .tip-tag{font-size:10px;font-weight:500;color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:6px;text-transform:uppercase;letter-spacing:.06em}
+.vika-tip .tip-text{font-size:14px;color:var(--text);line-height:1.5}
+.vika-tip .tip-text a{color:var(--accent);font-weight:500;border-bottom:1px solid rgba(160,135,211,.4)}
+@media(max-width:520px){.vika-tip{padding:12px 14px 12px 12px;gap:10px}.vika-tip .vika-avatar{width:34px;height:34px}.vika-tip .tip-text{font-size:13px}}
+
+@media(max-width:520px){
+  .hero{padding:32px 20px 24px}.breadcrumb{padding:20px 20px 0}
+  .layout{padding:0 20px 64px}.site-nav{padding:16px 20px}.wow{padding:40px 24px}
+  .checklist{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="pb"></div>
+
+<nav class="site-nav">
+  <a href="/" class="logo">ГЛАВНОЕ</a>
+  <div class="nav-links">
+    <a href="/">Главная</a>
+    <a href="/cases/portfolio">Кейсы</a>
+    <a href="/blog/">Статьи</a>
+    <a href="/about">О нас</a>
+    <a href="/contact">Контакты</a>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Главная</a> · <a href="/blog/ai/">AI-гайды</a> · <a href="/ai-office/">AI-офис</a> · <span>Codex</span></div>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="eyebrow">AI-офис · Бонус-гайд 🤖</div>
+  <h1>Codex от OpenAI. <span class="accent">Работа с телефона</span></h1>
+  <p class="subtitle">Codex живёт на твоём компьютере или сервере, а ты управляешь с телефона через обычное ChatGPT-приложение. Без терминала, без программиста.</p>
+  <div class="meta"><span>Виктория Нартдинова</span><span style="color:var(--border)">·</span><span>Время на чтение: 7 минут</span></div>
+</section>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc-title">Содержание</div>
+    <ul class="toc-list">
+      <li><a href="#intro">Что выпустили и зачем</a></li>
+      <li><a href="#ready">Что нужно</a></li>
+      <li><a href="#step-01">01 · Скачать приложения</a></li>
+      <li><a href="#step-02">02 · Связать телефон с компом</a></li>
+      <li><a href="#step-03">03 · Работа с файлами компа</a></li>
+      <li><a href="#step-04">04 · Подключить свой VPS</a></li>
+      <li><a href="#when">Когда какой режим</a></li>
+      <li><a href="#troubleshooting">Если сломалось</a></li>
+      <li><a href="#whats-next">Что дальше</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="intro" class="reveal prose">
+      <h2 style="margin-bottom:18px">Что выпустили и зачем тебе это</h2>
+      <p>На этой неделе OpenAI выпустили Codex прямо внутри приложения ChatGPT. Это их агент-разработчик, аналог Клода. С 14 мая можно держать Codex на своём компьютере или сервере, а управлять с телефона через обычное ChatGPT-приложение. Никакого терминала, никакого программиста рядом.</p>
+      <p>Самая горячая часть: настройка занимает 20 минут даже если ты никогда не открывал терминал. Подписку Pro покупать не нужно, всё работает на обычном Plus за <code>$20</code> в месяц.</p>
+      <p>Если ты ещё не пробовал Клода и думаешь с чего начать, Codex, отличная стартовая точка. Цена в десять раз ниже, интерфейс знакомый, а удалённое подключение к серверу уже встроено в приложение.</p>
+      <div class="note"><strong>Если совсем без сервера -</strong> начни с <a href="/ai-office/">Шага 1: свой сервер под любую LLM</a>. Развернём VPS за 500₽/мес и поставим Клода. Тот же сервер потом тащит Codex с этой страницы, локальные модели, что угодно. И <a href="/ai-office/tg/">Шаг 2: управление с телефона</a> через свой телеграм-бот. Эта статья работает и сама по себе, и в связке.</div>
+    </section>
+
+    <section id="ready" class="checklist reveal">
+      <h2>Что нужно</h2>
+      <ol>
+        <li><div><div class="item-title">Подписка ChatGPT</div><div class="item-desc">Plus за $20, Pro за $200, Business или Enterprise. Codex включён в любой тариф, отдельно не оплачивается.</div></div></li>
+        <li><div><div class="item-title">Mac или Windows-компьютер</div><div class="item-desc">Сюда поставится приложение Codex.</div></div></li>
+        <li><div><div class="item-title">iPhone или Android-телефон</div><div class="item-desc">Сюда поставится ChatGPT, с него будешь управлять.</div></div></li>
+        <li><div><div class="item-title">VPN, если ты в России</div><div class="item-desc">Без него ChatGPT-приложение и сайт OpenAI не откроются.</div></div></li>
+        <li><div><div class="item-title">Свой VPS, опционально</div><div class="item-desc">Без него Codex работает с файлами на компьютере. С ним, рабочее окружение на сервере и доступ с любого устройства.</div></div></li>
+      </ol>
+    </section>
+
+    <section id="step-01" class="funnel-step reveal">
+      <div class="num">01</div>
+      <div>
+        <div class="label">Шаг 01</div>
+        <h3>Скачать приложения</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Скачивай Codex и ChatGPT под одним и тем же OpenAI-аккаунтом, иначе синхронизация телефона с компом не подхватит.</div></div></div>
+          <p>Два приложения: на компьютер и на телефон.</p>
+          <p><strong>Codex на Mac или Windows.</strong> Зайди на <a href="https://developers.openai.com/codex/app" target="_blank" rel="noopener">developers.openai.com/codex/app</a>, выбери систему, скачай dmg или exe, поставь как обычное приложение. Войди в свой ChatGPT-аккаунт.</p>
+          <p><strong>ChatGPT на телефон.</strong> Стандартное приложение, не отдельный «Codex», Codex живёт прямо внутри.</p>
+          <ul>
+            <li><a href="https://apps.apple.com/app/chatgpt/id6448311069" target="_blank" rel="noopener">App Store · iOS</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.openai.chatgpt" target="_blank" rel="noopener">Google Play · Android</a></li>
+          </ul>
+          <p>Войди в тот же аккаунт что и на компе. Один аккаунт, одна подписка, и веб-чат, и Codex на компе, и Codex на телефоне.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-02" class="funnel-step reveal">
+      <div class="num">02</div>
+      <div>
+        <div class="label">Шаг 02</div>
+        <h3>Связать телефон с компьютером</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Если QR не сканируется, обнови обе версии до последних. У меня сработало на первой попытке после апдейта.</div></div></div>
+          <p>Открой Codex на компе. В меню найди раздел <code>Codex mobile</code> (он появился 14 мая, проверь что приложение свежее). Там будет QR-код.</p>
+          <p>Открой ChatGPT на телефоне, зайди в раздел Codex, нажми «подключить компьютер» и отсканируй QR. Через секунду телефон увидит компьютер, всё что делаешь в Codex на компе, синхронизируется с телефоном в реальном времени.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-03" class="funnel-step reveal">
+      <div class="num">03</div>
+      <div>
+        <div class="label">Шаг 03</div>
+        <h3>Работать с файлами на компьютере с телефона</h3>
+        <div class="body">
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Начинай с папки контента или таблички клиентов. Самые быстрые победы, там, где руками рутина.</div></div></div>
+          <p>Самый простой режим, никакого сервера, только твой компьютер.</p>
+          <p>На компьютере в Codex создай новый проект и укажи папку: заметки, таблички, рабочий код, документы клиентов, что угодно.</p>
+          <p>На телефоне открой ChatGPT → Codex → этот проект. Напиши задачу голосом или текстом:</p>
+          <code class="codeblock">Прочитай папку и сделай выжимку
+Напиши черновик письма по этому документу
+Найди в табличке клиентов с просроченной оплатой
+Перепиши последний пост в моём тоне</code>
+          <p>Codex на компьютере выполняет задачу, ответ приходит на телефон. <strong>Компьютер должен быть включён и не уснуть.</strong> Если Mac закрыт, ничего работать не будет.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-04" class="funnel-step reveal">
+      <div class="num">04</div>
+      <div>
+        <div class="label">Шаг 04</div>
+        <h3>Подключиться к своему VPS</h3>
+        <div class="body">
+          <p>Для тех, у кого уже есть сервер (или собирается купить). Плюсы: компьютер можно выключать, всё крутится на сервере, доступ с любого устройства.</p>
+          <div class="vika-tip"><img class="vika-avatar" src="/assets/avatars/vika-avatar.jpg" alt=""><div class="tip-bubble"><div class="tip-name">Вика <span class="tip-tag">подсказка</span></div><div class="tip-text">Если сервера ещё нет, сначала <a href="/ai-office/">Шаг 1</a>: поднимешь VPS за вечер, потом вернёшься сюда и подцепишь Codex по SSH.</div></div></div>
+          <p>Сначала проверь подключение. Открой терминал (<code>Terminal</code> на Mac, <code>PowerShell</code> на Windows):</p>
+          <code class="codeblock">ssh root@IP-твоего-сервера</code>
+          <p>Если пускает по паролю или ключу, ты внутри. Теперь добавь алиас в SSH-конфиг. Открой <code>~/.ssh/config</code> (если файла нет, создай):</p>
+          <code class="codeblock">Host myserver
+  HostName IP-твоего-сервера
+  User root</code>
+          <p>Имя <code>myserver</code> можешь поменять. Сохрани и проверь:</p>
+          <code class="codeblock">ssh myserver</code>
+          <p>Должно подключиться без вопросов.</p>
+          <p>Теперь поставь Codex на сам сервер. Зайди по SSH и набери:</p>
+          <code class="codeblock">npm install -g @openai/codex
+codex login</code>
+          <p><code>codex login</code> покажет ссылку, открой в браузере, авторизуйся, вернись в терминал.</p>
+          <p>В приложении Codex на компе → <code>Settings → Connections → Add SSH host</code>. Codex сам подхватит алиас <code>myserver</code> из конфига. Выбери папку проекта на сервере (например <code>/root/work</code>).</p>
+          <p>С этого момента в Codex появляется удалённый проект. Открываешь его на телефоне через ChatGPT, кидаешь задачу, Codex работает уже на сервере, ответ приходит на телефон. Компьютер можно закрывать (главное чтобы был включён в момент запроса, он играет роль моста).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="when" class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Когда какой режим</h2>
+      <div class="modes">
+        <div class="mode-card lav">
+          <div class="tag"><span class="dot"></span>📱 → 💻</div>
+          <h3>С телефона к компьютеру</h3>
+          <p>Дома или в офисе, комп всегда включён. Codex прокидывает задачи с телефона на твою машину. Подойдёт большинству.</p>
+        </div>
+        <div class="mode-card mint">
+          <div class="tag"><span class="dot"></span>📱 → 💻 → 🖥</div>
+          <h3>С телефона к серверу через комп</h3>
+          <p>Когда несколько устройств (Mac дома, ноут в дороге, телефон) и хочется одну рабочую папку. Задачи долгие, выключать комп на ночь не хочется. Команда и общая кодовая база.</p>
+        </div>
+        <div class="mode-card coral">
+          <div class="tag"><span class="dot"></span>💻 → 💻</div>
+          <h3>Codex прямо на компе</h3>
+          <p>Без телефона. Самый быстрый режим, без задержек. Идеально когда сидишь за компом и не отвлекаешься.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="troubleshooting" class="reveal" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Если что-то пошло не так</h2>
+      <div class="note coral"><strong>Раздела Codex mobile нет в приложении.</strong><br>Старая версия. Обнови Codex с <a href="https://developers.openai.com/codex/app" target="_blank" rel="noopener" style="color:var(--accent-coral);text-decoration:underline">developers.openai.com/codex/app</a>.</div>
+      <div class="note honey"><strong>Раздела Codex нет в ChatGPT на телефоне.</strong><br>Старая версия мобильного приложения. Обнови через App Store или Google Play.</div>
+      <div class="note"><strong>QR-код не сканируется.</strong><br>Камеру держи ровно, расстояние 20-30 см. Не помогло, в ChatGPT на телефоне есть кнопка «ввести код вручную».</div>
+      <div class="note mint"><strong>Подключение работает, но компьютер засыпает.</strong><br>Зайди в System Settings на Mac или Power Options на Windows и отключи автозасыпание в режиме «когда подключено к питанию».</div>
+      <div class="note"><strong>SSH-host не появляется в Connections.</strong><br>Codex читает только <code>~/.ssh/config</code>. Если ты прописал хост в <code>/etc/ssh/ssh_config</code>, перенеси его в пользовательский.</div>
+      <div class="note coral"><strong>Лимит исчерпан.</strong><br>ChatGPT Plus, 150 сообщений в Codex в неделю. Pro в десять раз больше.</div>
+    </section>
+
+    <section id="whats-next" class="reveal prose" style="margin-top:48px">
+      <h2 style="margin-bottom:18px">Что дальше</h2>
+      <p>Дальше покажу как адаптировать Codex под менеджерские и бизнес-задачи, и на сервере, и на ПК. Гугл-таблицы, отчётность, управление эффективностью команды, рутина, в которой каждый собственник и менеджер тонет.</p>
+      <p>Codex не только про код. Если правильно подложить контекст, становится твоим ассистентом по операционке.</p>
+    </section>
+
+    <div class="next-cards reveal">
+      <a href="/ai-office/" class="next-card">
+        <div class="tag">Шаг 1</div>
+        <h3>Свой Клод на своём сервере</h3>
+        <p>Базовая инструкция: купить VPS, поставить Клода, дать ему свой контекст. Один вечер.</p>
+        <span class="arrow">Открыть →</span>
+      </a>
+      <a href="/ai-office/tg/" class="next-card">
+        <div class="tag">Шаг 2</div>
+        <h3>Управление с телефона</h3>
+        <p>Свой телеграм-бот, который заходит к Клоду на сервер и приносит ответ обратно. Без ноутбука.</p>
+        <span class="arrow">Открыть →</span>
+      </a>
+    </div>
+
+    <section class="wow reveal">
+      <div class="label">Финал</div>
+      <h2>Поставь Codex и погоняй неделю</h2>
+      <p>Потом напиши мне в личку, какой режим прижился (комп или сервер), какие задачи в него ушли первыми, что не получилось. Я собираю наблюдения и пишу следующий шаг под реальные паттерны.</p>
+      <a href="https://t.me/vnartdinova" target="_blank" rel="noopener" class="channel-card">
+        <span class="avatar"><img src="/assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова"></span>
+        <span class="info">
+          <span class="name">@vnartdinova <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.566 7.04l-1.522 7.18c-.115.519-.418.643-.847.4l-2.34-1.726-1.13 1.087c-.124.124-.229.229-.471.229l.168-2.388 4.342-3.922c.188-.168-.041-.262-.293-.094L8.99 13.18l-2.314-.724c-.504-.158-.514-.504.105-.747l9.046-3.485c.42-.158.787.094.74.816z"/></svg></span>
+          <span class="sub">Канал AI-школы · разборы и следующие шаги</span>
+        </span>
+      </a>
+    </section>
+
+    <div class="reveal" style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px">– Виктория</div>
+
+  </article>
+</div>
+
+<footer class="site-footer">
+  <a href="/">theglavnoe.com</a> · <a href="/blog/">Статьи</a> · <a href="/blog/ai/">AI-гайды</a> · <a href="/about">О нас</a> · <a href="/contact">Контакты</a>
+</footer>
+
+<script>
+(function(){
+  var pb=document.getElementById('pb');
+  function upd(){var h=document.documentElement;var s=h.scrollTop/(h.scrollHeight-h.clientHeight);pb.style.width=(s*100)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var tocLinks=document.querySelectorAll('.toc-list a');
+  var sections=Array.prototype.map.call(tocLinks,function(a){return document.getElementById(a.getAttribute('href').slice(1))}).filter(Boolean);
+  function setActive(){var y=window.scrollY+120;var cur=sections[0];sections.forEach(function(s){if(s&&s.offsetTop<=y)cur=s});tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href').slice(1)===(cur&&cur.id))});}
+  window.addEventListener('scroll',setActive,{passive:true});setActive();
+})();
+</script>
+</body>
+</html>
