@@ -14,41 +14,170 @@
 <meta name="author" content="Виктория Нартдинова">
 <meta name="keywords" content="стратегия маркетинга застройщика, маркетинг девелопера 2026, CPL недвижимость, performance маркетинг застройщик, fractional cmo девелопер">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:#0a0a0a;color:#fff;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:inherit;text-decoration:none}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 32px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.08)}
-  .nav__logo{font-weight:700;letter-spacing:-0.02em;font-size:20px;text-transform:none}
-  .nav__items{display:flex;gap:28px;flex-wrap:wrap}
-  .nav__items a:hover{color:#ff3b30}
-  .hero{padding:88px 32px 32px;max-width:880px;margin:0 auto}
-  .meta{font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:12px}
-  .hero__title{font-size:clamp(32px,5vw,56px);line-height:1.1;letter-spacing:-0.02em;font-weight:700}
-  .hero__sub{margin-top:24px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:rgba(255,255,255,0.7);max-width:760px}
-  .article{padding:24px 32px 96px;max-width:760px;margin:0 auto;font-size:18px;line-height:1.7;color:rgba(255,255,255,0.85)}
-  .article p{margin:18px 0}
-  .article h2{margin:48px 0 16px;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:#fff;font-weight:700}
-  .article h3{margin:36px 0 12px;font-size:22px;letter-spacing:-0.01em;line-height:1.25;color:#fff;font-weight:600}
-  .article ul,.article ol{margin:18px 0 18px 24px}
-  .article li{margin:8px 0}
-  .article a{color:#ff7a73;text-decoration:underline;text-underline-offset:3px}
-  .article a:hover{color:#ff3b30}
-  .article strong{color:#fff}
-  .article blockquote{margin:32px 0;padding:18px 24px;border-left:3px solid #ff3b30;color:rgba(255,255,255,0.75);font-style:italic}
-  .article hr{border:none;border-top:1px solid rgba(255,255,255,0.12);margin:48px 0}
-  .faq{padding:32px 32px 64px;max-width:760px;margin:0 auto}
-  .faq__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:#fff;margin-bottom:24px}
-  .faq__item{padding:24px 0;border-top:1px solid rgba(255,255,255,0.12)}
-  .faq__q{font-size:18px;color:#fff;font-weight:600;margin-bottom:8px}
-  .faq__a{font-size:16px;line-height:1.6;color:rgba(255,255,255,0.75)}
-  .cta{padding:48px 32px 96px;max-width:760px;margin:0 auto;text-align:center}
-  .cta__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#fff;margin-bottom:24px}
-  .cta__btn{display:inline-flex;align-items:center;gap:12px;padding:18px 32px;background:#ff3b30;color:#fff;border-radius:48px;font-size:16px;letter-spacing:0.02em;text-transform:uppercase;font-weight:600}
-  .footer{padding:48px 32px;border-top:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(255,255,255,0.5);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .footer a:hover{color:#fff}
+:root{
+  --bg:#FFFCF7;
+  --bg-soft:#FBF7F1;
+  --text:#1A1814;
+  --text-secondary:#5C5750;
+  --text-mute:#8A8479;
+  --border:#EFEAE0;
+  --border-strong:#E5E0D8;
+  --accent:#A087D3;
+  --accent-soft:#F6F3FC;
+  --accent-grad-2:#ECE6F8;
+  --mint:#5CBA8C;
+  --mint-soft:#ECFDF5;
+  --honey:#F5C24A;
+  --card-bg:#FFFFFF;
+  --card-alt:#FBF7F1;
+  --card-shadow:0 4px 24px rgba(26,24,20,0.04);
+  --card-shadow-strong:0 8px 32px rgba(26,24,20,0.06);
+  --ease:cubic-bezier(0.22, 1, 0.36, 1);
+  --font:'Suisse Intl','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 32px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;border-bottom:1px solid var(--border);background:rgba(255,252,247,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.nav__logo{font-weight:600;letter-spacing:-0.01em;font-size:18px;text-transform:none;color:var(--text)}
+.nav__items{display:flex;gap:24px;flex-wrap:wrap}
+.nav__items a{color:var(--text-secondary);transition:color .2s}
+.nav__items a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{padding:72px 32px 36px;max-width:880px;margin:0 auto;background:radial-gradient(1100px 500px at 50% -10%,var(--accent-soft),transparent 60%)}
+.author-pill{display:inline-flex;align-items:center;gap:12px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;padding:6px 18px 6px 6px;box-shadow:var(--card-shadow);color:var(--text);transition:transform .25s var(--ease),border-color .25s var(--ease);margin-bottom:22px}
+.author-pill:hover{transform:translateY(-1px);border-color:var(--accent)}
+.author-pill img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+.author-pill .role{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:600;line-height:1}
+.author-pill .name{display:block;font-size:14px;font-weight:600;color:var(--text);line-height:1.2;margin-top:4px}
+.meta{font-size:12px;color:var(--text-mute);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px;display:flex;flex-wrap:wrap;gap:12px;font-weight:600}
+.meta span{color:var(--accent)}
+.hero__title{font-size:clamp(30px,4.6vw,52px);line-height:1.08;letter-spacing:-0.02em;font-weight:600;color:var(--text)}
+.hero__sub{margin-top:20px;font-size:clamp(17px,1.8vw,20px);line-height:1.55;color:var(--text-secondary);max-width:720px}
+.reading-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;padding:14px 18px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;box-shadow:var(--card-shadow);font-size:13px;color:var(--text);max-width:560px}
+.reading-meta .rm-item{display:flex;align-items:center;gap:8px}
+.reading-meta .rm-item .rm-icon{font-size:16px}
+.reading-meta .rm-item strong{color:var(--text);font-weight:600}
+
+/* Article */
+.article{padding:24px 32px 64px;max-width:760px;margin:0 auto;font-size:17px;line-height:1.75;color:var(--text)}
+.article p{margin:16px 0;color:var(--text)}
+.article h2{margin:48px 0 16px;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:var(--text);font-weight:600;scroll-margin-top:96px}
+.article h3{margin:32px 0 12px;font-size:21px;letter-spacing:-0.01em;line-height:1.3;color:var(--text);font-weight:600;scroll-margin-top:96px}
+.article ul,.article ol{margin:16px 0 16px 22px;color:var(--text)}
+.article li{margin:8px 0}
+.article a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.article a:hover{color:#8c70c4}
+.article strong{color:var(--text);font-weight:600}
+.article blockquote{margin:28px 0;padding:20px 26px;border-left:3px solid var(--accent);background:var(--card-bg);border-radius:0 14px 14px 0;color:var(--text);font-style:italic;box-shadow:var(--card-shadow)}
+.article hr{border:none;border-top:1px solid var(--border);margin:44px 0}
+
+/* FAQ */
+.faq{padding:24px 32px 64px;max-width:760px;margin:0 auto}
+.faq__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:var(--text);font-weight:600;margin-bottom:20px}
+.faq__item{padding:22px 0;border-top:1px solid var(--border)}
+.faq__q{font-size:17px;color:var(--text);font-weight:600;margin-bottom:8px;line-height:1.4}
+.faq__a{font-size:15px;line-height:1.65;color:var(--text-secondary)}
+
+/* Completion */
+.completion{margin:48px auto 0;text-align:center;max-width:560px}
+.completion-circle{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--mint) 0%,#4AA37A 100%);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(92,186,140,0.35);position:relative}
+.completion-circle svg{width:40px;height:40px;color:#fff}
+.completion-circle::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--mint);opacity:0;animation:pulseRing 2.4s ease infinite}
+@keyframes pulseRing{0%{opacity:0.4;transform:scale(1)}100%{opacity:0;transform:scale(1.25)}}
+.completion h4{font-size:22px;font-weight:600;margin:22px 0 10px;color:var(--text);letter-spacing:-0.01em;line-height:1.25}
+.completion p{font-size:15px;color:var(--text-secondary);line-height:1.55}
+.completion-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:14px 26px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;font-size:14px;font-weight:600;color:var(--text);transition:all .25s ease;box-shadow:var(--card-shadow)}
+.completion-cta:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){.completion-circle::after{animation:none}}
+
+/* CTA */
+.cta{padding:32px 32px 80px;max-width:760px;margin:0 auto;text-align:center}
+.cta__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:var(--text);font-weight:600;margin-bottom:22px;line-height:1.25}
+.cta__btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;background:var(--accent);color:#fff;border-radius:48px;font-size:15px;letter-spacing:0.01em;font-weight:600;transition:background .2s,transform .2s}
+.cta__btn:hover{background:#8c70c4;transform:translateY(-1px)}
+
+/* Footer */
+.footer{padding:42px 32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-secondary);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{color:var(--text-secondary);transition:color .2s}
+.footer a:hover{color:var(--accent)}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:100;will-change:transform;transition:transform .1s linear}
+
+/* Reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* Mobile TOC */
+.toc-mobile{display:block;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;margin:20px 32px 0;overflow:hidden;max-width:760px;margin-left:auto;margin-right:auto}
+.toc-mobile summary{padding:14px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::after{content:'+';font-size:20px;color:var(--accent);font-weight:600}
+.toc-mobile[open] summary::after{content:'−'}
+.toc-mobile ul{list-style:none;margin:0;padding:0 0 12px}
+.toc-mobile ul li a{display:block;padding:8px 20px;font-size:13px;color:var(--text-secondary);line-height:1.45}
+.toc-mobile ul li a:hover{color:var(--accent)}
+@media (min-width:1180px){.toc-mobile{display:none}}
+
+/* Desktop sticky TOC */
+@media (min-width:1180px){
+  .desktop-toc{position:fixed;top:120px;left:24px;width:220px;z-index:40;font-size:13px}
+  .desktop-toc-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);font-weight:700;margin-bottom:14px;padding-left:14px}
+  .desktop-toc ol{list-style:none;margin:0;padding:0;counter-reset:dtoc}
+  .desktop-toc ol li{counter-increment:dtoc;position:relative;padding:0}
+  .desktop-toc ol li a{display:flex;align-items:center;gap:10px;padding:9px 14px;color:var(--text-secondary);border-radius:10px;transition:all .25s ease;font-weight:500;line-height:1.3}
+  .desktop-toc ol li a::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--bg-soft);border:1.5px solid var(--border);flex:none;transition:all .25s ease}
+  .desktop-toc ol li a:hover{color:var(--text);background:var(--accent-soft)}
+  .desktop-toc ol li.passed a::before{background:var(--mint);border-color:var(--mint)}
+  .desktop-toc ol li.passed a{color:var(--text);text-decoration:line-through;opacity:0.7}
+  .desktop-toc ol li.active a::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .desktop-toc ol li.active a{color:var(--accent);font-weight:600;background:var(--accent-soft)}
+}
+@media (max-width:1179px){.desktop-toc{display:none}}
+
+/* Tablet/Mobile tweaks */
+@media (max-width:809px){
+  .nav{padding:14px 20px}
+  .nav__items{display:none}
+  .hero{padding:48px 20px 28px}
+  .article{padding:20px 22px 48px;font-size:16px}
+  .article h2{margin:36px 0 12px}
+  .article h3{margin:26px 0 10px;font-size:19px}
+  .faq{padding:18px 22px 48px}
+  .cta{padding:24px 22px 64px}
+  .footer{padding:32px 22px;flex-direction:column;align-items:flex-start;gap:14px}
+  .completion-circle{width:72px;height:72px}
+  .completion-circle svg{width:34px;height:34px}
+  .toc-mobile{margin:16px 22px 0}
+}
+/* Dual CTA plates (subscribe to channel + personal) */
+.dual-cta{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:36px auto;max-width:760px;padding:0 32px}
+.dual-cta-card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:24px 22px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:8px;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1),border-color .3s cubic-bezier(.22,1,.36,1);box-shadow:0 4px 24px rgba(26,24,20,.04)}
+.dual-cta-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(26,24,20,.08);border-color:var(--accent)}
+.dual-cta-card .dc-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.dual-cta-card .dc-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;letter-spacing:.02em}
+.dual-cta-card .dc-handle{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--text);line-height:1.2}
+.dual-cta-card .dc-sub{font-size:12px;color:var(--text-secondary);line-height:1.3}
+.dual-cta-card .dc-desc{font-size:14px;color:var(--text-secondary);line-height:1.55;margin-top:4px}
+.dual-cta-card .dc-arrow{margin-top:auto;padding-top:8px;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.dual-cta-card.brand-v .dc-avatar{background:linear-gradient(135deg,#C8B5E8 0%,#FFC4A8 100%)}
+.dual-cta-card.brand-v:hover{border-color:#A087D3}
+.dual-cta-card.brand-v .dc-arrow{color:#A087D3}
+.dual-cta-card.brand-g .dc-avatar{background:linear-gradient(135deg,#7FD9AB 0%,#5CBA8C 100%)}
+.dual-cta-card.brand-g:hover{border-color:#5CBA8C}
+.dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
+@media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
+
 </style>
-<script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:relative;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#fff;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#ff3b30;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:18px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script id="glavnoe-mobile-header-fix-js">(function(){function inject(){var nav=document.querySelector("nav.nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("data-framer-name","Mobile Menu Icon");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script></head>
+<script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script id="glavnoe-mobile-header-fix-js">(function(){function inject(){var nav=document.querySelector("nav.nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("data-framer-name","Mobile Menu Icon");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script></head>
 <body>
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 <nav class="nav">
   <a class="nav__logo" href="/">ГЛАВНОЕ</a>
   <div class="nav__items">
@@ -59,7 +188,43 @@
     <a href="/blog/">Статьи</a>
   </div>
 </nav>
+
+<details class="toc-mobile">
+  <summary>Содержание гайда</summary>
+  <ul>
+    <li><a href="#sec-1">Что такое стратегия маркетинга для девелопера</a></li>
+    <li><a href="#sec-2">Почему застройщику нужна стратегия, а не просто реклама</a></li>
+    <li><a href="#sec-3">Пошаговый план построения маркетинговой стратегии для застройщика</a></li>
+    <li><a href="#sec-4">Сравнение каналов маркетинга для застройщика в 2026 году</a></li>
+    <li><a href="#sec-5">Чек-лист: 7 признаков, что застройщику нужна маркетинговая стратегия</a></li>
+    <li><a href="#sec-6">Три модели работы с маркетингом для застройщика</a></li>
+    <li><a href="#sec-7">Что должна включать стратегия маркетинга застройщика</a></li>
+    <li><a href="#sec-8">Ошибки застройщиков в маркетинге</a></li>
+    <li><a href="#sec-9">Как начать работу со стратегическим партнёром</a></li>
+  </ul>
+</details>
+<nav class="desktop-toc" id="desktopToc" aria-label="Карта гайда">
+  <div class="desktop-toc-title">Разделы</div>
+  <ol>
+    <li data-target="sec-1"><a href="#sec-1">Что такое стратегия маркетинга для девелопера</a></li>
+    <li data-target="sec-2"><a href="#sec-2">Почему застройщику нужна стратегия, а не просто реклама</a></li>
+    <li data-target="sec-3"><a href="#sec-3">Пошаговый план построения маркетинговой стратегии для застройщика</a></li>
+    <li data-target="sec-4"><a href="#sec-4">Сравнение каналов маркетинга для застройщика в 2026 году</a></li>
+    <li data-target="sec-5"><a href="#sec-5">Чек-лист: 7 признаков, что застройщику нужна маркетинговая стратегия</a></li>
+    <li data-target="sec-6"><a href="#sec-6">Три модели работы с маркетингом для застройщика</a></li>
+    <li data-target="sec-7"><a href="#sec-7">Что должна включать стратегия маркетинга застройщика</a></li>
+    <li data-target="sec-8"><a href="#sec-8">Ошибки застройщиков в маркетинге</a></li>
+    <li data-target="sec-9"><a href="#sec-9">Как начать работу со стратегическим партнёром</a></li>
+  </ol>
+</nav>
 <section class="hero">
+    <a class="author-pill" href="/" aria-label="Гайд разбирает Виктория Нартдинова, founder ГЛАВНОЕ">
+    <img src="assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова">
+    <span>
+      <span class="role">Разбирает гайд</span>
+      <span class="name">Виктория Нартдинова · founder ГЛАВНОЕ</span>
+    </span>
+  </a>
   <div class="meta">
     <span>(гайды и инсайты)</span>
     <span>2026-03-10</span>
@@ -67,20 +232,25 @@
   </div>
   <h1 class="hero__title">Стратегия маркетинга для девелопера: что работает в 2026 году</h1>
   <p class="hero__sub">Какие каналы маркетинга работают для застройщиков в 2026 году. Telegram, Авито, контекст — сравнение CPL и конверсий. Пошаговый план стратегии от агентства ГЛАВНОЕ.</p>
+  <div class="reading-meta" aria-label="Что узнаешь из гайда">
+    <span class="rm-item"><span class="rm-icon">⏱</span> <span><strong>9 мин</strong> чтения</span></span>
+    <span class="rm-item"><span class="rm-icon">📊</span> <span><strong>9 разделов</strong></span></span>
+    <span class="rm-item"><span class="rm-icon">🎯</span> <span>для девелоперов</span></span>
+  </div>
 </section>
 <article class="article">
-<h2>Что такое стратегия маркетинга для девелопера</h2>
+<h2 id="sec-1" class="reveal">Что такое стратегия маркетинга для девелопера</h2>
 <p>Стратегия маркетинга для девелопера — это документ и план действий, который определяет, какие каналы продвижения использовать, сколько вкладывать в каждый из них и какие результаты в лидах и сделках ожидать. Это не медиаплан и не контент-план. Стратегия отвечает на вопрос <strong>«как системно получать обращения от покупателей квартир и доводить их до сделки»</strong>, а не «что постить в социальных сетях».</p>
 <p>В 2026 году рынок недвижимости изменился: стоимость привлечения клиента выросла на 30-40% по сравнению с 2024 годом, а покупатели стали дольше принимать решения. По данным наших проектов, средний цикл сделки для лотов от 20 млн рублей составляет 45-90 дней. Без выстроенной стратегии девелопер тратит бюджет на разрозненные каналы и не понимает, что именно приносит результат.</p>
 <p>Агентство <a href="/uslugi/strategiya-marketinga" target="_blank" rel="noopener">ГЛАВНОЕ</a> работает с застройщиками как стратегический партнёр: мы не ведём социальные сети — мы управляем маркетингом, который конвертируется в сделки.</p>
-<h2>Почему застройщику нужна стратегия, а не просто реклама</h2>
+<h2 id="sec-2" class="reveal">Почему застройщику нужна стратегия, а не просто реклама</h2>
 <p>Большинство девелоперов начинают маркетинг с тактики: запускают контекстную рекламу, заводят Telegram-канал, размещаются на Авито. Каждый канал работает отдельно, метрики не связаны между собой, а маркетолог отчитывается охватами и подписчиками вместо стоимости лида и количества сделок.</p>
 <p>Стратегический подход переворачивает эту логику. Сначала определяется цель в деньгах: сколько сделок нужно в месяц, с каким средним чеком, какой допустимый CPL. Затем под эту цель подбираются каналы, распределяется бюджет и выстраивается воронка от первого касания до подписания договора.</p>
 <h3>Разница между тактическим и стратегическим маркетингом</h3>
 <p><strong>Тактический подход:</strong> девелопер нанимает SMM-специалиста, который делает 20 постов в месяц. Через 3 месяца у канала 500 подписчиков, ноль обращений, непонятно зачем это нужно. Бюджет потрачен, результат измеряется в лайках.</p>
 <p><strong>Стратегический подход:</strong> определяется, что Telegram нужен не для охватов, а как канал прогрева для тёплой аудитории. Трафик идёт из контекстной рекламы и Telegram Ads, канал прогревает кейсами и цифрами, целевое действие — заявка на консультацию. CPL контролируется, конверсия замеряется на каждом этапе.</p>
 <p>В нашей практике этот подход позволил достичь CPL 3 784 рубля через Telegram Ads для проекта с лотами от 20 млн рублей. За лучший месяц кампания принесла 69 целевых обращений, из которых 6 конвертировались в сделки со средним чеком 15 млн рублей.</p>
-<h2>Пошаговый план построения маркетинговой стратегии для застройщика</h2>
+<h2 id="sec-3" class="reveal">Пошаговый план построения маркетинговой стратегии для застройщика</h2>
 <h3>Шаг 1. Аудит текущего состояния</h3>
 <p>Прежде чем строить стратегию, нужно понять, что уже есть. Аудит включает анализ всех действующих каналов, их стоимости, конверсий и качества лидов. Часто на этом этапе обнаруживается, что 60-70% бюджета уходит в каналы, которые приносят менее 20% сделок.</p>
 <p>Что проверяем:</p>
@@ -103,11 +273,11 @@
 <p>Первые 2-3 месяца — это период калибровки. Стратегия задаёт направление, но конкретные настройки (аудитории, креативы, офферы) тестируются и оптимизируются на реальных данных. Важно не менять всё одновременно, а проверять гипотезы последовательно.</p>
 <h3>Шаг 7. Ежемесячная коррекция и масштабирование</h3>
 <p>Стратегия — это не разовый документ, а живой процесс. Каждый месяц анализируются результаты, перераспределяется бюджет в пользу работающих каналов и тестируются новые гипотезы. Формат <a href="/uslugi/fractional-cmo" target="_blank" rel="noopener">Fractional CMO</a> идеально подходит для этой задачи: внешний директор по маркетингу управляет стратегией 8 часов в месяц, не раздувая штат.</p>
-<h2>Сравнение каналов маркетинга для застройщика в 2026 году</h2>
+<h2 id="sec-4" class="reveal">Сравнение каналов маркетинга для застройщика в 2026 году</h2>
 <p>| Канал | CPL (руб.) | Конверсия в сделку | Минимальный бюджет/мес | Время до результата | Для кого подходит | |-------|-----------|-------------------|----------------------|--------------------|--------------------| | Контекстная реклама (Яндекс) | 5 000 — 12 000 | 1,5 — 3% | от 300 000 | 2-4 недели | Все классы жилья | | Telegram Ads | 3 000 — 6 000 | 2 — 4% | от 150 000 | 3-6 недель | Бизнес, премиум | | Авито Недвижимость | 2 000 — 5 000 | 1 — 2% | от 50 000 | 1-2 недели | Комфорт, эконом | | Медийная реклама | 8 000 — 20 000 | 0,5 — 1% | от 500 000 | 2-3 месяца | Имиджевые кампании | | PR и статьи | 10 000 — 30 000 | 3 — 5% | от 100 000 | 2-4 месяца | Бизнес, премиум | | Посевы в Telegram | 4 000 — 10 000 | 1,5 — 3% | от 100 000 | 2-4 недели | Все классы жилья | | SEO (сайт проекта) | 1 500 — 4 000 | 2 — 4% | от 80 000 | 4-6 месяцев | Долгосрочная стратегия |</p>
 <p><strong>Важно:</strong> цифры в таблице — средние по рынку для проектов в Москве и Московской области с лотами от 10 млн рублей. Для регионов CPL обычно ниже на 30-50%. Для премиального сегмента (от 50 млн) CPL может быть выше, но конверсия в сделку также растёт.</p>
 <p>Подробнее о <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">performance-маркетинге для застройщиков</a> и как мы управляем этими каналами.</p>
-<h2>Чек-лист: 7 признаков, что застройщику нужна маркетинговая стратегия</h2>
+<h2 id="sec-5" class="reveal">Чек-лист: 7 признаков, что застройщику нужна маркетинговая стратегия</h2>
 <p>Если вы узнали себя хотя бы в 3 пунктах из 7, пора переходить от хаотичного маркетинга к системному.</p>
 <ol><li><strong>Вы не знаете свой CPL.</strong> Маркетолог отчитывается охватами и подписчиками, но не может назвать стоимость одного обращения по каждому каналу.</li></ol>
 <ol><li><strong>Более 30% лидов — мусорные.</strong> Брокеры, нецелевые запросы, люди с бюджетом ниже минимального лота. Это значит, что каналы настроены неправильно или аудитория подобрана без стратегии.</li></ol>
@@ -116,7 +286,7 @@
 <ol><li><strong>Нет сквозной аналитики.</strong> Невозможно проследить путь клиента от первого клика до подписания договора. Отдел продаж говорит «пришёл по рекомендации», а на деле человек видел рекламу 3 месяца назад.</li></ol>
 <ol><li><strong>Маркетинг зависит от одного человека.</strong> Уходит маркетолог — рушится всё. Нет документированных процессов, стандартов и KPI.</li></ol>
 <ol><li><strong>Вы масштабируете продажи, но маркетинг не масштабируется.</strong> Выводите новый проект — и начинаете с нуля, вместо того чтобы использовать уже отработанные связки.</li></ol>
-<h2>Три модели работы с маркетингом для застройщика</h2>
+<h2 id="sec-6" class="reveal">Три модели работы с маркетингом для застройщика</h2>
 <h3>Модель 1. Штатный отдел маркетинга</h3>
 <p><strong>Подходит для:</strong> крупных девелоперов с портфелем от 10 проектов.</p>
 <p>Стоимость: от 1,5 млн рублей в месяц (руководитель + 2-3 специалиста + бюджеты на инструменты). Даёт полный контроль, но требует управленческого ресурса и экспертизы для найма правильных людей.</p>
@@ -127,7 +297,7 @@
 <h3>Модель 3. Полный аутсорсинг (агентство)</h3>
 <p><strong>Подходит для:</strong> застройщиков с 1-3 проектами без внутренней экспертизы.</p>
 <p>Стоимость: от 350 000 рублей в месяц за комплексное обслуживание. Агентство берёт на себя и стратегию, и исполнение. Удобно, но есть риск потери контроля и зависимости от одного подрядчика.</p>
-<h2>Что должна включать стратегия маркетинга застройщика</h2>
+<h2 id="sec-7" class="reveal">Что должна включать стратегия маркетинга застройщика</h2>
 <p>Готовая стратегия — это не презентация на 100 слайдов, а рабочий документ, по которому команда действует каждый день. Вот обязательные разделы:</p>
 <h3>Аналитический блок</h3>
 <ul><li>Анализ конкурентов (3-5 ближайших по классу и локации);</li><li>Анализ целевой аудитории (сегменты, боли, критерии выбора);</li><li>Аудит текущих каналов и их эффективности;</li><li>SWOT-анализ маркетинговой функции.</li></ul>
@@ -135,24 +305,60 @@
 <ul><li>Позиционирование проекта (чем отличается от конкурентов);</li><li>Ключевое сообщение для каждого сегмента аудитории;</li><li>Выбор каналов и обоснование;</li><li>Распределение бюджета по каналам с прогнозом CPL и количества лидов;</li><li>Воронка продаж: от первого касания до сделки.</li></ul>
 <h3>Операционный блок</h3>
 <ul><li>Медиаплан на 3-6 месяцев;</li><li>KPI по каждому каналу и этапу воронки;</li><li>Календарь активностей;</li><li>Ответственные и дедлайны;</li><li>Система отчётности (что, когда, кому).</li></ul>
-<h2>Ошибки застройщиков в маркетинге</h2>
+<h2 id="sec-8" class="reveal">Ошибки застройщиков в маркетинге</h2>
 <p>За 4 года работы с девелоперами мы видели одни и те же ошибки. Вот самые дорогие из них.</p>
 <p><strong>Ошибка 1: измерять эффективность охватами.</strong> Охват — это метрика осведомлённости, а не продаж. У канала может быть 10 000 подписчиков и ноль обращений. CPL и количество квалифицированных лидов — вот настоящие показатели.</p>
 <p><strong>Ошибка 2: менять агентство каждые 3 месяца.</strong> Маркетинг в недвижимости — это длинный цикл. Результаты стратегии видны через 3-6 месяцев. Менять подрядчика раньше — значит каждый раз начинать с нуля и платить за обучение новой команды.</p>
 <p><strong>Ошибка 3: экономить на стратегии, но тратить на тактику.</strong> Девелопер платит 500 000 рублей в месяц за рекламу, но не готов заплатить 200 000 за стратегию, которая покажет, что половина этого бюджета уходит впустую. Стратегия окупается в первый же месяц за счёт оптимизации расходов.</p>
 <p><strong>Ошибка 4: копировать конкурентов вместо анализа данных.</strong> «У соседнего ЖК красивый канал в Telegram — нам тоже надо». Без понимания, зачем конкуренту этот канал и какие результаты он приносит, копирование формы без содержания — пустая трата ресурсов.</p>
-<h2>Как начать работу со стратегическим партнёром</h2>
+<h2 id="sec-9" class="reveal">Как начать работу со стратегическим партнёром</h2>
 <p>Процесс начинается с диагностической встречи, на которой мы разбираем текущую ситуацию: каналы, бюджеты, результаты, цели. Встреча длится 60 минут и бесплатна.</p>
 <p>По итогам встречи вы получаете:</p>
 <ul><li>предварительную оценку потенциала роста;</li><li>рекомендации по перераспределению бюджета;</li><li>предложение по формату работы (стратегия, Fractional CMO или комплекс).</li></ul>
 <p>Стоимость <a href="/uslugi/strategiya-marketinga" target="_blank" rel="noopener">стратегии маркетинга</a> начинается от 150 000 рублей. Формат <a href="/uslugi/fractional-cmo" target="_blank" rel="noopener">Fractional CMO</a> — от 200 000 рублей в месяц за 8 часов стратегического управления.</p>
 <p>ГЛАВНОЕ работает с застройщиками, для которых маркетинг — это инвестиция в сделки, а не статья расходов на «красивые картинки». Если ваш средний чек от 20 млн рублей и вы хотите системно управлять стоимостью привлечения клиента — мы говорим на одном языке.</p>
 </article>
+<div class="dual-cta reveal" aria-label="Подписаться на каналы">
+  <a class="dual-cta-card brand-v" href="https://t.me/vnartdinova" target="_blank" rel="noopener" aria-label="Канал Виктории Нартдиновой">
+    <div class="dc-row">
+      <span class="dc-avatar" aria-hidden="true">В</span>
+      <div>
+        <div class="dc-handle">@vnartdinova</div>
+        <div class="dc-sub">Виктория Нартдинова</div>
+      </div>
+    </div>
+    <div class="dc-desc">Учу делать AI-продукты для бизнеса, разбираю свои стартапы, делюсь рабочими схемами.</div>
+    <div class="dc-arrow">Открыть в Telegram →</div>
+  </a>
+  <a class="dual-cta-card brand-g" href="https://t.me/glavnoe_agency" target="_blank" rel="noopener" aria-label="Канал агентства ГЛАВНОЕ">
+    <div class="dc-row">
+      <span class="dc-avatar" aria-hidden="true">Г</span>
+      <div>
+        <div class="dc-handle">@glavnoe_agency</div>
+        <div class="dc-sub">Агентство ГЛАВНОЕ</div>
+      </div>
+    </div>
+    <div class="dc-desc">Маркетинг недвижимости, performance в Telegram и ПромоСтраницах, AI-инструменты для бизнеса.</div>
+    <div class="dc-arrow">Открыть в Telegram →</div>
+  </a>
+</div>
+
+
 <section class="faq"><h2 class="faq__title">Частые вопросы</h2><div class="faq__item"><div class="faq__q">Сколько стоит стратегия маркетинга для застройщика?</div><div class="faq__a">Стоимость стратегии маркетинга для застройщика варьируется от 150 000 до 500 000 рублей в зависимости от объёма проекта, количества ЖК и каналов продвижения. Базовая стратегия включает аудит, позиционирование, каналы и KPI.</div></div>
 <div class="faq__item"><div class="faq__q">Что такое Fractional CMO и зачем это застройщику?</div><div class="faq__a">Fractional CMO (внешний директор по маркетингу) — это формат работы, при котором опытный маркетолог управляет стратегией застройщика на аутсорсе. Обычно это 8 часов в месяц за 200 000 рублей — дешевле штатного директора, но с тем же уровнем экспертизы.</div></div>
 <div class="faq__item"><div class="faq__q">Какой CPL считается нормальным для застройщика?</div><div class="faq__a">Для застройщиков с лотами от 20 млн нормальный CPL — от 3 000 до 8 000 рублей. В нашей практике средний CPL через Telegram Ads составил 3 784 рубля, а через комплексные кампании — до 5 741 рубля.</div></div>
 <div class="faq__item"><div class="faq__q">Нужен ли застройщику отдел маркетинга или можно работать с агентством?</div><div class="faq__a">Для застройщиков до 5 ЖК обычно эффективнее работать с внешней командой (Fractional CMO + агентство). Свой отдел оправдан при масштабе от 10+ проектов. Внешний эксперт приносит кросс-отраслевой опыт и свежий взгляд.</div></div>
 <div class="faq__item"><div class="faq__q">Как измерить эффективность маркетинговой стратегии застройщика?</div><div class="faq__a">Основные метрики: CPL (стоимость лида), конверсия из лида в показ, конверсия из показа в сделку, стоимость привлечения сделки (CPA) и ROI маркетинговых инвестиций. Стратегия должна включать конкретные KPI по каждой метрике.</div></div></section>
+<section class="completion-section" style="padding:24px 32px 0;max-width:760px;margin:0 auto">
+  <div class="completion reveal" data-completion>
+    <span class="completion-circle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+    </span>
+    <h4>Ты прошёл весь гайд</h4>
+    <p>Спасибо, что дочитал. Если есть вопрос по своему проекту, напиши, разберём бесплатно.</p>
+    <a class="completion-cta" href="/contact/">Задать вопрос Виктории →</a>
+  </div>
+</section>
 <section class="cta">
   <div class="cta__title">Напишем под ваш проект — расскажите задачу</div>
   <a class="cta__btn" href="mailto:hello@glavnoe.com">Написать на hello@glavnoe.com</a>
@@ -539,6 +745,94 @@
     run();
   }
   window.addEventListener('load', function(){ setTimeout(run, 500); setTimeout(run, 1800); setTimeout(run, 4000); });
+})();
+</script>
+<script data-glavnoe-guide-gamification="1">
+(function(){
+  if (window.__glavnoeGuideGameLoaded) return;
+  window.__glavnoeGuideGameLoaded = true;
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function initProgress(){
+    var bar = document.getElementById('progressBar');
+    if (!bar) return;
+    var ticking = false;
+    function update(){
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - window.innerHeight) || 1;
+      var p = Math.min(1, Math.max(0, window.scrollY / max));
+      bar.style.transform = 'scaleX(' + p + ')';
+      ticking = false;
+    }
+    function onScroll(){ if (!ticking){ requestAnimationFrame(update); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  function initDesktopToc(){
+    var toc = document.getElementById('desktopToc');
+    if (!toc) return;
+    var items = Array.prototype.slice.call(toc.querySelectorAll('li[data-target]'));
+    var targets = items.map(function(li){ return document.getElementById(li.dataset.target); }).filter(Boolean);
+    if (!targets.length) return;
+    function update(){
+      var midline = window.scrollY + window.innerHeight * 0.35;
+      var activeIdx = 0;
+      targets.forEach(function(t, idx){
+        var top = t.getBoundingClientRect().top + window.scrollY;
+        if (top <= midline) activeIdx = idx;
+      });
+      items.forEach(function(li, idx){
+        li.classList.remove('active', 'passed');
+        if (idx < activeIdx) li.classList.add('passed');
+        else if (idx === activeIdx) li.classList.add('active');
+      });
+    }
+    var ticking = false;
+    function onScroll(){ if (!ticking){ requestAnimationFrame(function(){ update(); ticking = false; }); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
+  function initCompletion(){
+    var box = document.querySelector('[data-completion]');
+    if (!box) return;
+    if (reduced || !('IntersectionObserver' in window)){ box.classList.add('in'); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ box.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    io.observe(box);
+  }
+
+  function run(){
+    try { initProgress(); } catch(e){}
+    try { initReveal(); } catch(e){}
+    try { initDesktopToc(); } catch(e){}
+    try { initCompletion(); } catch(e){}
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
 })();
 </script>
 </body>

@@ -1,475 +1,339 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Статьи | ГЛАВНОЕ</title>
-<meta name="description" content="Гайды и кейсы от ГЛАВНОЕ — стратегического маркетинга для застройщиков. Telegram Ads, ПромоСтраницы, performance, контент-стратегия.">
-<link rel="canonical" href="/blog/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Статьи и гайды | ГЛАВНОЕ, маркетинг недвижимости</title>
+<meta name="description" content="Гайды по маркетингу для застройщиков и агентств недвижимости. Стратегия 2026, где искать клиентов брокеру, как вести Telegram-канал ЖК, кейс-разборы.">
+<link rel="canonical" href="https://theglavnoe.com/blog/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Статьи | ГЛАВНОЕ">
-<meta property="og:description" content="Гайды и кейсы от ГЛАВНОЕ — Telegram Ads, performance-маркетинг для застройщиков.">
-<meta property="og:url" content="/blog/">
-<meta property="og:image" content="/assets/framer/assets/Rf8zWc2T6zVsrABCdIoWtdai428.png">
+<meta property="og:title" content="Статьи и гайды по маркетингу недвижимости | ГЛАВНОЕ">
+<meta property="og:description" content="Стратегия девелопера 2026, каналы лидгена для брокера, Telegram-канал ЖК, кейс-разборы. Гайды с цифрами от агентства ГЛАВНОЕ.">
+<meta property="og:url" content="https://theglavnoe.com/blog/">
+<meta property="og:image" content="https://theglavnoe.com/work/case-spb-15mln/assets/cover.jpg">
+<link rel="icon" type="image/png" href="/assets/framer/images/f0EhgXWunWZsCvCzDGy44b0jj6Y.png">
+
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-Regular.otf" type="font/otf" crossorigin>
+<link rel="preload" as="font" href="/assets/fonts/suisse/SuisseIntl-SemiBold.otf" type="font/otf" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Blog",
+  "name":"Статьи и гайды ГЛАВНОЕ",
+  "description":"Гайды по маркетингу недвижимости: Telegram Ads, ПромоСтраницы, контент-стратегия, лидген",
+  "url":"https://theglavnoe.com/blog/",
+  "publisher":{"@type":"Organization","name":"ГЛАВНОЕ","url":"https://theglavnoe.com"},
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Главная","item":"https://theglavnoe.com/"},
+      {"@type":"ListItem","position":2,"name":"Статьи","item":"https://theglavnoe.com/blog/"}
+    ]
+  }
+}
+</script>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:#0a0a0a;color:#fff;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:inherit;text-decoration:none}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 32px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.08)}
-  .nav__logo{font-weight:700;letter-spacing:-0.02em;font-size:20px;text-transform:none}
-  .nav__items{display:flex;gap:28px;flex-wrap:wrap}
-  .nav__items a:hover{color:#ff3b30}
-  .hero{padding:88px 32px 56px;max-width:1200px;margin:0 auto}
-  .hero__eyebrow{font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px}
-  .hero__title{font-size:clamp(40px,7vw,84px);line-height:1.05;letter-spacing:-0.03em;font-weight:700}
-  .hero__sub{margin-top:24px;font-size:clamp(16px,2vw,20px);line-height:1.5;color:rgba(255,255,255,0.7);max-width:680px}
-  .grid{padding:24px 32px 96px;max-width:1200px;margin:0 auto;display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
-  .card{background:#141414;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s, transform .2s}
-  .card:hover{border-color:#ff3b30;transform:translateY(-2px)}
-  .card__tag{display:flex;justify-content:space-between;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ff3b30}
-  .card__date{color:rgba(255,255,255,0.4)}
-  .card__title{font-size:22px;line-height:1.22;font-weight:600;letter-spacing:-0.01em}
-  .card__desc{font-size:15px;line-height:1.5;color:rgba(255,255,255,0.6);flex:1}
-  .card__cta{margin-top:8px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:#ff3b30}
-  .footer{padding:48px 32px;border-top:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(255,255,255,0.5);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .footer a:hover{color:#fff}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Book.otf') format('opentype');font-weight:350;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url('/assets/fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+::selection{background:#ECE6F8;color:#1A1814}
+:root{
+  --bg:#FBF7F1;
+  --card-bg:#FFFFFF;
+  --text:#1A1814;
+  --text-secondary:#5C5750;
+  --text-muted:#8A857E;
+  --border:#E5E0D8;
+  --accent:#A087D3;
+  --accent-soft:#F6F3FC;
+  --accent-mint:#5CBA8C;
+  --accent-mint-soft:#ECFDF5;
+  --accent-coral:#F0805F;
+  --accent-coral-soft:#FEF3F0;
+  --accent-honey:#F5C24A;
+  --accent-honey-soft:#FEF9E7;
+  --card-radius:24px;
+  --card-shadow:0 1px 3px rgba(26,24,20,.04),0 8px 24px rgba(26,24,20,.04);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:'Suisse Intl','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.5}
+
+.progress-bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:100;will-change:width;transition:width .1s linear}
+
+.site-nav{position:relative;background:var(--bg);padding:24px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:50}
+.site-nav .logo{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--text);text-decoration:none}
+.site-nav .logo:hover{color:var(--accent)}
+.site-nav .nav-links{display:flex;gap:24px;font-size:14px}
+.site-nav .nav-links a{color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.site-nav .nav-links a:hover,.site-nav .nav-links a.active{color:var(--accent)}
+.site-nav .nav-links a.active{font-weight:500}
+@media(max-width:720px){.site-nav .nav-links{display:none}}
+
+.breadcrumb{padding:24px 32px 0;font-size:13px;color:var(--text-muted);max-width:1200px;margin:0 auto}
+.breadcrumb a{color:var(--text-muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--text);font-weight:500}
+
+.hero{padding:48px 32px 32px;max-width:1200px;margin:0 auto}
+.hero .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:600;margin-bottom:16px;opacity:0;transform:translateY(20px);animation:reveal .8s var(--ease) .05s forwards}
+.hero h1{font-size:clamp(40px,5.5vw,72px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px;max-width:900px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .15s forwards}
+.hero .subtitle{font-size:clamp(18px,2vw,21px);color:var(--text-secondary);line-height:1.55;max-width:680px;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .3s forwards}
+
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+.filters{max-width:1200px;margin:0 auto;padding:24px 32px;display:flex;gap:8px;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .45s forwards}
+.filter{font-size:13px;font-weight:500;padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-secondary);transition:all .2s var(--ease);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.filter:hover{border-color:var(--accent);color:var(--accent)}
+.filter.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.filter .count{font-size:11px;opacity:.6}
+
+.featured{max-width:1200px;margin:0 auto;padding:24px 32px}
+.featured-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:0;box-shadow:var(--card-shadow);transition:transform .3s var(--ease),box-shadow .3s var(--ease);text-decoration:none;color:var(--text);opacity:0;transform:translateY(20px);animation:reveal .9s var(--ease) .6s forwards}
+.featured-card:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(26,24,20,.06),0 24px 56px rgba(26,24,20,.08)}
+@media(max-width:880px){.featured-card{grid-template-columns:1fr}}
+.featured-content{padding:40px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.featured-tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--accent);width:fit-content;padding:6px 12px;border-radius:999px;background:var(--accent-soft)}
+.featured-card h2{font-size:clamp(26px,3vw,34px);font-weight:600;line-height:1.15;letter-spacing:-0.02em}
+.featured-card .featured-desc{font-size:15px;color:var(--text-secondary);line-height:1.55}
+.featured-card .featured-meta{display:flex;gap:16px;font-size:13px;color:var(--text-muted);margin-top:8px;flex-wrap:wrap}
+.featured-card .featured-cta{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:15px;font-weight:500;color:var(--accent)}
+.featured-card .featured-cta .arrow{transition:transform .3s var(--ease)}
+.featured-card:hover .featured-cta .arrow{transform:translateX(4px)}
+.featured-visual{background:linear-gradient(135deg,var(--accent-soft),var(--card-bg) 60%);border-left:3px solid var(--accent);padding:48px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px}
+@media(max-width:880px){.featured-visual{border-left:none;border-top:3px solid var(--accent);min-height:200px}}
+.featured-visual .big{font-size:clamp(60px,7vw,96px);font-weight:600;line-height:1;letter-spacing:-0.04em;color:var(--accent)}
+.featured-visual .big-label{font-size:14px;color:var(--text-secondary);font-weight:500}
+
+.grid{max-width:1200px;margin:32px auto 0;padding:0 32px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+.article-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--card-radius);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--text);box-shadow:var(--card-shadow);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);opacity:0;transform:translateY(20px)}
+.article-card.reveal-on{animation:reveal .8s var(--ease) forwards}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(26,24,20,.06),0 24px 56px rgba(26,24,20,.08);border-color:var(--accent)}
+.article-cover{aspect-ratio:16/10;padding:32px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,var(--accent-soft),var(--card-bg) 60%);border-bottom:1px solid var(--border)}
+.article-cover.coral{background:linear-gradient(135deg,var(--accent-coral-soft),var(--card-bg) 60%)}
+.article-cover.mint{background:linear-gradient(135deg,var(--accent-mint-soft),var(--card-bg) 60%)}
+.article-cover.honey{background:linear-gradient(135deg,var(--accent-honey-soft),var(--card-bg) 60%)}
+.article-cover.lavender{background:linear-gradient(135deg,var(--accent-soft),var(--card-bg) 60%)}
+.article-cover .cover-tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:var(--text-secondary);align-self:flex-start}
+.article-cover .cover-num{font-size:clamp(36px,4vw,56px);font-weight:600;letter-spacing:-0.03em;line-height:1;color:var(--text)}
+.article-cover.coral .cover-num{color:var(--accent-coral)}
+.article-cover.mint .cover-num{color:var(--accent-mint)}
+.article-cover.lavender .cover-num{color:var(--accent)}
+.article-cover.honey .cover-num{color:#C99B1F}
+.article-cover .cover-label{font-size:13px;color:var(--text-secondary);font-weight:500;margin-top:4px}
+.article-cover-photo{padding:0;position:relative;overflow:hidden;background:var(--card-bg)}
+.article-cover-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.article-card:hover .article-cover-photo img{transform:scale(1.04)}
+.article-cover-photo .cover-tag{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:6px 10px;border-radius:999px;color:var(--text);z-index:2}
+
+.article-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.article-meta{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.article-meta .dot{width:3px;height:3px;background:var(--text-muted);border-radius:50%}
+.article-title{font-size:17px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;color:var(--text)}
+.article-desc{font-size:14px;color:var(--text-secondary);line-height:1.5;flex:1}
+.article-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent);margin-top:8px}
+
+.final-cta{background:var(--bg);color:var(--text);padding:96px 32px 120px;border-top:1px solid var(--border);text-align:left}
+.final-cta .wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:end}
+@media(max-width:880px){.final-cta .wrap{grid-template-columns:1fr;gap:32px;align-items:start}}
+.final-cta .small{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:600;margin-bottom:16px}
+.final-cta h2{font-size:clamp(32px,4.5vw,52px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0;color:var(--text);max-width:560px}
+.final-cta .right{padding-bottom:8px;display:flex;flex-direction:column;gap:20px}
+.final-cta .right p{font-size:17px;color:var(--text-secondary);line-height:1.6;margin:0;max-width:480px}
+.final-cta .channel-card{display:flex;align-items:center;gap:14px;padding:14px 20px 14px 14px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;width:fit-content;box-shadow:var(--card-shadow);text-decoration:none;color:var(--text);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+.final-cta .channel-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,24,20,.06),0 16px 32px rgba(26,24,20,.08);border-color:var(--accent)}
+.final-cta .channel-card .avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--accent-soft)}
+.final-cta .channel-card .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.final-cta .channel-card .channel-info{display:flex;flex-direction:column;gap:2px;line-height:1.2}
+.final-cta .channel-card .channel-name{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.01em;display:flex;align-items:center;gap:6px}
+.final-cta .channel-card .channel-action{font-size:12px;color:var(--text-muted)}
+.final-cta .channel-card .tg-icon{width:20px;height:20px;flex-shrink:0;margin-left:6px;color:#229ED9}
+
+.site-footer{padding:32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);text-align:center;background:var(--bg)}
+.site-footer a{color:var(--text-secondary);text-decoration:none;margin:0 8px}
+.site-footer a:hover{color:var(--accent)}
+
+@media(max-width:520px){
+  .hero{padding:32px 20px 24px}
+  .hero h1{font-size:34px;letter-spacing:-0.025em}
+  .hero .subtitle{font-size:16px}
+  .breadcrumb{padding:20px 20px 0}
+  .grid,.featured,.filters{padding-left:20px;padding-right:20px}
+  .site-nav{padding:16px 20px}
+  .featured-content{padding:28px 24px}
+  .featured-visual{padding:32px 24px;min-height:160px}
+  .final-cta{padding:64px 20px 80px}
+}
 </style>
-<script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:relative;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#fff;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#ff3b30;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:18px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script id="glavnoe-mobile-header-fix-js">(function(){function inject(){var nav=document.querySelector("nav.nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("data-framer-name","Mobile Menu Icon");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script></head>
+</head>
 <body>
-<nav class="nav">
-  <a class="nav__logo" href="/">ГЛАВНОЕ</a>
-  <div class="nav__items">
+<div class="progress-bar" id="pb"></div>
+
+<nav class="site-nav">
+  <a href="/" class="logo">ГЛАВНОЕ</a>
+  <div class="nav-links">
     <a href="/">Главная</a>
-    <a href="/#products">Услуги</a>
-    <a href="/cases/portfolio/">Кейсы</a>
-    <a href="/#results">Результаты</a>
-    <a href="/blog/">Статьи</a>
+    <a href="/cases/portfolio">Кейсы</a>
+    <a href="/blog/" class="active">Статьи</a>
+    <a href="/about">О нас</a>
+    <a href="/contact">Контакты</a>
   </div>
 </nav>
+
+<div class="breadcrumb"><a href="/">Главная</a> · <span>Статьи и гайды</span></div>
+
 <section class="hero">
-  <div class="hero__eyebrow">(гайды и инсайты)</div>
-  <h1 class="hero__title">Статьи</h1>
-  <p class="hero__sub">Разборы Telegram Ads, ПромоСтраниц, стратегий и performance-маркетинга для застройщиков и агентств недвижимости. Реальные цифры, кейсы, гайды.</p>
+  <div class="eyebrow">База знаний</div>
+  <h1>Гайды для компаний и всех кто в недвижимости 🤟</h1>
+  <p class="subtitle">От стратегии до лидгена и внедрения AI в маркетинг и продажи.</p>
 </section>
-<div class="grid">
-  <a class="card" href="/blog/strategiya-marketinga-dlya-developera-2026/">
-    <div class="card__tag"><span>Стратегия</span><span class="card__date">2026-03-10</span></div>
-    <h2 class="card__title">Стратегия маркетинга для девелопера: что работает в 2026 году</h2>
-    <p class="card__desc">Сравнение CPL и конверсий по каналам, пошаговый план стратегии от агентства ГЛАВНОЕ.</p>
-    <span class="card__cta">Читать →</span>
+
+<section class="filters">
+  <span class="filter active">Все материалы <span class="count">4</span></span>
+  <span class="filter">Гайды <span class="count">2</span></span>
+  <span class="filter">Кейс-разборы <span class="count">2</span></span>
+</section>
+
+<section class="featured">
+  <a href="/blog/gde-iskat-klientov-brokeru-2026/" class="featured-card">
+    <div class="featured-content">
+      <span class="featured-tag">Гайд · Каналы</span>
+      <h2>Где брокеру искать клиентов в 2026: системность вместо хаоса 🎯</h2>
+      <p class="featured-desc">Сравнительная таблица 8 каналов с CPL, качеством, сложностью и под какой средний чек подходят. Плюс 4 шага выбора канала под свой сегмент. Опубликовано в «Бизнес-Секретах».</p>
+      <div class="featured-meta">
+        <span>⏱ 12 мин чтения</span>
+        <span>·</span>
+        <span>8 каналов в сравнении</span>
+        <span>·</span>
+        <span>СМИ: Бизнес-Секреты</span>
+      </div>
+      <span class="featured-cta">Читать статью <span class="arrow">→</span></span>
+    </div>
+    <div class="featured-visual">
+      <div>
+        <div class="big">8</div>
+        <div class="big-label">каналов поиска клиентов брокеру</div>
+      </div>
+    </div>
   </a>
-  <a class="card" href="/blog/kak-zastrojshchiku-vesti-telegram-kanal/">
-    <div class="card__tag"><span>Telegram</span><span class="card__date">2026-03-12</span></div>
-    <h2 class="card__title">Как застройщику вести Telegram-канал в 2026 году</h2>
-    <p class="card__desc">CPL от 3 784 ₽, 69 заявок в месяц — пошаговый план: контент-план, ads, аналитика.</p>
-    <span class="card__cta">Читать →</span>
+</section>
+
+<section class="grid">
+
+  <a href="/blog/kak-zastrojshchiku-vesti-telegram-kanal/" class="article-card">
+    <div class="article-cover mint">
+      <span class="cover-tag">Гайд · Telegram</span>
+      <div>
+        <div class="cover-num">TG</div>
+        <div class="cover-label">канал ЖК пошагово</div>
+      </div>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span>Гайд</span><span class="dot"></span><span>10 мин</span></div>
+      <div class="article-title">Как застройщику вести Telegram-канал ЖК 🏗</div>
+      <div class="article-desc">Контент-стратегия, частота постов, рубрики, что работает в премиуме и что в массовом сегменте. С чек-листом запуска канала за 2 недели.</div>
+      <span class="article-cta">Читать →</span>
+    </div>
   </a>
-  <a class="card" href="/blog/gde-iskat-klientov-brokeru-2026/">
-    <div class="card__tag"><span>Брокеры</span><span class="card__date">2026-04-02</span></div>
-    <h2 class="card__title">Где брокеру искать клиентов в 2026 году: системность вместо хаоса</h2>
-    <p class="card__desc">Сегментация, упаковка ценности, Telegram-канал как актив, личный бренд, кейс первой сделки без рекламы.</p>
-    <span class="card__cta">Читать →</span>
+
+  <a href="/blog/6-sdelok-srednim-chekom-15-mln-telegram-ads/" class="article-card">
+    <div class="article-cover article-cover-photo">
+      <img src="/work/case-spb-15mln/assets/cover.jpg" alt="Telegram Ads × премиум СПб" loading="lazy">
+      <span class="cover-tag">Кейс-разбор · СПб</span>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span>Кейс</span><span class="dot"></span><span>8 мин</span></div>
+      <div class="article-title">Telegram Ads × премиум СПб: 6 сделок за 4 месяца 🤝</div>
+      <div class="article-desc">Короткая версия с цифрами и переходом на полный кейс с разбором этапов. Бюджет 1.05 млн ₽, стоимость квалифицированного обращения 19 973 ₽.</div>
+      <span class="article-cta">Читать →</span>
+    </div>
   </a>
-  <a class="card" href="/blog/6-sdelok-srednim-chekom-15-mln-telegram-ads/">
-    <div class="card__tag"><span>Кейс · Telegram Ads</span><span class="card__date">2025-12-01</span></div>
-    <h2 class="card__title">6 сделок со средним чеком 15 млн ₽ через Telegram Ads — кейс агентства недвижимости</h2>
-    <p class="card__desc">CPL 5 113 ₽, 260 обращений, CPM 310 ₽ за 4 месяца. Пошаговая стратегия и аналитика.</p>
-    <span class="card__cta">Читать →</span>
+
+  <a href="/blog/50-kvallidov-premium-nedvizhimost-telegram-ads/" class="article-card">
+    <div class="article-cover article-cover-photo">
+      <img src="/work/regardis-telegram-ads-premium/assets/cover.jpg" alt="Regardis: премиум-недвижимость Москвы" loading="lazy">
+      <span class="cover-tag">Кейс-разбор · Москва</span>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span>Кейс</span><span class="dot"></span><span>9 мин</span></div>
+      <div class="article-title">50+ обращений в месяц на премиум-недвижимости (Regardis) ✨</div>
+      <div class="article-desc">Стоимость обращения 9 684 ₽ при KPI до 10 000. Что сработало в премиум-сегменте Москвы: креативы, каналы, контент-стратегия канала клиента.</div>
+      <span class="article-cta">Читать →</span>
+    </div>
   </a>
-  <a class="card" href="/blog/50-kvallidov-premium-nedvizhimost-telegram-ads/">
-    <div class="card__tag"><span>Кейс · Премиум</span><span class="card__date">2025-07-01</span></div>
-    <h2 class="card__title">50+ квалифицированных обращений в месяц на премиум-недвижимость с Telegram Ads</h2>
-    <p class="card__desc">CPL 9 684 ₽, баннеры Telegram Ads, премиум-сегмент. Стратегия, таргетинг, бюджет.</p>
-    <span class="card__cta">Читать →</span>
+
+  <a href="/work/case-aag-promostranicy/" class="article-card">
+    <div class="article-cover article-cover-photo">
+      <img src="/work/case-aag-promostranicy/assets/aag-slide-10.jpg" alt="AAG Development × ПромоСтраницы Яндекса" loading="lazy">
+      <span class="cover-tag">Кейс-разбор · СПб</span>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span>Кейс</span><span class="dot"></span><span>7 мин</span></div>
+      <div class="article-title">602 перехода по 64 ₽ для AAG через ПромоСтраницы 📰</div>
+      <div class="article-desc">AAG Development, квартал AVANT на Петроградской. Бюджет 38 780 ₽, 602 перехода, 1 115 дочитываний, 35 ₽ за 1 000 охвата. Канал, который работает без Telegram Ads.</div>
+      <span class="article-cta">Читать →</span>
+    </div>
   </a>
-  <a class="card" href="/blog/telegram-dlya-agentstva-nedvizhimosti-90-zayavok/">
-    <div class="card__tag"><span>Кейс · Бюджет 50К</span><span class="card__date">2024-05-15</span></div>
-    <h2 class="card__title">Telegram для агентства недвижимости: 90 заявок за 50 000 ₽ в месяц</h2>
-    <p class="card__desc">370 заявок за 4 месяца. Бюджет 50 000 ₽/мес, CPL около 555 ₽. Стратегия и воронка.</p>
-    <span class="card__cta">Читать →</span>
-  </a>
-</div>
-<footer class="footer">
-  <span>© 2026 ГЛАВНОЕ</span>
-  <div class="nav__items">
-    <a href="mailto:hello@glavnoe.com">hello@glavnoe.com</a>
-    <a href="https://t.me/glavnoe_channel" target="_blank" rel="noopener">Telegram</a>
-    <a href="https://www.instagram.com/glavnoe_agency" target="_blank" rel="noopener">Instagram</a>
+
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <div>
+      <div class="small">Канал агентства в Telegram</div>
+      <h2>Разбираем каждый интересный запрос. Без исключения.</h2>
+    </div>
+    <div class="right">
+      <p>Кидайте вопрос в комментарии или в личку, разберём в посте. В канале публикуем кейсы клиентов, гипотезы по каналам и форматам, инсайты с рынка недвижимости.</p>
+      <a href="https://t.me/glavnoe_agency" target="_blank" rel="noopener" class="channel-card">
+        <span class="avatar"><img src="/assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова"></span>
+        <span class="channel-info">
+          <span class="channel-name">@glavnoe_agency<svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.566 7.04l-1.522 7.18c-.115.519-.418.643-.847.4l-2.34-1.726-1.13 1.087c-.124.124-.229.229-.471.229l.168-2.388 4.342-3.922c.188-.168-.041-.262-.293-.094L8.99 13.18l-2.314-.724c-.504-.158-.514-.504.105-.747l9.046-3.485c.42-.158.787.094.74.816z"/></svg></span>
+          <span class="channel-action">Подписаться или оставить запрос</span>
+        </span>
+      </a>
+    </div>
   </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/">theglavnoe.com</a> · <a href="/cases/portfolio">Кейсы</a> · <a href="/about">О нас</a> · <a href="/contact">Контакты</a> · <a href="https://t.me/glavnoe_agency" target="_blank" rel="noopener">@glavnoe_agency</a>
 </footer>
-<script data-glavnoe-nav-v3="1">/* fix:home-article-cards-v2 applied */
+
+<script>
 (function(){
-  if (window.__glavnoeNavFixerLoaded) return;
-  window.__glavnoeNavFixerLoaded = true;
-
-  var NAV_MAP = {
-    'Услуги':       '/#products',
-    'Результаты':   '/#results',
-    'Статьи':       '/blog/',
-    'Кейсы':        '/cases/portfolio/',
-    'Главная':      '/',
-    'Написать CEO': 'mailto:hello@glavnoe.com',
-    'СТАРТ ПРОЕКТА': '/contact/',
-    'START PROJECT': '/contact/',
-    'Забронировать звонок': '/contact/',
-    'забронировать': '/contact/',
-    'Написать сейчас': '/contact/'
-  };
-
-  var SECTION_MARKERS = {
-    '(Немного о нас)':    'about',
-    '(Что придумали)':    'products',
-    '(Результаты)':       'results',
-    '(гайды и инсайты)':  'articles',
-    '(Ваша обратная свзяь)': 'contact'
-  };
-
-  var BLOG_CARDS = {
-    '/blog/way-to-clearance/':  { slug: 'strategiya-marketinga-dlya-developera-2026', title: 'Стратегия маркетинга для девелопера в 2026', tag: 'Стратегия', year: '© 2026', match: ['Way To Clearance'] },
-    '/blog/all-grapples/':      { slug: 'kak-zastrojshchiku-vesti-telegram-kanal',     title: 'Как застройщику вести Telegram-канал',           tag: 'Telegram', year: '© 2026', match: ['All Grapples'] },
-    '/blog/flowers-love/':      { slug: '6-sdelok-srednim-chekom-15-mln-telegram-ads', title: '6 сделок × 15 млн ₽ через Telegram Ads',          tag: 'Кейс',     year: '© 2026', match: ['Flowers Love'] },
-    '/blog/velocity-becomes/':  { slug: 'gde-iskat-klientov-brokeru-2026',             title: 'Где брокеру искать клиентов в 2026',             tag: 'Брокеры',  year: '© 2026', match: ['Velocity Becomes'] }
-  };
-
-  // Post-hydration text replacements — Framer SSR can re-render and overwrite static HTML edits.
-  // These mirror the static replacements in product/*/index.html, work/*/index.html, 404/index.html.
-  var TEXT_REPLACEMENTS = {
-    'Glavnoe@2026':       'ГЛАВНОЕ © 2026',
-    'START PROJECT':      'Запустить проект',
-    '(Meet Our Team)':    '(Наша команда)',
-    'Live Preview':       'Смотреть кейс',
-    '404 Error':          '404 — Страница не найдена',
-    'A curated selection of refined digital work shaped through structure.':
-      'Похоже, страница потерялась. Вернитесь на главную или посмотрите наши работы.',
-    // FIX 10 — текстовые правки (страховка от регрессий)
-    'Кейсы в СМИ:)':              'Опубликованные кейсы',
-    'Кейсы в СМИ':                'Опубликованные кейсы',
-    'Главное — их донести®.':     'Главное — их донести.',
-    'Главное — их донести®':      'Главное — их донести.',
-    '© 2025':                     '© 2026'
-  };
-
-  function fixVisibleText(){
-    document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, a, div').forEach(function(el){
-      if (el.children.length) return;
-      var t = (el.textContent || '').trim();
-      if (!t) return;
-      var rep = TEXT_REPLACEMENTS[t];
-      if (rep && el.textContent !== rep) el.textContent = rep;
-    });
+  var pb = document.getElementById('pb');
+  function update(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    pb.style.width = (scrolled * 100) + '%';
   }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
 
-  // Hide 5th "Skate" card on homepage Article section — no Russian content mapped for it.
-  function hideExtraBlogCards(){
-    if (!isHomepage()) return;
-    document.querySelectorAll('h5.framer-text').forEach(function(el){
-      if ((el.textContent || '').trim() === 'Skate') {
-        var card = el.closest('a, [data-framer-name="Card"], .framer-h52ftj') || el.parentElement;
-        if (card) card.style.setProperty('display', 'none', 'important');
-      }
-    });
-  }
-
-  function _normalizeBlogHref(raw){
-    if (!raw) return '';
-    var n = raw.replace(/^https?:\/\/[^/]+/, '');
-    n = n.replace(/^\.\//, '/');
-    if (n.charAt(0) !== '/') n = '/' + n;
-    n = n.replace(/index\.html$/, '');
-    if (!n.endsWith('/')) n += '/';
-    return n;
-  }
-
-  // Recursively find the deepest descendant text-bearing element.
-  // Returns either a text-only <p>/<span> or the original element.
-  function _leafTextEl(el){
-    if (!el) return el;
-    var cur = el;
-    var guard = 0;
-    while (cur && cur.children && cur.children.length === 1 && guard < 6) {
-      cur = cur.children[0];
-      guard++;
-    }
-    return cur;
-  }
-
-  function _setLeafText(el, newText){
-    var leaf = _leafTextEl(el);
-    if (!leaf) return;
-    if (leaf.children.length === 0 && (leaf.textContent || '').trim() !== newText) {
-      leaf.textContent = newText;
-    }
-  }
-
-  function _findBlogMapByPlaceholderTitle(anchor){
-    var titleEl = anchor.querySelector('[data-framer-name="Title"], h2, h3, h4');
-    if (!titleEl) return null;
-    var t = (titleEl.textContent || '').trim();
-    for (var k in BLOG_CARDS){
-      if (!Object.prototype.hasOwnProperty.call(BLOG_CARDS, k)) continue;
-      var m = BLOG_CARDS[k];
-      if (!m.match) continue;
-      for (var i=0;i<m.match.length;i++){ if (m.match[i] === t) return m; }
-    }
-    return null;
-  }
-
-  function fixBlogCards(){
-    document.querySelectorAll('a[href]').forEach(function(a){
-      var raw = a.getAttribute('href');
-      var normalized = _normalizeBlogHref(raw);
-      var map = BLOG_CARDS[normalized] || _findBlogMapByPlaceholderTitle(a);
-      if (!map) return;
-      var newHref = '/blog/' + map.slug + '/';
-      if (a.getAttribute('href') !== newHref) a.setAttribute('href', newHref);
-      a.querySelectorAll('h2, h3, h4, [data-framer-name="Title"]').forEach(function(t){
-        _setLeafText(t, map.title);
-      });
-      a.querySelectorAll('[data-framer-name="Tag"], [data-framer-name="Category"]').forEach(function(t){
-        _setLeafText(t, map.tag);
-      });
-      if (map.year) {
-        a.querySelectorAll('[data-framer-name="Year"]').forEach(function(t){
-          _setLeafText(t, map.year);
-        });
-      }
-    });
-  }
-
-  // MutationObserver — ловит пост-хидратационные ре-рендеры Framer,
-  // которые откатывают наши правки.
-  function _watchBlogCards(){
-    if (!isHomepage()) return;
-    if (window.__glavnoeBlogCardObserver) return;
-    var pending = false;
-    var obs = new MutationObserver(function(){
-      if (pending) return;
-      pending = true;
-      requestAnimationFrame(function(){
-        pending = false;
-        try { fixBlogCards(); } catch(e){}
-    try { _watchBlogCards(); } catch(e){}
-      });
-    });
-    obs.observe(document.body, { childList: true, subtree: true, characterData: true });
-    window.__glavnoeBlogCardObserver = obs;
-    setTimeout(function(){ try { obs.disconnect(); } catch(e){} }, 30000);
-  }
-
-  function fixLinks(root){
-    (root || document).querySelectorAll('a').forEach(function(a){
-      var t = (a.textContent || '').trim();
-      if (!t) return;
-      var dest = NAV_MAP[t];
-      if (!dest) return;
-      if (a.getAttribute('href') === dest) return;
-      a.setAttribute('href', dest);
-      if (dest.indexOf('mailto:') !== 0 && a.getAttribute('target') === '_blank') {
-        a.removeAttribute('target');
-      }
-    });
-  }
-
-  function addAnchorIds(){
-    if (!isHomepage()) return;
-    Object.keys(SECTION_MARKERS).forEach(function(marker){
-      var id = SECTION_MARKERS[marker];
-      if (document.getElementById(id)) return;
-      var hit = Array.from(document.querySelectorAll('p, h2, h3, h4, span')).find(function(el){
-        return el.textContent && el.textContent.trim() === marker && el.children.length === 0;
-      });
-      if (!hit) return;
-      var sec = hit.closest('section') || hit.closest('div[data-framer-name]') || hit.parentElement;
-      if (sec && !sec.id) sec.id = id;
-    });
-  }
-
-  function isHomepage(){
-    var p = window.location.pathname.replace(/index\.html$/, '');
-    return p === '/' || p === '';
-  }
-
-  function isProductPage(){
-    return /^\/product\/[a-z0-9-]+\//.test(window.location.pathname.replace(/index\.html$/, ''));
-  }
-
-  function injectPricingNote(){
-    if (!isProductPage()) return;
-    if (document.querySelector('[data-glavnoe-injected="pricing-note"]')) return;
-    var pricingHead = Array.from(document.querySelectorAll('p, h2, h3')).find(function(el){
-      return el.textContent && el.textContent.trim() === '(Стоимость)';
-    });
-    if (!pricingHead) return;
-    var sec = pricingHead.closest('section');
-    if (!sec || !sec.parentNode) return;
-    var note = document.createElement('section');
-    note.setAttribute('data-glavnoe-injected', 'pricing-note');
-    note.style.cssText = 'background:#0a0a0a;color:#fff;padding:72px 24px 88px;text-align:center';
-    note.innerHTML = ''
-      + '<div style="max-width:760px;margin:0 auto">'
-      + '  <div style="font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:32px;line-height:1.15;letter-spacing:-1px;margin-bottom:20px">Нужен другой формат работы?</div>'
-      + '  <div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:18px;line-height:1.5;color:rgba(255,255,255,0.75);margin-bottom:36px">Мы открыты к индивидуальным задачам и нестандартным условиям сотрудничества. Расскажите о вашем проекте — предложим оптимальное решение под ваши цели и вводные данные.</div>'
-      + '  <a href="mailto:hello@glavnoe.com" style="display:inline-flex;align-items:center;gap:12px;padding:18px 32px;background:#ff3b30;color:#fff;text-decoration:none;border-radius:48px;font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:16px;letter-spacing:0.02em;text-transform:uppercase">Написать на hello@glavnoe.com</a>'
-      + '</div>';
-    sec.parentNode.insertBefore(note, sec.nextSibling);
-  }
-
-  var HOMEPAGE_CASES = [
-    {
-      href: '/work/case-spb-15mln/',
-      tag: 'Telegram Ads · СПб',
-      title: '6 сделок × 15 млн ₽ через Telegram Ads',
-      metrics: [['6','Сделок'],['15 млн ₽','Средний чек'],['19 973 ₽','CPL']],
-      desc: 'Премиум-агентство недвижимости, 4 месяца, бюджет 1 053 352 ₽. Опубликовано на PPC World.'
-    },
-    {
-      href: '/work/case-aag-promostranicy/',
-      tag: 'ПромоСтраницы · AAG',
-      title: 'ROI 6000% на ПромоСтраницах Яндекса',
-      metrics: [['6 000%','ROI'],['−32%','CPL vs контекст'],['62%','Дочитываемость']],
-      desc: 'AAG Development, премиум-девелопер СПб. 3 формата статей, гео СПб+ЛО.'
-    },
-    {
-      href: '/work/regardis-telegram-ads-premium/',
-      tag: 'Telegram Ads · Москва',
-      title: '50+ квал-лидов в месяц на премиум',
-      metrics: [['50+','Лидов/мес'],['9 684 ₽','CPL'],['20 млн ₽','Средний чек']],
-      desc: 'Regardis. Бренд-медиа в Telegram + баннеры Telegram Ads, бюджет 1 млн ₽/мес.'
-    }
-  ];
-
-  function injectHomepageCases(){
-    if (!isHomepage()) return;
-    if (document.querySelector('[data-glavnoe-injected="homepage-cases"]')) return;
-    var anchor = document.getElementById('results')
-              || Array.from(document.querySelectorAll('p, h2, h3')).find(function(el){
-                   return el.textContent && el.textContent.trim() === '(Результаты)';
-                 });
-    if (!anchor) return;
-    var hostSection = anchor.closest('section') || anchor;
-    if (!hostSection || !hostSection.parentNode) return;
-    var sec = document.createElement('section');
-    sec.id = 'cases';
-    sec.setAttribute('data-glavnoe-injected', 'homepage-cases');
-    sec.style.cssText = 'background:#0a0a0a;color:#fff;padding:96px 24px 96px';
-    var cards = HOMEPAGE_CASES.map(function(c){
-      var metrics = c.metrics.map(function(m){
-        return '<div style="flex:1 1 0;min-width:96px"><div style="font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:24px;line-height:1;letter-spacing:-0.02em;color:#fff">'+m[0]+'</div><div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:12px;line-height:1.3;color:rgba(255,255,255,0.5);margin-top:6px">'+m[1]+'</div></div>';
-      }).join('');
-      return '<a href="'+c.href+'" style="background:#141414;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px;text-decoration:none;color:inherit;transition:border-color .2s">'
-        + '<div style="display:flex;justify-content:space-between;font-family:\'Suisse Intl Regular\',sans-serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ff3b30"><span>'+c.tag+'</span><span style="color:rgba(255,255,255,0.4)">2026</span></div>'
-        + '<div style="font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:22px;line-height:1.2;letter-spacing:-0.01em;color:#fff">'+c.title+'</div>'
-        + '<div style="display:flex;gap:16px;flex-wrap:wrap">'+metrics+'</div>'
-        + '<div style="font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;line-height:1.5;color:rgba(255,255,255,0.6);flex:1">'+c.desc+'</div>'
-        + '<div style="margin-top:4px;font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#ff3b30">Открыть кейс →</div>'
-        + '</a>';
-    }).join('');
-    sec.innerHTML = '<div style="max-width:1392px;margin:0 auto">'
-      + '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;font-family:\'Suisse Intl Regular\',sans-serif;font-size:14px;color:rgba(255,255,255,0.4)"><span>(03)</span><span>(Кейсы)</span><span>© 2026</span></div>'
-      + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">'+cards+'</div>'
-      + '<div style="margin-top:48px;text-align:center"><a href="/cases/portfolio/" style="display:inline-flex;align-items:center;gap:12px;padding:18px 32px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:48px;text-decoration:none;font-family:\'Suisse Intl SemiBold\',sans-serif;font-size:14px;letter-spacing:0.04em;text-transform:uppercase">Все кейсы →</a></div>'
-      + '</div>';
-    hostSection.parentNode.insertBefore(sec, hostSection.nextSibling);
-  }
-
-  var TEMPLATE_TEXTS = [
-    'Industries → our designs have supported businesses, adapting to unique needs and challenges',
-    'our designs have supported businesses, adapting to unique needs and challenges',
-    'Industries → our designs',
-    'adapting to unique needs and challenges'
-  ];
-
-  // 4 slots of Framer Stats carousel — slot 1 is product-specific, slots 2-4 are agency-wide
-  var PRODUCT_STATS = {
-    '/product/avito-ads/':       [['1000+','Стоимость целевого обращения на недвижимость бизнес и премиум-класса']],
-    '/product/content-product/': [['500+', 'Запусков контент-систем для застройщиков и агентств недвижимости']],
-    '/product/product-statii/':  [['6000+','Обращений с ПромоСтраниц Яндекса по цене на 32% ниже контекста']],
-    '/product/product-telegram/':[['800+', 'Заявок из Telegram Ads с CPL в 2 раза ниже рынка']],
-    '/product/youtube-product/': [['50+',  'Личных брендов основателей запущенных за 1.5 недели']]
-  };
-  var CASE_STATS = {
-    '/work/case-spb-15mln/':                [['6',    'Сделок премиум-недвижимости закрыто через Telegram Ads']],
-    '/work/case-aag-promostranicy/':        [['6000%','ROI на ПромоСтраницах Яндекса для AAG Development']],
-    '/work/regardis-telegram-ads-premium/': [['50+',  'Квалифицированных лидов в месяц на премиум-недвижимость']]
-  };
-  // Agency-wide stats — used for slots 2..N on every product/case page
-  var AGENCY_STATS = [
-    ['3600+', 'Квалифицированных заявок собрано для клиентов в недвижимости'],
-    ['1M+',   'Охватов в Telegram и Яндекс ПромоСтраницах ежемесячно'],
-    ['20K+',  'Подписчиков на каналах клиентов'],
-    ['№1',    'Performance-агентство в нише недвижимости по CPL']
-  ];
-
-  function pageStats(){
-    var head = PRODUCT_STATS[path()] || CASE_STATS[path()];
-    if (!head) return null;
-    return head.concat(AGENCY_STATS);
-  }
-
-  function patchTemplateBlocks(){
-    var stats = pageStats();
-    // 1. Replace each "30+" by index from stats list
-    if (stats) {
-      var bigNodes = [];
-      document.querySelectorAll('h1, h2, h3, p, span, div').forEach(function(el){
-        if (el.children.length) return;
-        if ((el.textContent || '').trim() === '30+') bigNodes.push(el);
-      });
-      bigNodes.forEach(function(el, i){
-        var s = stats[Math.min(i, stats.length - 1)];
-        if (s && s[0]) el.textContent = s[0];
-      });
-      // 2. Replace each template phrase by index from stats list
-      var phraseNodes = [];
-      document.querySelectorAll('h1, h2, h3, h4, p, span, div').forEach(function(el){
-        if (el.children.length) return;
-        var t = (el.textContent || '').trim();
-        if (!t) return;
-        if (TEMPLATE_TEXTS.some(function(p){ return t.indexOf(p) >= 0; })) phraseNodes.push(el);
-      });
-      phraseNodes.forEach(function(el, i){
-        var s = stats[Math.min(i, stats.length - 1)];
-        if (s && s[1]) el.textContent = s[1];
-      });
-    } else {
-      // No mapping for this path — at least hide template sections
-      document.querySelectorAll('h1, h2, h3, p, span, div').forEach(function(el){
-        if (el.children.length) return;
-        var t = (el.textContent || '').trim();
-        if (TEMPLATE_TEXTS.some(function(p){ return t.indexOf(p) >= 0; })) {
-          var sec = el.closest('section, [data-framer-name]');
-          if (sec) sec.style.setProperty('display', 'none', 'important');
+  var cards = document.querySelectorAll('.article-card');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('reveal-on');
+          io.unobserve(e.target);
         }
       });
-    }
-    // 3. Hide template placeholder images (lambo + sneaker)
-    document.querySelectorAll('img, [data-framer-background-image-wrapper] img, picture img').forEach(function(img){
-      var s = (img.getAttribute('src')||'') + ' ' + (img.getAttribute('srcset')||'') + ' ' + (img.getAttribute('alt')||'');
-      if (/lambo|sneaker|shoe|automobile|yellow-car|nike|adidas/i.test(s)) {
-        var hidden = img.closest('figure, picture, [data-framer-name="Image"]') || img;
-        hidden.style.setProperty('display', 'none', 'important');
-        hidden.setAttribute('data-glavnoe-hidden', 'template-image');
-      }
+    }, {threshold:0.1, rootMargin:'0px 0px -10% 0px'});
+    cards.forEach(function(c, i){
+      c.style.animationDelay = (i * 0.05) + 's';
+      io.observe(c);
     });
-  }
-
-  function run(){
-    try { fixLinks(); } catch(e){}
-    try { addAnchorIds(); } catch(e){}
-    try { injectPricingNote(); } catch(e){}
-    try { fixBlogCards(); } catch(e){}
-    try { injectHomepageCases(); } catch(e){}
-    try { patchTemplateBlocks(); } catch(e){}
-    try { fixVisibleText(); } catch(e){}
-    try { hideExtraBlogCards(); } catch(e){}
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run, { once:true });
   } else {
-    run();
+    cards.forEach(function(c){ c.classList.add('reveal-on'); });
   }
-  window.addEventListener('load', function(){ setTimeout(run, 500); setTimeout(run, 1800); setTimeout(run, 4000); });
 })();
 </script>
 </body>

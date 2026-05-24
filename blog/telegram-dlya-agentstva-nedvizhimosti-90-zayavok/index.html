@@ -14,41 +14,170 @@
 <meta name="author" content="Виктория Нартдинова">
 <meta name="keywords" content="telegram агентство недвижимости, заявки из telegram недвижимость, лиды telegram недвижимость, CPL telegram, продвижение агентства недвижимости, маркетинг новостроек telegram, воронка продаж telegram">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:#0a0a0a;color:#fff;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:inherit;text-decoration:none}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 32px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.08)}
-  .nav__logo{font-weight:700;letter-spacing:-0.02em;font-size:20px;text-transform:none}
-  .nav__items{display:flex;gap:28px;flex-wrap:wrap}
-  .nav__items a:hover{color:#ff3b30}
-  .hero{padding:88px 32px 32px;max-width:880px;margin:0 auto}
-  .meta{font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:12px}
-  .hero__title{font-size:clamp(32px,5vw,56px);line-height:1.1;letter-spacing:-0.02em;font-weight:700}
-  .hero__sub{margin-top:24px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:rgba(255,255,255,0.7);max-width:760px}
-  .article{padding:24px 32px 96px;max-width:760px;margin:0 auto;font-size:18px;line-height:1.7;color:rgba(255,255,255,0.85)}
-  .article p{margin:18px 0}
-  .article h2{margin:48px 0 16px;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:#fff;font-weight:700}
-  .article h3{margin:36px 0 12px;font-size:22px;letter-spacing:-0.01em;line-height:1.25;color:#fff;font-weight:600}
-  .article ul,.article ol{margin:18px 0 18px 24px}
-  .article li{margin:8px 0}
-  .article a{color:#ff7a73;text-decoration:underline;text-underline-offset:3px}
-  .article a:hover{color:#ff3b30}
-  .article strong{color:#fff}
-  .article blockquote{margin:32px 0;padding:18px 24px;border-left:3px solid #ff3b30;color:rgba(255,255,255,0.75);font-style:italic}
-  .article hr{border:none;border-top:1px solid rgba(255,255,255,0.12);margin:48px 0}
-  .faq{padding:32px 32px 64px;max-width:760px;margin:0 auto}
-  .faq__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:#fff;margin-bottom:24px}
-  .faq__item{padding:24px 0;border-top:1px solid rgba(255,255,255,0.12)}
-  .faq__q{font-size:18px;color:#fff;font-weight:600;margin-bottom:8px}
-  .faq__a{font-size:16px;line-height:1.6;color:rgba(255,255,255,0.75)}
-  .cta{padding:48px 32px 96px;max-width:760px;margin:0 auto;text-align:center}
-  .cta__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#fff;margin-bottom:24px}
-  .cta__btn{display:inline-flex;align-items:center;gap:12px;padding:18px 32px;background:#ff3b30;color:#fff;border-radius:48px;font-size:16px;letter-spacing:0.02em;text-transform:uppercase;font-weight:600}
-  .footer{padding:48px 32px;border-top:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(255,255,255,0.5);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .footer a:hover{color:#fff}
+:root{
+  --bg:#FFFCF7;
+  --bg-soft:#FBF7F1;
+  --text:#1A1814;
+  --text-secondary:#5C5750;
+  --text-mute:#8A8479;
+  --border:#EFEAE0;
+  --border-strong:#E5E0D8;
+  --accent:#A087D3;
+  --accent-soft:#F6F3FC;
+  --accent-grad-2:#ECE6F8;
+  --mint:#5CBA8C;
+  --mint-soft:#ECFDF5;
+  --honey:#F5C24A;
+  --card-bg:#FFFFFF;
+  --card-alt:#FBF7F1;
+  --card-shadow:0 4px 24px rgba(26,24,20,0.04);
+  --card-shadow-strong:0 8px 32px rgba(26,24,20,0.06);
+  --ease:cubic-bezier(0.22, 1, 0.36, 1);
+  --font:'Suisse Intl','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 32px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;border-bottom:1px solid var(--border);background:rgba(255,252,247,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.nav__logo{font-weight:600;letter-spacing:-0.01em;font-size:18px;text-transform:none;color:var(--text)}
+.nav__items{display:flex;gap:24px;flex-wrap:wrap}
+.nav__items a{color:var(--text-secondary);transition:color .2s}
+.nav__items a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{padding:72px 32px 36px;max-width:880px;margin:0 auto;background:radial-gradient(1100px 500px at 50% -10%,var(--accent-soft),transparent 60%)}
+.author-pill{display:inline-flex;align-items:center;gap:12px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;padding:6px 18px 6px 6px;box-shadow:var(--card-shadow);color:var(--text);transition:transform .25s var(--ease),border-color .25s var(--ease);margin-bottom:22px}
+.author-pill:hover{transform:translateY(-1px);border-color:var(--accent)}
+.author-pill img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+.author-pill .role{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:600;line-height:1}
+.author-pill .name{display:block;font-size:14px;font-weight:600;color:var(--text);line-height:1.2;margin-top:4px}
+.meta{font-size:12px;color:var(--text-mute);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px;display:flex;flex-wrap:wrap;gap:12px;font-weight:600}
+.meta span{color:var(--accent)}
+.hero__title{font-size:clamp(30px,4.6vw,52px);line-height:1.08;letter-spacing:-0.02em;font-weight:600;color:var(--text)}
+.hero__sub{margin-top:20px;font-size:clamp(17px,1.8vw,20px);line-height:1.55;color:var(--text-secondary);max-width:720px}
+.reading-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;padding:14px 18px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;box-shadow:var(--card-shadow);font-size:13px;color:var(--text);max-width:560px}
+.reading-meta .rm-item{display:flex;align-items:center;gap:8px}
+.reading-meta .rm-item .rm-icon{font-size:16px}
+.reading-meta .rm-item strong{color:var(--text);font-weight:600}
+
+/* Article */
+.article{padding:24px 32px 64px;max-width:760px;margin:0 auto;font-size:17px;line-height:1.75;color:var(--text)}
+.article p{margin:16px 0;color:var(--text)}
+.article h2{margin:48px 0 16px;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:var(--text);font-weight:600;scroll-margin-top:96px}
+.article h3{margin:32px 0 12px;font-size:21px;letter-spacing:-0.01em;line-height:1.3;color:var(--text);font-weight:600;scroll-margin-top:96px}
+.article ul,.article ol{margin:16px 0 16px 22px;color:var(--text)}
+.article li{margin:8px 0}
+.article a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.article a:hover{color:#8c70c4}
+.article strong{color:var(--text);font-weight:600}
+.article blockquote{margin:28px 0;padding:20px 26px;border-left:3px solid var(--accent);background:var(--card-bg);border-radius:0 14px 14px 0;color:var(--text);font-style:italic;box-shadow:var(--card-shadow)}
+.article hr{border:none;border-top:1px solid var(--border);margin:44px 0}
+
+/* FAQ */
+.faq{padding:24px 32px 64px;max-width:760px;margin:0 auto}
+.faq__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;line-height:1.2;color:var(--text);font-weight:600;margin-bottom:20px}
+.faq__item{padding:22px 0;border-top:1px solid var(--border)}
+.faq__q{font-size:17px;color:var(--text);font-weight:600;margin-bottom:8px;line-height:1.4}
+.faq__a{font-size:15px;line-height:1.65;color:var(--text-secondary)}
+
+/* Completion */
+.completion{margin:48px auto 0;text-align:center;max-width:560px}
+.completion-circle{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--mint) 0%,#4AA37A 100%);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(92,186,140,0.35);position:relative}
+.completion-circle svg{width:40px;height:40px;color:#fff}
+.completion-circle::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--mint);opacity:0;animation:pulseRing 2.4s ease infinite}
+@keyframes pulseRing{0%{opacity:0.4;transform:scale(1)}100%{opacity:0;transform:scale(1.25)}}
+.completion h4{font-size:22px;font-weight:600;margin:22px 0 10px;color:var(--text);letter-spacing:-0.01em;line-height:1.25}
+.completion p{font-size:15px;color:var(--text-secondary);line-height:1.55}
+.completion-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:14px 26px;background:var(--card-bg);border:1px solid var(--border);border-radius:999px;font-size:14px;font-weight:600;color:var(--text);transition:all .25s ease;box-shadow:var(--card-shadow)}
+.completion-cta:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){.completion-circle::after{animation:none}}
+
+/* CTA */
+.cta{padding:32px 32px 80px;max-width:760px;margin:0 auto;text-align:center}
+.cta__title{font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:var(--text);font-weight:600;margin-bottom:22px;line-height:1.25}
+.cta__btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;background:var(--accent);color:#fff;border-radius:48px;font-size:15px;letter-spacing:0.01em;font-weight:600;transition:background .2s,transform .2s}
+.cta__btn:hover{background:#8c70c4;transform:translateY(-1px)}
+
+/* Footer */
+.footer{padding:42px 32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-secondary);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{color:var(--text-secondary);transition:color .2s}
+.footer a:hover{color:var(--accent)}
+
+/* Progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:100;will-change:transform;transition:transform .1s linear}
+
+/* Reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* Mobile TOC */
+.toc-mobile{display:block;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;margin:20px 32px 0;overflow:hidden;max-width:760px;margin-left:auto;margin-right:auto}
+.toc-mobile summary{padding:14px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::after{content:'+';font-size:20px;color:var(--accent);font-weight:600}
+.toc-mobile[open] summary::after{content:'−'}
+.toc-mobile ul{list-style:none;margin:0;padding:0 0 12px}
+.toc-mobile ul li a{display:block;padding:8px 20px;font-size:13px;color:var(--text-secondary);line-height:1.45}
+.toc-mobile ul li a:hover{color:var(--accent)}
+@media (min-width:1180px){.toc-mobile{display:none}}
+
+/* Desktop sticky TOC */
+@media (min-width:1180px){
+  .desktop-toc{position:fixed;top:120px;left:24px;width:220px;z-index:40;font-size:13px}
+  .desktop-toc-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);font-weight:700;margin-bottom:14px;padding-left:14px}
+  .desktop-toc ol{list-style:none;margin:0;padding:0;counter-reset:dtoc}
+  .desktop-toc ol li{counter-increment:dtoc;position:relative;padding:0}
+  .desktop-toc ol li a{display:flex;align-items:center;gap:10px;padding:9px 14px;color:var(--text-secondary);border-radius:10px;transition:all .25s ease;font-weight:500;line-height:1.3}
+  .desktop-toc ol li a::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--bg-soft);border:1.5px solid var(--border);flex:none;transition:all .25s ease}
+  .desktop-toc ol li a:hover{color:var(--text);background:var(--accent-soft)}
+  .desktop-toc ol li.passed a::before{background:var(--mint);border-color:var(--mint)}
+  .desktop-toc ol li.passed a{color:var(--text);text-decoration:line-through;opacity:0.7}
+  .desktop-toc ol li.active a::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .desktop-toc ol li.active a{color:var(--accent);font-weight:600;background:var(--accent-soft)}
+}
+@media (max-width:1179px){.desktop-toc{display:none}}
+
+/* Tablet/Mobile tweaks */
+@media (max-width:809px){
+  .nav{padding:14px 20px}
+  .nav__items{display:none}
+  .hero{padding:48px 20px 28px}
+  .article{padding:20px 22px 48px;font-size:16px}
+  .article h2{margin:36px 0 12px}
+  .article h3{margin:26px 0 10px;font-size:19px}
+  .faq{padding:18px 22px 48px}
+  .cta{padding:24px 22px 64px}
+  .footer{padding:32px 22px;flex-direction:column;align-items:flex-start;gap:14px}
+  .completion-circle{width:72px;height:72px}
+  .completion-circle svg{width:34px;height:34px}
+  .toc-mobile{margin:16px 22px 0}
+}
+/* Dual CTA plates (subscribe to channel + personal) */
+.dual-cta{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:36px auto;max-width:760px;padding:0 32px}
+.dual-cta-card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:24px 22px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:8px;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1),border-color .3s cubic-bezier(.22,1,.36,1);box-shadow:0 4px 24px rgba(26,24,20,.04)}
+.dual-cta-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(26,24,20,.08);border-color:var(--accent)}
+.dual-cta-card .dc-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.dual-cta-card .dc-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;letter-spacing:.02em}
+.dual-cta-card .dc-handle{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--text);line-height:1.2}
+.dual-cta-card .dc-sub{font-size:12px;color:var(--text-secondary);line-height:1.3}
+.dual-cta-card .dc-desc{font-size:14px;color:var(--text-secondary);line-height:1.55;margin-top:4px}
+.dual-cta-card .dc-arrow{margin-top:auto;padding-top:8px;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.dual-cta-card.brand-v .dc-avatar{background:linear-gradient(135deg,#C8B5E8 0%,#FFC4A8 100%)}
+.dual-cta-card.brand-v:hover{border-color:#A087D3}
+.dual-cta-card.brand-v .dc-arrow{color:#A087D3}
+.dual-cta-card.brand-g .dc-avatar{background:linear-gradient(135deg,#7FD9AB 0%,#5CBA8C 100%)}
+.dual-cta-card.brand-g:hover{border-color:#5CBA8C}
+.dual-cta-card.brand-g .dc-arrow{color:#5CBA8C}
+@media (max-width:680px){.dual-cta{grid-template-columns:1fr;padding:0 22px;margin:28px auto}}
+
 </style>
-<script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:relative;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#fff;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#ff3b30;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:18px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script id="glavnoe-mobile-header-fix-js">(function(){function inject(){var nav=document.querySelector("nav.nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("data-framer-name","Mobile Menu Icon");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script></head>
+<script id="glavnoe-nav-enhance-script" src="/scripts/nav-enhance.js" defer></script><style id="glavnoe-mobile-header-fix">nav.nav{position:sticky;top:0;z-index:50;}nav.nav .glavnoe-static-burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:#1A1814;cursor:pointer;padding:0;margin-left:auto;}nav.nav .glavnoe-static-burger:hover{color:#A087D3;}nav.nav .glavnoe-static-burger svg{width:24px;height:24px;display:block;}@media (max-width:1024px){nav.nav .nav__items{display:none !important;}nav.nav{padding:14px 20px !important;align-items:center !important;}nav.nav .glavnoe-static-burger{display:flex !important;}}</style><script id="glavnoe-mobile-header-fix-js">(function(){function inject(){var nav=document.querySelector("nav.nav");if(!nav)return;if(nav.querySelector(".glavnoe-static-burger"))return;var btn=document.createElement("button");btn.type="button";btn.className="glavnoe-static-burger";btn.setAttribute("aria-label","Меню");btn.setAttribute("data-framer-name","Mobile Menu Icon");btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';nav.appendChild(btn);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",inject,{once:true});}else{inject();}})();</script></head>
 <body>
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 <nav class="nav">
   <a class="nav__logo" href="/">ГЛАВНОЕ</a>
   <div class="nav__items">
@@ -59,7 +188,47 @@
     <a href="/blog/">Статьи</a>
   </div>
 </nav>
+
+<details class="toc-mobile">
+  <summary>Содержание гайда</summary>
+  <ul>
+    <li><a href="#sec-1">Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц</a></li>
+    <li><a href="#sec-2">Исходные условия</a></li>
+    <li><a href="#sec-3">Две ключевые проблемы</a></li>
+    <li><a href="#sec-4">Аналитика перед стартом: почему именно Telegram</a></li>
+    <li><a href="#sec-5">Стратегия: прогноз и подбор каналов</a></li>
+    <li><a href="#sec-6">Реализация: 6 шагов от нуля до 90 заявок</a></li>
+    <li><a href="#sec-7">Результаты за 4 месяца</a></li>
+    <li><a href="#sec-8">Почему конкуренты получают хуже результат</a></li>
+    <li><a href="#sec-9">Сравнение: стандартный подход и стратегический</a></li>
+    <li><a href="#sec-10">Ключевые выводы</a></li>
+    <li><a href="#sec-11">Подходит ли вам эта стратегия</a></li>
+  </ul>
+</details>
+<nav class="desktop-toc" id="desktopToc" aria-label="Карта гайда">
+  <div class="desktop-toc-title">Разделы</div>
+  <ol>
+    <li data-target="sec-1"><a href="#sec-1">Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц</a></li>
+    <li data-target="sec-2"><a href="#sec-2">Исходные условия</a></li>
+    <li data-target="sec-3"><a href="#sec-3">Две ключевые проблемы</a></li>
+    <li data-target="sec-4"><a href="#sec-4">Аналитика перед стартом: почему именно Telegram</a></li>
+    <li data-target="sec-5"><a href="#sec-5">Стратегия: прогноз и подбор каналов</a></li>
+    <li data-target="sec-6"><a href="#sec-6">Реализация: 6 шагов от нуля до 90 заявок</a></li>
+    <li data-target="sec-7"><a href="#sec-7">Результаты за 4 месяца</a></li>
+    <li data-target="sec-8"><a href="#sec-8">Почему конкуренты получают хуже результат</a></li>
+    <li data-target="sec-9"><a href="#sec-9">Сравнение: стандартный подход и стратегический</a></li>
+    <li data-target="sec-10"><a href="#sec-10">Ключевые выводы</a></li>
+    <li data-target="sec-11"><a href="#sec-11">Подходит ли вам эта стратегия</a></li>
+  </ol>
+</nav>
 <section class="hero">
+    <a class="author-pill" href="/" aria-label="Гайд разбирает Виктория Нартдинова, founder ГЛАВНОЕ">
+    <img src="assets/avatars/vika-avatar.jpg" alt="Виктория Нартдинова">
+    <span>
+      <span class="role">Разбирает гайд</span>
+      <span class="name">Виктория Нартдинова · founder ГЛАВНОЕ</span>
+    </span>
+  </a>
   <div class="meta">
     <span>(гайды и инсайты)</span>
     <span>2024-05-15</span>
@@ -67,22 +236,27 @@
   </div>
   <h1 class="hero__title">Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц</h1>
   <p class="hero__sub">Кейс: как агентство недвижимости в Санкт-Петербурге получило 370 заявок за 4 месяца через Telegram. Бюджет 50 000 руб/мес, CPL ~555 рублей. Стратегия, воронка, результаты.</p>
+  <div class="reading-meta" aria-label="Что узнаешь из гайда">
+    <span class="rm-item"><span class="rm-icon">⏱</span> <span><strong>5 мин</strong> чтения</span></span>
+    <span class="rm-item"><span class="rm-icon">📊</span> <span><strong>11 разделов</strong></span></span>
+    <span class="rm-item"><span class="rm-icon">🎯</span> <span>для агентств</span></span>
+  </div>
 </section>
 <article class="article">
-<h2>Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц</h2>
+<h2 id="sec-1" class="reveal">Telegram для агентства недвижимости: 90 заявок за 50 000 рублей в месяц</h2>
 <p>Привет, меня зовут Виктория. Моя команда занимается комплексным маркетингом для недвижимости в Telegram. Этот материал — для тех, кто устал от покупки лидов и ищет возможности роста, но считает это непомерно дорогостоящим.</p>
 <p>Главный вопрос, на который отвечает этот кейс: <strong>как агентству недвижимости расти в условиях высокой конкуренции</strong> без огромных рекламных бюджетов?</p>
-<h2>Исходные условия</h2>
+<h2 id="sec-2" class="reveal">Исходные условия</h2>
 <p>Агентство недвижимости в Санкт-Петербурге, специализация — новостройки. Без дополнительных услуг вроде trade-in.</p>
 <p>Что было на старте:</p>
 <ul><li><strong>Маркетинг:</strong> только объявления на Авито</li><li><strong>Telegram-присутствие:</strong> нулевая база подписчиков</li><li><strong>Рекламный бюджет:</strong> 50 000 рублей в месяц</li></ul>
-<h2>Две ключевые проблемы</h2>
+<h2 id="sec-3" class="reveal">Две ключевые проблемы</h2>
 <p><strong>Проблема первая — выгорание брокеров.</strong> Обработка низкокачественных лидов сжигала мотивацию команды. Люди устали работать с обращениями, которые не конвертируются в сделки.</p>
 <p><strong>Проблема вторая — острая конкуренция.</strong> Количество агентств новостроек в городе выросло с 15 до 35 организаций. Уровень конкуренции оказался выше, чем в Москве.</p>
-<h2>Аналитика перед стартом: почему именно Telegram</h2>
+<h2 id="sec-4" class="reveal">Аналитика перед стартом: почему именно Telegram</h2>
 <p>Мы не начинали работу без предварительного анализа. Изучив источники трафика крупнейших агентств с оборотом более <strong>1 млрд рублей</strong>, выяснили: <strong>80% трафика приходит через Telegram</strong>.</p>
 <p>Вопрос: как привлекать «тёплые» лиды системно — учитывая конкуренцию в контекстной рекламе, проблемы с Авито и ограничения застройщиков на промоматериалы?</p>
-<h2>Стратегия: прогноз и подбор каналов</h2>
+<h2 id="sec-5" class="reveal">Стратегия: прогноз и подбор каналов</h2>
 <h3>Критерии оценки каналов</h3>
 <p>Каждый рекламный канал оценивался по четырём параметрам:</p>
 <ul><li>Рекламная отдача (сколько заявок приносит на вложенный рубль)</li><li>Частота закупа канала (насколько аудитория «выгорает» от рекламы)</li><li>Категория аудитории по месту размещения (покупатели или конкуренты?)</li><li>Уровень вовлечённости (процент читающих и комментирующих)</li></ul>
@@ -91,7 +265,7 @@
 <p>Реклама приносит не только прямые заявки, но и новых подписчиков. Через <strong>3-8 недель</strong>, когда подписчик «созревает» на контенте канала, приходят самые тёплые обращения.</p>
 <p>Разница принципиальная: клиент обращается <strong>именно к вам для решения конкретной проблемы</strong>, а не просто для покупки квартиры. Качество таких обращений близко к рекомендациям — самому ценному типу лидов.</p>
 <p>Цель стратегии: системно увеличивать количество тёплых заявок, близких по качеству к рекомендациям.</p>
-<h2>Реализация: 6 шагов от нуля до 90 заявок</h2>
+<h2 id="sec-6" class="reveal">Реализация: 6 шагов от нуля до 90 заявок</h2>
 <h3>1. Позиционирование</h3>
 <p>Команда полностью погрузилась в работу агентства: изучила экспертизу, внутренние процессы, стиль руководителей. Результат — запоминающееся отличие от конкурентов плюс незаметная рыночная особенность, которую не использовал никто.</p>
 <p>Позиционирование — это не красивый слоган. Это <a href="/uslugi/strategiya-marketinga" target="_blank" rel="noopener">стратегическое решение</a>, которое определяет, почему клиент выбирает вас, а не ещё 34 агентства в городе.</p>
@@ -109,33 +283,69 @@
 <p>Автоматизация решила проблему выгорания: брокеры перестали тратить время на нецелевые обращения.</p>
 <h3>6. Работа с подписчиками</h3>
 <ul><li>Прямые эфиры с экспертами</li><li>Подкасты о рынке недвижимости</li><li>Активности для вовлечения и удержания аудитории</li></ul>
-<h2>Результаты за 4 месяца</h2>
+<h2 id="sec-7" class="reveal">Результаты за 4 месяца</h2>
 <p>| Метрика | Значение | |---------|----------| | Всего заявок за 4 месяца | <strong>370 обращений</strong> | | Заявки в первый месяц | <strong>30</strong> | | Заявки к четвёртому месяцу | <strong>90 в месяц</strong> | | Ежемесячный рекламный бюджет | <strong>50 000 рублей</strong> | | Стоимость заявки (CPL) | <strong>~555 рублей</strong> |</p>
 <p>Динамика роста: от 30 заявок в первый месяц до 90 заявок к четвёртому. Трёхкратный рост при том же бюджете — за счёт накопления подписчиков и эффекта «дозревания».</p>
-<h2>Почему конкуренты получают хуже результат</h2>
+<h2 id="sec-8" class="reveal">Почему конкуренты получают хуже результат</h2>
 <p>Основная ошибка рынка — <strong>бездумное распределение бюджета</strong>. Конкуренты закупают рекламу в тематических каналах «недвижимость», где:</p>
 <ul><li>Аудитория перенасыщена рекламой — каждый пост конкурирует с десятками аналогичных предложений</li><li>Целевая аудитория состоит <strong>не из покупателей</strong>, а из профессионалов рынка — конкурентов, риэлторов, ипотечных брокеров</li></ul>
 <p>Результат: высокий CPL и нецелевые обращения. Деньги уходят на рекламу, которую видят те, кто продаёт, а не те, кто покупает.</p>
 <p>Наш подход — прямая противоположность. Нестандартные площадки, ручная проверка каждого канала перед размещением, анализ реальной аудитории, а не тематики.</p>
-<h2>Сравнение: стандартный подход и стратегический</h2>
+<h2 id="sec-9" class="reveal">Сравнение: стандартный подход и стратегический</h2>
 <p>| Параметр | Стандартный подход | Наш подход | |----------|-------------------|------------| | Площадки | Тематические каналы «недвижимость» | Нестандартные каналы с целевой аудиторией | | Проверка | Автоматическая по тематике | Ручная проверка каждого канала | | Аудитория | Конкуренты и профессионалы | Реальные покупатели | | Контент | Периодические посты | Минимум 2 поста ежедневно | | Квалификация | Ручная обработка | Бот + CRM-интеграция | | Результат (4 мес.) | Десятки заявок | <strong>370 заявок</strong> |</p>
-<h2>Ключевые выводы</h2>
+<h2 id="sec-10" class="reveal">Ключевые выводы</h2>
 <p><strong>Не количество подписчиков, а бизнес-результат.</strong> Работая с клиентом, мы не гнались за подписчиками — сосредоточились на продажах и росте. Подписная база — промежуточная метрика, а не цель.</p>
 <p><strong>Окупаемость с первой сделки.</strong> Рекламный бюджет и стоимость услуг окупаются одной закрытой сделкой. При 90 заявках в месяц это более чем достижимо. Первый клиент из Telegram был закрыт через рассылку бота.</p>
 <p><strong>Тёплые заявки вместо холодных лидов.</strong> Эффект «дозревания» через 3-8 недель даёт обращения, близкие по качеству к рекомендациям. Брокеры работают с мотивированными покупателями, а не с «просто спросить».</p>
 <p><strong>Стратегия определяет результат.</strong> При одинаковом бюджете в 50 000 рублей можно получить и 10 заявок, и 90 — разница в подходе. Нестандартный подбор площадок, ежедневный контент, автоматизация квалификации — это <a href="/uslugi/performance-marketing" target="_blank" rel="noopener">управление performance-каналом</a>, а не «ведение странички».</p>
-<h2>Подходит ли вам эта стратегия</h2>
+<h2 id="sec-11" class="reveal">Подходит ли вам эта стратегия</h2>
 <p>Этот подход работает для агентств недвижимости, которые:</p>
 <ul><li>Специализируются на новостройках и хотят снизить зависимость от классифайдов</li><li>Готовы вкладываться в системную работу минимум на 3-4 месяца</li><li>Понимают, что 50 000 рублей в месяц на рекламу — это инвестиция, а не расход</li><li>Хотят получать тёплые заявки, а не базы контактов для холодного обзвона</li></ul>
 <p>Если вам нужна <a href="/uslugi/telegram-prodvizhenie" target="_blank" rel="noopener">стратегия продвижения в Telegram</a> для вашего агентства — с конкретными цифрами и прогнозами вместо абстрактных обещаний — <a href="/uslugi/strategiya-marketinga" target="_blank" rel="noopener">свяжитесь с нами</a>. Мы начинаем с аналитики рынка и стратегии позиционирования, а не с контент-плана.</p>
 <hr>
 <p><em>Статья первоначально опубликована на <a href="https://vc.ru/id1363818/1172181" target="_blank" rel="noopener">VC.ru</a></em></p>
 </article>
+<div class="dual-cta reveal" aria-label="Подписаться на каналы">
+  <a class="dual-cta-card brand-v" href="https://t.me/vnartdinova" target="_blank" rel="noopener" aria-label="Канал Виктории Нартдиновой">
+    <div class="dc-row">
+      <span class="dc-avatar" aria-hidden="true">В</span>
+      <div>
+        <div class="dc-handle">@vnartdinova</div>
+        <div class="dc-sub">Виктория Нартдинова</div>
+      </div>
+    </div>
+    <div class="dc-desc">Учу делать AI-продукты для бизнеса, разбираю свои стартапы, делюсь рабочими схемами.</div>
+    <div class="dc-arrow">Открыть в Telegram →</div>
+  </a>
+  <a class="dual-cta-card brand-g" href="https://t.me/glavnoe_agency" target="_blank" rel="noopener" aria-label="Канал агентства ГЛАВНОЕ">
+    <div class="dc-row">
+      <span class="dc-avatar" aria-hidden="true">Г</span>
+      <div>
+        <div class="dc-handle">@glavnoe_agency</div>
+        <div class="dc-sub">Агентство ГЛАВНОЕ</div>
+      </div>
+    </div>
+    <div class="dc-desc">Маркетинг недвижимости, performance в Telegram и ПромоСтраницах, AI-инструменты для бизнеса.</div>
+    <div class="dc-arrow">Открыть в Telegram →</div>
+  </a>
+</div>
+
+
 <section class="faq"><h2 class="faq__title">Частые вопросы</h2><div class="faq__item"><div class="faq__q">Сколько стоит привлечение заявки через Telegram для агентства недвижимости?</div><div class="faq__a">В нашем кейсе стоимость одной заявки составила около 555 рублей при ежемесячном рекламном бюджете 50 000 рублей. К четвёртому месяцу работы канал генерировал 90 заявок в месяц. Итого за 4 месяца — 370 обращений.</div></div>
 <div class="faq__item"><div class="faq__q">Можно ли получать заявки из Telegram с нулевой базой подписчиков?</div><div class="faq__a">Да. Мы начали работу с нуля — у канала не было ни одного подписчика. В первый месяц получили 30 заявок, а к четвёртому месяцу вышли на 90 заявок. Ключ — системная стратегия: позиционирование, ежедневный контент, нестандартные рекламные размещения и автоматизация через бот.</div></div>
 <div class="faq__item"><div class="faq__q">Какие рекламные каналы в Telegram работают для недвижимости?</div><div class="faq__a">Основная ошибка конкурентов — реклама в тематических каналах про недвижимость, где аудитория состоит из конкурентов, риэлторов и ипотечных брокеров. Мы используем нестандартный подбор каналов с ручной проверкой — это и есть главная причина высокой эффективности при низком бюджете.</div></div>
 <div class="faq__item"><div class="faq__q">Через какое время Telegram-канал начинает приносить заявки?</div><div class="faq__a">Первые заявки появляются уже в первый месяц. Однако самые тёплые обращения приходят через 3-8 недель после подписки — когда человек «созревает» на контенте канала и обращается к вам для решения конкретной задачи, а не просто для покупки квартиры.</div></div>
 <div class="faq__item"><div class="faq__q">Окупается ли продвижение в Telegram для агентства недвижимости?</div><div class="faq__a">Да. Рекламный бюджет и стоимость услуг окупаются одной закрытой сделкой. При 90 заявках в месяц это более чем достижимо. Первый клиент из Telegram в нашем кейсе был закрыт через рассылку бота.</div></div></section>
+<section class="completion-section" style="padding:24px 32px 0;max-width:760px;margin:0 auto">
+  <div class="completion reveal" data-completion>
+    <span class="completion-circle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+    </span>
+    <h4>Ты прошёл весь гайд</h4>
+    <p>Спасибо, что дочитал. Если есть вопрос по своему проекту, напиши, разберём бесплатно.</p>
+    <a class="completion-cta" href="/contact/">Задать вопрос Виктории →</a>
+  </div>
+</section>
 <section class="cta">
   <div class="cta__title">Напишем под ваш проект — расскажите задачу</div>
   <a class="cta__btn" href="mailto:hello@glavnoe.com">Написать на hello@glavnoe.com</a>
@@ -522,6 +732,94 @@
     run();
   }
   window.addEventListener('load', function(){ setTimeout(run, 500); setTimeout(run, 1800); setTimeout(run, 4000); });
+})();
+</script>
+<script data-glavnoe-guide-gamification="1">
+(function(){
+  if (window.__glavnoeGuideGameLoaded) return;
+  window.__glavnoeGuideGameLoaded = true;
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function initProgress(){
+    var bar = document.getElementById('progressBar');
+    if (!bar) return;
+    var ticking = false;
+    function update(){
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - window.innerHeight) || 1;
+      var p = Math.min(1, Math.max(0, window.scrollY / max));
+      bar.style.transform = 'scaleX(' + p + ')';
+      ticking = false;
+    }
+    function onScroll(){ if (!ticking){ requestAnimationFrame(update); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  function initDesktopToc(){
+    var toc = document.getElementById('desktopToc');
+    if (!toc) return;
+    var items = Array.prototype.slice.call(toc.querySelectorAll('li[data-target]'));
+    var targets = items.map(function(li){ return document.getElementById(li.dataset.target); }).filter(Boolean);
+    if (!targets.length) return;
+    function update(){
+      var midline = window.scrollY + window.innerHeight * 0.35;
+      var activeIdx = 0;
+      targets.forEach(function(t, idx){
+        var top = t.getBoundingClientRect().top + window.scrollY;
+        if (top <= midline) activeIdx = idx;
+      });
+      items.forEach(function(li, idx){
+        li.classList.remove('active', 'passed');
+        if (idx < activeIdx) li.classList.add('passed');
+        else if (idx === activeIdx) li.classList.add('active');
+      });
+    }
+    var ticking = false;
+    function onScroll(){ if (!ticking){ requestAnimationFrame(function(){ update(); ticking = false; }); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
+  function initCompletion(){
+    var box = document.querySelector('[data-completion]');
+    if (!box) return;
+    if (reduced || !('IntersectionObserver' in window)){ box.classList.add('in'); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ box.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    io.observe(box);
+  }
+
+  function run(){
+    try { initProgress(); } catch(e){}
+    try { initReveal(); } catch(e){}
+    try { initDesktopToc(); } catch(e){}
+    try { initCompletion(); } catch(e){}
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
 })();
 </script>
 </body>
